@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Are Ya? - Premier League Quiz</title>
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    body {
+      background: linear-gradient(to bottom, #3C3C41, #1E2328);
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .header {
+      background-color: #010A13;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .content {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
+    .quiz-item {
+      background-color: #091428;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .quiz-item img {
+      width: 100%;
+      border-radius: 10px;
+      filter: blur(30px);
+      transition: filter 0.3s;
+      pointer-events: none;
+    }
+    .quiz-item input {
+      margin-top: 10px;
+      padding: 5px;
+      width: 80%;
+    }
+    .quiz-item.correct img {
+      filter: none;
+    }
+    .quiz-item.correct {
+      background-color: #4CAF50;
+    }
+    .quiz-item.incorrect {
+      background-color: #f44336;
+    }
+    .suggestions {
+      background-color: #091428;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 10px;
+      padding: 10px;
+      max-height: 150px;
+      overflow-y: auto;
+      display: none;
+    }
+    .suggestions div {
+      padding: 5px;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background-color: #0AC8B9;
+    }
+    .hints-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 600px;
+    }
+    .hint-row {
+      display: flex;
+      justify-content: space-around;
+    }
+    .hint-item {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .hint-item.fade-in {
+      display: flex;
+      animation: fadeIn 0.75s forwards;
+    }
+    .hint-item .cover {
+      background-color: #808080;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 5px;
+      transition: background-color 0.75s;
+    }
+    .hint-item img {
+      width: 40px;
+      height: 40px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Who Are Ya? - Premier League Quiz</h1>
+</div>
+<div class="content">
+  <div class="quiz-item" data-answer="Player1">
+    <img src="../image/content/faker.jpg" alt="Player 1">
+    <input type="text" placeholder="1 of 8">
+    <div class="suggestions"></div>
+  </div>
+</div>
+<div class="hints-container"></div>
+
+<script>
+  const hintNames = ['LEAGUE', 'TEAM', 'POS', 'AGE', 'LW', 'IW'];
+  const playerNames = ['Player1', 'Player2', 'Player3', 'Player4'];
+  const playerHints = {
+    'Player1': ['LCK', 'Team A', 'MID', '25', '3', '1'],
+    'Player2': ['LCK', 'Team A', 'JGL', '22', '3', '1'],
+    'Player3': ['LEC', 'Team C', 'TOP', '27', '2', '1'],
+    'Player4': ['LPL', 'Team D', 'SUP', '23', '0', '0'],
+    'Player5': ['LCS', 'Team A', 'ADC', '25', '3', '1'],
+  };
+  const playerImages = {
+    'LCK': '../image/content/league/lck.jpg',
+    'LEC': '../image/content/league/lec.jpg',
+    'LPL': '../image/content/league/lpl.jpg',
+    'LCS': '../image/content/league/lcs.jpg',
+    'Team A': '../image/content/team/teamA.jpg',
+    'Team C': '../image/content/team/teamC.jpg',
+    'Team D': '../image/content/team/teamD.jpg',
+    'MID': '../image/content/position/MID.jpg',
+    'JGL': '../image/content/position/JGL.jpg',
+    'TOP': '../image/content/position/TOP.jpg',
+    'SUP': '../image/content/position/SUP.jpg',
+    'ADC': '../image/content/position/ADC.jpg',
+    '25': '../image/content/age/25.jpg',
+    '22': '../image/content/age/22.jpg',
+    '27': '../image/content/age/27.jpg',
+    '23': '../image/content/age/23.jpg',
+    '3': '../image/content/wins/3.jpg',
+    '2': '../image/content/wins/2.jpg',
+    '0': '../image/content/wins/0.jpg',
+    '1': '../image/content/wins/1.jpg'
+  };
+
+  document.querySelectorAll('.quiz-item').forEach(item => {
+    const hintsContainer = document.querySelector('.hints-container');
+    const suggestions = item.querySelector('.suggestions');
+    const inputField = item.querySelector('input');
+    const maxAttempts = 8;
+    let attempts = 0;
+
+    inputField.addEventListener('input', function() {
+      const userInput = this.value.toLowerCase();
+      if (userInput === '') {
+        suggestions.style.display = 'none';
+      } else {
+        const matchedNames = playerNames.filter(name => name.toLowerCase().includes(userInput));
+        suggestions.innerHTML = matchedNames.map(name => `<div>${name}</div>`).join('');
+        suggestions.style.display = 'block';
+      }
+    });
+
+    inputField.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        const answer = 'Player1';//item.getAttribute('data-answer');
+        const userAnswer = this.value.trim();
+        attempts++;
+
+        if (userAnswer.toLowerCase() === answer.toLowerCase()) {
+          item.classList.add('correct');
+          item.classList.remove('incorrect');
+          item.querySelector('img').style.filter = 'none';
+        } else {
+          item.classList.add('incorrect');
+          item.classList.remove('correct');
+        }
+
+        hintsContainer.style.display = 'flex';
+        displayHints(hintsContainer, playerHints[answer], playerHints[userAnswer]);
+
+        inputField.placeholder = `${attempts + 1} of ${maxAttempts}`;
+        inputField.value = '';
+
+        if (attempts >= maxAttempts) {
+          showAnswer(hintsContainer, playerHints[answer]);
+          item.querySelector('img').style.filter = 'none';
+          inputField.disabled = true;
+        }
+      }
+    });
+
+    suggestions.addEventListener('click', function(event) {
+      if (event.target.tagName === 'DIV') {
+        inputField.value = event.target.textContent;
+        suggestions.style.display = 'none';
+      }
+    });
+  });
+
+  function displayHints(hintsContainer, correctHints, userHints) {
+    const hintRow = document.createElement('div');
+    hintRow.classList.add('hint-row');
+
+    userHints.forEach((hint, index) => {
+      const hintItem = document.createElement('div');
+      hintItem.classList.add('hint-item', 'fade-in');
+      hintItem.style.display = 'flex';
+
+      const cover = document.createElement('div');
+      cover.classList.add('cover');
+      cover.style.backgroundColor = hint === correctHints[index] ? 'green' : '#808080';
+
+      const img = document.createElement('img');
+      img.src = playerImages[hint] || '../image/content/default.jpg'; // 적절한 이미지 경로를 추가하세요
+      img.alt = hint;
+      cover.appendChild(img);
+
+      const span = document.createElement('span');
+      span.textContent = hintNames[index];
+
+      hintItem.appendChild(cover);
+      hintItem.appendChild(span);
+
+      hintRow.appendChild(hintItem);
+    });
+
+    hintsContainer.insertBefore(hintRow, hintsContainer.firstChild);
+  }
+
+  function showAnswer(hintsContainer, correctHints) {
+    const answerRow = document.createElement('div');
+    answerRow.classList.add('hint-row');
+
+    correctHints.forEach((hint, index) => {
+      const hintItem = document.createElement('div');
+      hintItem.classList.add('hint-item', 'fade-in');
+      hintItem.style.display = 'flex';
+
+      const cover = document.createElement('div');
+      cover.classList.add('cover');
+      cover.style.backgroundColor = 'green';
+
+      const img = document.createElement('img');
+      img.src = playerImages[hint] || '../image/content/default.jpg'; // 적절한 이미지 경로를 추가하세요
+      img.alt = hint;
+      cover.appendChild(img);
+
+      const span = document.createElement('span');
+      span.textContent = hintNames[index];
+
+      hintItem.appendChild(cover);
+      hintItem.appendChild(span);
+
+      answerRow.appendChild(hintItem);
+    });
+
+    hintsContainer.insertBefore(answerRow, hintsContainer.firstChild);
+  }
+</script>
+</body>
+</html>

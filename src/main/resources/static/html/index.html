@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progamer Quiz Games</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #3C3C41, #1E2328);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .header {
+            background-image: url('/media/content/bg.jpg'); /* 헤더 배경 이미지 URL 추가 */
+            background-size: cover; /* 배경 이미지를 헤더에 꽉 차게 설정 */
+            background-position: center; /* 배경 이미지의 위치를 가운데로 설정 */
+            background-repeat: no-repeat; /* 배경 이미지 반복 안함 */
+            width: 100%;
+            height: 300px; /* 헤더 높이 지정 */
+            text-align: center;
+            padding: 20px;
+            color: white; /* 텍스트 색상 설정 */
+            box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #1A0033;
+            padding: 20px;
+            box-sizing: border-box;
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+            overflow-y: auto;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .menu a:hover {
+            background-color: #0AC8B9;
+        }
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 40px;
+            width: 50px;
+            height: 50px;
+            background-color: #1A0033;
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% - 320px);
+            max-width: 1200px;
+            margin: 0;
+            position: relative;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            width: 100%;
+            transition: margin-left 0.3s;
+        }
+        .menu-open .content-container {
+            margin-left: 0; /* 메뉴 열릴 때 그리드 위치 고정 */
+        }
+        .menu-open .menu {
+            transform: translateX(0);
+        }
+        .menu-open .content {
+            margin-left: 0px;
+        }
+        .menu-open .menu-open-button {
+            display: none;
+        }
+        .ad-container {
+            position: fixed;
+            top: 100px;
+            bottom: 100px;
+            width: 160px;
+            height: 80%;
+            background-color: rgba(26, 0, 51, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 0;
+        }
+        .ad-container.left {
+            left: 0;
+        }
+        .ad-container.right {
+            right: 0;
+        }
+        .ad-content {
+            background-color: #4CAF50;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 두 개씩 한 줄에 배치 */
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .grid-item {
+            background-color: #091428;
+            position: relative;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-item::before {
+            content: "";
+            display: block;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
+        .grid-item-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-item:hover {
+            background-color: #0AC8B9;
+        }
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            opacity: 0.7;
+            z-index: 0;
+        }
+        .grid-item h2, .grid-item p, .grid-item .play-button {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
+        .grid-item .play-button {
+            background-color: #ceff27;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="ad-container left">
+    <div class="ad-content">Ad Space 1</div>
+    <div class="ad-content">Ad Space 2</div>
+    <div class="ad-content">Ad Space 3</div>
+</div>
+<div class="ad-container right">
+    <div class="ad-content">Ad Space 1</div>
+    <div class="ad-content">Ad Space 2</div>
+    <div class="ad-content">Ad Space 3</div>
+</div>
+<div class="content-container">
+    <button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
+    <div class="menu">
+        <button class="menu-close" onclick="toggleMenu()">✕</button>
+        <a href="#quiz1">Who Are You?</a>
+        <a href="#quiz2">Tiki-Taka-Toe</a>
+        <a href="#quiz3">Football Bingo</a>
+        <a href="#quiz4">Who Are Ya?</a>
+        <a href="#quiz5">Footy TenaBall</a>
+        <a href="#quiz6">SuperDraft Soccer</a>
+        <a href="#quiz7">Missing 11</a>
+        <a href="#quiz8">Where Were Ya?</a>
+        <a href="#quiz9">Guess The Football Club</a>
+        <!-- 추가 항목으로 메뉴가 스크롤 가능하도록 설정 -->
+        <a href="#quiz10">Quiz 10</a>
+        <a href="#quiz11">Quiz 11</a>
+        <a href="#quiz12">Quiz 12</a>
+        <a href="#quiz13">Quiz 13</a>
+        <a href="#quiz14">Quiz 14</a>
+        <a href="#quiz15">Quiz 15</a>
+    </div>
+    <div class="header">
+        <h1>Progamer Quiz Games</h1>
+    </div>
+    <div class="content">
+
+        <div class="grid">
+            <div class="grid-item" id="quiz1" onclick="location.href='quiz1.html'">
+                <img src="https://playfootball.games/social-icon.png" alt="Who Are You?">
+                <div class="grid-item-content">
+                    <h2>Who Are You?</h2>
+                    <p>Guess the Progamer.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz2" onclick="location.href='quiz2.html'">
+                <img src="/media/content/footy-tic-tac-toe.jpg" alt="Footy Tic Tac Toe">
+                <div class="grid-item-content">
+                    <h2>Tiki-Taka-Toe</h2>
+                    <p>Play Footy Tic Tac Toe online.</p>
+                    <span class="play-button">Play</span>
+                    </div>
+            </div>
+            <div class="grid-item" id="quiz3" onclick="location.href='quiz3.html'">
+                <img src="/media/content/football-bingo.jpg" alt="Football Bingo">
+                <div class="grid-item-content">
+                    <h2>Football Bingo</h2>
+                    <p>Complete the bingo card.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz4" onclick="location.href='quiz4.html'">
+                <img src="/media/content/who-are-ya.jpg" alt="Who Are Ya?">
+                <div class="grid-item-content">
+                    <h2>Who Are Ya?</h2>
+                    <p>Guess the football player.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz5" onclick="location.href='quiz5.html'">
+                <img src="/media/content/football-tenable.jpg" alt="Footy TenaBall">
+                <div class="grid-item-content">
+                    <h2>Footy TenaBall</h2>
+                    <p>Find the top 10 football tenable answers.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz6" onclick="location.href='quiz6.html'">
+                <img src="/media/content/superdraft-soccer.jpg" alt="SuperDraft Soccer">
+                <div class="grid-item-content">
+                    <h2>SuperDraft Soccer</h2>
+                    <p>Create your Ultimate Team.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz7" onclick="location.href='quiz7.html'">
+                <img src="/media/content/missing11.png" alt="Missing 11">
+                <div class="grid-item-content">
+                    <h2>Missing 11</h2>
+                    <p>Guess the starting 11 lineup.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz8" onclick="location.href='quiz8.html'">
+                <img src="/media/content/where-were-ya.jpg" alt="Where Were Ya?">
+                <div class="grid-item-content">
+                    <h2>Where Were Ya?</h2>
+                    <p>Guess the Player from their Career Path.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz9" onclick="location.href='quiz9.html'">
+                <img src="/media/content/guess-the-football-club.webp" alt="Guess the Football Club">
+                <div class="grid-item-content">
+                    <h2>Guess The Football Club</h2>
+                    <p>How well do you know Football Team Logos?</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.body.classList.toggle('menu-open');
+        document.querySelector('.content-container').classList.toggle('menu-open');
+    }
+</script>
+</body>
+</html>
