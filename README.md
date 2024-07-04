@@ -1,7 +1,18 @@
 # Project For Progamer Quiz Web Site
 
-## Front-End
+## Contents
+
 - [ ] Main Page
-- [ ] Who Are Ya?
-- [ ] 
-## Back-End
+- [ ] Who Are You?
+- [ ] Player Bingo
+- [ ] Tic Tac Toe
+- [ ] Last Player
+- [ ] What is Team?
+
+## 
+
+
+
+
+## CopyRights
+- # 
