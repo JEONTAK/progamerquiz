@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Quiz {
+public class Quiz1 {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class QuizController {
+public class Quiz1Controller {
 
     @Autowired
-    private QuizService quizService;
+    private Quiz1Service quiz1Service;
 
     private ProGamer correctGamer;
     private int attempts = 0;
@@ -20,7 +20,7 @@ public class QuizController {
 
     @GetMapping("/")
     public String startQuiz(Model model) {
-        correctGamer = quizService.getRandomProGamer();
+        correctGamer = quiz1Service.getRandomProGamer();
         attempts = 0;
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
@@ -28,9 +28,9 @@ public class QuizController {
     }
 
     @PostMapping("/guess")
-    public String guessProGamer(@RequestParam String playerId, Model model) {
+    public String guessProGamer(@RequestParam String idOrName, Model model) {
         attempts++;
-        ProGamer guessedGamer = quizService.getProGamerByPlayerId(playerId);
+        ProGamer guessedGamer = quiz1Service.getProGamer(idOrName);
 
         model.addAttribute("guessedGamer", guessedGamer);
         model.addAttribute("correctGamer", correctGamer);
