@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class Quiz1Controller {
 
@@ -17,6 +20,7 @@ public class Quiz1Controller {
     private ProGamer correctGamer;
     private int attempts = 0;
     private static final int MAX_ATTEMPTS = 8;
+    private List<ProGamer> guessedList = new ArrayList<>();
 
     @GetMapping("/")
     public String startQuiz(Model model) {
@@ -24,15 +28,16 @@ public class Quiz1Controller {
         attempts = 0;
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
-        return "quiz";
+        return "whoareyou";
     }
 
-    @PostMapping("/guess")
+    @PostMapping("/")
     public String guessProGamer(@RequestParam String idOrName, Model model) {
         attempts++;
         ProGamer guessedGamer = quiz1Service.getProGamer(idOrName);
-
-        model.addAttribute("guessedGamer", guessedGamer);
+        guessedGamer.setAgeAndImage();
+        guessedList.add(guessedGamer);
+        model.addAttribute("guessedList", guessedList);
         model.addAttribute("correctGamer", correctGamer);
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
@@ -43,6 +48,6 @@ public class Quiz1Controller {
             model.addAttribute("gameOver", true);
         }
 
-        return "quiz";
+        return "whoareyou";
     }
 }

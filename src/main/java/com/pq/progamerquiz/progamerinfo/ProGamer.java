@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -18,7 +19,7 @@ public class ProGamer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private String player_id;
+    private String playerId;
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)
@@ -33,5 +34,27 @@ public class ProGamer {
     private int league_win;
     @Column(columnDefinition = "0")
     private int intl_win;
+    private int age;
+    private String imagePath;
+
+    public void setAgeAndImage(){
+        this.age = birthToAge(this.birth);
+        this.imagePath = setImagePath(this.id);
+    }
+
+    private int birthToAge(Date birth) {
+        Calendar cur = Calendar.getInstance();
+        int age = cur.get(Calendar.YEAR) - birth.getYear();
+        if (birth.getMonth() * 100 + birth.getDay() > (cur.get(Calendar.MONTH) + 1) * 100 + cur.get(Calendar.DAY_OF_MONTH)) {
+            age--;
+        }
+        return age;
+    }
+
+    private String setImagePath(Long id) {
+        String path = "../image/content/player/";
+        path = path + id + ".jpg";
+        return path;
+    }
 }
 
