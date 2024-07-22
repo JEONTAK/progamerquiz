@@ -15,7 +15,7 @@
             position: relative;
         }
         .header {
-            background-image: url('/media/content/bg.jpg'); /* 헤더 배경 이미지 URL 추가 */
+            background-image: url("../image/content/bg.png");/* 헤더 배경 이미지 URL 추가 */
             background-size: cover; /* 배경 이미지를 헤더에 꽉 차게 설정 */
             background-position: center; /* 배경 이미지의 위치를 가운데로 설정 */
             background-repeat: no-repeat; /* 배경 이미지 반복 안함 */
@@ -23,14 +23,10 @@
             height: 300px; /* 헤더 높이 지정 */
             text-align: center;
             padding: 20px;
-            color: white; /* 텍스트 색상 설정 */
             box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-        .header h1 {
-            margin: 0;
         }
         .menu {
             position: fixed;
@@ -227,13 +223,12 @@
         <a href="#quiz15">Quiz 15</a>
     </div>
     <div class="header">
-        <h1>Progamer Quiz Games</h1>
     </div>
     <div class="content">
 
         <div class="grid">
-            <div class="grid-item" id="quiz1" onclick="location.href='quiz1.html'">
-                <img src="https://playfootball.games/social-icon.png" alt="Who Are You?">
+            <div class="grid-item" id="quiz1" onclick="location.href='whoareyou.html'">
+                <img src="/media/content/quizImg/footy-tic-tac-toe.jpg" alt="Who Are You?">
                 <div class="grid-item-content">
                     <h2>Who Are You?</h2>
                     <p>Guess the Progamer.</p>
@@ -241,7 +236,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz2" onclick="location.href='quiz2.html'">
-                <img src="/media/content/footy-tic-tac-toe.jpg" alt="Footy Tic Tac Toe">
+                <img src="/media/content/quizImg/footy-tic-tac-toe.jpg" alt="Footy Tic Tac Toe">
                 <div class="grid-item-content">
                     <h2>Tiki-Taka-Toe</h2>
                     <p>Play Footy Tic Tac Toe online.</p>
@@ -249,7 +244,7 @@
                     </div>
             </div>
             <div class="grid-item" id="quiz3" onclick="location.href='quiz3.html'">
-                <img src="/media/content/football-bingo.jpg" alt="Football Bingo">
+                <img src="/media/content/quizImg/football-bingo.jpg" alt="Football Bingo">
                 <div class="grid-item-content">
                     <h2>Football Bingo</h2>
                     <p>Complete the bingo card.</p>
@@ -257,7 +252,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz4" onclick="location.href='quiz4.html'">
-                <img src="/media/content/who-are-ya.jpg" alt="Who Are Ya?">
+                <img src="/media/content/quizImg/who-are-ya.jpg" alt="Who Are Ya?">
                 <div class="grid-item-content">
                     <h2>Who Are Ya?</h2>
                     <p>Guess the football player.</p>
@@ -265,7 +260,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz5" onclick="location.href='quiz5.html'">
-                <img src="/media/content/football-tenable.jpg" alt="Footy TenaBall">
+                <img src="/media/content/quizImg/football-tenable.jpg" alt="Footy TenaBall">
                 <div class="grid-item-content">
                     <h2>Footy TenaBall</h2>
                     <p>Find the top 10 football tenable answers.</p>
@@ -273,7 +268,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz6" onclick="location.href='quiz6.html'">
-                <img src="/media/content/superdraft-soccer.jpg" alt="SuperDraft Soccer">
+                <img src="/media/content/quizImg/superdraft-soccer.jpg" alt="SuperDraft Soccer">
                 <div class="grid-item-content">
                     <h2>SuperDraft Soccer</h2>
                     <p>Create your Ultimate Team.</p>
@@ -281,7 +276,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz7" onclick="location.href='quiz7.html'">
-                <img src="/media/content/missing11.png" alt="Missing 11">
+                <img src="/media/content/quizImg/missing11.png" alt="Missing 11">
                 <div class="grid-item-content">
                     <h2>Missing 11</h2>
                     <p>Guess the starting 11 lineup.</p>
@@ -289,7 +284,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz8" onclick="location.href='quiz8.html'">
-                <img src="/media/content/where-were-ya.jpg" alt="Where Were Ya?">
+                <img src="/media/content/quizImg/where-were-ya.jpg" alt="Where Were Ya?">
                 <div class="grid-item-content">
                     <h2>Where Were Ya?</h2>
                     <p>Guess the Player from their Career Path.</p>
@@ -297,7 +292,7 @@
                 </div>
             </div>
             <div class="grid-item" id="quiz9" onclick="location.href='quiz9.html'">
-                <img src="/media/content/guess-the-football-club.webp" alt="Guess the Football Club">
+                <img src="/media/content/quizImg/guess-the-football-club.webp" alt="Guess the Football Club">
                 <div class="grid-item-content">
                     <h2>Guess The Football Club</h2>
                     <p>How well do you know Football Team Logos?</p>
