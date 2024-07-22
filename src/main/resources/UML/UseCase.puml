@@ -1,0 +1,89 @@
+@startuml
+skinparam actorStyle awesome
+actor User
+actor System
+left to right direction
+(Input Pro Gamer 1)
+(Input Pro Gamer 2)
+(Input Team 1)
+(Input Team 2)
+(Click Board)
+(Set Board Size)
+(User Correct 1)
+(User Correct 2)
+(User Correct 3)
+(User Incorrect 1)
+(User Incorrect 2)
+(User Fail 1)
+(User Fail 2)
+(End Quiz)
+User --> MainPage
+User --> Quiz1
+User --> Quiz2
+User --> Quiz3
+User --> Quiz4
+User --> Quiz5
+User --> Quiz6
+
+rectangle MainPage{
+    MainPage --> (Click Quiz)
+    MainPage --> (Click Advertisement)
+    MainPage --> (Select Quiz from Menu)
+}
+
+rectangle Quiz1{
+    Quiz1 ---> (Input Pro Gamer 1)
+    Quiz1 ---> (Input Pro Gamer 2)
+    Quiz1 ---> (User Correct 1)
+    Quiz1 ---> (User Incorrect 1)
+    Quiz1 ---> (User Fail 1)
+}
+rectangle Quiz2{
+    Quiz2 ---> (Click Board)
+    Quiz2 ---> (Set Board Size)
+    Quiz2 ---> (User Correct 2)
+    Quiz2 ---> (User Incorrect 2)
+    Quiz2 ---> (User Fail 2)
+}
+
+rectangle Quiz3{
+    Quiz3 ---> (Input Pro Gamer 1)
+    Quiz3 ---> (Input Pro Gamer 2)
+    Quiz3 ---> (User Correct 3)
+    Quiz3 ---> (User Incorrect 2)
+    Quiz3 ---> (User Fail 2)
+}
+rectangle Quiz4{
+    Quiz4 ---> (Input Pro Gamer 1)
+    Quiz4 ---> (Input Pro Gamer 2)
+    Quiz4 ---> (User Correct 1)
+    Quiz4 ---> (User Incorrect 2)
+    Quiz4 ---> (User Fail 1)
+    Quiz4 ---> (End Quiz)
+}
+rectangle Quiz5{
+    Quiz5 ---> (Input Team 1)
+    Quiz5 ---> (Input Team 2)
+    Quiz5 ---> (User Correct 1)
+    Quiz5 ---> (User Incorrect 2)
+    Quiz5 ---> (User Fail 1)
+    Quiz5 ---> (End Quiz)
+}
+rectangle Quiz6{
+    Quiz6 ---> (Input Pro Gamer 1)
+    Quiz6 ---> (Input Pro Gamer 2)
+    Quiz6 ---> (User Correct 1)
+    Quiz6 ---> (User Incorrect 2)
+    Quiz6 ---> (User Fail 1)
+    Quiz6 ---> (End Quiz)
+}
+
+System -up-> (User Correct 1)
+System -up-> (User Correct 2)
+System -up-> (User Correct 3)
+System -up-> (User Incorrect 1)
+System -up-> (User Incorrect 2)
+System -up-> (User Fail 1)
+System -up-> (User Fail 2)
+
+@enduml

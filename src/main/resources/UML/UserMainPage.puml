@@ -1,0 +1,19 @@
+@startuml
+skinparam actorStyle awesome
+actor User
+actor Program
+
+rectangle MainPage {
+    User --> MainPage : Select (Quiz N)
+    MainPage --> Program : Request (Quiz N)
+    Program --> MainPage : Set Quiz (Quiz N)
+    MainPage --> Quiz : Go to (Quiz N)
+}
+
+package Quiz{
+    (Quiz 1)
+    (Quiz 2)
+    (Quiz 3)
+    (Quiz N)
+}
+@enduml
