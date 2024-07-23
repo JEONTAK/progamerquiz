@@ -1,0 +1,68 @@
+@startuml
+class Quiz3Controller {
+    - totalAttempts: int
+    - currentAttempt: int
+    - bingoBoard: BingoBoard
+    - currentProGamer: ProGamer
+    + startGame()
+    + provideProGamer(): ProGamer
+    + validateSelection(input: string): bool
+    + checkBingo()
+    + displayResults()
+}
+
+class Board {
+    - size: int
+    - cells: List<Cell>
+    + generateBoard(size: int)
+    + displayBoard()
+    + markCell(row: int, col: int, correct: bool)
+}
+
+class Cell {
+    - row: int
+    - col: int
+    - rowHint: Hint
+    - colHint: Hint
+    - isCorrect: bool
+    - proGamer: ProGamer
+    + markCorrect(proGamer: ProGamer)
+    + markIncorrect()
+}
+
+class ProGamer {
+    - id: string
+    - name: string
+    - league: string
+    - team: string
+    - position: string
+    - leagueWins: int
+    - intlWins: int
+    - previousTeams: string
+    + getRelatedHints(): List<Hint>
+}
+
+class Hint {
+    - hintType: string
+    - hintValue: string
+    + generateHint(proGamer: ProGamer, hintType: string): string
+}
+
+class Attempt {
+    - attemptNumber: int
+    - input: string
+    - selectedCell: Cell
+    - isCorrect: bool
+    + compareWithProGamer(proGamer: ProGamer): bool
+}
+
+Quiz3Controller --> Board : has
+Quiz3Controller --> ProGamer : provides
+Quiz3Controller --> Attempt : manages
+Board --> Cell : contains
+Cell --> Hint : contains
+Cell --> ProGamer : references
+Attempt --> Cell : selects
+ProGamer --> Hint : provides
+
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+class Quiz4Controller {
+    - totalAttempts: int
+    - currentAttempt: int
+    - teams: List<Team>
+    - currentTeam: Team
+    - currentProGamer: ProGamer
+    + startGame()
+    + selectTeam(): Team
+    + validateSelection(input: string): bool
+    + nextQuestion()
+    + displayResults()
+}
+
+class Team {
+    - year: int
+    - name: string
+    - roster: List<RosterSlot>
+    + displayRoster()
+    + getMissingPlayers(): List<ProGamer>
+}
+
+class ProGamer {
+    - id: string
+    - name: string
+    - image: Image
+    + revealImage()
+    + blurImage()
+}
+
+class RosterSlot {
+    - player: ProGamer
+    - isRevealed: bool
+    + revealPlayer()
+}
+
+class Attempt {
+    - attemptNumber: int
+    - input: string
+    - selectedPlayer: ProGamer
+    - isCorrect: bool
+    + compareWithProGamer(proGamer: ProGamer): bool
+}
+
+Quiz4Controller --> Team : manages
+Quiz4Controller --> ProGamer : uses
+Quiz4Controller --> Attempt : manages
+Team --> RosterSlot : contains
+RosterSlot --> ProGamer : contains
+Attempt --> ProGamer : selects
+ProGamer --> Attempt : compares
+
+@enduml

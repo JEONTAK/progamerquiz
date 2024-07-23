@@ -1,0 +1,52 @@
+@startuml
+class Quiz5Controller {
+    - totalAttempts: int
+    - currentAttempt: int
+    - teams: List<Team>
+    - currentTeam: Team
+    + startGame()
+    + selectTeam(): Team
+    + validateSelection(input: string): bool
+    + nextQuestion()
+    + displayResults()
+}
+
+class Team {
+    - year: int
+    - name: string
+    - roster: List<ProGamer>
+    - leagueRank: int
+    - intlRank: int
+    - logo: Image
+    + displayInfo()
+    + revealTeam()
+}
+
+class ProGamer {
+    - id: string
+    - name: string
+    - position: string
+}
+
+class Attempt {
+    - attemptNumber: int
+    - input: string
+    - selectedTeam: Team
+    - isCorrect: bool
+    + compareWithTeam(team: Team): bool
+}
+
+class Hint {
+    - hintType: string
+    - hintValue: string
+    + generateHint(input: string): List<string>
+}
+
+Quiz5Controller --> Team : manages
+Quiz5Controller --> Attempt : manages
+Quiz5Controller --> Hint : uses
+Team --> ProGamer : contains
+Attempt --> Team : selects
+Hint --> Quiz5Controller : provides
+
+@enduml

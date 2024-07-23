@@ -1,0 +1,55 @@
+@startuml
+class Quiz2Controller {
+    - totalAttempts: int
+    - currentAttempt: int
+    - bingoBoard: BingoBoard
+    - currentProGamer: ProGamer
+    + startGame()
+    + provideProGamer(): ProGamer
+    + validateSelection(selection: Hint): bool
+    + checkBingo()
+    + displayResults()
+}
+
+class BingoBoard {
+    - size: int
+    - hints: List<Hint>
+    - selectedHints: List<Hint>
+    + generateBoard(size: int)
+    + displayBoard()
+    + markHint(hint: Hint, correct: bool)
+}
+
+class ProGamer {
+    - id: string
+    - name: string
+    - league: string
+    - team: string
+    - position: string
+    - leagueWins: int
+    - intlWins: int
+    - previousTeams: List<string>
+    + getRelatedHints(): List<Hint>
+}
+
+class Hint {
+    - hintType: string
+    - hintValue: string
+    + generateHint(proGamer: ProGamer, hintType: string): string
+}
+
+class Attempt {
+    - attemptNumber: int
+    - selectedHint: Hint
+    - isCorrect: bool
+    + compareWithProGamer(proGamer: ProGamer): bool
+}
+
+Quiz2Controller --> BingoBoard : has
+Quiz2Controller --> ProGamer : provides
+Quiz2Controller --> Attempt : manages
+Attempt --> Hint : selects
+ProGamer --> Hint : provides
+BingoBoard --> Hint : contains
+
+@enduml
