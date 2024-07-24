@@ -1,0 +1,49 @@
+@startuml
+skinparam actorStyle awesome
+actor User
+participant "Input Form" as IF
+participant "Quiz Screen" as QS
+participant "Controller" as CR
+participant "Database" as DB
+
+== Initial Screen ==
+CR -> DB : 10 ~ 15명의 선수 데이터 요청
+DB -> CR : 선수 데이터 반환
+
+== 선수 맞추기 퀴즈 ==
+loop 총 10~15명의 선수, 각 선수당 3번의 기회 (총 30~45회)
+    CR -> QS : 순차적으로 선수의 팀 정보 반환
+    QS -> User : 받은 값을 순서대로 나열해 보여줌
+
+    ==사용자가 프로게이머 입력 도중==
+    User -> IF : ID 또는 Name 입력
+    IF -> CR : 입력 값 전달
+    CR -> DB : 입력 값을 포함하는 ID/Name 리스트 요청
+    DB -> CR : ID/Name 리스트 반환
+    CR -> IF : ID/Name 리스트 제공
+    IF -> User : ID/Name 리스트 출력
+
+    ==사용자가 프로게이머 입력==
+    User -> IF : ID 또는 Name 입력
+    IF -> CR : 입력 값 전달
+    CR -> DB : 입력 값과 일치하는 ID/Name 요청
+    DB -> CR : 일치하는 ID/Name 반환
+    CR -> IF : 일치하는 ID/Name 제공
+    IF -> User : 일치하는 ID/Name 출력
+    User -> IF : Enter or 리스트 클릭
+    IF -> CR : 사용자가 답 입력 알림
+    CR -> DB : 입력 값 정보 요청
+    DB -> CR : Progamer 정보 반환
+    alt 정답인 경우
+        CR -> QS : 이미지 블러 해제 및 배경 초록색으로 표시
+        CR -> User : 정답 피드백 및 다음 선수로 이동
+    else 오답인 경우
+        CR -> QS : 배경 빨간색으로 일시적 표시
+        CR -> User : 오답 알림
+    end
+end
+
+== 퀴즈 종료 시 ==
+CR -> User : 결과 화면 출력 (맞춘 선수의 개수 / 총 선수 개수 AND 사용한 기회 / 총 기회)
+
+@enduml
