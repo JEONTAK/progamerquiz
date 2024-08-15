@@ -1,6 +1,6 @@
 package com.pq.progamerquiz.domain.whoareyou;
 
-import com.pq.progamerquiz.progamerinfo.ProGamer;
+import com.pq.progamerquiz.progamerInfo.Progamer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +17,12 @@ public class Quiz1Controller {
     @Autowired
     private Quiz1Service quiz1Service;
 
-    private ProGamer correctGamer;
+    private Progamer correctGamer;
     private int attempts = 0;
     private static final int MAX_ATTEMPTS = 8;
-    private List<ProGamer> guessedList = new ArrayList<>();
+    private List<Progamer> guessedList = new ArrayList<>();
 
-    @GetMapping("/")
+    @GetMapping("/quiz1")
     public String startQuiz(Model model) {
         correctGamer = quiz1Service.getRandomProGamer();
         attempts = 0;
@@ -31,11 +31,11 @@ public class Quiz1Controller {
         return "whoareyou";
     }
 
-    @PostMapping("/")
+    @PostMapping("/quiz1")
     public String guessProGamer(@RequestParam String idOrName, Model model) {
         attempts++;
-        ProGamer guessedGamer = quiz1Service.getProGamer(idOrName);
-        guessedGamer.setAgeAndImage();
+        Progamer guessedGamer = quiz1Service.getProGamer(idOrName);
+        guessedGamer.setImage();
         guessedList.add(guessedGamer);
         model.addAttribute("guessedList", guessedList);
         model.addAttribute("correctGamer", correctGamer);

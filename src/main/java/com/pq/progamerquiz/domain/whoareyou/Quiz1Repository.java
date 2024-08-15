@@ -1,14 +1,8 @@
 package com.pq.progamerquiz.domain.whoareyou;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.HashMap;
-import java.util.Map;
-
-@Repository
-public class Quiz1Repository {
-
-    private static final Map<Long, Quiz1> store = new HashMap<>(); // static
-    private static long sequence = 0L; //static
-
+public interface Quiz1Repository extends JpaRepository<Quiz1, Long> {
+    // 기본적인 CRUD 연산은 JpaRepository에서 제공
 }
+

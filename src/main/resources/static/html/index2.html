@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -191,32 +191,72 @@
 </head>
 <body>
 <div class="ad-container left">
-    <div class="ad-content">Ad Space 1</div>
+    <div class="ad-content">Ad Space </div>
 </div>
 <div class="ad-container right">
-    <div class="ad-content">Ad Space 1</div>
+    <div class="ad-content">Ad Space </div>
 </div>
 <div class="content-container">
     <button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
     <div class="menu">
         <button class="menu-close" onclick="toggleMenu()">✕</button>
-        <!-- 메뉴 항목을 Thymeleaf로 동적 생성 -->
-        <a th:href="@{'/quiz1'}" th:text="${menuItems[0]}"></a>
-        <a th:href="@{'/quiz2'}" th:text="${menuItems[1]}"></a>
-        <a th:href="@{'/quiz3'}" th:text="${menuItems[2]}"></a>
-        <a th:href="@{'/quiz4'}" th:text="${menuItems[3]}"></a>
-        <a th:href="@{'/quiz5'}" th:text="${menuItems[4]}"></a>
-        <a th:href="@{'/quiz6'}" th:text="${menuItems[5]}"></a>
+        <a href="#quiz1">Who Are You?</a>
+        <a href="#quiz2">Bingo!</a>
+        <a href="#quiz3">Tic Tac Toe</a>
+        <a href="#quiz4">Piece of Puzzle</a>
+        <a href="#quiz5">What is Team?</a>
+        <a href="#quiz6">I Got You!</a>
     </div>
-    <div class="header"></div>
+    <div class="header">
+    </div>
     <div class="content">
+
         <div class="grid">
-            <!-- 그리드 항목을 Thymeleaf로 동적 생성 -->
-            <div class="grid-item" th:each="quiz : ${quizzes}" th:onclick="'location.href=@{${quiz.url}}'">
-                <img th:src="@{${quiz.imageUrl}}" th:alt="${quiz.altText}">
+            <div class="grid-item" id="quiz1" onclick="location.href='whoareyou.html'">
+                <img src="/media/content/quizImg/footy-tic-tac-toe.jpg" alt="Who Are You?">
                 <div class="grid-item-content">
-                    <h2 th:text="${quiz.title}">Quiz Title</h2>
-                    <p th:text="${quiz.description}">Quiz Description</p>
+                    <h2>Who Are You?</h2>
+                    <p>Guess the Progamer.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz2" onclick="location.href='quiz2.html'">
+                <img src="/media/content/quizImg/footy-tic-tac-toe.jpg" alt="Footy Tic Tac Toe">
+                <div class="grid-item-content">
+                    <h2>Tiki-Taka-Toe</h2>
+                    <p>Play Footy Tic Tac Toe online.</p>
+                    <span class="play-button">Play</span>
+                    </div>
+            </div>
+            <div class="grid-item" id="quiz3" onclick="location.href='quiz3.html'">
+                <img src="/media/content/quizImg/football-bingo.jpg" alt="Football Bingo">
+                <div class="grid-item-content">
+                    <h2>Football Bingo</h2>
+                    <p>Complete the bingo card.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz4" onclick="location.href='quiz4.html'">
+                <img src="/media/content/quizImg/who-are-ya.jpg" alt="Who Are Ya?">
+                <div class="grid-item-content">
+                    <h2>Who Are Ya?</h2>
+                    <p>Guess the football player.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz5" onclick="location.href='quiz5.html'">
+                <img src="/media/content/quizImg/football-tenable.jpg" alt="Footy TenaBall">
+                <div class="grid-item-content">
+                    <h2>Footy TenaBall</h2>
+                    <p>Find the top 10 football tenable answers.</p>
+                    <span class="play-button">Play</span>
+                </div>
+            </div>
+            <div class="grid-item" id="quiz6" onclick="location.href='quiz6.html'">
+                <img src="/media/content/quizImg/superdraft-soccer.jpg" alt="SuperDraft Soccer">
+                <div class="grid-item-content">
+                    <h2>SuperDraft Soccer</h2>
+                    <p>Create your Ultimate Team.</p>
                     <span class="play-button">Play</span>
                 </div>
             </div>
