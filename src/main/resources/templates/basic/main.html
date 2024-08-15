@@ -15,15 +15,15 @@
             position: relative;
         }
         .header {
-            background-image: url("../image/content/bg.png");/* 헤더 배경 이미지 URL 추가 */
-            background-size: cover; /* 배경 이미지를 헤더에 꽉 차게 설정 */
-            background-position: center; /* 배경 이미지의 위치를 가운데로 설정 */
-            background-repeat: no-repeat; /* 배경 이미지 반복 안함 */
+            background-image: url('../../image/content/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             width: 100%;
-            height: 300px; /* 헤더 높이 지정 */
+            height: 300px;
             text-align: center;
             padding: 20px;
-            box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
+            box-sizing: border-box;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -90,7 +90,7 @@
             transition: margin-left 0.3s;
         }
         .menu-open .content-container {
-            margin-left: 0; /* 메뉴 열릴 때 그리드 위치 고정 */
+            margin-left: 0;
         }
         .menu-open .menu {
             transform: translateX(0);
@@ -127,7 +127,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 두 개씩 한 줄에 배치 */
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
             width: 100%;
@@ -149,7 +149,7 @@
         .grid-item::before {
             content: "";
             display: block;
-            padding-top: 100%; /* 1:1 Aspect Ratio */
+            padding-top: 100%;
         }
         .grid-item-content {
             position: absolute;
@@ -187,6 +187,7 @@
             border-radius: 5px;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -201,18 +202,17 @@
     <div class="menu">
         <button class="menu-close" onclick="toggleMenu()">✕</button>
         <!-- 메뉴 항목을 Thymeleaf로 동적 생성 -->
-        <a th:href="@{'/quiz1'}" th:text="${menuItems[0]}"></a>
-        <a th:href="@{'/quiz2'}" th:text="${menuItems[1]}"></a>
-        <a th:href="@{'/quiz3'}" th:text="${menuItems[2]}"></a>
-        <a th:href="@{'/quiz4'}" th:text="${menuItems[3]}"></a>
-        <a th:href="@{'/quiz5'}" th:text="${menuItems[4]}"></a>
-        <a th:href="@{'/quiz6'}" th:text="${menuItems[5]}"></a>
+        <a th:each="menuItem, iterStat : ${menuItems}" th:href="@{|/quiz${iterStat.index + 1}|}" th:text="${menuItem}"></a>
     </div>
-    <div class="header"></div>
+
+    <div class="header" style="background-image: url('../../image/content/bg.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <!-- 헤더 내용 -->
+    </div>
+
     <div class="content">
         <div class="grid">
             <!-- 그리드 항목을 Thymeleaf로 동적 생성 -->
-            <div class="grid-item" th:each="quiz : ${quizzes}" th:onclick="'location.href=@{${quiz.url}}'">
+            <div class="grid-item" th:each="quiz : ${quizzes}" th:onclick="'location.href=\'' + @{${quiz.url}} + '\''">
                 <img th:src="@{${quiz.imageUrl}}" th:alt="${quiz.altText}">
                 <div class="grid-item-content">
                     <h2 th:text="${quiz.title}">Quiz Title</h2>
@@ -220,6 +220,7 @@
                     <span class="play-button">Play</span>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
