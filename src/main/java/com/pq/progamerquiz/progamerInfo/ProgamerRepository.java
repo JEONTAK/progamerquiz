@@ -10,7 +10,7 @@ public interface ProgamerRepository extends JpaRepository<Progamer, Long> {
     Progamer findByPid(String pid);
 
     // 특정 팀의 모든 프로게이머를 찾는 메서드
-    List<Progamer> findByTeamId(Long teamId);
+    //List<Progamer> findByTeamId(Long teamId);
 
     // 특정 포지션의 프로게이머를 찾는 메서드
     List<Progamer> findByPos(Progamer.Position pos);

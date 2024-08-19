@@ -1,4 +1,4 @@
-package com.pq.progamerquiz.domain.whoareyou;
+package com.pq.progamerquiz.domain.quiz1;
 
 import com.pq.progamerquiz.progamerInfo.Progamer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class Quiz1Controller {
         attempts = 0;
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
-        return "whoareyou";
+        return "quiz1";
     }
 
     @PostMapping("/quiz1")
@@ -48,6 +48,6 @@ public class Quiz1Controller {
             model.addAttribute("gameOver", true);
         }
 
-        return "whoareyou";
+        return "quiz1";
     }
 }

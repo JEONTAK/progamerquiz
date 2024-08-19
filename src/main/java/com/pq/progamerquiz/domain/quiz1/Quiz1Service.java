@@ -1,4 +1,4 @@
-package com.pq.progamerquiz.domain.whoareyou;
+package com.pq.progamerquiz.domain.quiz1;
 
 
 import com.pq.progamerquiz.progamerInfo.Progamer;
@@ -25,8 +25,9 @@ public class Quiz1Service {
     public Progamer getProGamer(String idOrName) {
         if (proGamerRepository.findByName(idOrName).equals(idOrName)) {
             return proGamerRepository.findByName(idOrName);
-        }
-        else
+        } else if (proGamerRepository.findByPid(idOrName).equals(idOrName)) {
             return proGamerRepository.findByPid(idOrName);
+        }
+        return null;
     }
 }

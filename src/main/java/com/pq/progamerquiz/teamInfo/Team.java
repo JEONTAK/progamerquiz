@@ -2,14 +2,14 @@ package com.pq.progamerquiz.teamInfo;
 
 import com.pq.progamerquiz.progamerInfo.Progamer;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-
 
 @Entity
 @Getter
 @Setter
-@Table(name = "team")
 public class Team {
 
     @Id
@@ -26,9 +26,9 @@ public class Team {
     private Integer mr; // Mid Season Rank
     private Integer wr; // Worlds Rank
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "rId")
-    private Roster roster;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "progamer")
+    private List<Progamer> roster = new ArrayList<>();
 
     // Getters and Setters...
 }

@@ -2,9 +2,10 @@ package com.pq.progamerquiz.progamerInfo;
 
 import com.pq.progamerquiz.teamInfo.Team;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name ="progamer")
 public class Progamer {
 
     @Id
@@ -21,9 +22,8 @@ public class Progamer {
     @Column(nullable = false, length = 10)
     private League league;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tid")
-    private Team team;
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
+    private List<Team> teams = new ArrayList<>();
 
     @Column(nullable = false)
     private Integer birth;
