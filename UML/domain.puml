@@ -1,0 +1,134 @@
+@startuml
+
+
+class User{
+    -long id
+    -Quiz selectQuiz
+}
+User "1" -- "*" Quizzes
+
+class Quizzes{
+    -Quiz1 quiz1
+    -Quiz2 quiz2
+    -Quiz3 quiz3
+    -Quiz4 quiz4
+    -Quiz5 quiz5
+    -Quiz6 quiz6
+}
+
+Quizzes::Quiz1 <-- Quiz1
+Quizzes::Quiz2 <-- Quiz2
+Quizzes::Quiz3 <-- Quiz3
+Quizzes::Quiz4 <-- Quiz4
+Quizzes::Quiz5 <-- Quiz5
+Quizzes::Quiz6 <-- Quiz6
+
+class Quiz1{
+    -Progamer answer
+    -List<Progamer> attempts
+    -boolean success
+}
+
+Quiz1::answer <-- Progamer
+Quiz1::attempts <-- Progamer
+
+class Quiz2{
+    -List<Board> boards
+    -int boardSize
+    -List<Progamer> progamerList
+    -boolean success
+}
+
+Quiz2::boards <-- Board
+Quiz2::progamerList <-- Progamer
+
+class Quiz3{
+    -List<Board> boards
+    -int boardSize
+    -List<Progamer> attempts
+    -boolean success
+}
+
+Quiz3::boards <-- Board
+Quiz3::attempts <-- Progamer
+
+class Quiz4{
+    -List<Team> teamList
+    -List<int[]> hideList
+    -List<Progamer> answerList
+    -List<Progamer> attempts
+    -int attemptCount
+    -int correctCount
+    -double result
+}
+
+Quiz4::teamList<-- Team
+Quiz4::answerList <-- Progamer
+Quiz4::attempts <-- Progamer
+
+class Quiz5{
+    -List<Team> answerList
+    -List<Team> attempts
+    -int attemptCount
+    -int correctCount
+    -double result
+}
+
+Quiz5::answerList <-- Team
+Quiz5::attempts <-- Team
+
+class Quiz6{
+    -List<Progamer> answerList
+    -List<Progamer> attempts
+    -int attemptCount
+    -int correctCount
+    -double result
+}
+
+Quiz6::answerList <-- Progamer
+Quiz6::attempts <-- Progamer
+
+class Progamer {
+    -long id
+    -String gid
+    -String name
+    -League league
+    -List<Team> team
+    -int birth
+    -Position pos
+    -int league_wins
+    -int intl_wins
+}
+
+Progamer::team <-- Team
+
+class Team {
+    -long id
+    -String name
+    -int year
+    -int league_ranking
+    -int msi_ranking
+    -int worlds_ranking
+    -List<Progamer> roster
+}
+
+Team::roster <-- Progamer
+
+class Board {
+    -long id
+    -Category category
+    -String value
+}
+
+Board::Category <-- Category
+
+class Category{
+    -long id
+    -String type
+    -List<Board> boards
+    -Category parent
+    -List<Category> child
+}
+
+
+@enduml
