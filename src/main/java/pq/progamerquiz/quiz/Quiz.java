@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain;
+package pq.progamerquiz.quiz;
 
 
 import jakarta.persistence.Column;

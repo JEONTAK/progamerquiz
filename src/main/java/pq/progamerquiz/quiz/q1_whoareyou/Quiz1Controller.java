@@ -1,4 +1,4 @@
-package pq.progamerquiz.controller;
+package pq.progamerquiz.quiz.q1_whoareyou;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;

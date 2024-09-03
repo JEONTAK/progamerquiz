@@ -1,7 +1,7 @@
-package pq.progamerquiz.service;
+package pq.progamerquiz.quiz.q1_whoareyou;
 
 
-import pq.progamerquiz.repository.ProgamerRepository;
+import pq.progamerquiz.progamer.ProgamerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

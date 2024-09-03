@@ -1,7 +1,7 @@
-package pq.progamerquiz.controller;
+package pq.progamerquiz.quiz;
 
 
-import pq.progamerquiz.service.QuizService;
+import pq.progamerquiz.quiz.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 

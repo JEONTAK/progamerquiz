@@ -1,14 +1,12 @@
-package pq.progamerquiz.repository;
+package pq.progamerquiz.quiz;
 
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 @RequiredArgsConstructor
-public class TeamRepository {
+public class QuizRepository {
 
     private final EntityManager em;
-
 }

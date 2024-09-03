@@ -1,6 +1,6 @@
-package pq.progamerquiz.service;
+package pq.progamerquiz.progamer;
 
-import pq.progamerquiz.repository.QuizRepository;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class QuizService {
+public class ProgamerService {
 
-    private final QuizRepository quizRepository;
+    private final ProgamerRepository progamerRepository;
+
 }
