@@ -1,8 +1,10 @@
 package pq.progamerquiz.progamer;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import lombok.Getter;
 import java.util.List;
+import pq.progamerquiz.team.Team;
 
 @Entity
 @Getter
@@ -19,14 +21,20 @@ public class Progamer{
 
     private Long birth;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Position pos;
 
-    @OneToMany(mappedBy = "progamer")
-    private List<ProgamerTeam> teams;
+    private Long league_w; //League Wins
+    private Long intl_w; //Intl Wins
 
-    private Long league_w; // Last Week Wins
-    private Long intl_w; // Current Week Wins
+    @ManyToMany
+    @JoinTable(
+            name = "progamer_team",
+            joinColumns = @JoinColumn(name = "progamer_id"),
+            inverseJoinColumns = @JoinColumn(name = "team_id")
+    )
+    private List<Team> teams = new ArrayList<>();
+
 
     // Enum for Position
     public enum Position {

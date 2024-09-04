@@ -1,11 +1,11 @@
 package pq.progamerquiz.board;
 import jakarta.persistence.*;
-
-import jakarta.persistence.*;
-import java.lang.reflect.Type;
-import pq.progamerquiz.team.Team.League;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Board {
 
     @Id
