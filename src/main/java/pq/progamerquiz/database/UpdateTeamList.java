@@ -1,54 +1,46 @@
-package pq.progamerquiz.team;
+package pq.progamerquiz.database;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.team.Team;
+import pq.progamerquiz.team.TeamRepository;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 @Transactional
 @Service
-public class TeamService {
+public class UpdateTeamList {
 
     @Autowired
     private TeamRepository teamRepository;
 
     @Autowired
     private EntityManager em;
-
     private final ObjectMapper mapper = new ObjectMapper();
 
-    public void initializeTeams() {
-        // 1. 데이터베이스에 이미 데이터가 있는지 확인
-        List<Team> existingTeams = em.createQuery("SELECT t FROM Team t", Team.class).getResultList();
-
-        if (!existingTeams.isEmpty()) {
-            // 데이터가 이미 존재하는 경우, 초기화 작업을 하지 않음
-            System.out.println("Teams already exist in the database. Skipping initialization.");
-            return;
-        }
-
-        // 2. 데이터가 없을 경우, JSON 파일에서 데이터를 불러와 저장
-        System.out.println("No teams found in the database. Loading data from JSON.");
+    @PostConstruct
+    public void init() {
         try {
-            // JSON 파일 읽기
+            // 1. ObjectMapper로 JSON 파일을 JsonNode로 읽기
+            ObjectMapper mapper = new ObjectMapper();
             JsonNode rootNode = mapper.readTree(new File("src/main/resources/database/Team.json"));
 
             // 2. JSON 배열에서 각 객체를 순회
             for (JsonNode node : rootNode) {
                 Team team = mapper.treeToValue(node, Team.class);
                 teamRepository.save(team);
-                em.persist(team);
             }
+            System.out.println(teamRepository.count());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
