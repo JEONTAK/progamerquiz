@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import pq.progamerquiz.progamer.Progamer;
 
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 public class Team{
 
@@ -24,7 +26,8 @@ public class Team{
 
     private Long seasonYear;
 
-    private String league;
+    @Enumerated(EnumType.STRING)
+    private League league;
 
     private Long spring_rank;
 
@@ -39,7 +42,7 @@ public class Team{
     @ManyToMany(mappedBy = "teams")
     private List<Progamer> roster = new ArrayList<>();
 
-    /*public enum League {
-        LCK, LPL, LEC, LCS, CBLOL, PCS, LLA, VCS, LJL, LCO
-    }*/
+    public enum League {
+        LCK, LPL, LEC, LCS, CBLOL, PCS, LLA, VCS, LJL, LCO, LMS, TCL, LST
+    }
 }

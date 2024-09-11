@@ -14,7 +14,7 @@ public class TeamDto {
     private Long id;
     private String name;
     private String callName;
-    private Long year;
+    private Long seasonYear;
     private String league;
     private Long spring_rank;
     private Long summer_rank;

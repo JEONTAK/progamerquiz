@@ -3,6 +3,7 @@ package pq.progamerquiz.progamer;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import pq.progamerquiz.team.Team;
 
 import java.util.ArrayList;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 public class Progamer{
 
@@ -24,8 +26,12 @@ public class Progamer{
 
     private Long birth;
 
-    @Enumerated
-    private Position pos;
+    @Enumerated(EnumType.STRING)
+    private Position position;
+
+    private Long league_win; // Last Week Wins
+    private Long intl_win; // Current Week Wins
+    private String nationality;
 
     @ManyToMany  // 중간 테이블을 활용한 다대다 매핑
     @JoinTable(
@@ -35,12 +41,8 @@ public class Progamer{
     )
     private List<Team> teams = new ArrayList<>();
 
-    private Long league_w; // Last Week Wins
-    private Long intl_w; // Current Week Wins
-
-    // Enum for Position
-    public enum Position {
-        TOP, JGL, MID, ADC, SPT
+    public enum Position{
+        TOP, JGL, MID, ADC, SUP,
     }
 }
 
