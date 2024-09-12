@@ -1097,7 +1097,7 @@
         "league_win": "2",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": "112,133,152,168,164,000"
+        "teams": "112,133,152,168,164,172"
     },
     {
         "id": "101",
@@ -1108,7 +1108,7 @@
         "league_win": "9",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "383,397,396,406,415,425,443,450,455,467,476"
     },
     {
         "id": "102",
@@ -1119,21 +1119,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "120,117,126,143"
     },
     {
         "id": "103",
-        "pid": "Ivory",
-        "name": "Jeong Ye-chan",
-        "birth": "2003",
-        "position": "MID",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "104",
         "pid": "Jelly",
         "name": "Son Ho-gyeong",
         "birth": "1997",
@@ -1141,10 +1130,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "37,56,64,608,613,622"
     },
     {
-        "id": "105",
+        "id": "104",
         "pid": "Jett",
         "name": "Bae Ho-young",
         "birth": "2001",
@@ -1152,10 +1141,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "188,194,216,75,874,882,892"
     },
     {
-        "id": "106",
+        "id": "105",
         "pid": "Jiwoo",
         "name": "Jung Ji-woo",
         "birth": "2004",
@@ -1163,10 +1152,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "100,108"
     },
     {
-        "id": "107",
+        "id": "106",
         "pid": "Joker",
         "name": "Cho Jae-eup",
         "birth": "1991",
@@ -1174,10 +1163,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "53,67"
     },
     {
-        "id": "108",
+        "id": "107",
         "pid": "Juhan",
         "name": "Lee Ju-han",
         "birth": "2001",
@@ -1185,10 +1174,10 @@
         "league_win": null,
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "76,795,85,99,377"
     },
     {
-        "id": "109",
+        "id": "108",
         "pid": "Jun",
         "name": "Yoon Se-jun",
         "birth": "2000",
@@ -1196,10 +1185,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "75,97,373"
     },
     {
-        "id": "110",
+        "id": "109",
         "pid": "Justice",
         "name": "Yoon Seok-joon",
         "birth": "1998",
@@ -1207,10 +1196,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "30,42,53"
     },
     {
-        "id": "111",
+        "id": "110",
         "pid": "Kabbie",
         "name": "Jeong Sang-hyeon",
         "birth": "2001",
@@ -1218,10 +1207,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "50,68,67,581"
     },
     {
-        "id": "112",
+        "id": "111",
         "pid": "Kael",
         "name": "Kim Jin-hong",
         "birth": "2004",
@@ -1229,10 +1218,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "89,96,269"
     },
     {
-        "id": "113",
+        "id": "112",
         "pid": "KaKAO",
         "name": "Lee Byung-kwon",
         "birth": "1995",
@@ -1240,10 +1229,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "113,301,928,42,948"
     },
     {
-        "id": "114",
+        "id": "113",
         "pid": "Kanavi",
         "name": "Seo Jin-hyeok",
         "birth": "2000",
@@ -1251,10 +1240,10 @@
         "league_win": "4",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "50,172,1990,211,228,242,261"
     },
     {
-        "id": "115",
+        "id": "114",
         "pid": "Karis",
         "name": "Kim Hong-jo",
         "birth": "2003",
@@ -1262,10 +1251,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "90,98,110"
     },
     {
-        "id": "116",
+        "id": "115",
         "pid": "Keine",
         "name": "Kim Joon-cheol",
         "birth": "1999",
@@ -1273,10 +1262,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "65,70,615,621,628"
     },
     {
-        "id": "117",
+        "id": "116",
         "pid": "Kellin",
         "name": "Kim Hyeong-gyu",
         "birth": "2001",
@@ -1284,10 +1273,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "58,60,76,83,95,104"
     },
     {
-        "id": "118",
+        "id": "117",
         "pid": "Keria",
         "name": "Ryu Min-seok",
         "birth": "2002",
@@ -1295,10 +1284,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "61,74,81,92,102"
     },
     {
-        "id": "119",
+        "id": "118",
         "pid": "Key",
         "name": "Kim Han-gi",
         "birth": "1997",
@@ -1306,10 +1295,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "23,31,41,47,54,539"
     },
     {
-        "id": "120",
+        "id": "119",
         "pid": "Khan",
         "name": "Kim Dong-ha",
         "birth": "1995",
@@ -1317,10 +1306,10 @@
         "league_win": "6",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "149,30,36,49,192,71"
     },
     {
-        "id": "121",
+        "id": "120",
         "pid": "Kiin",
         "name": "Kim Gi-in",
         "birth": "1999",
@@ -1328,10 +1317,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "35,37,56,64,79,84,93,101"
     },
     {
-        "id": "122",
+        "id": "121",
         "pid": "Kingen",
         "name": "Hwang Seong-hoon",
         "birth": "2000",
@@ -1339,10 +1328,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "38,57,199,75,85,94,104"
     },
     {
-        "id": "123",
+        "id": "122",
         "pid": "Kramer",
         "name": "Ha Jong-hun",
         "birth": "1996",
@@ -1350,10 +1339,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "715,20,29,37,181,204,220"
     },
     {
-        "id": "124",
+        "id": "123",
         "pid": "Kuro",
         "name": "Lee Seo-haeng",
         "birth": "1994",
@@ -1361,10 +1350,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "2,9,14,29,37,179,63"
     },
     {
-        "id": "125",
+        "id": "124",
         "pid": "Kuzan",
         "name": "Lee Seong-hyeok",
         "birth": "1997",
@@ -1372,10 +1361,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "41,47,55,69"
     },
     {
-        "id": "126",
+        "id": "125",
         "pid": "kyeahoo",
         "name": "Kang Ye-hoo",
         "birth": "2005",
@@ -1383,10 +1372,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "99"
     },
     {
-        "id": "127",
+        "id": "126",
         "pid": "Lava",
         "name": "Kim Tae-hoon",
         "birth": "1999",
@@ -1394,10 +1383,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "31,41,47,54,66,80,86,567,575,628"
     },
     {
-        "id": "128",
+        "id": "127",
         "pid": "Leaper",
         "name": "Choi Gi-myeong",
         "birth": "2000",
@@ -1405,10 +1394,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "106"
     },
     {
-        "id": "129",
+        "id": "128",
         "pid": "Lehends",
         "name": "Son Si-woo",
         "birth": "1998",
@@ -1416,10 +1405,10 @@
         "league_win": "2",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "21,48,50,66,79,82,93,101"
     },
     {
-        "id": "130",
+        "id": "129",
         "pid": "Leo",
         "name": "Han Gyeo-re",
         "birth": "2000",
@@ -1427,10 +1416,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "39,49,67,78,79,84,883"
     },
     {
-        "id": "131",
+        "id": "130",
         "pid": "Life",
         "name": "Kim Jeong-min",
         "birth": "2000",
@@ -1438,21 +1427,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "46,55,60,72,87,94,263"
     },
     {
-        "id": "132",
-        "pid": "Lilac",
-        "name": "Jeon Ho-jin",
-        "birth": "1992",
-        "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "133",
+        "id": "131",
         "pid": "Lindarang",
         "name": "Heo Man-heung",
         "birth": "1997",
@@ -1460,10 +1438,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,31,41,47,58"
     },
     {
-        "id": "134",
+        "id": "132",
         "pid": "LirA",
         "name": "Nam Tae-yoo",
         "birth": "1995",
@@ -1471,10 +1449,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,414,418,433"
     },
     {
-        "id": "135",
+        "id": "133",
         "pid": "LokeN",
         "name": "Lee Dong-wook",
         "birth": "1997",
@@ -1482,10 +1460,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "23,149,155,187,190,211,882"
     },
     {
-        "id": "136",
+        "id": "134",
         "pid": "Looper",
         "name": "Jang Hyeong-seok",
         "birth": "1993",
@@ -1493,10 +1471,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "119,126,412"
     },
     {
-        "id": "137",
+        "id": "135",
         "pid": "Lucid",
         "name": "Choi Yong-hyeok",
         "birth": "2005",
@@ -1504,21 +1482,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "104"
     },
     {
-        "id": "138",
-        "pid": "Lustboy",
-        "name": "Ham Jang-sik",
-        "birth": "1994",
-        "position": "SUP",
-        "league_win": "3",
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "139",
+        "id": "136",
         "pid": "MadLife",
         "name": "Hong Min-gi",
         "birth": "1992",
@@ -1526,21 +1493,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "3,20"
     },
     {
-        "id": "140",
-        "pid": "Mafa",
-        "name": "Won Sang-yeon",
-        "birth": "1992",
-        "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "141",
+        "id": "137",
         "pid": "MaHa",
         "name": "Oh Hyun-sik",
         "birth": "1995",
@@ -1548,21 +1504,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "24,28,44"
     },
     {
-        "id": "142",
-        "pid": "MakNooN",
-        "name": "Yoon Ha-woon",
-        "birth": "1991",
-        "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "143",
+        "id": "138",
         "pid": "Malrang",
         "name": "Kim Geun-seong",
         "birth": "2000",
@@ -1570,10 +1515,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "35,925,58,63,71,351,362,580"
     },
     {
-        "id": "144",
+        "id": "139",
         "pid": "MaRin",
         "name": "Jang Gyeong-hwan",
         "birth": "1991",
@@ -1581,10 +1526,10 @@
         "league_win": "2",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "1,133,29,170"
     },
     {
-        "id": "145",
+        "id": "140",
         "pid": "Mata",
         "name": "Cho Se-hyeong",
         "birth": "1994",
@@ -1592,10 +1537,10 @@
         "league_win": "5",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "116,126,26,38,49"
     },
     {
-        "id": "146",
+        "id": "141",
         "pid": "Max",
         "name": "Jeong Jong-bin",
         "birth": "1996",
@@ -1603,10 +1548,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "3,24,28,44"
     },
     {
-        "id": "147",
+        "id": "142",
         "pid": "Mia",
         "name": "Choi Sang-in",
         "birth": "1998",
@@ -1614,10 +1559,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "839,38,57,65,70,606,611,463,976,620"
     },
     {
-        "id": "148",
+        "id": "143",
         "pid": "Mickey",
         "name": "Son Young-min",
         "birth": "1997",
@@ -1625,10 +1570,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,31,413,424,336,65,70"
     },
     {
-        "id": "149",
+        "id": "144",
         "pid": "Mightybear",
         "name": "Kim Min-su",
         "birth": "1995",
@@ -1636,10 +1581,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "31,41,47,606"
     },
     {
-        "id": "150",
+        "id": "145",
         "pid": "Mihile",
         "name": "Baek Sang-hwi",
         "birth": "2003",
@@ -1647,21 +1592,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "108"
     },
     {
-        "id": "151",
-        "pid": "Minous",
-        "name": "Kang Min-woo",
-        "birth": "2004",
-        "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "152",
+        "id": "146",
         "pid": "Mir",
         "name": "Park Mi-reu",
         "birth": "2000",
@@ -1669,10 +1603,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "73,632"
     },
     {
-        "id": "153",
+        "id": "147",
         "pid": "Mireu",
         "name": "Jeong Jo-bin",
         "birth": "2001",
@@ -1680,10 +1614,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "66,611,618,984"
     },
     {
-        "id": "154",
+        "id": "148",
         "pid": "Moham",
         "name": "Jeong Jae-hun",
         "birth": "2002",
@@ -1691,10 +1625,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "84,97,104"
     },
     {
-        "id": "155",
+        "id": "149",
         "pid": "Moojin",
         "name": "Kim Moo-jin",
         "birth": "1998",
@@ -1702,10 +1636,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "741,54,866"
     },
     {
-        "id": "156",
+        "id": "150",
         "pid": "Morgan",
         "name": "Park Gi-tae",
         "birth": "2001",
@@ -1713,10 +1647,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "172,194,73,86,98,110"
     },
     {
-        "id": "157",
+        "id": "151",
         "pid": "Mowgil",
         "name": "Lee Jae-ha",
         "birth": "1998",
@@ -1724,10 +1658,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "29,37,325,339"
     },
     {
-        "id": "158",
+        "id": "152",
         "pid": "Mystic",
         "name": "Jin Seong-jun",
         "birth": "1995",
@@ -1735,10 +1669,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "115,128,142,164,177,64,211"
     },
     {
-        "id": "159",
+        "id": "153",
         "pid": "NaeHyun",
         "name": "Yoo Nae-hyun",
         "birth": "1996",
@@ -1746,10 +1680,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "307,915,51,68,869,877"
     },
     {
-        "id": "160",
+        "id": "154",
         "pid": "Nagne",
         "name": "Kim Sang-moon",
         "birth": "1994",
@@ -1757,10 +1691,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "5,308,939"
     },
     {
-        "id": "161",
+        "id": "155",
         "pid": "Noah",
         "name": "Oh Hyeon-taek",
         "birth": "2001",
@@ -1768,21 +1702,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "87,368,373"
     },
     {
-        "id": "162",
-        "pid": "NoFe",
-        "name": "Jeong No-chul",
-        "birth": "1988",
-        "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "163",
+        "id": "156",
         "pid": "Nova",
         "name": "Park Chan-ho",
         "birth": "1997",
@@ -1790,10 +1713,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "42,58"
     },
     {
-        "id": "164",
+        "id": "157",
         "pid": "Nuclear",
         "name": "Sin Jeong-hyeon",
         "birth": "1997",
@@ -1801,10 +1724,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "12,21,303,52,62"
     },
     {
-        "id": "165",
+        "id": "158",
         "pid": "Nuguri",
         "name": "Jang Ha-gwon",
         "birth": "1999",
@@ -1812,10 +1735,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "52,62,208,83"
     },
     {
-        "id": "166",
+        "id": "159",
         "pid": "Ohq",
         "name": "Oh Gyu-min",
         "birth": "1996",
@@ -1823,10 +1746,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "6,397,150"
     },
     {
-        "id": "167",
+        "id": "160",
         "pid": "Oner",
         "name": "Moon Hyeon-joon",
         "birth": "2002",
@@ -1834,10 +1757,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "74,81,92,102"
     },
     {
-        "id": "168",
+        "id": "161",
         "pid": "OnFleek",
         "name": "Kim Jang-gyeon",
         "birth": "1997",
@@ -1845,10 +1768,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "53,67,78,90,619,629"
     },
     {
-        "id": "169",
+        "id": "162",
         "pid": "Paduck",
         "name": "Park Seok-hyeon",
         "birth": "2005",
@@ -1856,10 +1779,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "99"
     },
     {
-        "id": "170",
+        "id": "163",
         "pid": "Part",
         "name": "Jin Jae-seung",
         "birth": "1995",
@@ -1867,10 +1790,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "21,23,32"
     },
     {
-        "id": "171",
+        "id": "164",
         "pid": "PawN",
         "name": "Heo Won-seok",
         "birth": "1997",
@@ -1878,10 +1801,10 @@
         "league_win": "3",
         "intl_win": "2",
         "nationality": "KOR",
-        "teams": null
+        "teams": "111,127,26,38,51"
     },
     {
-        "id": "172",
+        "id": "165",
         "pid": "Peanut",
         "name": "Han Wang-ho",
         "birth": "1998",
@@ -1889,10 +1812,10 @@
         "league_win": "6",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "6,14,25,36,55,204,76,82,91,103"
     },
     {
-        "id": "173",
+        "id": "166",
         "pid": "PerfecT",
         "name": "Lee Seung-min",
         "birth": "2004",
@@ -1900,10 +1823,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "87,105"
     },
     {
-        "id": "174",
+        "id": "167",
         "pid": "Peter",
         "name": "Jeong Yoon-su",
         "birth": "2003",
@@ -1911,10 +1834,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "88,100,108"
     },
     {
-        "id": "175",
+        "id": "168",
         "pid": "Peyz",
         "name": "Kim Su-hwan",
         "birth": "2005",
@@ -1922,10 +1845,10 @@
         "league_win": "3",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "91,101"
     },
     {
-        "id": "176",
+        "id": "169",
         "pid": "Piccaboo",
         "name": "Lee Jong-beom",
         "birth": "1997",
@@ -1933,10 +1856,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "1,5"
     },
     {
-        "id": "177",
+        "id": "170",
         "pid": "Piglet",
         "name": "Chae Gwang-jin",
         "birth": "1994",
@@ -1944,10 +1867,10 @@
         "league_win": "2",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "382,395,413,433"
     },
     {
-        "id": "178",
+        "id": "171",
         "pid": "Pilot",
         "name": "Na Woo-hyung",
         "birth": "1995",
@@ -1955,10 +1878,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "4,16,44,936,961"
     },
     {
-        "id": "179",
+        "id": "172",
         "pid": "Pirean",
         "name": "Choi Jun-sik",
         "birth": "1998",
@@ -1966,10 +1889,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "400,414,407,39,324,858"
     },
     {
-        "id": "180",
+        "id": "173",
         "pid": "Pleata",
         "name": "Son Min-woo",
         "birth": "2003",
@@ -1977,10 +1900,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "75,109"
     },
     {
-        "id": "181",
+        "id": "174",
         "pid": "Pollu",
         "name": "Oh Dong-gyu",
         "birth": "2006",
@@ -1988,21 +1911,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "110"
     },
     {
-        "id": "182",
-        "pid": "PoohManDu",
-        "name": "Lee Jeong-hyeon",
-        "birth": "1991",
-        "position": "SUP",
-        "league_win": "2",
-        "intl_win": "1",
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "183",
+        "id": "175",
         "pid": "PraY",
         "name": "Kim Jong-in",
         "birth": "1994",
@@ -2010,10 +1922,10 @@
         "league_win": "4",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "2,9,14,30,36,57"
     },
     {
-        "id": "184",
+        "id": "176",
         "pid": "Prince",
         "name": "Lee Chae-hwan",
         "birth": "2000",
@@ -2021,10 +1933,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "43,52,78,89,467,265"
     },
     {
-        "id": "185",
+        "id": "177",
         "pid": "Profit",
         "name": "Kim Jun-hyung",
         "birth": "1995",
@@ -2032,10 +1944,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "25,308,314"
     },
     {
-        "id": "186",
+        "id": "178",
         "pid": "Pullbae",
         "name": "Jeong Ji-hoon",
         "birth": "2004",
@@ -2043,10 +1955,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "110"
     },
     {
-        "id": "187",
+        "id": "179",
         "pid": "Punch",
         "name": "Son Min-hyuk",
         "birth": "1998",
@@ -2054,10 +1966,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "22,34,52,67"
     },
     {
-        "id": "188",
+        "id": "180",
         "pid": "Pyosik",
         "name": "Hong Chang-hyeon",
         "birth": "2000",
@@ -2065,10 +1977,10 @@
         "league_win": null,
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "61,75,85,472,105"
     },
     {
-        "id": "189",
+        "id": "181",
         "pid": "Quad",
         "name": "Song Su-hyeong",
         "birth": "2002",
@@ -2076,10 +1988,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "61,75,100,477"
     },
     {
-        "id": "190",
+        "id": "182",
         "pid": "Quantum",
         "name": "Son Jeon-hwan",
         "birth": "2004",
@@ -2087,10 +1999,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "106"
     },
     {
-        "id": "191",
+        "id": "183",
         "pid": "Raise",
         "name": "Oh Ji-hwan",
         "birth": "1997",
@@ -2098,21 +2010,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "295,33,45,742,754"
     },
     {
-        "id": "192",
-        "pid": "RapidStar",
-        "name": "Jung Min-sung",
-        "birth": "1993",
-        "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "193",
+        "id": "184",
         "pid": "Raptor",
         "name": "Jeon Eo-jin",
         "birth": "2004",
@@ -2120,10 +2021,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "86,107"
     },
     {
-        "id": "194",
+        "id": "185",
         "pid": "Rascal",
         "name": "Kim Kwang-hee",
         "birth": "1997",
@@ -2131,10 +2032,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "837,30,36,51,87,99,109"
     },
     {
-        "id": "195",
+        "id": "186",
         "pid": "Reignover",
         "name": "Kim Yeu-jin",
         "birth": "1995",
@@ -2142,10 +2043,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "276,394,413,421"
     },
     {
-        "id": "196",
+        "id": "187",
         "pid": "Rich",
         "name": "Lee Jae-won",
         "birth": "1998",
@@ -2153,10 +2054,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "55,69,76,227,474,481"
     },
     {
-        "id": "197",
+        "id": "188",
         "pid": "Roach",
         "name": "Kim Kang-hui",
         "birth": "1999",
@@ -2164,10 +2065,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "22,34,45,55,59"
     },
     {
-        "id": "198",
+        "id": "189",
         "pid": "Rookie",
         "name": "Song Eui-jin",
         "birth": "1997",
@@ -2175,10 +2076,10 @@
         "league_win": "2",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "113,132,148,160,171,193,215,227,248,262"
     },
     {
-        "id": "199",
+        "id": "190",
         "pid": "Route",
         "name": "Moon Geom-su",
         "birth": "1999",
@@ -2186,10 +2087,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "928,931,58,67,78,565,576"
     },
     {
-        "id": "200",
+        "id": "191",
         "pid": "Ruler",
         "name": "Park Jae-hyuk",
         "birth": "1998",
@@ -2197,10 +2098,10 @@
         "league_win": "3",
         "intl_win": "2",
         "nationality": "KOR",
-        "teams": null
+        "teams": "18,27,40,46,55,60,72,82,242,261"
     },
     {
-        "id": "201",
+        "id": "192",
         "pid": "Rush",
         "name": "Lee Yoon-jae",
         "birth": "1993",
@@ -2208,10 +2109,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "383,396,38,429"
     },
     {
-        "id": "202",
+        "id": "193",
         "pid": "Ryu",
         "name": "Yoo Sang-wook",
         "birth": "1994",
@@ -2219,10 +2120,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "278,290,407,416,434"
     },
     {
-        "id": "203",
+        "id": "194",
         "pid": "SamD",
         "name": "Lee Jae-hoon",
         "birth": "2001",
@@ -2230,10 +2131,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "206,219,90,620,"
     },
     {
-        "id": "204",
+        "id": "195",
         "pid": "Samver",
         "name": "Lee Seung-yong",
         "birth": "2001",
@@ -2241,10 +2142,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "966,110"
     },
     {
-        "id": "205",
+        "id": "196",
         "pid": "Sangyoon",
         "name": "Gwon Sang-yun",
         "birth": "1995",
@@ -2252,10 +2153,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,31,41,47,54"
     },
     {
-        "id": "206",
+        "id": "197",
         "pid": "Save",
         "name": "Baek Young-jin",
         "birth": "1993",
@@ -2263,10 +2164,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "113,132,148"
     },
     {
-        "id": "207",
+        "id": "198",
         "pid": "Score",
         "name": "Go Dong-bin",
         "birth": "1992",
@@ -2274,10 +2175,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "5,15,26,38,57"
     },
     {
-        "id": "208",
+        "id": "199",
         "pid": "Scout",
         "name": "Lee Ye-chan",
         "birth": "1998",
@@ -2285,10 +2186,10 @@
         "league_win": "4",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "1,127,144,158,178,195,209,232,246,266"
     },
     {
-        "id": "209",
+        "id": "200",
         "pid": "Secret",
         "name": "Park Ki-sun",
         "birth": "1997",
@@ -2296,10 +2197,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "12,21,34,45,65,70,867,875"
     },
     {
-        "id": "210",
+        "id": "201",
         "pid": "SeongHwan",
         "name": "Yoon Seong-hwan",
         "birth": "1997",
@@ -2307,10 +2208,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,31,41,47,55,539,955,970"
     },
     {
-        "id": "211",
+        "id": "202",
         "pid": "SeTab",
         "name": "Song Kyeong-jin",
         "birth": "2004",
@@ -2318,10 +2219,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "109"
     },
     {
-        "id": "212",
+        "id": "203",
         "pid": "ShowMaker",
         "name": "Heo Su",
         "birth": "2000",
@@ -2329,10 +2230,10 @@
         "league_win": "3",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "52,62,71,83,95,104"
     },
     {
-        "id": "213",
+        "id": "204",
         "pid": "Shy",
         "name": "Park Sang-myeon",
         "birth": "1991",
@@ -2340,10 +2241,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "3,20,31"
     },
     {
-        "id": "214",
+        "id": "205",
         "pid": "Sky",
         "name": "Kim Ha-neul",
         "birth": "1998",
@@ -2351,10 +2252,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "20,25,516,590"
     },
     {
-        "id": "215",
+        "id": "206",
         "pid": "Smeb",
         "name": "Song Kyung-ho",
         "birth": "1995",
@@ -2362,10 +2263,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "2,9,14,26,38,57,63"
     },
     {
-        "id": "216",
+        "id": "207",
         "pid": "SnowFlower",
         "name": "No Hoi-jong",
         "birth": "1997",
@@ -2373,10 +2274,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "17,33,924,57,948,88"
     },
     {
-        "id": "217",
+        "id": "208",
         "pid": "SoHwan",
         "name": "Kim Jun-yeong",
         "birth": "1996",
@@ -2384,21 +2285,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "4,16,33,42,54,63,959,612"
     },
     {
-        "id": "218",
-        "pid": "SONSTAR",
-        "name": "Son Seung-ik",
-        "birth": "1994",
-        "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "219",
+        "id": "209",
         "pid": "Space",
         "name": "Seon Ho-san",
         "birth": "1993",
@@ -2406,10 +2296,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "3"
     },
     {
-        "id": "220",
+        "id": "210",
         "pid": "Spirit",
         "name": "Lee Da-yoon",
         "birth": "1996",
@@ -2417,10 +2307,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "115,289,29,37,56,64"
     },
     {
-        "id": "221",
+        "id": "211",
         "pid": "Sponge",
         "name": "Bae Young-jun",
         "birth": "2004",
@@ -2428,10 +2318,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "109"
     },
     {
-        "id": "222",
+        "id": "212",
         "pid": "SSol",
         "name": "Seo Jin-sol",
         "birth": "1998",
@@ -2439,21 +2329,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "22,34,45,56,64,867,875,883,893"
     },
     {
-        "id": "223",
-        "pid": "SSONG",
-        "name": "Kim Sang-soo",
-        "birth": "1989",
-        "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "224",
+        "id": "213",
         "pid": "Ssumday",
         "name": "Kim Chan-ho",
         "birth": "1996",
@@ -2461,10 +2340,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "5,15,409,416,434,440,448,456,468,469"
     },
     {
-        "id": "225",
+        "id": "214",
         "pid": "Stitch",
         "name": "Lee Seung-ju",
         "birth": "1996",
@@ -2472,10 +2351,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "18,27,742,58"
     },
     {
-        "id": "226",
+        "id": "215",
         "pid": "Summit",
         "name": "Park Woo-tae",
         "birth": "1998",
@@ -2483,10 +2362,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "37,53,67,78,458,234,472,628"
     },
     {
-        "id": "227",
+        "id": "216",
         "pid": "Sword",
         "name": "Choi Seong-won",
         "birth": "1997",
@@ -2494,10 +2373,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "48,50,68,86"
     },
     {
-        "id": "228",
+        "id": "217",
         "pid": "Sylvie",
         "name": "Lee Seung-bok",
         "birth": "2002",
@@ -2505,10 +2384,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "88,100,108"
     },
     {
-        "id": "229",
+        "id": "218",
         "pid": "Taeyoon",
         "name": "Kim Tae-yoon",
         "birth": "2002",
@@ -2516,10 +2395,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "75,85,97"
     },
     {
-        "id": "230",
+        "id": "219",
         "pid": "Tank",
         "name": "Park Dan-won",
         "birth": "1995",
@@ -2527,10 +2406,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "6,130,150,784"
     },
     {
-        "id": "231",
+        "id": "220",
         "pid": "Tarzan",
         "name": "Lee Seung-yong",
         "birth": "1999",
@@ -2538,10 +2417,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "48,50,68,216,229,246,264"
     },
     {
-        "id": "232",
+        "id": "221",
         "pid": "Teddy",
         "name": "Park Jin-seong",
         "birth": "1998",
@@ -2549,10 +2428,10 @@
         "league_win": "3",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "33,42,49,59,74,84,96,109"
     },
     {
-        "id": "233",
+        "id": "222",
         "pid": "Tempt",
         "name": "Kang Myung-gu",
         "birth": "1998",
@@ -2560,10 +2439,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "23,32,43,54,66,975"
     },
     {
-        "id": "234",
+        "id": "223",
         "pid": "Thal",
         "name": "Park Kwon-hyuk",
         "birth": "1998",
@@ -2571,10 +2450,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "39,54"
     },
     {
-        "id": "235",
+        "id": "224",
         "pid": "Tom",
         "name": "Im Jae-hyeon",
         "birth": "1995",
@@ -2582,10 +2461,10 @@
         "league_win": "2",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "1,130"
     },
     {
-        "id": "236",
+        "id": "225",
         "pid": "Totoro",
         "name": "Eun Jong-seop",
         "birth": "1996",
@@ -2593,10 +2472,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "23,32,319,53"
     },
     {
-        "id": "237",
+        "id": "226",
         "pid": "TrAce",
         "name": "Yeo Chang-dong",
         "birth": "1989",
@@ -2604,10 +2483,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "4,16"
     },
     {
-        "id": "238",
+        "id": "227",
         "pid": "Trick",
         "name": "Kim Gang-yun",
         "birth": "1995",
@@ -2615,10 +2494,10 @@
         "league_win": "4",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "3,287,298,43,941,326,338,575"
     },
     {
-        "id": "239",
+        "id": "228",
         "pid": "Trigger",
         "name": "Kim Eui-joo",
         "birth": "2000",
@@ -2626,10 +2505,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "218,633"
     },
     {
-        "id": "240",
+        "id": "229",
         "pid": "TusiN",
         "name": "Park Jong-ik",
         "birth": "1995",
@@ -2637,10 +2516,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "29,37,51,63"
     },
     {
-        "id": "241",
+        "id": "230",
         "pid": "Ucal",
         "name": "Son Woo-hyeon",
         "birth": "2001",
@@ -2648,10 +2527,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "38,56,68,63,77,241,250,271"
     },
     {
-        "id": "242",
+        "id": "231",
         "pid": "Umti",
         "name": "Eom Seong-hyeon",
         "birth": "1999",
@@ -2659,10 +2538,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "33,42,57,80,86,476"
     },
     {
-        "id": "243",
+        "id": "232",
         "pid": "Untara",
         "name": "Park Ui-jin",
         "birth": "1996",
@@ -2670,10 +2549,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "120,20,25,39,933,68"
     },
     {
-        "id": "244",
+        "id": "233",
         "pid": "VicLa",
         "name": "Lee Dae-kwang",
         "birth": "2003",
@@ -2681,10 +2560,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "77,87,467,273"
     },
     {
-        "id": "245",
+        "id": "234",
         "pid": "Viper",
         "name": "Park Do-hyeon",
         "birth": "2000",
@@ -2692,10 +2571,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "48,50,68,90,209,232,94,103"
     },
     {
-        "id": "246",
+        "id": "235",
         "pid": "vital",
         "name": "Ha In-seong",
         "birth": "2002",
@@ -2703,10 +2582,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "874,100"
     },
     {
-        "id": "247",
+        "id": "236",
         "pid": "Vsta",
         "name": "Oh Hyo-seong",
         "birth": "2000",
@@ -2714,10 +2593,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "66,73,90,884,889"
     },
     {
-        "id": "248",
+        "id": "237",
         "pid": "Watch",
         "name": "Cho Jae-geol",
         "birth": "1992",
@@ -2725,10 +2604,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "6"
     },
     {
-        "id": "249",
+        "id": "238",
         "pid": "Willer",
         "name": "Kim Jeon-hyeon",
         "birth": "2003",
@@ -2736,10 +2615,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "73,90,96,107"
     },
     {
-        "id": "250",
+        "id": "239",
         "pid": "Winged",
         "name": "Park Tae-jin",
         "birth": "1992",
@@ -2747,10 +2626,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "4,16,516"
     },
     {
-        "id": "251",
+        "id": "240",
         "pid": "Wiz",
         "name": "Na Yoo-joon",
         "birth": "1998",
@@ -2758,10 +2637,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "45,933,534,539,557,584"
     },
     {
-        "id": "252",
+        "id": "241",
         "pid": "Wolf",
         "name": "Lee Jae-wan",
         "birth": "1996",
@@ -2769,21 +2648,10 @@
         "league_win": "4",
         "intl_win": "4",
         "nationality": "KOR",
-        "teams": null
+        "teams": "1,13,25,39,934"
     },
     {
-        "id": "253",
-        "pid": "Woong",
-        "name": "Jang Gun-woong",
-        "birth": "1990",
-        "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "254",
+        "id": "242",
         "pid": "Wraith",
         "name": "Kwon Ji-min",
         "birth": "1995",
@@ -2791,21 +2659,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "8,18,27,42"
     },
     {
-        "id": "255",
-        "pid": "Yaharong",
-        "name": "Lee Chan-ju",
-        "birth": "2000",
-        "position": "MID",
-        "league_win": null,
-        "intl_win": null,
-        "nationality": "KOR",
-        "teams": null
-    },
-    {
-        "id": "256",
+        "id": "243",
         "pid": "yoHan",
         "name": "Kim Yo-han",
         "birth": "1999",
@@ -2813,10 +2670,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "73,989"
     },
     {
-        "id": "257",
+        "id": "244",
         "pid": "Youngjae",
         "name": "Ko Yeong-jae",
         "birth": "2002",
@@ -2824,10 +2681,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "66,72,82,97,110"
     },
     {
-        "id": "258",
+        "id": "245",
         "pid": "Zefa",
         "name": "Lee Jae-min",
         "birth": "1988",
@@ -2835,10 +2692,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "6"
     },
     {
-        "id": "259",
+        "id": "246",
         "pid": "Zeka",
         "name": "Kim Geon-woo",
         "birth": "2002",
@@ -2846,10 +2703,10 @@
         "league_win": null,
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "198,217,85,94,103"
     },
     {
-        "id": "260",
+        "id": "247",
         "pid": "Zenit",
         "name": "Jeon Tae-gwon",
         "birth": "2000",
@@ -2857,10 +2714,10 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "57,66,870"
     },
     {
-        "id": "261",
+        "id": "248",
         "pid": "Zero",
         "name": "Yoon Kyung-sup",
         "birth": "1994",
@@ -2868,10 +2725,10 @@
         "league_win": "1",
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "120,117,128,142,164"
     },
     {
-        "id": "262",
+        "id": "249",
         "pid": "Zeus",
         "name": "Choi Woo-je",
         "birth": "2004",
@@ -2879,10 +2736,10 @@
         "league_win": "1",
         "intl_win": "1",
         "nationality": "KOR",
-        "teams": null
+        "teams": "74,81,92,102"
     },
     {
-        "id": "263",
+        "id": "250",
         "pid": "Zzus",
         "name": "Jang Joon-soo",
         "birth": "1998",
@@ -2890,6 +2747,6 @@
         "league_win": null,
         "intl_win": null,
         "nationality": "KOR",
-        "teams": null
+        "teams": "19,926,77"
     }
 ]
