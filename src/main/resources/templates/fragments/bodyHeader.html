@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<style>
-    .header {
-        image-orientation: from-image;
-        background-position: center top; /* 이미지를 상단에서 시작 */
-        background-size: 50% auto; /* 이미지의 너비를 100%로 하고, 높이는 자동으로 조절 */
-        background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
-        padding: 20px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-</style>
-<div class="header" th:fragment="bodyHeader">
-    <img href="/" src='/images/quiz/bg.png'>
+<div class="bh" th:fragment="bodyHeader">
+    <a th:href="@{/}">
+        <img src='/images/quiz/bg.png'>
+    </a>
 </div>
 </html>

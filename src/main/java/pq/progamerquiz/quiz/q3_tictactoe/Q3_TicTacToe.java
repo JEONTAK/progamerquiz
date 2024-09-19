@@ -6,8 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import pq.progamerquiz.quiz.Quiz;
 
-@Entity
-@DiscriminatorValue("Q3")
+
 @Getter
 @Setter
 public class Q3_TicTacToe extends Quiz {

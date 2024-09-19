@@ -2,26 +2,20 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/header :: header}">
     <title>Progamer Quiz Games</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<div class="ad-container left">
-    <div class="ad-content">Ad Space 1</div>
-</div>
-<div class="ad-container right">
-    <div class="ad-content">Ad Space 1</div>
-</div>
-
-<div class="content-container">
-    <div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
-    <button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
-    <div class="menu">
-        <button class="menu-close" onclick="toggleMenu()">✕</button>
-        <!-- 메뉴 항목을 Thymeleaf로 동적 생성 -->
-        <a th:each="quizzes : ${quizzes}"
-           th:href="@{${quizzes.url}}"
-           th:text="${quizzes.title}"></a>
+<!--메뉴 -->
+<button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
     </div>
+
     <div class="content">
         <div class="grid">
             <!-- 그리드 항목을 Thymeleaf로 동적 생성 -->
@@ -36,14 +30,12 @@
             </div>
         </div>
     </div>
-    <div th:replace="~{fragments/footer :: footer}"></div>
-</div>
 
-<script>
-    function toggleMenu() {
-        document.body.classList.toggle('menu-open');
-        document.querySelector('.content-container').classList.toggle('menu-open');
-    }
-    </script>
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+<script th:src="@{/js/home.js}"></script>
 </html>

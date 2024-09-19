@@ -1,7 +1,9 @@
 package pq.progamerquiz.others;
 
 
+import jakarta.persistence.EntityManager;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpHeaders;
@@ -11,6 +13,7 @@ import pq.progamerquiz.quiz.Quiz;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import pq.progamerquiz.quiz.QuizService;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,25 +23,20 @@ import java.util.List;
 public class HomeController {
 
     private final ResourceLoader resourceLoader;
+    private final EntityManager em;
+    private final QuizService quizService;
 
-    public HomeController(ResourceLoader resourceLoader) {
+    public HomeController(ResourceLoader resourceLoader, EntityManager em, QuizService quizService) {
         this.resourceLoader = resourceLoader;
+        this.em = em;
+        this.quizService = quizService;
     }
 
     @GetMapping("/")
     public String home(Model model) {
         log.info("Home Controller");
+        List<Quiz> quizzes  = em.createQuery("select q from Quiz q", Quiz.class).getResultList();
 
-        List<Quiz> quizzes = Arrays.asList(
-                new Quiz("whoareyou", "whoareyou.png", "Who Are You?", "Guess the Progamer."),
-                new Quiz("progamerbingo", "progamerbingo.png", "Bingo!", "Make Bingo"),
-                new Quiz("tictactoe", "tictactoe.png", "Tic Tac Toe", "Play Tic Tac Toe"),
-                new Quiz("pieceofpuzzle", "pieceofpuzzle.png", "Piece of Puzzle",
-                        "Find Progamer on particular team"),
-                new Quiz("whatisteam", "whatisteam.png", "What is Team?",
-                        "Find Team Using Hint"),
-                new Quiz("igotyou", "igotyou.png", "I Got You!", "Find Progamer Using Team")
-        );
         for (Quiz quiz : quizzes) {
             Resource image = resourceLoader.getResource("classpath:/static/images/quiz/" + quiz.getImageUrl());
             String imageUrl;
@@ -50,10 +48,8 @@ public class HomeController {
                 imageUrl = "/images/none.png";
                 quiz.setImageUrl(imageUrl);
             }
-        }
 
-        for (Quiz quiz : quizzes) {
-            System.out.println("quiz.getImageUrl() = " + quiz.getImageUrl());
+            quizService.saveQuiz(quiz);
         }
         model.addAttribute("quizzes", quizzes);
         return "home";

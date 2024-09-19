@@ -1,24 +1,30 @@
+
 body {
     background: linear-gradient(to bottom, #3C3C41, #1E2328);
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
     display: flex;
-    justify-content: center;
-    position: relative;
+    flex-direction: column;
+}
+.bh img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 .menu {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
+    left: 0; /* 좌측 상단에 고정 */
     width: 200px;
     height: 100%;
     background-color: #1A0033;
     padding: 20px;
     box-sizing: border-box;
     transform: translateX(-100%);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
     overflow-y: auto;
+    z-index: 99; /* 메뉴가 열렸을 때 다른 요소 위에 표시되도록 */
 }
 .menu a {
     color: white;
@@ -29,45 +35,35 @@ body {
 .menu a:hover {
     background-color: #0AC8B9;
 }
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 40px;
-    width: 50px;
-    height: 50px;
-    background-color: #1A0033;
-    color: white;
-    border: none;
-    font-size: 1.5em;
-    cursor: pointer;
-    z-index: 2;
-}
 .menu-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    position: absolute; /* 절대 배치 */
+    top: 0;
+    right: 0; /* 메뉴의 오른쪽 끝에 배치 */
     background-color: transparent;
     color: white;
     border: none;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
     z-index: 3;
+    transition: background-color 0.3s ease;
 }
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(100% - 320px);
-    max-width: 1000px;
-    margin: 0;
-    position: relative;
+.menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0; /* 메뉴 버튼은 여전히 왼쪽에 */
+    background-color: #1A0033;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
 }
-.content {
-    flex: 1;
-    padding: 20px;
-    width: 100%;
-    transition: margin-left 0.3s;
+
+.menu-toggle:hover, .menu-close:hover {
+    background-color: #0AC8B9;
 }
+
 .menu-open .content-container {
     margin-left: 0;
 }
@@ -80,29 +76,30 @@ body {
 .menu-open .menu-open-button {
     display: none;
 }
+.content-wrapper {
+    display: flex; /* 좌우 광고와 컨텐츠를 한 줄에 배치 */
+    justify-content: space-between; /* 공간을 양쪽으로 나눔 */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.content {
+    width: 70%; /* 남은 공간을 content가 차지 */
+    padding: 20px;
+    box-sizing: border-box;
+}
 .ad-container {
-    position: fixed;
-    top: 100px;
-    bottom: 100px;
-    width: 160px;
-    height: 80%;
+    width: 15%; /* 광고의 너비 설정 */
     background: linear-gradient(to bottom, #3C3C41, #1E2328);
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    z-index: 0;
 }
-.ad-container.left {
-    left: 0;
+.ad-container.adLeft {
+    left: 10px;
 }
-.ad-container.right {
-    right: 0;
-}
-.ad-content {
-    color: black;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 10px;
+.ad-container.adRight {
+    right: 10px;
 }
 .grid {
     display: grid;
@@ -154,15 +151,113 @@ body {
     opacity: 0.7;
     z-index: 0;
 }
-.grid-item h2, .grid-item p, .grid-item .play-button {
+.grid-item h2 {
     position: relative;
     z-index: 1;
     margin: 0;
+    font-size: 3vw; /* 화면 너비의 3%에 해당하는 글씨 크기 */
 }
+
+.grid-item p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 2vw; /* 화면 너비의 2%에 해당하는 글씨 크기 */
+}
+
 .grid-item .play-button {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 2.5vw; /* 화면 너비의 2.5%에 해당하는 글씨 크기 */
     background-color: #ceff27;
     color: black;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
+}
+
+
+.quiz-item {
+    background-color: #091428;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.quiz-item img {
+    width: 100%;
+    border-radius: 10px;
+    filter: blur(30px);
+    transition: filter 0.3s;
+    pointer-events: none;
+}
+.quiz-item input {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80%;
+}
+.quiz-item.correct img {
+    filter: none;
+}
+.quiz-item.correct {
+    background-color: #4CAF50;
+}
+.quiz-item.incorrect {
+    background-color: #f44336;
+}
+.suggestions {
+    background-color: #091428;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: block;
+}
+.suggestions div {
+    padding: 5px;
+    cursor: pointer;
+}
+.suggestions div:hover {
+    background-color: #0AC8B9;
+}
+.hints-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    padding-top: 20px;
+}
+.hint-row {
+    display: flex;
+    justify-content: space-around;
+}
+.hint-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.hint-item.fade-in {
+    display: flex;
+    animation: fadeIn 0.75s forwards;
+}
+.hint-item .cover {
+    background-color: #808080;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    transition: background-color 0.75s;
+}
+.hint-item img {
+    width: 60%;
+    height: 60%;
 }

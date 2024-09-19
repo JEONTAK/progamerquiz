@@ -12,8 +12,8 @@ public class TeamService {
     @Autowired
     private TeamRepository teamRepository;
 
-    @Autowired
-    private EntityManager em;
 
-
+    public void saveTeam(Team team) {
+        teamRepository.save(team);
+    }
 }

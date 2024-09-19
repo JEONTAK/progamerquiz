@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pq.progamerquiz.quiz.Quiz;
 
-@Entity
-@DiscriminatorValue("Q4")
 @Getter
 @Setter
 public class Q4_PieceOfPuzzle extends Quiz {

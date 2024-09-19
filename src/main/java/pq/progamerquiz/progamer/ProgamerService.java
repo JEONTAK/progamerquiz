@@ -24,4 +24,8 @@ public class ProgamerService {
     public Progamer findOne(Long progamerId) {
         return progamerRepository.findById(progamerId).orElse(null);
     }
+
+    public void saveProgamer(Progamer progamer) {
+        progamerRepository.save(progamer);
+    }
 }

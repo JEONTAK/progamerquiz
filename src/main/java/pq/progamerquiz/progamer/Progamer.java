@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Progamer{
+public class Progamer {
 
     @Id
     @GeneratedValue
@@ -41,7 +41,7 @@ public class Progamer{
     )
     private List<Team> teams = new ArrayList<>();
 
-    public enum Position{
+    public enum Position {
         TOP, JGL, MID, ADC, SUP,
     }
 }

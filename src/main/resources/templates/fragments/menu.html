@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--메뉴 -->
+<div class="menu" th:fragment="menu">
+    <button class="menu-close" onclick="toggleMenu()">✕</button>
+    <!-- 메뉴 항목을 Thymeleaf로 동적 생성 -->
+    <a th:each="quizzes : ${quizzes}"
+       th:href="@{${quizzes.url}}"
+       th:text="${quizzes.title}"></a>
+</div>
