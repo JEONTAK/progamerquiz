@@ -18,9 +18,9 @@
 
     <div class="content">
         <div class="quiz-item" data-answer="${answer.id}">
-            <form id="playerForm" action="/submitAnswer" method="post">
-                <img th:src="@{${imagePath}}" alt="Player Image">
-                <input id="player-input" name="playerInput" type="text" placeholder="1 of 8">
+            <form id="playerForm" method="post">
+                <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
+                <input id="player-input" name="input" type="text" placeholder="1 of 8">
                 <div id="suggestions"></div>
                 <div class="hints-container"></div>
             </form>
@@ -34,4 +34,8 @@
 <div th:replace="~{fragments/footer :: footer}"></div>
 <script th:src="@{/js/whoareyou.js}"></script>
 </body>
+<script th:inline="javascript">
+    const tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
+    console.log("Try Status from server: ", tryStatus);
+</script>
 </html>

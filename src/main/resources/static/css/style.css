@@ -261,3 +261,12 @@ body {
     width: 60%;
     height: 60%;
 }
+
+input[disabled] {
+    background-color: #e0e0e0; /* 비활성화된 상태일 때 배경색 */
+    color: #888; /* 비활성화된 상태일 때 텍스트 색 */
+    cursor: not-allowed; /* 마우스 커서 */
+}
+#player-image {
+    transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
+}

@@ -47,7 +47,10 @@ public class Quiz1Service {
     }
 
     public Optional<Progamer> findById(Long pid){
-        Optional<Progamer> result = progamerRepository.findById(pid);
-        return result;
+        return progamerRepository.findById(pid);
+    }
+
+    public Progamer findByPid(String pid){
+        return progamerRepository.findByPid(pid);
     }
 }

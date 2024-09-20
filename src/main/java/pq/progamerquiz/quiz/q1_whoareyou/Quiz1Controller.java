@@ -1,5 +1,6 @@
 package pq.progamerquiz.quiz.q1_whoareyou;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +26,9 @@ public class Quiz1Controller {
     @Autowired
     private Quiz1Service quiz1Service;
     private Progamer answer;
-    private int attempts = 0;
+    private int attempts = 1;
     private static final int MAX_ATTEMPTS = 8;
     private List<Progamer> guessedList = new ArrayList<>();
-    @Autowired
-    private ProgamerService progamerService;
 
     @GetMapping
     public String startQuiz(Model model) {
@@ -42,8 +41,7 @@ public class Quiz1Controller {
     }
 
     @GetMapping("/{progamerId}")
-    public String showQuiz(@PathVariable Long progamerId, Model model) {
-        // 전달된 선수 ID로 데이터를 가져옴
+    public String showQuiz(@PathVariable Long progamerId, Model model, HttpSession session) {
         Optional<Progamer> progamer = quiz1Service.findById(progamerId);
         String imagePath = quiz1Service.getImagePath(progamer.orElse(null));
 
@@ -51,19 +49,54 @@ public class Quiz1Controller {
         model.addAttribute("answer", progamer);
         model.addAttribute("imagePath", imagePath);
 
-        // whoareyou.html 페이지로 이동
+        // 세션에서 정답 여부와 관련된 정보 가져오기
+        Integer tryStatus = (Integer) session.getAttribute("try");
+        List<Progamer> guessedList = (List<Progamer>) session.getAttribute("guessedList");
+        Integer attempts = (Integer) session.getAttribute("attempts");
+
+        log.info("Try status: " + tryStatus);
+        log.info("Attempts: " + attempts);
+
+        model.addAttribute("try", tryStatus);
+        model.addAttribute("guessedList", guessedList);
+        model.addAttribute("attempts", attempts);
+        model.addAttribute("maxAttempts", MAX_ATTEMPTS);
+
+        // 세션 정보 초기화
+        session.removeAttribute("try");
+        session.removeAttribute("guessedList");
+        session.removeAttribute("attempts");
+
         return "quizzes/whoareyou";
     }
 
-    @PostMapping("/submitAnswer")
-    public ResponseEntity<String> submitAnswer(@RequestBody Map<String, String> payload) {
-        String submittedAnswer = payload.get("answer");
-        // 제출된 답변을 처리
-        if (quiz1Service.checkAnswer(submittedAnswer)) {
-            return ResponseEntity.ok("Correct Answer");
-        } else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Incorrect Answer");
+    @PostMapping("/{progamerId}")
+    public String submitAnswer(@RequestParam("input") String submit, Model model, HttpSession session) {
+        log.info(submit);
+        Progamer submitProgamer = quiz1Service.findByPid(submit);
+
+        if (submitProgamer == null) {
+            log.error("Submitted progamer is null");
+            return "redirect:/whoareyou/" + answer.getId();
         }
+
+        log.info(submitProgamer.getId() + " " + submitProgamer.getPid());
+
+        if (submitProgamer.getId().equals(answer.getId())) {
+            session.setAttribute("try", 1);
+            session.setAttribute("guessedList", guessedList);
+            session.setAttribute("attempts", attempts);
+            log.info("Correct answer!");
+        } else {
+            session.setAttribute("try", 0);
+            attempts++;
+            guessedList.add(submitProgamer);
+            session.setAttribute("guessedList", guessedList);
+            session.setAttribute("attempts", attempts);
+            log.info("Incorrect answer.");
+        }
+
+        return "redirect:/whoareyou/" + answer.getId();
     }
 
 

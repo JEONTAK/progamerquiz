@@ -1,4 +1,5 @@
 
+// 메뉴 토글 기능
 function toggleMenu() {
     document.body.classList.toggle('menu-open');
     document.querySelector('.content-container').classList.toggle('menu-open');
@@ -41,118 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/*
-document.querySelectorAll('.quiz-item').forEach(item => {
-    const hintsContainer = document.querySelector('.hints-container');
-    const suggestions = item.querySelector('.suggestions');
-    const inputField = item.querySelector('input');
-    const maxAttempts = 8;
-    let attempts = 0;
+document.addEventListener("DOMContentLoaded", function() {
+    // 이미지 요소 및 입력 필드 가져오기
+    const playerImage = document.getElementById("player-image");
+    const playerInput = document.getElementById("player-input");
 
-    inputField.addEventListener('input', function() {
-        const userInput = this.value.toLowerCase();
-        if (userInput === '') {
-            suggestions.style.display = 'none';
-        } else {
-            const matchedNames = playerNames.filter(name => name.toLowerCase().includes(userInput));
-            suggestions.innerHTML = matchedNames.map(name => `<div>${name}</div>`).join('');
-            suggestions.style.display = 'block';
-        }
-    });
+    // TryStatus 값 확인 후 정답일 경우 이미지 블러 해제 및 배경색 변경
+    if (tryStatus === 1) {
+        // 이미지 블러 해제
+        playerImage.style.filter = "none";
 
-    inputField.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            const answer = 'Player1';//item.getAttribute('data-answer');
-            const userAnswer = this.value.trim();
-            attempts++;
+        // 이미지 배경색을 초록색으로 변경
+        playerImage.style.backgroundColor = "green";
 
-            if (userAnswer.toLowerCase() === answer.toLowerCase()) {
-                item.classList.add('correct');
-                item.classList.remove('incorrect');
-                item.querySelector('img').style.filter = 'none';
-            } else {
-                item.classList.add('incorrect');
-                item.classList.remove('correct');
-            }
-
-            hintsContainer.style.display = 'flex';
-            displayHints(hintsContainer, playerHints[answer], playerHints[userAnswer]);
-
-            inputField.placeholder = `${attempts + 1} of ${maxAttempts}`;
-            inputField.value = '';
-
-            if (attempts >= maxAttempts) {
-                showAnswer(hintsContainer, playerHints[answer]);
-                item.querySelector('img').style.filter = 'none';
-                inputField.disabled = true;
-            }
-        }
-    });
-
-    suggestions.addEventListener('click', function(event) {
-        if (event.target.tagName === 'DIV') {
-            inputField.value = event.target.textContent;
-            suggestions.style.display = 'none';
-        }
-    });
+        // 텍스트 필드 수정 불가능하게 설정
+        playerInput.disabled = true;
+    }
 });
-
-function displayHints(hintsContainer, correctHints, userHints) {
-    const hintRow = document.createElement('div');
-    hintRow.classList.add('hint-row');
-
-    userHints.forEach((hint, index) => {
-        const hintItem = document.createElement('div');
-        hintItem.classList.add('hint-item', 'fade-in');
-        hintItem.style.display = 'flex';
-
-        const cover = document.createElement('div');
-        cover.classList.add('cover');
-        cover.style.backgroundColor = hint === correctHints[index] ? 'green' : '#808080';
-
-        const img = document.createElement('img');
-        img.src = playerImages[hint] || '../image/content/default.jpg'; // 적절한 이미지 경로를 추가하세요
-        img.alt = hint;
-        cover.appendChild(img);
-
-        const span = document.createElement('span');
-        span.textContent = hintNames[index];
-
-        hintItem.appendChild(cover);
-        hintItem.appendChild(span);
-
-        hintRow.appendChild(hintItem);
-    });
-
-    hintsContainer.insertBefore(hintRow, hintsContainer.firstChild);
-}
-
-function showAnswer(hintsContainer, correctHints) {
-    const answerRow = document.createElement('div');
-    answerRow.classList.add('hint-row');
-
-    correctHints.forEach((hint, index) => {
-        const hintItem = document.createElement('div');
-        hintItem.classList.add('hint-item', 'fade-in');
-        hintItem.style.display = 'flex';
-
-        const cover = document.createElement('div');
-        cover.classList.add('cover');
-        cover.style.backgroundColor = 'green';
-
-        const img = document.createElement('img');
-        img.src = playerImages[hint] || '../image/content/default.jpg'; // 적절한 이미지 경로를 추가하세요
-        img.alt = hint;
-        cover.appendChild(img);
-
-        const span = document.createElement('span');
-        span.textContent = hintNames[index];
-
-        hintItem.appendChild(cover);
-        hintItem.appendChild(span);
-
-        answerRow.appendChild(hintItem);
-    });
-
-    hintsContainer.insertBefore(answerRow, hintsContainer.firstChild);
-}*/

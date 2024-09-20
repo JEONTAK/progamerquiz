@@ -4,11 +4,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ProgamerRepository extends JpaRepository<Progamer, Long> {
 
-    List<Progamer> findByName(String name);
-    List<Progamer> findByPid(String pid);
-    List<Progamer> findByNameOrPid(String name, String pid);
+    Optional<Progamer> findByName(String name);
+    Progamer findByPid(String pid);
+    Optional<Progamer> findByNameOrPid(String name, String pid);
 }
