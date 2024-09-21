@@ -84,7 +84,7 @@ body {
     box-sizing: border-box;
 }
 .content {
-    width: 70%; /* 남은 공간을 content가 차지 */
+    width: 50%; /* 남은 공간을 content가 차지 */
     padding: 20px;
     box-sizing: border-box;
 }
@@ -268,5 +268,7 @@ input[disabled] {
     cursor: not-allowed; /* 마우스 커서 */
 }
 #player-image {
+    width: 50%;
+    height: 50%;
     transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
 }
