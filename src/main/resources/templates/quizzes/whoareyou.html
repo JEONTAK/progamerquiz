@@ -22,7 +22,7 @@
                 <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
                 <input id="player-input" name="input" type="text" placeholder="1 of 8">
                 <div id="suggestions"></div>
-                <div class="hints-container"></div>
+                <div id = "hintContainer" class="hints-container"></div>
             </form>
         </div>
     </div>
@@ -36,6 +36,7 @@
 </body>
 <script th:inline="javascript">
     const tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
+    const guessedList = /*[[${guessedList}]]*/ [];
     console.log("Try Status from server: ", tryStatus);
 </script>
 </html>

@@ -41,6 +41,9 @@ public class Progamer {
     )
     private List<Team> teams = new ArrayList<>();
 
+    private Long latestTeam;
+    private String latestLeague;
+
     public enum Position {
         TOP, JGL, MID, ADC, SUP,
     }

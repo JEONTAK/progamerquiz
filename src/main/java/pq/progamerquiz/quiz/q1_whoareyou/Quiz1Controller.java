@@ -3,13 +3,16 @@ package pq.progamerquiz.quiz.q1_whoareyou;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.progamer.Progamer;
+import pq.progamerquiz.progamer.ProgamerDto;
 import pq.progamerquiz.progamer.ProgamerService;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ public class Quiz1Controller {
 
     @Autowired
     private Quiz1Service quiz1Service;
-    private Progamer answer;
+    private ProgamerDto answer;
     private int attempts = 1;
     private static final int MAX_ATTEMPTS = 8;
     private List<Progamer> guessedList = new ArrayList<>();
@@ -40,28 +43,31 @@ public class Quiz1Controller {
         return "redirect:/whoareyou/" + answer.getId();
     }
 
+    @Transactional
     @GetMapping("/{progamerId}")
     public String showQuiz(@PathVariable Long progamerId, Model model, HttpSession session) {
-        Optional<Progamer> progamer = quiz1Service.findById(progamerId);
-        String imagePath = quiz1Service.getImagePath(progamer.orElse(null));
+        ProgamerDto progamerDto = quiz1Service.findProgamerDtoById(progamerId);
+
+        String imagePath = quiz1Service.getImagePath(progamerDto);
 
         // 모델에 데이터 추가
-        model.addAttribute("answer", progamer);
+        model.addAttribute("answer", progamerDto);
         model.addAttribute("imagePath", imagePath);
 
         // 세션에서 정답 여부와 관련된 정보 가져오기
         Integer tryStatus = (Integer) session.getAttribute("try");
-        List<Progamer> guessedList = (List<Progamer>) session.getAttribute("guessedList");
+        List<ProgamerDto> guessedList = (List<ProgamerDto>) session.getAttribute("guessedList");
         Integer attempts = (Integer) session.getAttribute("attempts");
-
-        log.info("Try status: " + tryStatus);
-        log.info("Attempts: " + attempts);
-
         model.addAttribute("try", tryStatus);
         model.addAttribute("guessedList", guessedList);
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
 
+        log.info("Progamer: " + progamerDto);  // progamer가 null인지 확인
+        log.info("Image Path: " + imagePath);
+        log.info("Try status: " + tryStatus);
+        log.info("Guessed List: " + guessedList);
+        log.info("Attempts: " + attempts);
         // 세션 정보 초기화
         session.removeAttribute("try");
         session.removeAttribute("guessedList");

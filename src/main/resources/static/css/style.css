@@ -234,6 +234,7 @@ body {
 .hint-row {
     display: flex;
     justify-content: space-around;
+    margin-top: 10px;
 }
 .hint-item {
     display: none;

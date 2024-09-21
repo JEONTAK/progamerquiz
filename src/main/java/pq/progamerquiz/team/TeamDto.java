@@ -1,6 +1,7 @@
 package pq.progamerquiz.team;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pq.progamerquiz.progamer.Progamer;
 
@@ -9,6 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class TeamDto {
 
     private Long id;
@@ -22,4 +24,9 @@ public class TeamDto {
     private Long worlds_rank;
     private Long winter_rank;
     private List<Progamer> roster = new ArrayList<>();
+
+    public TeamDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
