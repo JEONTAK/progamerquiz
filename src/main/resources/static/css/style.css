@@ -235,6 +235,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
+    overflow: visible;
 }
 .hint-item {
     display: none;
@@ -242,6 +243,7 @@ body {
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    z-index: 10;
 }
 .hint-item.fade-in {
     display: flex;
@@ -258,9 +260,12 @@ body {
     margin-bottom: 5px;
     transition: background-color 0.75s;
 }
+
 .hint-item img {
-    width: 60%;
-    height: 60%;
+    width: 90%;  /* 이미지가 부모의 크기만큼 차지하도록 설정 */
+    height: auto; /* 비율을 유지하며 높이 설정 */
+    object-fit: contain; /* 이미지를 잘리지 않도록 설정 */
+    opacity: 1;   /* 이미지가 투명하지 않게 */
 }
 
 input[disabled] {

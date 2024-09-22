@@ -1,4 +1,4 @@
-package pq.progamerquiz.progamer;
+package pq.progamerquiz.quiz.q1_whoareyou;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProgamerDto {
+public class Quiz1Dto {
 
     private Long id;
     private String pid;
@@ -19,6 +19,6 @@ public class ProgamerDto {
     private Long league_win;
     private Long intl_win;
     private String nationality;
-    private String teams;
-
+    private Long recentTeam;
+    private String recentLeague;
 }

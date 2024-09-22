@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-//guessedList 입력 Function
 document.addEventListener("DOMContentLoaded", function() {
     const hintContainer = document.getElementById("hintContainer");
 
@@ -74,38 +73,44 @@ document.addEventListener("DOMContentLoaded", function() {
         const hintData = [
             {
                 label: 'League',
-                value: progamer.latestLeague,
-                icon: `/images/league/${progamer.latestLeague}.png`,
+                value: progamer.recentLeague,
+                answerValue: answer.recentLeague,  // answer 값 추가
+                icon: `/images/league/${progamer.recentLeague}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'Team',
                 value: progamer.latestTeam,
-                icon: `/images/teams/${progamer.latestTeam}.png`,
+                answerValue: answer.latestTeam,  // answer 값 추가
+                icon: `/images/none.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'Position',
                 value: progamer.position,
-                icon: `/images/positions/${progamer.position}.png`,
+                answerValue: answer.position,  // answer 값 추가
+                icon: `/images/position/${progamer.position}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'Birth',
                 value: progamer.birth,
+                answerValue: answer.birth,  // answer 값 추가
                 icon: `/images/number/number_${progamer.birth.toString().slice(-2)}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'League Wins',
-                value: progamer.league_win,
-                icon: `/images/number/${progamer.league_win}.png`,
+                value: progamer.league_win != null ? progamer.league_win : 0,
+                answerValue: answer.league_win != null ? answer.league_win : 0,  // answer 값 추가
+                icon: `/images/number/number_${progamer.league_win != null ? progamer.league_win : 0}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'International Wins',
-                value: progamer.intl_win,
-                icon: `/images/number/${progamer.intl_win}.png`,
+                value: progamer.intl_win != null ? progamer.intl_win : 0,
+                answerValue: answer.intl_win != null ? answer.intl_win : 0,  // answer 값 추가
+                icon: `/images/number/number_${progamer.intl_win != null ? progamer.intl_win : 0}.png`,
                 fallbackIcon: '/images/none.png'
             }
         ];
@@ -114,6 +119,8 @@ document.addEventListener("DOMContentLoaded", function() {
         hintData.forEach(hint => {
             const hintItem = document.createElement("div");
             hintItem.classList.add("hint-item");
+            hintItem.style.display = "flex";   // 반드시 보이도록 설정
+            hintItem.style.opacity = "1";      // 투명도를 명확히 설정
 
             // 이미지 추가
             const cover = document.createElement("div");
@@ -121,9 +128,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const img = document.createElement("img");
             img.src = hint.icon;  // 해당 힌트의 아이콘 경로
-            img.onerror = function () {
+            /*img.onerror = function () {
                 this.src = hint.fallbackIcon;
-            };
+            };*/
             img.alt = hint.label;
             cover.appendChild(img);
 
@@ -131,16 +138,25 @@ document.addEventListener("DOMContentLoaded", function() {
             const span = document.createElement("span");
             span.textContent = hint.value;
 
+            // answer의 값과 동일한 경우 배경색을 초록색으로 설정
+            if (hint.value === hint.answerValue) {
+                cover.style.backgroundColor = "green";  // 이미지 배경색을 초록색으로 변경
+            }
+
             hintItem.appendChild(cover);
             hintItem.appendChild(span);
-            hintRow.appendChild(hintItem);
+            hintRow.appendChild(hintItem);  // hintItem을 hintRow에 추가
         });
 
         hintContainer.appendChild(hintRow);
 
         // fade-in 애니메이션을 적용하기 위해 짧은 지연 후 fade-in 클래스 추가
         setTimeout(() => {
-            hintRow.childNodes.forEach(item => item.classList.add("fade-in"));
+            hintRow.classList.add("fade-in");  // hintRow에 fade-in 적용
+            hintRow.childNodes.forEach(item => {
+                item.style.display = "flex";   // 모든 자식 요소가 보이게 설정
+                item.style.opacity = "1";      // 모든 자식 요소의 투명도 설정
+            });
         }, index * 200);  // 각 행이 순차적으로 애니메이션되도록 지연 시간 추가
     });
 });
