@@ -40,7 +40,7 @@ public class Quiz1Service {
     }
 
     public String getImagePath(Quiz1Dto answer) {
-        String imagePath = "/images/player/" + answer.getId() + ".png";
+        String imagePath = "/images/player/" + answer.getId() + ".webp";
         try{
             Path path = Paths.get(new ClassPathResource("static" + imagePath).getURI());
             if (!Files.exists(path)) {
@@ -58,7 +58,7 @@ public class Quiz1Service {
     }
 
     public Progamer findByPid(String pid){
-        return progamerRepository.findByPid(pid);
+        return progamerRepository.findByPidIgnoreCase(pid);
     }
 
     public static Quiz1Dto convert(Progamer submitProgamer) {
