@@ -127,13 +127,24 @@ document.addEventListener("DOMContentLoaded", function() {
             cover.classList.add("cover");
 
             const img = document.createElement("img");
+
             img.src = hint.icon;  // 해당 힌트의 아이콘 경로
             /*img.onerror = function () {
                 this.src = hint.fallbackIcon;
             };*/
-            img.alt = hint.label;
-            cover.appendChild(img);
+            img.onload = function() {
+                console.log("Image loaded:", img.src);
+            };
 
+            img.onerror = function() {
+                console.log("Failed to load image:", img.src);
+                this.src = hint.fallbackIcon;
+            };
+            img.alt = hint.label;
+            removeBlur(img);
+
+            cover.appendChild(img);
+            console.log("Generated img tag:", img);
             // 힌트 값 추가
             const span = document.createElement("span");
             span.textContent = hint.value;
@@ -160,3 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, index * 200);  // 각 행이 순차적으로 애니메이션되도록 지연 시간 추가
     });
 });
+
+function removeBlur(imageElement) {
+    imageElement.classList.add('no-blur');
+}

@@ -78,7 +78,7 @@ public class Quiz1Controller {
             log.error("Submitted progamer is null");
             return "redirect:/whoareyou/" + answer.getId();
         }
-    Quiz1Dto curProgamer = Quiz1Service.convert(submitProgamer);
+        Quiz1Dto curProgamer = Quiz1Service.convert(submitProgamer);
         log.info(curProgamer.getId() + " " + curProgamer.getPid());
 
         if (curProgamer.getId().equals(answer.getId())) {

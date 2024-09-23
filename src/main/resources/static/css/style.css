@@ -228,8 +228,9 @@ body {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     padding-top: 20px;
+    overflow: auto;
 }
 .hint-row {
     display: flex;
@@ -243,16 +244,15 @@ body {
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    z-index: 10;
 }
 .hint-item.fade-in {
     display: flex;
     animation: fadeIn 0.75s forwards;
 }
 .hint-item .cover {
-    background-color: #808080;
     width: 60px;
     height: 60px;
+    background-color: #808080;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -262,10 +262,18 @@ body {
 }
 
 .hint-item img {
-    width: 90%;  /* 이미지가 부모의 크기만큼 차지하도록 설정 */
+    width: 70%; /* 이미지가 부모의 크기만큼 차지하도록 설정 */
     height: auto; /* 비율을 유지하며 높이 설정 */
     object-fit: contain; /* 이미지를 잘리지 않도록 설정 */
-    opacity: 1;   /* 이미지가 투명하지 않게 */
+    opacity: 1; /* 이미지가 투명하지 않게 */
+}
+
+img.no-blur {
+    filter: none; /* 블러를 제거 */
+}
+
+.hint-item img[src*="number"] {
+    margin-top: -15%; /* src 속성에 "number"가 포함된 이미지에만 적용 */
 }
 
 input[disabled] {
