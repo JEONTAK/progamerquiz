@@ -45,4 +45,6 @@ public class Team{
     public enum League {
         LCK, LPL, LEC, LCS, CBLOL, PCS, LLA, VCS, LJL, LCO, LMS, TCL, LST
     }
+
+    public Long image_path;
 }

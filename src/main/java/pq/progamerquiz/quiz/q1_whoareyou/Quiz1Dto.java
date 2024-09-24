@@ -19,6 +19,7 @@ public class Quiz1Dto {
     private Long league_win;
     private Long intl_win;
     private String nationality;
-    private Long recentTeam;
+    private String recentTeam;
+    private Long teamId;
     private String recentLeague;
 }

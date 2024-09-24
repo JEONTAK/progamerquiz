@@ -71,7 +71,8 @@ public class Quiz1Service {
                 submitProgamer.getLeague_win(),
                 submitProgamer.getIntl_win(),
                 submitProgamer.getNationality(),
-                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getId(),
+                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getName(),
+                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getImage_path(),
                 submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getLeague().toString()
         );
         return result;

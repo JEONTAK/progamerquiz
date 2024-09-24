@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 label: 'Team',
                 value: progamer.latestTeam,
                 answerValue: answer.latestTeam,  // answer 값 추가
-                icon: `/images/none.png`,
+                icon: `/images/team/${progamer.teamid}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
