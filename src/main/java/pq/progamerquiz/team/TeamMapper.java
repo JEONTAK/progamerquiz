@@ -17,6 +17,7 @@ public class TeamMapper {
         team.setWorlds_rank(teamDto.getWorlds_rank());
         team.setWinter_rank(teamDto.getWinter_rank());
         team.setRoster(new ArrayList<>());
+        team.setImage_path(teamDto.getImage_path());
         return team;
     }
 }

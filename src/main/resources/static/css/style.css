@@ -225,6 +225,7 @@ body {
 }
 .hints-container {
     display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 최소 150px의 크기로 그리드 요소를 자동으로 배치 */
     flex-direction: column;
     gap: 10px;
     width: 100%;
@@ -234,7 +235,7 @@ body {
 }
 .hint-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between; /* 아이템 간의 균일한 간격 */
     margin-top: 10px;
     overflow: visible;
 }
@@ -244,10 +245,18 @@ body {
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    padding: 3px;
 }
 .hint-item.fade-in {
     display: flex;
     animation: fadeIn 0.75s forwards;
+}
+.hint-item .hint-name{
+    display: flex;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
 }
 .hint-item .cover {
     width: 60px;
@@ -259,8 +268,16 @@ body {
     justify-content: center;
     margin-bottom: 5px;
     transition: background-color 0.75s;
+    overflow: visible;
+    flex: 1 1 auto;
 }
-
+.hint-item .hint-value{
+    display: flex;
+    width: 60px;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+}
 .hint-item img {
     width: 70%; /* 이미지가 부모의 크기만큼 차지하도록 설정 */
     height: auto; /* 비율을 유지하며 높이 설정 */

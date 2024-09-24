@@ -24,9 +24,5 @@ public class TeamDto {
     private Long worlds_rank;
     private Long winter_rank;
     private List<Progamer> roster = new ArrayList<>();
-
-    public TeamDto(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private Long image_path;
 }

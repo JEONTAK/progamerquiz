@@ -3,6 +3,7 @@ package pq.progamerquiz.database;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +26,7 @@ import java.util.List;
 
 @Transactional
 @Service
+@Log4j2
 public class UpdateDBList {
 
 
@@ -41,10 +43,10 @@ public class UpdateDBList {
     public void initializeTeams() {
         List<Team> existingTeams = em.createQuery("SELECT t FROM Team t", Team.class).getResultList();
         if (!existingTeams.isEmpty()) {
-            System.out.println("Teams already exist in the database. Skipping initialization.");
+            log.info("Teams already exist in the database. Skipping initialization.");
             return;
         }
-        System.out.println("No teams found in the database. Loading data from JSON.");
+        log.info("No teams found in the database. Loading data from JSON.");
         try {
             File jsonFile = new File("src/main/resources/static/database/Team.json");
             JsonNode rootNode = mapper.readTree(jsonFile);
@@ -61,10 +63,10 @@ public class UpdateDBList {
     public void initializeProgamers() {
         List<Progamer> existingProgamers = em.createQuery("SELECT p FROM Progamer p", Progamer.class).getResultList();
         if (!existingProgamers.isEmpty()) {
-            System.out.println("Quizzes already exist in the database. Skipping initialization.");
+            log.info("Quizzes already exist in the database. Skipping initialization.");
             return;
         }
-        System.out.println("No Quizzes found in the database. Loading data from JSON.");
+        log.info("No Quizzes found in the database. Loading data from JSON.");
         try {
             File jsonFile = new File("src/main/resources/static/database/Progamer.json");
             JsonNode rootNode = mapper.readTree(jsonFile);
@@ -81,10 +83,10 @@ public class UpdateDBList {
     public void initializeQuizzes() {
         List<Quiz> existingQuizzes= em.createQuery("SELECT q FROM Quiz q", Quiz.class).getResultList();
         if (!existingQuizzes.isEmpty()) {
-            System.out.println("Progamers already exist in the database. Skipping initialization.");
+            log.info("Progamers already exist in the database. Skipping initialization.");
             return;
         }
-        System.out.println("No Progamers found in the database. Loading data from JSON.");
+        log.info("No Progamers found in the database. Loading data from JSON.");
         try {
             File jsonFile = new File("src/main/resources/static/database/Quiz.json");
             JsonNode rootNode = mapper.readTree(jsonFile);

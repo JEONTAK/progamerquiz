@@ -62,6 +62,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const hintContainer = document.getElementById("hintContainer");
+    const playerInput = document.getElementById("player-input");
+    const totalItems = 8; // 고정된 총 항목의 수
+    const guessedListSize = guessedList.length; // guessedList의 사이즈
+    playerInput.setAttribute("placeholder", `${guessedListSize} of ${totalItems}`);
+    // hint-item 크기 설정 함수
+    function setHintItemSizes() {
+        const containerWidth = hintContainer.offsetWidth;
+        const itemSize = containerWidth / 6; // hint-item 크기를 컨테이너 너비의 6등분으로 설정
+
+        const hintItems = document.querySelectorAll('.hint-item');
+        hintItems.forEach(item => {
+            const cover = item.querySelector('.cover');
+            const img = cover.querySelector('img');
+            const span = item.querySelector('span');
+
+            if (cover && img) {
+                cover.style.width = `${itemSize * 0.7}px`;  // cover의 크기 설정
+                cover.style.height = `${itemSize * 0.7}px`; // cover의 크기 설정
+                img.style.width = `${itemSize * 0.6}px`;    // img의 크기 설정
+                img.style.height = `${itemSize * 0.6}px`;   // img의 크기 설정
+            }
+
+            if (span) {
+                span.style.fontSize = `${itemSize * 0.15}px`; // 텍스트 크기 설정
+            }
+        });
+    }
+    const containerWidth = hintContainer.offsetWidth;
+    const minFontSize = 5;  // 최소 폰트 크기
+    const maxFontSize = 20;  // 최대 폰트 크기
+    const dynamicFontSize = Math.max(minFontSize, Math.min(containerWidth * 0.03, maxFontSize));
+
+    const hintName = ['League', 'Team', 'Position', 'Birth', 'League Wins', 'Intl Wins'];
+    // 힌트 행 생성
+    const hintRow = document.createElement("div");
+    hintRow.classList.add("hint-row");
+    hintName.forEach(hint => {
+        const hintItem = document.createElement("div");
+        hintItem.classList.add("hint-item");
+        hintItem.style.display = "block";   // 반드시 보이도록 설정
+        hintItem.style.opacity = "1";      // 투명도를 명확히 설정
+        const hintLabel = document.createElement("span");
+        hintLabel.classList.add("hint-name");
+        hintLabel.textContent = hint; // 각 힌트의 라벨 설정
+        hintLabel.style.fontWeight = "bold";  // 강조 효과
+        hintItem.appendChild(hintLabel); // 컨테이너에 라벨을 추가
+        hintRow.appendChild(hintItem);
+        hintRow.classList.add("fade-in");  // hintRow에 fade-in 적용
+        hintRow.childNodes.forEach(item => {
+            item.style.display = "block";   // 모든 자식 요소가 보이게 설정
+            item.style.opacity = "1";      // 모든 자식 요소의 투명도 설정
+        });
+    });
+    hintContainer.appendChild(hintRow);
+
 
     // guessedList에서 데이터를 가져와 동적으로 추가
     guessedList.forEach((progamer, index) => {
@@ -69,20 +124,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const hintRow = document.createElement("div");
         hintRow.classList.add("hint-row");
 
+
         // 각 힌트 정보를 아이템으로 추가
         const hintData = [
             {
                 label: 'League',
                 value: progamer.recentLeague,
                 answerValue: answer.recentLeague,  // answer 값 추가
-                icon: `/images/league/${progamer.recentLeague}.png`,
+                icon: `/images/league/${progamer.recentLeague}.webp`,
                 fallbackIcon: '/images/none.png'
             },
             {
                 label: 'Team',
-                value: progamer.latestTeam,
-                answerValue: answer.latestTeam,  // answer 값 추가
-                icon: `/images/team/${progamer.teamid}.png`,
+                value: progamer.recentTeam,
+                answerValue: answer.recentTeam,  // answer 값 추가
+                icon: `/images/team/${progamer.teamId}.webp`,
                 fallbackIcon: '/images/none.png'
             },
             {
@@ -100,14 +156,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 fallbackIcon: '/images/none.png'
             },
             {
-                label: 'League Wins',
+                label: 'Leag Wins',
                 value: progamer.league_win != null ? progamer.league_win : 0,
                 answerValue: answer.league_win != null ? answer.league_win : 0,  // answer 값 추가
                 icon: `/images/number/number_${progamer.league_win != null ? progamer.league_win : 0}.png`,
                 fallbackIcon: '/images/none.png'
             },
             {
-                label: 'International Wins',
+                label: 'Intl Wins',
                 value: progamer.intl_win != null ? progamer.intl_win : 0,
                 answerValue: answer.intl_win != null ? answer.intl_win : 0,  // answer 값 추가
                 icon: `/images/number/number_${progamer.intl_win != null ? progamer.intl_win : 0}.png`,
@@ -119,9 +175,8 @@ document.addEventListener("DOMContentLoaded", function() {
         hintData.forEach(hint => {
             const hintItem = document.createElement("div");
             hintItem.classList.add("hint-item");
-            hintItem.style.display = "flex";   // 반드시 보이도록 설정
+            hintItem.style.display = "block";   // 반드시 보이도록 설정
             hintItem.style.opacity = "1";      // 투명도를 명확히 설정
-
             // 이미지 추가
             const cover = document.createElement("div");
             cover.classList.add("cover");
@@ -129,9 +184,9 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
 
             img.src = hint.icon;  // 해당 힌트의 아이콘 경로
-            /*img.onerror = function () {
+            img.onerror = function () {
                 this.src = hint.fallbackIcon;
-            };*/
+            };
             img.onload = function() {
                 console.log("Image loaded:", img.src);
             };
@@ -147,6 +202,7 @@ document.addEventListener("DOMContentLoaded", function() {
             console.log("Generated img tag:", img);
             // 힌트 값 추가
             const span = document.createElement("span");
+            span.classList.add("hint-value");
             span.textContent = hint.value;
 
             // answer의 값과 동일한 경우 배경색을 초록색으로 설정
@@ -165,11 +221,34 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             hintRow.classList.add("fade-in");  // hintRow에 fade-in 적용
             hintRow.childNodes.forEach(item => {
-                item.style.display = "flex";   // 모든 자식 요소가 보이게 설정
+                item.style.display = "block";   // 모든 자식 요소가 보이게 설정
                 item.style.opacity = "1";      // 모든 자식 요소의 투명도 설정
             });
-        }, index * 200);  // 각 행이 순차적으로 애니메이션되도록 지연 시간 추가
+        }, index * 500);  // 각 행이 순차적으로 애니메이션되도록 지연 시간 추가
     });
+
+    // 페이지 로드 후 hint-item 크기 설정
+        setHintItemSizes();
+
+    // 창 크기가 변경될 때마다 hint-item 크기 다시 설정
+    window.addEventListener('resize', setHintItemSizes);
+});
+
+window.addEventListener('resize', function() {
+    const minWidth = 600;
+    const minHeight = 400;
+
+    if (window.innerWidth < minWidth) {
+        document.body.style.width = `${minWidth}px`;
+    } else {
+        document.body.style.width = 'auto';  // 다시 기본값으로
+    }
+
+    if (window.innerHeight < minHeight) {
+        document.body.style.height = `${minHeight}px`;
+    } else {
+        document.body.style.height = 'auto';  // 다시 기본값으로
+    }
 });
 
 function removeBlur(imageElement) {
