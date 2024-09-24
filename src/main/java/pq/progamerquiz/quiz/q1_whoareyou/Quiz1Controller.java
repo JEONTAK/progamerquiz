@@ -1,8 +1,6 @@
 package pq.progamerquiz.quiz.q1_whoareyou;
 
 import jakarta.servlet.http.HttpSession;
-import java.util.Objects;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.progamer.Progamer;
-import pq.progamerquiz.progamer.ProgamerDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,18 +24,24 @@ public class Quiz1Controller {
     private Quiz1Service quiz1Service;
     private Quiz1Dto answer;
     private String imagePath;
-    private int attempts = 1;
+    private int attempts = 0;
     private static final int MAX_ATTEMPTS = 8;
     private List<Quiz1Dto> guessedList = new ArrayList<>();
 
     @GetMapping
     public String startQuiz(Model model) {
         log.info("Make Answer Progamer");
+        initialize();
         answer = quiz1Service.getRandomProgamer();
         imagePath = quiz1Service.getImagePath(answer);
         model.addAttribute("answer", answer);
         model.addAttribute("imagePath", imagePath);
         return "redirect:/whoareyou/" + answer.getId();
+    }
+
+    private void initialize() {
+        attempts = 0;
+        guessedList.clear();
     }
 
     @Transactional

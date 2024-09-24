@@ -303,3 +303,50 @@ input[disabled] {
     height: 50%;
     transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
 }
+
+.failed-message {
+    display: none;
+    background-color: #f44336; /* 빨간색 배경 */
+    color: white; /* 흰색 텍스트 */
+    padding: 15px; /* 패딩 */
+    position: fixed; /* 화면에 고정 */
+    top: 20px; /* 화면 위에서 20px 위치 */
+    left: 50%; /* 화면 중앙에 위치 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    z-index: 1000; /* 위쪽에 표시되도록 설정 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    font-size: 18px; /* 폰트 크기 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+}
+
+.main-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #f44336;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-items: center;
+
+}
+.main-button:hover {
+    background-color: #e0e0e0;
+}
+
+.pid-overlay {
+/*    position: absolute;
+    bottom: 10px; !* 이미지 아래쪽에 배치 *!
+!*    transform: translateX(-50%);*!*/
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* 배경을 어둡게 처리 */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    z-index: 2; /* 이미지 위에 텍스트가 나오도록 z-index 설정 */
+}
