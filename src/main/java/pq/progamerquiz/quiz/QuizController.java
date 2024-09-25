@@ -20,7 +20,9 @@ public class QuizController {
     @GetMapping("/{quizUrl}")
     public String handleQuiz(@PathVariable String quizUrl, Model model) {
         List<Quiz> quizzes = quizService.findAll();
-
+        for (Quiz quiz : quizzes) {
+            System.out.println(quiz.getImageUrl());
+        }
         model.addAttribute("quizzes", quizzes);
         return "redirect:/" + quizUrl; // quizzes 폴더의 quizUrl에 해당하는 뷰 파일로 이동
     }

@@ -1,3 +1,19 @@
+// 가이드 오버레이 보이기
+function showGuide() {
+    const guideOverlay = document.getElementById('guide-overlay');
+    guideOverlay.style.display = 'flex';
+}
+
+// 가이드 오버레이 닫기
+function closeGuide() {
+    const guideOverlay = document.getElementById('guide-overlay');
+    guideOverlay.style.display = 'none';
+}
+
+// 페이지가 로드될 때 가이드 보여주기
+window.onload = function() {
+    showGuide();
+};
 
 // 메뉴 토글 기능
 function toggleMenu() {

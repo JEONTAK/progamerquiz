@@ -22,7 +22,7 @@
             <div class="grid-item" th:each="quiz : ${quizzes}" th:onclick="'location.href=\'' + @{${quiz.url}} + '\''">
                 <div class="grid-item-content">
                     <img th:src="@{${quiz.imageUrl != null ? quiz.imageUrl : '/images/none.png'}}"
-                         th:alt="${quiz.altText != null ? quiz.altText : 'Default Alt Text'}">
+                         th:alt="${quiz.altText != null ? quiz.altText : 'Default Alt Text'}" style="filter: blur(5px);">
                     <h2 th:text="${quiz.title}">Quiz Title</h2>
                     <p th:text="${quiz.description}">Quiz Description</p>
                     <span class="play-button">Play</span>

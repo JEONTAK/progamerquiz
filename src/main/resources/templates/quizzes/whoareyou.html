@@ -37,6 +37,17 @@
     </div>
 </div>
 <div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Welcome to the Quiz!</h2>
+        <p>This is a Progamer guessing game.
+            <br>You have 8 attempts to guess the correct player.
+            <br>If you type in your guessed pro gamer, you'll get 6 hints.
+            <br>Use those hints to answer correctly!</p>
+        <button onclick="closeGuide()" class="main-button">Got it!</button>
+    </div>
+</div>
 <script th:src="@{/js/whoareyou.js}"></script>
 </body>
 <script th:inline="javascript">
