@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.List;
 
 //Quiz : I Got you!
 @Getter
@@ -14,5 +15,11 @@ import lombok.Setter;
 public class Quiz2Dto {
 
     private Long index;
+    private Long id;
+    private String pid;
+    private String name;
+    private List<Long> teamYears;
+    private List<String> teamNames;
+    private List<Long> teamImages;
 
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/header :: header}">
-    <title>Who Are Ya? - Premier League Quiz</title>
+    <title>I got you! - Premier League Quiz</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
@@ -31,19 +31,27 @@
             </form>
         </div>
     </div>
-
     <div class="ad-container adRight">
         <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+    <!-- 가이드 오버레이 -->
+    <div id="guide-overlay" class="guide-overlay" style="display: none;">
+        <div class="guide-content">
+            <h2>Welcome to the Quiz!</h2>
+            <p>This is a Progamer guessing game.
+                <br>You can choose the number of quizzes!
+                <br>When we list the player's team, you just have to get the answer right!
+                <br>Use those hints to answer correctly!
+                <br>Please choose the number of quizzes!
+            </p>
+            <button onclick="closeGuide(10)" class="main-button">10</button>
+            <button onclick="closeGuide(20)" class="main-button">20</button>
+            <button onclick="closeGuide(30)" class="main-button">30</button>
+
+        </div>
     </div>
 </div>
 <div th:replace="~{fragments/footer :: footer}"></div>
 <script th:src="@{/js/igotyou.js}"></script>
 </body>
-<script th:inline="javascript">
-    let tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
-    const answer = /*[[${answer}]]*/ [];
-    const guessedList = /*[[${guessedList}]]*/ [];
-    console.log("Try Status from server: ", tryStatus);
-    console.log("Guessed List from server: ", guessedList);
-</script>
 </html>

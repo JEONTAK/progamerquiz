@@ -28,9 +28,6 @@ public class Quiz1Service {
     @Autowired
     private ProgamerRepository progamerRepository;
 
-    @Autowired
-    private EntityManager em;
-
     public Quiz1Dto getRandomProgamer() {
         List<Progamer> progamerList = progamerRepository.findAll();
         Random random = new Random();

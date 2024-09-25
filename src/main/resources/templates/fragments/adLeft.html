@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- 구글 애드센스 광고 스크립트를 로드 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "pub-8703419167538158",  <!-- 구글 애드센스 광고 클라이언트 ID -->
+            enable_page_level_ads: true
+        });
+    </script>
+</head>
+<body>
 <div class="adLeft" th:fragment="adLeft">
-    <div class="ad-content">Ad Space 1</div>
+    <div class="ad-content">
+    <!-- 구글 애드센스 광고 공간 -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="pub-8703419167538158"
+    data-ad-slot="6805015632"
+    data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </div>
 </div>
+</body>
 </html>
