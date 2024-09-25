@@ -9,18 +9,18 @@
     },
     {
         "id": "2",
-        "url": "progamerbingo",
-        "imageUrl": "progamerbingo.png",
-        "title": "Bingo!",
-        "altText": "Make Bingo",
+        "url": "igotyou",
+        "imageUrl": "igotyou.png",
+        "title": "I Got You!",
+        "altText": "Find Progamer Using Team",
         "description": ""
     },
     {
         "id": "3",
-        "url": "tictactoe",
-        "imageUrl": "tictactoe.png",
-        "title": "Tic Tac Toe",
-        "altText": "Play Tic Tac Toe",
+        "url": "whatisteam",
+        "imageUrl": "whatisteam.png",
+        "title": "What is Team?",
+        "altText": "Find Team Using Hint",
         "description": ""
     },
     {
@@ -33,18 +33,18 @@
     },
     {
         "id": "5",
-        "url": "whatisteam",
-        "imageUrl": "whatisteam.png",
-        "title": "What is Team?",
-        "altText": "Find Team Using Hint",
+        "url": "tictactoe",
+        "imageUrl": "tictactoe.png",
+        "title": "Tic Tac Toe",
+        "altText": "Play Tic Tac Toe",
         "description": ""
     },
     {
         "id": "6",
-        "url": "igotyou",
-        "imageUrl": "igotyou.png",
-        "title": "I Got You!",
-        "altText": "Find Progamer Using Team",
+        "url": "progamerbingo",
+        "imageUrl": "progamerbingo.png",
+        "title": "Bingo!",
+        "altText": "Make Bingo",
         "description": ""
     }
 ]
