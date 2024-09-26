@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import pq.progamerquiz.progamer.Progamer;
 import pq.progamerquiz.quiz.q1_whoareyou.Quiz1Dto;
+import pq.progamerquiz.quiz.q1_whoareyou.Quiz1Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,16 +41,14 @@ public class Quiz2Controller {
     }
 
     @GetMapping
-    public String setQuiz(Model model) {
-        log.info("Start Quiz2 I got You!");
+    public String startQuiz(Model model) {
         initialize();
-        model.addAttribute("totalCount", totalCount);
-        return "quizzes/igotyou";
+        return "redirect:/igotyou/start";
     }
 
-    @GetMapping("/{totalCount}")
-    public String runningQuiz(Model model) {
-        log.info("Set Progamers...");
+    @GetMapping("/start")
+    public String goQuiz(Model model) {
+        log.info("Start Quiz2 I got You!");
         for (Quiz2Dto quiz2Dto : quizList) {
             log.info(quiz2Dto.getIndex() + " : " + quiz2Dto.getPid());
             for (int i = 0; i < quiz2Dto.getTeamNames().size(); i++) {
@@ -60,14 +61,38 @@ public class Quiz2Controller {
         return "quizzes/igotyou";
     }
 
-    @PostMapping
-    public String startQuiz(@RequestParam("totalCount") int count, Model model){
+
+    @GetMapping("/{totalCount}")
+    public String settingQuiz(RedirectAttributes redirectAttributes) {
+        log.info("Start Quiz2 I got You!");
+
+        for (Quiz2Dto quiz2Dto : quizList) {
+            log.info(quiz2Dto.getIndex() + " : " + quiz2Dto.getPid());
+            for (int i = 0; i < quiz2Dto.getTeamNames().size(); i++) {
+                log.info("    Team : " + quiz2Dto.getTeamNames().get(i) + " (" + quiz2Dto.getTeamYears().get(i) +")");
+            }
+        }
+
+        redirectAttributes.addFlashAttribute("quizList", quizList);
+        redirectAttributes.addFlashAttribute("correctCount", correctCount);
+        redirectAttributes.addFlashAttribute("totalCount", totalCount);
+
+        return "redirect:/igotyou/start";
+    }
+
+    @PostMapping("/{totalCount}")
+    public String setQuiz(@RequestParam("totalCount") int count, RedirectAttributes redirectAttributes) {
         log.info("Request size : " + count);
+        log.info("Set Progamers...");
+        initialize();
         totalCount = count;
         quizList = quiz2Service.getProgamers(totalCount);
-        model.addAttribute("quizList", quizList);
-        model.addAttribute("correctCount", correctCount);
-        model.addAttribute("totalCount", totalCount);
+
+        // 세션에 데이터를 저장
+        redirectAttributes.addFlashAttribute("quizList", quizList);
+        redirectAttributes.addFlashAttribute("totalCount", totalCount);
+        redirectAttributes.addFlashAttribute("correctCount", correctCount);
+
         return "redirect:/igotyou/" + totalCount;
     }
 

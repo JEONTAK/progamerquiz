@@ -1,3 +1,4 @@
+
 // 가이드 오버레이 보이기
 function showGuide() {
     const guideOverlay = document.getElementById('guide-overlay');
@@ -8,13 +9,18 @@ function showGuide() {
 function closeGuide() {
     const guideOverlay = document.getElementById('guide-overlay');
     guideOverlay.style.display = 'none';
+    // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
+    localStorage.setItem('guideShown', 'true');
 }
 
-// 페이지가 로드될 때 가이드 보여주기
-window.onload = function() {
-    showGuide();
-};
 
+// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
+window.onload = function() {
+    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
+    if (!localStorage.getItem('guideShown')) {
+        showGuide();
+    }
+};
 // 메뉴 토글 기능
 function toggleMenu() {
     document.body.classList.toggle('menu-open');
@@ -57,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const hintContainer = document.getElementById("hintContainer");
@@ -408,6 +416,8 @@ function removeBlur(imageElement) {
 }
 
 function goToMainPage() {
+    // localStorage에서 guideShown 값을 삭제 (초기화)
+    localStorage.removeItem('guideShown');
     window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
 }
 

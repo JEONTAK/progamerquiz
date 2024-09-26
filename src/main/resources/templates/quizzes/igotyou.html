@@ -21,13 +21,12 @@
             Failed!
         </div>
         <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page</button>
-        <div class="quiz-item" data-answer="${answer.id}">
+        <div class="quiz-item" data-answer="${answer.id}" style="background-color: #c0c3cf">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">
-                <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
-                <input id="player-input" name="input" type="text" placeholder="0 of 8">
-                <div id="suggestions"></div>
                 <div id = "hintContainer" class="hints-container"></div>
+                <input id="player-input" name="input" type="text">
+                <div id="suggestions"></div>
             </form>
         </div>
     </div>
@@ -54,4 +53,9 @@
 <div th:replace="~{fragments/footer :: footer}"></div>
 <script th:src="@{/js/igotyou.js}"></script>
 </body>
+<script th:inline="javascript">
+    // quizList를 JSON 형식으로 변환하여 JavaScript 변수에 할당
+    let quizList = /*[[${quizList}]]*/ [];
+    console.log('QuizList from Server:', quizList);  // 전달된 데이터를 콘솔에 출력
+</script>
 </html>

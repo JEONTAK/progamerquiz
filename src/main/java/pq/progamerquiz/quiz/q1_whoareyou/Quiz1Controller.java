@@ -101,42 +101,4 @@ public class Quiz1Controller {
 
         return "redirect:/whoareyou/" + answer.getId();
     }
-
-
-
- /*   @PostMapping("/{playerId}")
-    public String getAnswer(@RequestParam @PathVariable String progamerId, Model model) {
-        log.info("User give the answer" + )
-    }*/
-
-    /*
-
-    @GetMapping("/quiz1")
-    public String startQuiz(Model model) {
-        correctGamer = quiz1Service.getRandomProGamer();
-        attempts = 0;
-        model.addAttribute("attempts", attempts);
-        model.addAttribute("maxAttempts", MAX_ATTEMPTS);
-        return "quiz1";
-    }
-
-    @PostMapping("/quiz1")
-    public String guessProGamer(@RequestParam String idOrName, Model model) {
-        attempts++;
-        Progamer guessedGamer = quiz1Service.getProGamer(idOrName);
-        guessedGamer.setImage();
-        guessedList.add(guessedGamer);
-        model.addAttribute("guessedList", guessedList);
-        model.addAttribute("correctGamer", correctGamer);
-        model.addAttribute("attempts", attempts);
-        model.addAttribute("maxAttempts", MAX_ATTEMPTS);
-
-        if (guessedGamer != null && guessedGamer.equals(correctGamer)) {
-            model.addAttribute("correct", true);
-        } else if (attempts >= MAX_ATTEMPTS) {
-            model.addAttribute("gameOver", true);
-        }
-
-        return "quiz1";
-    }*/
 }

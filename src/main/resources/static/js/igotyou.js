@@ -10,7 +10,7 @@ function closeGuide(totalCount) {
     guideOverlay.style.display = 'none';
 
     // 서버로 totalCount: 10 값을 전송
-    fetch('/igotyou', {  // 서버의 실제 엔드포인트로 변경해야 함
+    fetch('/igotyou/'+ totalCount, {  // 서버의 실제 엔드포인트로 변경해야 함
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -24,12 +24,29 @@ function closeGuide(totalCount) {
         .catch(error => {
             console.error('Error sending data:', error);  // 에러 처리
         });
+    // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
+    localStorage.setItem('guideShown', 'true');
 }
 
-// 페이지가 로드될 때 가이드 보여주기
+// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
 window.onload = function() {
-    showGuide();
+    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
+    if (!localStorage.getItem('guideShown')) {
+        showGuide();
+    }
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    // quizList가 빈 배열일 경우 1초 후 새로고침
+    if (quizList.length === 0) {
+        setTimeout(function() {
+            location.reload();  // 페이지 새로고침
+        }, 1000);  // 1초 후 새로고침
+    } else {
+        console.log("QuizList Loaded:", quizList);
+        showHintsForPlayer(currentIndex);  // quizList가 있으면 실행
+    }
+});
 
 // 메뉴 토글 기능
 function toggleMenu() {
@@ -64,14 +81,108 @@ document.addEventListener("DOMContentLoaded", function() {
         }).catch(error => console.error('Error fetching JSON:', error));
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const input = document.getElementById('player-input');
+// 현재 진행 중인 퀴즈 인덱스
+let currentIndex = 0;
 
-    input.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // 기본 Enter 동작을 막고
-            document.getElementById('playerForm').submit(); // form 제출
+// quizList를 받아서 힌트(팀 정보)를 보여주는 함수
+function showHintsForPlayer(index) {
+    const hintContainer = document.getElementById('hintContainer');
+    hintContainer.innerHTML = ''; // 이전 힌트들을 초기화
+
+    const currentPlayer = quizList[index];
+
+    if (currentPlayer) {
+        // 새로운 행을 담을 변수 선언
+        let rowDiv = document.createElement('div');
+        rowDiv.classList.add('hint-row');  // 행을 만들기 위해 클래스를 추가
+        let itemsInRow = 0;  // 현재 행에 추가된 항목 수
+
+        currentPlayer.teamNames.forEach((teamName, i) => {
+            // 팀 항목을 감쌀 div 생성
+            const cover = document.createElement('div');
+            cover.classList.add('cover');  // 스타일 적용을 위한 클래스
+
+            // 팀 이미지 추가
+            const teamImage = document.createElement('img');
+            teamImage.src = `/images/team/${currentPlayer.teamImages[i]}.webp`;  // 이미지 경로
+            teamImage.alt = teamName;
+            removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
+            cover.appendChild(teamImage);
+
+            // 팀 이름 추가
+            const teamNameDiv = document.createElement('div');
+            teamNameDiv.classList.add('team-name');
+            teamNameDiv.textContent = `${teamName} (${currentPlayer.teamYears[i]})`;
+            cover.appendChild(teamNameDiv);
+
+            // 현재 행에 항목 추가
+            rowDiv.appendChild(cover);
+            itemsInRow++;
+
+            // 3개 항목이 채워지면 새로운 행 생성
+            if (itemsInRow === 3) {
+                hintContainer.appendChild(rowDiv);  // 완성된 행을 hintContainer에 추가
+                rowDiv = document.createElement('div');  // 새로운 행 생성
+                rowDiv.classList.add('hint-row');
+                itemsInRow = 0;  // 행의 항목 수 초기화
+            }
+        });
+
+        // 마지막 남은 항목이 있으면 추가 (3개 이하로 남은 경우 처리)
+        if (itemsInRow > 0) {
+            hintContainer.appendChild(rowDiv);
         }
-    });
+
+    } else {
+        console.log('No player data available for this index.');
+    }
+}
+
+// 정답 제출 함수
+function checkAnswer() {
+    const input = document.getElementById('player-input').value.trim().toLowerCase();
+    const currentPlayer = quizList[currentIndex];
+    const answerPid = currentPlayer.pid.toLowerCase();
+
+    if (input === answerPid) {
+        alert('Correct!');
+    } else {
+        alert('Wrong! 정답은 ' + currentPlayer.pid + '입니다.');
+    }
+
+    // 다음 퀴즈로 넘어가기
+    currentIndex++;
+    if (currentIndex < quizList.length) {
+        showHintsForPlayer(currentIndex);  // 다음 선수의 힌트를 보여줌
+        document.getElementById('player-input').value = ''; // 입력값 초기화
+    } else {
+        alert('모든 퀴즈를 완료했습니다!');
+        // 완료 후 동작 추가 가능 (메인 페이지 이동 등)
+        document.getElementById('go-to-main').style.display = 'block';  // 완료 후 버튼 활성화
+    }
+}
+
+// 처음 시작할 때 첫 번째 선수의 힌트를 보여줌
+document.addEventListener('DOMContentLoaded', function () {
+    showHintsForPlayer(currentIndex);
 });
 
+// 엔터키로 정답 제출 처리
+document.getElementById('player-input').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        checkAnswer();
+    }
+});
+
+function goToMainPage() {
+    // localStorage에서 guideShown 값을 삭제 (초기화)
+    localStorage.removeItem('guideShown');
+    window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
+}
+
+function removeBlur(imageElement) {
+    imageElement.classList.add('no-blur');
+    imageElement.style.maxWidth = "120px";
+    imageElement.style.maxLength = "auto";
+}
