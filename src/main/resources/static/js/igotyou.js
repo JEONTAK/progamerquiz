@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // 현재 진행 중인 퀴즈 인덱스
 let currentIndex = 0;
 
+
 // quizList를 받아서 힌트(팀 정보)를 보여주는 함수
 function showHintsForPlayer(index) {
     const hintContainer = document.getElementById('hintContainer');
@@ -137,29 +138,64 @@ function showHintsForPlayer(index) {
         console.log('No player data available for this index.');
     }
 }
+let correctCount = 0;  // 맞춘 개수
+
+// 페이지 로드 시 전체 문제 수를 표시
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('total-count').textContent = totalCount;
+    updateQuestionNumber();
+});
+
+function updateQuestionNumber() {
+    const questionNumberElement = document.getElementById('question-number');
+    questionNumberElement.textContent = currentIndex + 1;  // 문제 번호는 인덱스에 1을 더한 값
+}
 
 // 정답 제출 함수
 function checkAnswer() {
     const input = document.getElementById('player-input').value.trim().toLowerCase();
     const currentPlayer = quizList[currentIndex];
     const answerPid = currentPlayer.pid.toLowerCase();
+    const quizItem = document.querySelector('.quiz-item');
+    const answerPidElement = document.getElementById('answer-pid');  // pid를 표시할 요소 선택
+
 
     if (input === answerPid) {
-        alert('Correct!');
+        quizItem.style.transition = 'background-color 1s ease';
+        quizItem.style.backgroundColor = "green";
+        correctCount++;  // 맞춘 개수 증가
     } else {
-        alert('Wrong! 정답은 ' + currentPlayer.pid + '입니다.');
+        quizItem.style.transition = 'background-color 1s ease';
+        quizItem.style.backgroundColor = "red";
     }
+    // PID를 보여주기 위해 answerPidElement에 값을 넣음
+    answerPidElement.textContent = currentPlayer.pid;  // 선수의 PID 표시
+    answerPidElement.style.display = 'block';  // PID를 표시
+    // 맞춘 개수 / 전체 개수를 업데이트
+    document.getElementById('correct-count').textContent = correctCount;
 
-    // 다음 퀴즈로 넘어가기
-    currentIndex++;
-    if (currentIndex < quizList.length) {
-        showHintsForPlayer(currentIndex);  // 다음 선수의 힌트를 보여줌
-        document.getElementById('player-input').value = ''; // 입력값 초기화
-    } else {
-        alert('모든 퀴즈를 완료했습니다!');
-        // 완료 후 동작 추가 가능 (메인 페이지 이동 등)
-        document.getElementById('go-to-main').style.display = 'block';  // 완료 후 버튼 활성화
-    }
+    // 2초 후에 다음 퀴즈로 넘어가도록 설정
+    setTimeout(function() {
+        //선수 pid 초기화
+        answerPidElement.textContent ='';
+        answerPidElement.style.display = 'none';
+        quizItem.style.transition = 'background-color 1s ease';
+        quizItem.style.backgroundColor = "#c0c3cf";
+        // 다음 퀴즈로 넘어가기
+        currentIndex++;
+        if (currentIndex < quizList.length) {
+            showHintsForPlayer(currentIndex);  // 다음 선수의 힌트를 보여줌
+            document.getElementById('player-input').value = '';  // 입력값 초기화
+            quizItem.classList.remove('correct', 'incorrect');  // 다음 문제로 넘어갈 때 클래스 초기화
+            answerPidElement.style.display = 'none';  // 다음 문제에서는 PID 숨김
+            updateQuestionNumber();  // 문제 번호 업데이트
+        } else {
+            // 퀴즈가 완료되었을 때 오버레이를 띄움
+            document.getElementById('correct-count-overlay').textContent = correctCount;
+            document.getElementById('total-count-overlay').textContent = totalCount;
+            document.getElementById('quiz-overlay').style.display = 'flex';  // 오버레이 보이기
+        }
+    }, 2000);  // 2000ms = 2초
 }
 
 // 처음 시작할 때 첫 번째 선수의 힌트를 보여줌

@@ -31,12 +31,10 @@ public class Quiz2Controller {
     private Quiz2Service quiz2Service;
 
     private int totalCount;
-    private int correctCount;
     private List<Quiz2Dto> quizList = new ArrayList<>();
 
     private void initialize() {
         totalCount = 0;
-        correctCount = 0;
         quizList.clear();
     }
 
@@ -49,14 +47,7 @@ public class Quiz2Controller {
     @GetMapping("/start")
     public String goQuiz(Model model) {
         log.info("Start Quiz2 I got You!");
-        for (Quiz2Dto quiz2Dto : quizList) {
-            log.info(quiz2Dto.getIndex() + " : " + quiz2Dto.getPid());
-            for (int i = 0; i < quiz2Dto.getTeamNames().size(); i++) {
-                log.info("    Team : " + quiz2Dto.getTeamNames().get(i) + " (" + quiz2Dto.getTeamYears().get(i) +")");
-            }
-        }
         model.addAttribute("quizList", quizList);
-        model.addAttribute("correctCount", correctCount);
         model.addAttribute("totalCount", totalCount);
         return "quizzes/igotyou";
     }
@@ -65,16 +56,13 @@ public class Quiz2Controller {
     @GetMapping("/{totalCount}")
     public String settingQuiz(RedirectAttributes redirectAttributes) {
         log.info("Start Quiz2 I got You!");
-
         for (Quiz2Dto quiz2Dto : quizList) {
             log.info(quiz2Dto.getIndex() + " : " + quiz2Dto.getPid());
             for (int i = 0; i < quiz2Dto.getTeamNames().size(); i++) {
                 log.info("    Team : " + quiz2Dto.getTeamNames().get(i) + " (" + quiz2Dto.getTeamYears().get(i) +")");
             }
         }
-
         redirectAttributes.addFlashAttribute("quizList", quizList);
-        redirectAttributes.addFlashAttribute("correctCount", correctCount);
         redirectAttributes.addFlashAttribute("totalCount", totalCount);
 
         return "redirect:/igotyou/start";
@@ -91,7 +79,6 @@ public class Quiz2Controller {
         // 세션에 데이터를 저장
         redirectAttributes.addFlashAttribute("quizList", quizList);
         redirectAttributes.addFlashAttribute("totalCount", totalCount);
-        redirectAttributes.addFlashAttribute("correctCount", correctCount);
 
         return "redirect:/igotyou/" + totalCount;
     }
