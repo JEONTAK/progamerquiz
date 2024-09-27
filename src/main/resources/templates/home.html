@@ -35,6 +35,16 @@
         <div th:replace="~{fragments/adRight :: adRight}"></div>
     </div>
 </div>
+
+<!-- 오버레이 HTML 구조 -->
+<div id="coming-soon-overlay" class="coming-soon-overlay" style="display: none;">
+    <div class="overlay-content">
+        <h2>Coming Soon</h2>
+        <p>We are working on this quiz. Please check back later!</p>
+        <button onclick="closeOverlay()" class="main-button">Close</button>
+    </div>
+</div>
+
 <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 <script th:src="@{/js/home.js}"></script>

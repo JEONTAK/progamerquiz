@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: header}">
+    <title>Coming Soon</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<!--메뉴 -->
+<button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
+<div th:replace="~{fragments/menu :: menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
+
+    <!-- Coming Soon 오버레이 -->
+    <div class="coming-soon-overlay">
+        <div class="overlay-content">
+            <h2>Coming Soon</h2>
+            <p>We are working on this quiz. Please check back later!</p>
+            <button onclick="goToMainPage()" class="main-button">Go to Main Page</button>
+        </div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+<script>
+    function goToMainPage() {
+        window.location.href = '/';  // 메인 페이지로 이동
+    }
+</script>
+</html>
