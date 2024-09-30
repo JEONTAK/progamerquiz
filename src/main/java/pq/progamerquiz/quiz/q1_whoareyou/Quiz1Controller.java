@@ -24,6 +24,7 @@ public class Quiz1Controller {
     private Quiz1Service quiz1Service;
     private Quiz1Dto answer;
     private String imagePath;
+    private String isSubmitted;
     private int attempts = 0;
     private static final int MAX_ATTEMPTS = 8;
     private List<Quiz1Dto> guessedList = new ArrayList<>();
@@ -40,6 +41,7 @@ public class Quiz1Controller {
     }
 
     private void initialize() {
+        isSubmitted = "true";
         attempts = 0;
         guessedList.clear();
     }
@@ -51,16 +53,17 @@ public class Quiz1Controller {
         model.addAttribute("answer", answer);
         model.addAttribute("imagePath", imagePath);
 
-        // 세션에서 정답 여부와 관련된 정보 가져오기
         Integer tryStatus = (Integer) session.getAttribute("try");
         List<Quiz1Dto> guessedList = (List<Quiz1Dto>) session.getAttribute("guessedList");
         Integer attempts = (Integer) session.getAttribute("attempts");
+        model.addAttribute("isSubmitted", isSubmitted);
         model.addAttribute("try", tryStatus);
         model.addAttribute("guessedList", guessedList);
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
 
         log.info("Progamer: " + answer);  // progamer가 null인지 확인
+        log.info("isSubmitted: " + isSubmitted);
         log.info("Image Path: " + imagePath);
         log.info("Try status: " + tryStatus);
         log.info("Guessed List: " + guessedList);
@@ -79,11 +82,14 @@ public class Quiz1Controller {
         Progamer submitProgamer = quiz1Service.findByPid(submit);
         if (submitProgamer == null) {
             log.error("Submitted progamer is null");
+            session.setAttribute("guessedList", guessedList);
+            session.setAttribute("attempts", attempts);
+            isSubmitted = "false";
             return "redirect:/whoareyou/" + answer.getId();
         }
         Quiz1Dto curProgamer = Quiz1Service.convert(submitProgamer);
         log.info(curProgamer.getId() + " " + curProgamer.getPid());
-
+        isSubmitted = "true";
         if (curProgamer.getId().equals(answer.getId())) {
             session.setAttribute("try", 1);
             guessedList.add(curProgamer);

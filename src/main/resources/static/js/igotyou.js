@@ -143,12 +143,13 @@ let correctCount = 0;  // 맞춘 개수
 // 페이지 로드 시 전체 문제 수를 표시
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('total-count').textContent = totalCount;
-    updateQuestionNumber();
+    updateQuestionNumber(0);
 });
 
-function updateQuestionNumber() {
+function updateQuestionNumber(index) {
     const questionNumberElement = document.getElementById('question-number');
-    questionNumberElement.textContent = currentIndex + 1;  // 문제 번호는 인덱스에 1을 더한 값
+    const currentPlayer = quizList[index];
+    questionNumberElement.textContent = currentIndex + 1 + `(${currentPlayer.position})`;  // 문제 번호는 인덱스에 1을 더한 값
 }
 
 // 정답 제출 함수
@@ -188,7 +189,7 @@ function checkAnswer() {
             document.getElementById('player-input').value = '';  // 입력값 초기화
             quizItem.classList.remove('correct', 'incorrect');  // 다음 문제로 넘어갈 때 클래스 초기화
             answerPidElement.style.display = 'none';  // 다음 문제에서는 PID 숨김
-            updateQuestionNumber();  // 문제 번호 업데이트
+            updateQuestionNumber(currentIndex);  // 문제 번호 업데이트
         } else {
             // 퀴즈가 완료되었을 때 오버레이를 띄움
             document.getElementById('correct-count-overlay').textContent = correctCount;

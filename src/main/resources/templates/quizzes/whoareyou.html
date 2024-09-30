@@ -25,6 +25,9 @@
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">
                 <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
+                <div id="error-message" class="error-message" style="display: none;">
+                    없는 선수 입니다.
+                </div>
                 <input id="player-input" name="input" type="text" placeholder="0 of 8">
                 <div id="suggestions"></div>
                 <div id = "hintContainer" class="hints-container"></div>
@@ -52,6 +55,7 @@
 </body>
 <script th:inline="javascript">
     let tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
+    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
     const answer = /*[[${answer}]]*/ [];
     const guessedList = /*[[${guessedList}]]*/ [];
     console.log("Try Status from server: ", tryStatus);

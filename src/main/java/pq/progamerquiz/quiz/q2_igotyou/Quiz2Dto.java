@@ -18,6 +18,7 @@ public class Quiz2Dto {
     private Long id;
     private String pid;
     private String name;
+    private String position;
     private List<Long> teamYears;
     private List<String> teamNames;
     private List<Long> teamImages;

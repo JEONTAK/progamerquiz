@@ -58,10 +58,12 @@ public class Quiz2Service {
                 submitProgamer.getId(),
                 submitProgamer.getPid(),
                 submitProgamer.getName(),
+                submitProgamer.getPosition().toString(),
                 teamYears,
                 teamNames,
                 teamImages
         );
+
         return result;
     }
 

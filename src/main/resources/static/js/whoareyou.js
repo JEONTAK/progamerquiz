@@ -27,6 +27,7 @@ function toggleMenu() {
     document.querySelector('.content-container').classList.toggle('menu-open');
 }
 
+//사용자가 Progamer 입력시 힌트 제공
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
     fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }).catch(error => console.error('Error fetching JSON:', error));
 });
 
+//Progamer 입력 제출
 document.addEventListener('DOMContentLoaded', function () {
     const input = document.getElementById('player-input');
 
@@ -64,9 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
+    const errorMessage = document.getElementById('error-message');
+    console.log(isSubmitted);
+    if (isSubmitted === "true") {
+        errorMessage.style.display = 'none';
+        errorMessage.style.opacity = '0';
+        errorMessage.style.visibility = 'true';
+    } else {
+        errorMessage.style.display = 'block';
+        errorMessage.style.opacity = '1';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+            errorMessage.style.opacity = '0';
+        }, 2000);  // 1000ms = 1초
+    }
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
     const playerImage = document.getElementById("player-image");
@@ -99,11 +113,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-    const containerWidth = hintContainer.offsetWidth;
-    const minFontSize = 5;  // 최소 폰트 크기
-    const maxFontSize = 20;  // 최대 폰트 크기
-    const dynamicFontSize = Math.max(minFontSize, Math.min(containerWidth * 0.03, maxFontSize));
-
     const hintName = ['League', 'Team', 'Position', 'Birth', 'League Wins', 'Intl Wins'];
     // 힌트 행 생성
     const hintRow = document.createElement("div");
@@ -301,7 +310,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 창 크기가 변경될 때마다 hint-item 크기 다시 설정
     window.addEventListener('resize', setHintItemSizes);
-
 
     function showAnswer(){
         // 힌트 행 생성
