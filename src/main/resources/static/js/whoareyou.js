@@ -71,14 +71,11 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log(isSubmitted);
     if (isSubmitted === "true") {
         errorMessage.style.display = 'none';
-        errorMessage.style.opacity = '0';
-        errorMessage.style.visibility = 'true';
     } else {
         errorMessage.style.display = 'block';
-        errorMessage.style.opacity = '1';
         setTimeout(() => {
             errorMessage.style.display = 'none';
-            errorMessage.style.opacity = '0';
+
         }, 2000);  // 1000ms = 1초
     }
     const hintContainer = document.getElementById("hintContainer");

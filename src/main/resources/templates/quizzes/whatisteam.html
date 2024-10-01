@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>What is Team? - Premier League Quiz</title>
 </head>
 <body>
+<!--메뉴 -->
+<button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
+<div th:replace="~{fragments/menu ::menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
 
+    <div class="content">
+        <div id="failed-message" class="failed-message" style="display: none;">
+            Failed!
+        </div>
+        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page</button>
+        <div class="quiz-item" data-answer="${answer.id}">
+            <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
+            <form id="playerForm" method="post">
+                <div id="error-message" class="error-message" style="display: none;">
+                    없는 팀 입니다.
+                </div>
+                <input id="player-input" name="input" type="text">
+                <div id="suggestions"></div>
+                <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
+                <div id = "hintContainer" class="hints-container"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Welcome to the Quiz!</h2>
+        <p>This is a Team guessing game.
+            <br>A total of 15 teams will be given, and each team will be given several hints.
+            <br>Guess the team that corresponds to the hint and as many teams as possible!</p>
+        <button onclick="closeGuide()" class="main-button">Got it!</button>
+    </div>
+</div>
+<script th:src="@{/js/whatisTeam.js}"></script>
 </body>
+<script th:inline="javascript">
+    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
+    const isCorrect = /*[[${isCorrect}]]*/ "true";
+    const currentIdx = /*[[${currentIdx}]]*/ 0;
+    const quizList = /*[[${quizList}]]*/ [];
+    console.log("isSubmitted : ", isSubmitted);
+    console.log("isCorrect : ", isCorrect);
+    console.log("quizList: ", quizList);
+</script>
 </html>

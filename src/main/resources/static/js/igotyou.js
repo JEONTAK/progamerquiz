@@ -54,14 +54,13 @@ function toggleMenu() {
     document.querySelector('.content-container').classList.toggle('menu-open');
 }
 
-
+let progamerList;
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
     fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
-            console.log('JSON data:', data);
-            const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
+            progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
             const input = document.getElementById('player-input');
             const suggestions = document.getElementById('suggestions');
 
@@ -154,12 +153,25 @@ function updateQuestionNumber(index) {
 
 // 정답 제출 함수
 function checkAnswer() {
+    const errorMessage = document.getElementById('error-message');
     const input = document.getElementById('player-input').value.trim().toLowerCase();
     const currentPlayer = quizList[currentIndex];
     const answerPid = currentPlayer.pid.toLowerCase();
     const quizItem = document.querySelector('.quiz-item');
     const answerPidElement = document.getElementById('answer-pid');  // pid를 표시할 요소 선택
 
+    const filtered = progamerList.filter(progamer => progamer.pid.toLowerCase().includes(input));
+    console.log(filtered);
+    if (filtered.length === 0) {
+        errorMessage.style.display = 'block';
+        setTimeout(() => {
+            errorMessage.style.display = 'none';
+
+        }, 2000);  // 1000ms = 1초
+        return;
+    } else {
+        errorMessage.style.display = 'none';
+    }
 
     if (input === answerPid) {
         quizItem.style.transition = 'background-color 1s ease';

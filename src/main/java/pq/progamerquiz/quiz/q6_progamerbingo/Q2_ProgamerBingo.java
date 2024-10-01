@@ -1,7 +1,5 @@
-package pq.progamerquiz.quiz.q2_progamerbingo;
+package pq.progamerquiz.quiz.q6_progamerbingo;
 
-import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import pq.progamerquiz.quiz.Quiz;

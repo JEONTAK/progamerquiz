@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: header}">
-    <title>Who Are Ya? - Premier League Quiz</title>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>Who Are Ya? - Premier League Quiz</title>
 </head>
 <body>
 <!--메뉴 -->
@@ -46,7 +47,7 @@
         <h2>Welcome to the Quiz!</h2>
         <p>This is a Progamer guessing game.
             <br>You have 8 attempts to guess the correct player.
-            <br>If you type in your guessed pro gamer, you'll get 6 hints.
+            <br>If you type in your guessed progamer, you'll get 6 hints.
             <br>Use those hints to answer correctly!</p>
         <button onclick="closeGuide()" class="main-button">Got it!</button>
     </div>

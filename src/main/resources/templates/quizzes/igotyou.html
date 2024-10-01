@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/header :: header}">
-    <title>I got you! - Premier League Quiz</title>
+<head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>I got you! - Premier League Quiz</title>
 </head>
 <body>
 <!--메뉴 -->
@@ -36,6 +37,9 @@
                 Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
             </div>
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
+            <div id="error-message" class="error-message" style="display: none;">
+                없는 선수 입니다.
+            </div>
             <form id="playerForm" method="post">
                 <input id="player-input" name="input" type="text">
                 <div id="suggestions"></div>
@@ -70,6 +74,7 @@
     // quizList를 JSON 형식으로 변환하여 JavaScript 변수에 할당
     let quizList = /*[[${quizList}]]*/ [];
     let totalCount = /*[[${totalCount}]]*/ 0;
+    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
     console.log('QuizList from Server:', quizList);  // 전달된 데이터를 콘솔에 출력
 </script>
 </html>
