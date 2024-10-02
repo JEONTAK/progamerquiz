@@ -23,11 +23,15 @@ public class TeamService {
        return teamRepository.findAll();
     }
 
-    public Team findByName(String name) {
+    public List<Team> findByName(String name) {
         return teamRepository.findByName(name);
     }
 
     public Long findIdByName(String teamName) {
         return teamRepository.findNameById(teamName);
+    }
+
+    public Long findIdByNameAndYear(String teamName, Long seasonYear) {
+        return teamRepository.findIdByNameAndYear(teamName, seasonYear);
     }
 }

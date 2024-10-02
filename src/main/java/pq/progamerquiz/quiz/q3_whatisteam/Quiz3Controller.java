@@ -1,20 +1,14 @@
 package pq.progamerquiz.quiz.q3_whatisteam;
 
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import pq.progamerquiz.progamer.Progamer;
-import pq.progamerquiz.quiz.q2_igotyou.Quiz2Dto;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 //Quiz : Who are you?
 @Controller
@@ -33,7 +27,7 @@ public class Quiz3Controller {
 
     private void initialize() {
         isSubmitted = "true";
-        isCorrect = "true";
+        isCorrect = "start";
         currentIdx = 0;
         quizList.clear();
         quizList = quiz3Service.getTeams(idx);
@@ -43,12 +37,13 @@ public class Quiz3Controller {
     public String startQuiz(Model model) {
         log.info("Start Quiz3 What is Team?");
         initialize();
-        return "redirect:/whatisteam/start";
+        return "redirect:/whatisteam/quiz";
     }
 
-    @GetMapping("/start")
+    @GetMapping("/quiz")
     public String goQuiz(Model model) {
-        log.info("Current : " + currentIdx + " Team Name : " + quizList.get(currentIdx).getTeamName());
+        log.info("Current : " + currentIdx + " |Team Id" + quizList.get(currentIdx).getTeamId());
+        log.info("Team Name : " + quizList.get(currentIdx).getTeamName() + " |Year" + quizList.get(currentIdx).getTeamYear());
         log.info("isSubmitted : " + isSubmitted + " isCorrect : " + isCorrect);
         model.addAttribute("quizList", quizList);
         model.addAttribute("index", idx);
@@ -58,23 +53,33 @@ public class Quiz3Controller {
         return "quizzes/whatisteam";
     }
 
-    @PostMapping("/{teamName}")
-    public String submitTeam(@RequestParam("teamName") String teamName, RedirectAttributes redirectAttributes) {
-        if (quiz3Service.isExist(teamName)) {
-            isSubmitted = "true";
-            if (Objects.equals(quiz3Service.getTeamId(teamName), quizList.get(currentIdx).getTeamId())) {
-                isCorrect = "true";
-            }else{
-                isCorrect = "false";
-            }
-            currentIdx++;
-        }else{
+    @PostMapping("/quiz")
+    public String submitTeam(@RequestParam("input") String team, RedirectAttributes redirectAttributes) {
+        String[] teamInfo =  team.split("/");
+        if (teamInfo.length != 2) {
             isCorrect = "false";
             isSubmitted = "false";
+        }else{
+            String teamName = teamInfo[0];
+            Long seasonYear = Long.parseLong(teamInfo[1]);
+            log.info("Team Name : " + teamName + " Season Year : " + seasonYear);
+            if (quiz3Service.isExist(teamName)) {
+                isSubmitted = "true";
+                if (quiz3Service.isAnswer(teamName, seasonYear, quizList.get(currentIdx))) {
+                    isCorrect = "true";
+                } else {
+                    isCorrect = "false";
+                }
+                currentIdx++;
+            } else {
+                isCorrect = "false";
+                isSubmitted = "false";
+            }
         }
         redirectAttributes.addFlashAttribute("currentIdx", currentIdx);
         redirectAttributes.addFlashAttribute("isCorrect", isCorrect);
         redirectAttributes.addFlashAttribute("isSubmitted", isSubmitted);
-        return "redirect:/whatisteam/start";
+        return "redirect:/whatisteam/quiz";
     }
+
 }

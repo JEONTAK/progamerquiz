@@ -71,4 +71,8 @@ public class Quiz3Service {
     public Long getTeamId(String teamName) {
         return teamService.findIdByName(teamName);
     }
+
+    public boolean isAnswer(String teamName, Long seasonYear, Quiz3Dto quiz3Dto) {
+        return Objects.equals(teamService.findIdByNameAndYear(teamName, seasonYear), quiz3Dto.getTeamId());
+    }
 }

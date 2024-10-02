@@ -14,7 +14,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Quiz3Dto {
-
     private Long index;
     private Long teamId;
     private String teamName;
