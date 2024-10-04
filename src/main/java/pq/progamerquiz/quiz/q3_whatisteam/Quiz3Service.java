@@ -50,7 +50,7 @@ public class Quiz3Service {
 
     public static Quiz3Dto convert(int idx, Team submitTeam) {
         return new Quiz3Dto(
-                (long) idx,
+                (long) idx - 1,
                 submitTeam.getId(),
                 submitTeam.getName(),
                 submitTeam.getLeague().toString(),

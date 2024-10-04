@@ -287,19 +287,19 @@ function showHint(currentTeam){
         {
             label: 'Spring',
             value: currentTeam.spring_ranking != null ? currentTeam.spring_ranking : 0,  // answer 값 추가
-            icon: `/images/number/number_${currentTeam.spring_ranking}.png`,
+            icon: `/images/number/number_${currentTeam.spring_ranking != null ? currentTeam.spring_ranking : 0}.png`,
             fallbackIcon: '/images/none.png'
         },
         {
             label: 'Summer',
-            value: currentTeam.winter_ranking != null ? currentTeam.winter_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${currentTeam.winter_ranking}.png`,
+            value: currentTeam.summer_ranking != null ? currentTeam.summer_ranking : 0, // answer 값 추가
+            icon: `/images/number/number_${ currentTeam.summer_ranking != null ? currentTeam.summer_ranking : 0}.png`,
             fallbackIcon: '/images/none.png'
         },
         {
             label: 'Winter',
-            value: currentTeam.summer_ranking != null ? currentTeam.summer_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${currentTeam.summer_ranking}.png`,
+            value: currentTeam.winter_ranking != null ? currentTeam.winter_ranking : 0, // answer 값 추가
+            icon: `/images/number/number_${currentTeam.winter_ranking != null ? currentTeam.winter_ranking : 0}.png`,
             fallbackIcon: '/images/none.png'
         },
         {
