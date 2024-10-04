@@ -3,9 +3,12 @@ package pq.progamerquiz.quiz.q3_whatisteam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.*;
 
 @Controller
@@ -14,4 +17,82 @@ import java.util.*;
 @RequestMapping("/whatisteam")
 public class Quiz3Controller {
 
+    @Autowired
+    private Quiz3Service quiz3Service;
+    private List<Quiz3Dto> quizList = new ArrayList<>();
+    private String isSubmitted;
+    private String isCorrect;
+    private final int totalIndex = 15;
+    private int currentIndex = 0;
+
+    private void initialize() {
+        isSubmitted = "true";
+        isCorrect = "start";
+        quizList.clear();
+        quizList = quiz3Service.getTeams(totalIndex);
+
+    }
+
+    @GetMapping
+    public String startQuiz(Model model) {
+        log.info("What is Team? Start");
+        initialize();
+        return "redirect:/whatisteam/quiz";
+    }
+
+    @GetMapping("/quiz")
+    public String gettingQuiz(@RequestParam(value = "currentIndex", required = false) Integer cIdx, Model model) {
+        if (cIdx == null) {
+            // currentIndex가 null일 경우 기본값 0으로 리디렉션
+            return "redirect:/whatisteam/quiz?currentIndex=0";
+        }
+        currentIndex = cIdx;
+        model.addAttribute("quizList", quizList);
+        model.addAttribute("isSubmitted", isSubmitted);
+        model.addAttribute("isCorrect", isCorrect);
+        model.addAttribute("totalIndex", totalIndex);
+        model.addAttribute("currentIndex", cIdx);
+        return "quizzes/whatisteam";
+    }
+
+    @GetMapping("/quiz/data")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> getQuiz(@RequestParam(value = "currentIndex", required = false) Integer currentIndex) {
+        Map<String, Object> result = new HashMap<>();
+        result.put("isSubmitted", isSubmitted);
+        result.put("isCorrect", isCorrect);
+        result.put("currentIndex", currentIndex);
+        result.put("currentTeam", quizList.get(currentIndex));
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @PostMapping("/submitAnswer")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, String> payload) {
+        String userInput = payload.get("input");
+        log.info("Submitting answer: " + userInput);
+        Map<String, Object> response = new HashMap<>();
+        if (!quiz3Service.isExist(userInput)) {
+            isSubmitted = "false";
+            isCorrect = "none";
+            response.put("isSubmitted", isSubmitted);
+            response.put("isCorrect", isCorrect);
+        }else{
+            if (quiz3Service.isAnswer(userInput, quizList.get(currentIndex))) {
+                isSubmitted = "true";
+                isCorrect = "true";
+                response.put("isSubmitted", isSubmitted);
+                response.put("isCorrect", isCorrect);
+            }else{
+                isSubmitted = "true";
+                isCorrect = "false";
+                response.put("isSubmitted", isSubmitted);
+                response.put("isCorrect", isCorrect);
+            }
+        }
+        log.info("isSubmitted: " + isSubmitted);
+        log.info("isCorrect: " + isCorrect);
+        log.info("currentIndex: " + currentIndex);
+        return ResponseEntity.ok(response);
+    }
 }

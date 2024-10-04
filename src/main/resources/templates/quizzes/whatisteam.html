@@ -55,8 +55,11 @@
 </body>
 <script th:inline="javascript">
     const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const currentIdx = /*[[${currentIdx}]]*/ 0;
+    const currentIndex = /*[[${currentIndex}]]*/ 0;
     const isCorrect = /*[[${isCorrect}]]*/ "start";
     const quizList = /*[[${quizList}]]*/ [];
+    console.log("isSubmitted : " + isSubmitted);
+    console.log("currentIndex : " + currentIndex);
+    console.log("isCorrect : " + isCorrect);
 </script>
 </html>

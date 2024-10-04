@@ -1,4 +1,3 @@
-
 // 가이드 오버레이 보이기
 function showGuide() {
     const guideOverlay = document.getElementById('guide-overlay');

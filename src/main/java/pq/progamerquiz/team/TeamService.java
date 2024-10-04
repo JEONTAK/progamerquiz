@@ -31,7 +31,4 @@ public class TeamService {
         return teamRepository.findNameById(teamName);
     }
 
-    public Long findIdByNameAndYear(String teamName, Long seasonYear) {
-        return teamRepository.findIdByNameAndYear(teamName, seasonYear);
-    }
 }

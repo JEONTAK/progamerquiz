@@ -65,14 +65,20 @@ public class Quiz3Service {
     }
 
     public boolean isExist(String teamName) {
-        return teamService.findByName(teamName) != null;
+        return !teamService.findByName(teamName).isEmpty();
     }
 
     public Long getTeamId(String teamName) {
         return teamService.findIdByName(teamName);
     }
 
-    public boolean isAnswer(String teamName, Long seasonYear, Quiz3Dto quiz3Dto) {
-        return Objects.equals(teamService.findIdByNameAndYear(teamName, seasonYear), quiz3Dto.getTeamId());
+    public boolean isAnswer(String teamName, Quiz3Dto quiz3Dto) {
+        List<Team> teamList =teamService.findByName(teamName);
+        for (Team team : teamList) {
+            if (team.getName().equals(quiz3Dto.getTeamName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
