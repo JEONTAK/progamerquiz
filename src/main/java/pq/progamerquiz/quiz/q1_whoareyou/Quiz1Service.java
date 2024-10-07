@@ -9,6 +9,7 @@ import pq.progamerquiz.progamer.Progamer;
 import pq.progamerquiz.progamer.ProgamerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pq.progamerquiz.progamer.ProgamerService;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,10 +27,10 @@ import java.util.Random;
 public class Quiz1Service {
 
     @Autowired
-    private ProgamerRepository progamerRepository;
+    private ProgamerService progamerService;
 
     public Quiz1Dto getRandomProgamer() {
-        List<Progamer> progamerList = progamerRepository.findAll();
+        List<Progamer> progamerList = progamerService.findAll();
         Random random = new Random();
         Progamer answer = progamerList.get(random.nextInt(progamerList.size()));
         Quiz1Dto quiz1Dto = convert(answer);
@@ -53,11 +54,11 @@ public class Quiz1Service {
     }
 
     public Optional<Progamer> findById(Long pid){
-        return progamerRepository.findById(pid);
+        return Optional.ofNullable(progamerService.findOne(pid));
     }
 
     public Progamer findByPid(String pid){
-        return progamerRepository.findByPidIgnoreCase(pid);
+        return progamerService.findByPid(pid);
     }
 
     public static Quiz1Dto convert(Progamer submitProgamer) {

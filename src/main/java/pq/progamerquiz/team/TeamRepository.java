@@ -15,4 +15,6 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     @Query("SELECT t.id FROM Team t WHERE LOWER(t.name) = LOWER(:teamName)")
     Long findNameById(String teamName);
 
+    @Query("SELECT t FROM Team t WHERE t.league = 'LCK'")
+    List<Team> findOnlyLCK();
 }

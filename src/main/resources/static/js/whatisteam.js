@@ -182,10 +182,6 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
 const quizItem = document.querySelector('.quiz-item');
 
 function showCorrect(){
- /*   const answerPidElement = document.getElementById('answer-pid');
-    answerPidElement.textContent = answer.pid; // 정답의 PID 표시
-    answerPidElement.style.display = 'block'; // 정답 PID 표시*/
-
     // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
     playerImage.style.filter = "none";
     quizItem.style.backgroundColor = "green";
@@ -195,10 +191,6 @@ function showCorrect(){
 }
 
 function showWrong(){
- /*   const answerPidElement = document.getElementById('answer-pid');
-    answerPidElement.textContent = answer.pid; // pid 출력
-    answerPidElement.style.display = 'block';
-*/
     // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
     playerImage.style.filter = "none";
     quizItem.style.backgroundColor = "red";

@@ -4,8 +4,11 @@ import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.progamer.ProgamerDto;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Transactional
 @Service
@@ -23,6 +26,10 @@ public class TeamService {
        return teamRepository.findAll();
     }
 
+    public Team find(Long id) {
+        return teamRepository.findById(id).orElse(null);
+    }
+
     public List<Team> findByName(String name) {
         return teamRepository.findByName(name);
     }
@@ -31,4 +38,7 @@ public class TeamService {
         return teamRepository.findNameById(teamName);
     }
 
+    public List<Team> findOnlyLCK() {
+        return teamRepository.findOnlyLCK();
+    }
 }

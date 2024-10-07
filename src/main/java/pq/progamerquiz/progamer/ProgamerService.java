@@ -28,6 +28,10 @@ public class ProgamerService {
         return progamerRepository.findById(progamerId).orElse(null);
     }
 
+    public Progamer findByPid(String pid) {
+        return progamerRepository.findByPidIgnoreCase(pid);
+    }
+
     public void saveProgamer(Progamer progamer) {
         progamerRepository.save(progamer);
     }

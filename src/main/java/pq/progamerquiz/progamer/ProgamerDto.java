@@ -21,4 +21,10 @@ public class ProgamerDto {
     private String nationality;
     private String teams;
 
+
+    public ProgamerDto(Long id, String pid, String name) {
+        this.id = id;
+        this.pid = pid;
+        this.name = name;
+    }
 }
