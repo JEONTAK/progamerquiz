@@ -210,12 +210,25 @@ function showWrong(){
 
 // 다음 퀴즈로 이동하는 로직을 currentIndex를 사용해 처리
 function goToNextQuiz() {
-/*    answerPidElement.style.display = 'none';*/
+    const nextIndex = parseInt(currentIndex) + 1;
     playerImage.style.filter = "blur(30px)";
     quizItem.style.backgroundColor = "#091428";
     playerInput.enabled = true;
-    const nextIndex = parseInt(currentIndex) + 1;
-    window.location.href = `/whatisteam/quiz?currentIndex=${nextIndex}`;
+    // currentIndex와 quizList 길이 비교
+    // 15번째 퀴즈 이후에는 끝내기 처리
+    if (nextIndex >= quizList.length) {
+        // 퀴즈가 끝나면 서버에서 맞춘 개수와 전체 개수 가져오기
+        fetch("/whatisteam/end")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('correct-count-overlay').textContent = data.correctCount;
+                document.getElementById('total-count-overlay').textContent = data.totalCount;
+                document.getElementById('quiz-overlay').style.display = 'flex';  // 오버레이 보이기
+            })
+            .catch(error => console.error("Error fetching quiz results:", error));
+    } else {
+        window.location.href = `/whatisteam/quiz?currentIndex=${nextIndex}`;
+    }
 }
 
 function showHint(currentTeam){

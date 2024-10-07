@@ -21,7 +21,14 @@
         <div id="failed-message" class="failed-message" style="display: none;">
             Failed!
         </div>
-        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page</button>
+        <!-- 오버레이 HTML 구조 -->
+        <div id="quiz-overlay" class="quiz-overlay" style="display: none;">
+            <div class="quiz-overlay-content">
+                <h2>Finish!</h2>
+                <p>Correct : <span id="correct-count-overlay"></span> / Total : <span id="total-count-overlay"></span></p>
+                <button id="go-to-main" class="main-button" onclick="goToMainPage()">Go to Main Page</button>
+            </div>
+        </div>
         <div class="quiz-item" data-answer="${answer.id}">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">

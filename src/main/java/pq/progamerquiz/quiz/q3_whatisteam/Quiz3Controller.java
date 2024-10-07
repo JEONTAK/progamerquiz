@@ -23,11 +23,14 @@ public class Quiz3Controller {
     private String isSubmitted;
     private String isCorrect;
     private final int totalIndex = 15;
-    private int currentIndex = 0;
+    private int correctCount;
+    private int currentIndex;
 
     private void initialize() {
         isSubmitted = "true";
         isCorrect = "start";
+        correctCount = 0;
+        currentIndex = 0;
         quizList.clear();
         quizList = quiz3Service.getTeams(totalIndex);
 
@@ -77,13 +80,14 @@ public class Quiz3Controller {
             isCorrect = "none";
             response.put("isSubmitted", isSubmitted);
             response.put("isCorrect", isCorrect);
-        }else{
+        } else {
             if (quiz3Service.isAnswer(userInput, quizList.get(currentIndex))) {
                 isSubmitted = "true";
                 isCorrect = "true";
+                correctCount++;
                 response.put("isSubmitted", isSubmitted);
                 response.put("isCorrect", isCorrect);
-            }else{
+            } else {
                 isSubmitted = "true";
                 isCorrect = "false";
                 response.put("isSubmitted", isSubmitted);
@@ -94,5 +98,15 @@ public class Quiz3Controller {
         log.info("isCorrect: " + isCorrect);
         log.info("currentIndex: " + currentIndex);
         return ResponseEntity.ok(response);
+    }
+
+    // 퀴즈 끝난 후, 맞춘 개수와 전체 개수를 넘기는 /end 처리
+    @GetMapping("/end")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> quizEnd() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("correctCount", correctCount);
+        result.put("totalCount", totalIndex);
+        return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
     }
 }
