@@ -25,4 +25,6 @@ public class Quiz4Dto {
     private List<ProgamerDto> roster = new ArrayList<>();
     private List<Map<Long, Boolean>> answer = new ArrayList<>();
     private Long image_path;
+    private int correct;
+    private int attempts;
 }

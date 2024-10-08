@@ -28,11 +28,12 @@ public class Quiz4Controller {
     private List<Quiz4Dto> quizList = new ArrayList<>();
     private String isSubmitted;
     private String isCorrect;
+    private String isFinish;
     private final int totalIndex = 15;
     private final int attemptsPerTeam = 3;
-    private int currentAttempt;
     private int correctCount;
     private int currentIndex;
+
     // 각 팀에서 맞춘 선수 카운트 (두 명 맞춰야 정답 처리)
     private Map<Integer, Integer> correctCountsForTeam = new HashMap<>();
     @Autowired
@@ -42,7 +43,7 @@ public class Quiz4Controller {
     private void initialize() {
         isSubmitted = "true";
         isCorrect = "start";
-        currentAttempt = 0;
+        isFinish = "false";
         correctCount = 0;
         currentIndex = 0;
         quizList.clear();
@@ -76,16 +77,13 @@ public class Quiz4Controller {
             return "redirect:/pieceofpuzzle/quiz?currentIndex=0";
         }
         currentIndex = cIdx;
-
-        if (currentIndex >= quizList.size()) {
-            return "redirect:/pieceofpuzzle/end";
-        }
-
+        isSubmitted = "true";
+        isCorrect = "start";
+        isFinish = "false";
         model.addAttribute("quizList", quizList);
         model.addAttribute("isSubmitted", isSubmitted);
         model.addAttribute("isCorrect", isCorrect);
-        model.addAttribute("currentTeamIndex", currentIndex);
-        model.addAttribute("currentAttempt", currentAttempt);
+        model.addAttribute("currentIndex", cIdx);
         return "quizzes/pieceofpuzzle";
     }
 
@@ -105,8 +103,6 @@ public class Quiz4Controller {
     @PostMapping("/submitAnswer")
     public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, Object> payload) {
         String input = (String) payload.get("input");
-        Integer currentIndex = (Integer) payload.get("currentIndex");
-
         Map<String, Object> response = new HashMap<>();
 
         // 유효성 검사
@@ -115,7 +111,7 @@ public class Quiz4Controller {
             return ResponseEntity.badRequest().body(response);
         }
 
-        if (currentIndex == null || currentIndex < 0 || currentIndex >= quizList.size()) {
+        if ( currentIndex < 0 || currentIndex >= quizList.size()) {
             response.put("message", "Invalid currentIndex");
             return ResponseEntity.badRequest().body(response);
         }
@@ -123,60 +119,55 @@ public class Quiz4Controller {
         Quiz4Dto currentTeam = quizList.get(currentIndex);
         Long correctId = null;
 
+        //존재
         if (quiz4Service.isExist(input)) {
-            response.put("isSubmitted", "true");
-
+            isSubmitted = "true";
+            currentTeam.setAttempts(currentTeam.getAttempts() + 1);
+            //정답
             if (quiz4Service.isAnswer(input, currentTeam)) {
-                response.put("isCorrect", "true");
-
-                int currentCorrectCount = correctCountsForTeam.get(currentIndex);
-                correctCountsForTeam.put(currentIndex, currentCorrectCount + 1);
-
-                // 2명을 모두 맞췄을 경우
-                if (correctCountsForTeam.get(currentIndex) == 2) {
-                    correctCount++;
-                    currentAttempt = 0;
-                    currentIndex++;
-                    correctId = progamerService.findByPid(input).getId();
-
-                    // 모든 퀴즈를 완료한 경우
-                    if (currentIndex >= quizList.size()) {
-                        response.put("message", "Quiz Ended");
-                        return ResponseEntity.ok(response);
-                    }
-                }
-            } else {
-                response.put("isCorrect", "false");
-                currentAttempt++;
-
-                // 3번의 기회를 모두 사용한 경우
-                if (currentAttempt >= attemptsPerTeam) {
-                    currentAttempt = 0;
-                    correctCountsForTeam.put(currentIndex, 0); // 실패 시 팀 맞춘 카운트 초기화
-                    currentIndex++;
-
-                    if (currentIndex >= quizList.size()) {
-                        response.put("message", "Quiz Ended");
-                        return ResponseEntity.ok(response);
-                    }
-                }
+                isCorrect = "true";
+                currentTeam.setCorrect(currentTeam.getCorrect() + 1);
+                correctId = progamerService.findByPid(input).getId();
             }
-        } else {
-            response.put("isSubmitted", "false");
-            response.put("isCorrect", "none");
-            return ResponseEntity.badRequest().body(response);
+            //오답
+            else {
+                isCorrect = "false";
+            }
+        }
+        //존재X
+        else {
+            isSubmitted = "false";
+            isCorrect = "none";
         }
 
+        if (currentTeam.getCorrect() == 2) {
+            isFinish = "true";
+            correctCount++;
+        }else if(currentTeam.getAttempts() == attemptsPerTeam){
+            isFinish = "true";
+        }
+
+        response.put("isFinish", isFinish);
+        response.put("isSubmitted", isSubmitted);
+        response.put("isCorrect", isCorrect);
         response.put("correctId", correctId);
-        response.put("currentIndex", currentIndex);
+        log.info("isFinish : " + isFinish);
+        log.info("isSubmitted : " + isSubmitted);
+        log.info("isCorrect : " + isCorrect);
+        log.info("correctId : " + correctId);
+        log.info("correctCount : " + correctCount);
+        log.info("currentIndex : " + currentIndex);
         return ResponseEntity.ok(response);
     }
 
-    // 결과 화면
+
+    // 퀴즈 끝난 후, 맞춘 개수와 전체 개수를 넘기는 /end 처리
     @GetMapping("/end")
-    public String endQuiz(Model model) {
-        model.addAttribute("correctAnswers", correctCount);
-        model.addAttribute("totalTeams", totalIndex); // 총 시도한 팀
-        return "quizzes/end";
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> quizEnd() {
+        Map<String, Object> result = new HashMap<>();
+        result.put("correctCount", correctCount);
+        result.put("totalCount", totalIndex);
+        return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
     }
 }

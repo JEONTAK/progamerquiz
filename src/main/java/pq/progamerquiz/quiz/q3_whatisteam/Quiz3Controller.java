@@ -78,22 +78,18 @@ public class Quiz3Controller {
         if (!quiz3Service.isExist(userInput)) {
             isSubmitted = "false";
             isCorrect = "none";
-            response.put("isSubmitted", isSubmitted);
-            response.put("isCorrect", isCorrect);
         } else {
             if (quiz3Service.isAnswer(userInput, quizList.get(currentIndex))) {
                 isSubmitted = "true";
                 isCorrect = "true";
                 correctCount++;
-                response.put("isSubmitted", isSubmitted);
-                response.put("isCorrect", isCorrect);
             } else {
                 isSubmitted = "true";
                 isCorrect = "false";
-                response.put("isSubmitted", isSubmitted);
-                response.put("isCorrect", isCorrect);
             }
         }
+        response.put("isSubmitted", isSubmitted);
+        response.put("isCorrect", isCorrect);
         log.info("isSubmitted: " + isSubmitted);
         log.info("isCorrect: " + isCorrect);
         log.info("currentIndex: " + currentIndex);

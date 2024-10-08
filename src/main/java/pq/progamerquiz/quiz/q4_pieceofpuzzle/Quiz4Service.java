@@ -64,13 +64,14 @@ public class Quiz4Service {
                 submitTeam.getSeasonYear(),
                 roster,
                 answer,
-                submitTeam.getImage_path()
+                submitTeam.getImage_path(),
+                0,
+                0
         );
     }
 
     private static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerDto> roster) {
         List<Map<Long, Boolean>> answer = new ArrayList<>();
-        log.info("Roster : " + roster.size());
         List<ProgamerDto> mutableRoster = new ArrayList<>(roster);
         Collections.shuffle(mutableRoster);
         if(roster.size() < 5) {

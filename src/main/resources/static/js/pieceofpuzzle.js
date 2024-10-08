@@ -87,7 +87,9 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ input: userInput })
+            body: JSON.stringify({
+                input: userInput,
+            })
         })
             .then(response => response.json())
             .then(data => {
@@ -95,21 +97,27 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
                     errorMessage.style.display = 'block';
                     setTimeout(() => {
                         errorMessage.style.display = 'none';
-
                     }, 2000);  // 1000ms = 1초
                 }else{
                     errorMessage.style.display = 'none';
                     if (data.isCorrect === "true") {
-                        showCorrect();
-
+                        showCorrect(data.correctId);
                         setTimeout(() => {
-                            goToNextQuiz()
+                            if (data.isFinish === "false") {
+                                playerInput.disabled = false;
+                            }else{
+                                goToNextQuiz();
+                            }
                         }, 2000);  // 1000ms = 1초
                     } else if (data.isCorrect === "false") {
                         showWrong();
-
                         setTimeout(() => {
-                            goToNextQuiz()
+                            quizItem.style.backgroundColor = "";  // 원래 배경색으로 복원
+                            if (data.isFinish === "false") {
+                                playerInput.disabled = false;
+                            }else{
+                                goToNextQuiz();
+                            }
                         }, 2000);  // 1000ms = 1초
                     } else{
 
@@ -156,22 +164,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const quizItem = document.querySelector('.quiz-item');
 
-function showCorrect(){
+function showCorrect(correctId) {
+    // 선수 이미지와 pid를 correctId로 찾음
+    const playerImage = document.querySelector(`img[data-player-id='${correctId}']`);
+    const playerPid = document.querySelector(`p[data-player-id='${correctId}']`);
 
-    // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
-    playerImage.style.filter = "none";
-    quizItem.style.backgroundColor = "green";
+    if (playerImage && playerPid) {
+        // 이미지 블러 해제
+        playerImage.style.filter = "none";
+
+        // 배경색 초록색으로 변경
+        playerImage.style.backgroundColor = "green";
+
+        // PID를 ???에서 원래 PID로 변경
+        const originalPid = playerPid.getAttribute("data-original-pid");
+        if (originalPid) {
+            playerPid.textContent = originalPid;  // 원래 PID로 변경
+        }
+
+        // 2초 후에 배경색을 원래대로 변경
+        setTimeout(() => {
+            playerImage.style.backgroundColor = "";  // 원래 배경색으로 복원
+        }, 2000);
+    }
 
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
 }
 
 function showWrong(){
-
-    // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
-    playerImage.style.filter = "none";
     quizItem.style.backgroundColor = "red";
-
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
 }
@@ -180,9 +202,7 @@ function showWrong(){
 // 다음 퀴즈로 이동하는 로직을 currentIndex를 사용해 처리
 function goToNextQuiz() {
     const nextIndex = parseInt(currentIndex) + 1;
-    playerImage.style.filter = "blur(30px)";
-    quizItem.style.backgroundColor = "#091428";
-    playerInput.enabled = true;
+    playerInput.disabled = false;
     // currentIndex와 quizList 길이 비교
     // 15번째 퀴즈 이후에는 끝내기 처리
     if (nextIndex >= quizList.length) {
@@ -219,18 +239,19 @@ function showHint(currentTeam){
 
             const playerImage = document.createElement('img');
             playerImage.src = `/images/player/${player.id}.webp`;
+            playerImage.setAttribute('data-player-id', player.id);  // player ID를 속성으로 저장
+
             // answer에 해당하는 선수는 블러 처리
             if (!isAnswer) {
                 removeBlur(playerImage);
+            } else {
+                playerImage.style.filter = 'blur(5px)';
             }
 
             const playerPid = document.createElement('p');
-            playerPid.textContent = player.pid;
-
-            // answer에 해당하는 선수의 pid는 숨김 처리
-            if (isAnswer) {
-                playerPid.textContent = "???";
-            }
+            playerPid.textContent = isAnswer ? "???" : player.pid;
+            playerPid.setAttribute('data-player-id', player.id);  // player ID를 속성으로 저장
+            playerPid.setAttribute('data-original-pid', player.pid);  // 실제 pid를 저장
 
             cover.appendChild(playerImage);
             cover.appendChild(playerPid);
