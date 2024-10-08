@@ -11,7 +11,6 @@ import java.util.Optional;
 @Repository
 public interface ProgamerRepository extends JpaRepository<Progamer, Long> {
 
-    Progamer findByPid(String pid);
     @Query("SELECT p FROM Progamer p WHERE LOWER(p.pid) = LOWER(:pid)")
     Progamer findByPidIgnoreCase(@Param("pid") String pid);
 }

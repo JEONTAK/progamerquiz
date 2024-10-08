@@ -3,5 +3,72 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <th:block th:insert="~{fragments/header :: header}"/>
-    <title>Piece of Puzzle - Premier League Quiz</title>
+    <title>Piece Of Puzzle - Premier League Quiz</title>
 </head>
+<body>
+<!--메뉴 -->
+<div th:replace="~{fragments/menu ::menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
+
+    <div class="content">
+        <div id="failed-message" class="failed-message" style="display: none;">
+            Failed!
+        </div>
+        <!-- 오버레이 HTML 구조 -->
+        <div id="quiz-overlay" class="quiz-overlay" style="display: none;">
+            <div class="quiz-overlay-content">
+                <h2>Finish!</h2>
+                <p>Correct : <span id="correct-count-overlay"></span> / Total : <span id="total-count-overlay"></span></p>
+                <button id="go-to-main" class="main-button" onclick="goToMainPage()">Go to Main Page</button>
+            </div>
+        </div>
+        <div class="quiz-item">
+            <form id="playerForm" method="post">
+                <div id="error-message" class="error-message" style="display: none;">
+                    없는 선수 입니다.
+                </div>
+                <div id="teamInfo" class="hints-container">
+                    <span id = "team-name">Team Name</span><span id = "team-year">Year</span>
+                    <img id="team-image" th:src="@{${imagePath}}" alt="Team Image">
+                </div>
+                <input id="player-input" name="input" type="text">
+                <div id="suggestions"></div>
+                <div id = "hintContainer" class="hints-container"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Welcome to the Quiz!</h2>
+        <p>This is a Progamer guessing game.
+            <br>A total of 15 teams will be given, <br>and two players must be matched for each team.
+            <br>Use the given team and the year and players <br>to match as many players as possible!
+        </p>
+        <button onclick="closeGuide()" class="main-button">Got it!</button>
+    </div>
+</div>
+<script th:src="@{/js/pieceofpuzzle.js}"></script>
+</body>
+<script th:inline="javascript">
+    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
+    const currentIndex = /*[[${currentIndex}]]*/ 0;
+    const isCorrect = /*[[${isCorrect}]]*/ "start";
+    const quizList = /*[[${quizList}]]*/ [];
+    console.log("currentIndex : " + currentIndex);
+    console.log("isSubmitted : " + isSubmitted);
+    console.log("isCorrect : " + isCorrect);
+</script>
+</html>

@@ -6,8 +6,6 @@
     <title>What is Team? - Premier League Quiz</title>
 </head>
 <body>
-<!--메뉴 -->
-<button class="menu-toggle menu-open-button" onclick="toggleMenu()">☰</button>
 <div th:replace="~{fragments/menu ::menu}"></div>
 <!--메인 페이지 이미지 -->
 <div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
@@ -21,7 +19,14 @@
         <div id="failed-message" class="failed-message" style="display: none;">
             Failed!
         </div>
-        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page</button>
+        <!-- 오버레이 HTML 구조 -->
+        <div id="quiz-overlay" class="quiz-overlay" style="display: none;">
+            <div class="quiz-overlay-content">
+                <h2>Finish!</h2>
+                <p>Correct : <span id="correct-count-overlay"></span> / Total : <span id="total-count-overlay"></span></p>
+                <button id="go-to-main" class="main-button" onclick="goToMainPage()">Go to Main Page</button>
+            </div>
+        </div>
         <div class="quiz-item" data-answer="${answer.id}">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">
@@ -46,8 +51,8 @@
     <div class="guide-content">
         <h2>Welcome to the Quiz!</h2>
         <p>This is a Team guessing game.
-            <br>A total of 15 teams will be given, and each team will be given several hints.
-            <br>Guess the team that corresponds to the hint and as many teams as possible!</p>
+            <br>A total of 15 teams will be given, <br>and each team will be given several hints.
+            <br>Guess the team that corresponds to the hint <br>and as many teams as possible!</p>
         <button onclick="closeGuide()" class="main-button">Got it!</button>
     </div>
 </div>
@@ -55,8 +60,11 @@
 </body>
 <script th:inline="javascript">
     const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const currentIdx = /*[[${currentIdx}]]*/ 0;
+    const currentIndex = /*[[${currentIndex}]]*/ 0;
     const isCorrect = /*[[${isCorrect}]]*/ "start";
     const quizList = /*[[${quizList}]]*/ [];
+    console.log("isSubmitted : " + isSubmitted);
+    console.log("currentIndex : " + currentIndex);
+    console.log("isCorrect : " + isCorrect);
 </script>
 </html>

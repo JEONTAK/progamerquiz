@@ -1,4 +1,3 @@
-
 // 가이드 오버레이 보이기
 function showGuide() {
     const guideOverlay = document.getElementById('guide-overlay');
@@ -27,7 +26,6 @@ function toggleMenu() {
     document.querySelector('.content-container').classList.toggle('menu-open');
 }
 
-//사용자가 Progamer 입력시 힌트 제공
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
     fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
@@ -47,6 +45,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     filtered.forEach(progamer => {
                         const suggestionItem = document.createElement('div');
                         suggestionItem.textContent = progamer.pid;  // pid를 표시
+                        suggestionItem.classList.add('suggestion-item');  // 스타일링을 위한 클래스 추가
+
+                        // suggestionItem 클릭 시 해당 값을 input에 넣음
+                        suggestionItem.addEventListener('click', function() {
+                            input.value = progamer.pid;
+                            suggestions.innerHTML = '';  // 클릭 후 suggestion 목록을 비움
+                        });
+
                         suggestions.appendChild(suggestionItem);
                     });
                 }
