@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <th:block th:insert="~{fragments/header :: header}"/>
-    <title>What is Team? - Premier League Quiz</title>
+    <title>Which is Team? - Premier League Quiz</title>
 </head>
 <body>
 <div th:replace="~{fragments/menu ::menu}"></div>
@@ -30,8 +30,7 @@
         <div class="quiz-item" data-answer="${answer.id}">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">
-                <div id="error-message" class="error-message" style="display: none;">
-                    없는 팀 입니다.
+                <div id="error-message-team" class="error-message" style="display: none;">
                 </div>
                 <input id="player-input" name="input" type="text">
                 <div id="suggestions"></div>
@@ -49,14 +48,12 @@
 <!-- 가이드 오버레이 -->
 <div id="guide-overlay" class="guide-overlay" style="display: none;">
     <div class="guide-content">
-        <h2>Welcome to the Quiz!</h2>
-        <p>This is a Team guessing game.
-            <br>A total of 15 teams will be given, <br>and each team will be given several hints.
-            <br>Guess the team that corresponds to the hint <br>and as many teams as possible!</p>
+        <h2>Which Is Team?</h2>
+        <div id="quiz3-guide"></div>
         <button onclick="closeGuide()" class="main-button">Got it!</button>
     </div>
 </div>
-<script th:src="@{/js/whatisTeam.js}"></script>
+<script th:src="@{/js/whichisteam.js}"></script>
 </body>
 <script th:inline="javascript">
     const isSubmitted = /*[[${isSubmitted}]]*/ "true";
@@ -66,5 +63,18 @@
     console.log("isSubmitted : " + isSubmitted);
     console.log("currentIndex : " + currentIndex);
     console.log("isCorrect : " + isCorrect);
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-team').textContent = data[selectedLang]['error-message-team'];
+            document.getElementById('quiz3-guide').innerHTML = data[selectedLang]['quiz3-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
 </script>
 </html>

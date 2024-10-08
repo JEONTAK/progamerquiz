@@ -20,17 +20,17 @@
         <div id="failed-message" class="failed-message" style="display: none;">
             Failed!
         </div>
-        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page</button>
+        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page
+        </button>
         <div class="quiz-item" data-answer="${answer.id}">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <form id="playerForm" method="post">
                 <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
-                <div id="error-message" class="error-message" style="display: none;">
-                    없는 선수 입니다.
+                <div id="error-message-player" class="error-message" style="display: none;">
                 </div>
                 <input id="player-input" name="input" type="text" placeholder="0 of 8">
                 <div id="suggestions"></div>
-                <div id = "hintContainer" class="hints-container"></div>
+                <div id="hintContainer" class="hints-container"></div>
             </form>
         </div>
     </div>
@@ -43,15 +43,13 @@
 <!-- 가이드 오버레이 -->
 <div id="guide-overlay" class="guide-overlay" style="display: none;">
     <div class="guide-content">
-        <h2>Welcome to the Quiz!</h2>
-        <p>This is a Progamer guessing game.
-            <br>You have 8 attempts to guess the correct player.
-            <br>If you type in your guessed progamer, you'll get 6 hints.
-            <br>Use those hints to answer correctly!</p>
+        <h2>Who Are You?</h2>
+        <div id="quiz1-guide">
+        </div>
         <button onclick="closeGuide()" class="main-button">Got it!</button>
     </div>
+    <script th:src="@{/js/whoareyou.js}"></script>
 </div>
-<script th:src="@{/js/whoareyou.js}"></script>
 </body>
 <script th:inline="javascript">
     let tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
@@ -60,5 +58,18 @@
     const guessedList = /*[[${guessedList}]]*/ [];
     console.log("Try Status from server: ", tryStatus);
     console.log("Guessed List from server: ", guessedList);
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
+            document.getElementById('quiz1-guide').innerHTML = data[selectedLang]['quiz1-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
 </script>
 </html>

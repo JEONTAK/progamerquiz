@@ -1,0 +1,23 @@
+{
+  "ko": {
+    "error-message-player": "없는 선수 입니다.",
+    "error-message-team": "없는 팀 입니다.",
+    "quiz1-guide" : "프로게이머를 주어진 기회 안에 맞히는 게임 입니다.\n총 8번의 시도가 있습니다.\n추측한 프로게이머를 입력하면 6개의 힌트가 주어집니다.\n힌트를 사용하여 정답을 맞혀보세요!",
+    "quiz2-guide" : "프로게이머를 주어진 기회 안에 맞히는 게임 입니다.\n퀴즈 수를 선택할 수 있습니다!\n프로게이머의 팀 이력이 힌트로 주어집니다.\n해당 힌트를 이용하여 정답을 맞혀보세요!\n퀴즈 수를 선택하세요!",
+    "quiz3-guide" : "어떤 팀인지 맞히는 게임입니다.\n총 15개 팀이 주어지고, 각 팀에는 몇 가지 힌트가 주어집니다.\n힌트에 해당하는 팀을 맞혀보세요!",
+    "quiz4-guide" : "프로게이머를 주어진 기회 안에 맞히는 게임 입니다.\n총 15개 팀이 주어집니다,\n각 팀당 두 명의 플레이어를 맞혀야 합니다.\n주어진 힌트를 활용해 최대한 많은 선수를 맞혀보세요!",
+    "quiz5-guide" : "프로게이머를 주어진 기회 안에 맞추는 게임 입니다.\n총 8번의 시도가 있습니다.\n추측한 프로게이머를 입력하면 6개의 힌트가 주어집니다.\n힌트를 사용하여 정답을 맞혀보세요!",
+    "quiz6-guide" : "프로게이머를 주어진 기회 안에 맞추는 게임 입니다.\n총 8번의 시도가 있습니다.\n추측한 프로게이머를 입력하면 6개의 힌트가 주어집니다.\n힌트를 사용하여 정답을 맞혀보세요!"
+  },
+  "en": {
+    "error-message-player": "There are no players",
+    "error-message-team": "There are no teams",
+    "quiz1-guide" : "This is a Progamer guessing game.\nYou have 8 attempts to guess the correct player.\nIf you type in your guessed progamer, you'll get 6 hints.\nUse those hints to answer correctly!",
+    "quiz2-guide" : "This is a Progamer guessing game.\nYou can choose the number of quizzes!\nWhen we list the player's team,\nyou just have to get the answer right!\nUse those hints to answer correctly!\nPlease choose the number of quizzes!",
+    "quiz3-guide" : "This is a Team guessing game.\nA total of 15 teams will be given,\nand each team will be given several hints.\nGuess the team that corresponds to the hint\nand as many teams as possible!",
+    "quiz4-guide" : "This is a Progamer guessing game.\nA total of 15 teams will be given,\nand two players must be matched for each team.\nUse the given team and the year and players\nto match as many players as possible!",
+    "quiz5-guide" : "This is a Progamer guessing game.\nYou have 8 attempts to guess the correct player.\nIf you type in your guessed progamer, you'll get 6 hints.\nUse those hints to answer correctly!",
+    "quiz6-guide" : "This is a Progamer guessing game.\nYou have 8 attempts to guess the correct player.\nIf you type in your guessed progamer, you'll get 6 hints.\nUse those hints to answer correctly!"
+
+  }
+}

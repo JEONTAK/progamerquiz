@@ -153,7 +153,7 @@ function updateQuestionNumber(index) {
 
 // 정답 제출 함수
 function checkAnswer() {
-    const errorMessage = document.getElementById('error-message');
+    const errorMessage = document.getElementById('error-message-player');
     const input = document.getElementById('player-input').value.trim().toLowerCase();
     const currentPlayer = quizList[currentIndex];
     const answerPid = currentPlayer.pid.toLowerCase();

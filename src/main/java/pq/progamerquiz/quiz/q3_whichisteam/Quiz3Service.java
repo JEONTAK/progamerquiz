@@ -1,22 +1,13 @@
-package pq.progamerquiz.quiz.q3_whatisteam;
+package pq.progamerquiz.quiz.q3_whichisteam;
 
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.progamer.Progamer;
-import pq.progamerquiz.progamer.ProgamerRepository;
-import pq.progamerquiz.quiz.q2_igotyou.Quiz2Dto;
 import pq.progamerquiz.team.Team;
-import pq.progamerquiz.team.TeamRepository;
 import pq.progamerquiz.team.TeamService;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 

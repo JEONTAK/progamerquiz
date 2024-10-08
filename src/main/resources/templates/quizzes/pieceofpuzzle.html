@@ -30,8 +30,7 @@
         </div>
         <div class="quiz-item">
             <form id="playerForm" method="post">
-                <div id="error-message" class="error-message" style="display: none;">
-                    없는 선수 입니다.
+                <div id="error-message-player" class="error-message" style="display: none;">
                 </div>
                 <div id="teamInfo" class="hints-container">
                     <span id = "team-name">Team Name</span><span id = "team-year">Year</span>
@@ -53,10 +52,7 @@
 <div id="guide-overlay" class="guide-overlay" style="display: none;">
     <div class="guide-content">
         <h2>Welcome to the Quiz!</h2>
-        <p>This is a Progamer guessing game.
-            <br>A total of 15 teams will be given, <br>and two players must be matched for each team.
-            <br>Use the given team and the year and players <br>to match as many players as possible!
-        </p>
+        <div id="quiz4-guide"></div>
         <button onclick="closeGuide()" class="main-button">Got it!</button>
     </div>
 </div>
@@ -70,5 +66,20 @@
     console.log("currentIndex : " + currentIndex);
     console.log("isSubmitted : " + isSubmitted);
     console.log("isCorrect : " + isCorrect);
+
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
+            document.getElementById('quiz4-guide').innerHTML = data[selectedLang]['quiz4-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
+
 </script>
 </html>

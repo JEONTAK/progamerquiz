@@ -1,12 +1,9 @@
-package pq.progamerquiz.quiz.q3_whatisteam;
+package pq.progamerquiz.quiz.q3_whichisteam;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pq.progamerquiz.progamer.Progamer;
-
-import java.util.List;
 
 //Quiz : What is Team?
 @Getter

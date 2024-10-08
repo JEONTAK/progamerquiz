@@ -1,4 +1,4 @@
-package pq.progamerquiz.quiz.q3_whatisteam;
+package pq.progamerquiz.quiz.q3_whichisteam;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -14,7 +14,7 @@ import java.util.*;
 @Controller
 @RequiredArgsConstructor
 @Log4j2
-@RequestMapping("/whatisteam")
+@RequestMapping("/whichisteam")
 public class Quiz3Controller {
 
     @Autowired
@@ -38,16 +38,16 @@ public class Quiz3Controller {
 
     @GetMapping
     public String startQuiz(Model model) {
-        log.info("What is Team? Start");
+        log.info("Which is Team? Start");
         initialize();
-        return "redirect:/whatisteam/quiz";
+        return "redirect:/whichisteam/quiz";
     }
 
     @GetMapping("/quiz")
     public String gettingQuiz(@RequestParam(value = "currentIndex", required = false) Integer cIdx, Model model) {
         if (cIdx == null) {
             // currentIndex가 null일 경우 기본값 0으로 리디렉션
-            return "redirect:/whatisteam/quiz?currentIndex=0";
+            return "redirect:/whichisteam/quiz?currentIndex=0";
         }
         currentIndex = cIdx;
         model.addAttribute("quizList", quizList);
@@ -55,7 +55,7 @@ public class Quiz3Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalIndex", totalIndex);
         model.addAttribute("currentIndex", cIdx);
-        return "quizzes/whatisteam";
+        return "whichisteam";
     }
 
     @GetMapping("/quiz/data")

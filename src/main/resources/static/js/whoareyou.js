@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const errorMessage = document.getElementById('error-message');
+    const errorMessage = document.getElementById('error-message-player');
     console.log(isSubmitted);
     if (isSubmitted === "true") {
         errorMessage.style.display = 'none';

@@ -36,8 +36,7 @@
                 Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
             </div>
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
-            <div id="error-message" class="error-message" style="display: none;">
-                없는 선수 입니다.
+            <div id="error-message-player" class="error-message" style="display: none;">
             </div>
             <form id="playerForm" method="post">
                 <input id="player-input" name="input" type="text">
@@ -52,13 +51,8 @@
     <!-- 가이드 오버레이 -->
     <div id="guide-overlay" class="guide-overlay" style="display: none;">
         <div class="guide-content">
-            <h2>Welcome to the Quiz!</h2>
-            <p>This is a Progamer guessing game.
-                <br>You can choose the number of quizzes!
-                <br>When we list the player's team, <br>you just have to get the answer right!
-                <br>Use those hints to answer correctly!
-                <br>Please choose the number of quizzes!
-            </p>
+            <h2>I Got You!</h2>
+            <div id="quiz2-guide"></div>
             <button onclick="closeGuide(10)" class="main-button">10</button>
             <button onclick="closeGuide(20)" class="main-button">20</button>
             <button onclick="closeGuide(30)" class="main-button">30</button>
@@ -75,5 +69,19 @@
     let totalCount = /*[[${totalCount}]]*/ 0;
     const isSubmitted = /*[[${isSubmitted}]]*/ "true";
     console.log('QuizList from Server:', quizList);  // 전달된 데이터를 콘솔에 출력
+
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
+            document.getElementById('quiz2-guide').innerHTML = data[selectedLang]['quiz2-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
 </script>
 </html>

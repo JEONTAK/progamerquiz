@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const currentIndex = urlParams.get('currentIndex') || 0; // currentIndex를 URL에서 가져옴
 
     // 서버로부터 currentTeam 데이터를 가져옴
-    fetch(`/whatisteam/quiz/data?currentIndex=${currentIndex}`)
+    fetch(`/whichisteam/quiz/data?currentIndex=${currentIndex}`)
         .then(response => {
             // 서버 응답이 정상적인 경우 (status code가 200)
             if (!response.ok) {
@@ -139,7 +139,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
         const errorMessage = document.getElementById('error-message');
 
         // Send the user input to the server
-        fetch('/whatisteam/submitAnswer', {
+        fetch('/whichisteam/submitAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -210,7 +210,7 @@ function goToNextQuiz() {
     // 15번째 퀴즈 이후에는 끝내기 처리
     if (nextIndex >= quizList.length) {
         // 퀴즈가 끝나면 서버에서 맞춘 개수와 전체 개수 가져오기
-        fetch("/whatisteam/end")
+        fetch("/whichisteam/end")
             .then(response => response.json())
             .then(data => {
                 document.getElementById('correct-count-overlay').textContent = data.correctCount;
@@ -219,7 +219,7 @@ function goToNextQuiz() {
             })
             .catch(error => console.error("Error fetching quiz results:", error));
     } else {
-        window.location.href = `/whatisteam/quiz?currentIndex=${nextIndex}`;
+        window.location.href = `/whichisteam/quiz?currentIndex=${nextIndex}`;
     }
 }
 
