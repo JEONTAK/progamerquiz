@@ -136,7 +136,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
     if (event.key === 'Enter') {
         event.preventDefault();
         const userInput = document.getElementById('player-input').value;
-        const errorMessage = document.getElementById('error-message');
+        const errorMessage = document.getElementById('error-message-team');
 
         // Send the user input to the server
         fetch('/whichisteam/submitAnswer', {

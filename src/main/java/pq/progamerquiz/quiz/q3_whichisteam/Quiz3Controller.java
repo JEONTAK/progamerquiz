@@ -55,7 +55,7 @@ public class Quiz3Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalIndex", totalIndex);
         model.addAttribute("currentIndex", cIdx);
-        return "whichisteam";
+        return "quizzes/whichisteam";
     }
 
     @GetMapping("/quiz/data")

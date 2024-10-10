@@ -79,7 +79,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
     if (event.key === 'Enter') {
         event.preventDefault();
         const userInput = document.getElementById('player-input').value;
-        const errorMessage = document.getElementById('error-message');
+        const errorMessage = document.getElementById('error-message-player');
 
         // Send the user input to the server
         fetch('/pieceofpuzzle/submitAnswer', {
@@ -224,8 +224,8 @@ function showHint(currentTeam){
     const hintContainer = document.getElementById('hintContainer');
     hintContainer.innerHTML = ''; // 이전 힌트들을 초기화
 
+    // 새로운 행을 담을 변수 선언
     if (currentTeam) {
-        // 새로운 행을 담을 변수 선언
         let rowDiv = document.createElement('div');
         rowDiv.classList.add('hint-row');  // 행을 만들기 위해 클래스를 추가
         let itemsInRow = 0;  // 현재 행에 추가된 항목 수

@@ -1,17 +1,15 @@
 package pq.progamerquiz.quiz.q2_igotyou;
 
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
+
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.progamer.Progamer;
 import pq.progamerquiz.progamer.ProgamerRepository;
+import pq.progamerquiz.progamer.ProgamerService;
 import pq.progamerquiz.quiz.q1_whoareyou.Quiz1Dto;
 import pq.progamerquiz.team.Team;
 
@@ -23,6 +21,8 @@ public class Quiz2Service {
 
     @Autowired
     private ProgamerRepository progamerRepository;
+    @Autowired
+    private ProgamerService progamerService;
 
     public List<Quiz2Dto> getProgamers(int totalCount) {
         List<Progamer> progamerList = progamerRepository.findAll();
@@ -67,4 +67,11 @@ public class Quiz2Service {
         return result;
     }
 
+    public boolean isExist(String userInput) {
+        return progamerService.findByPid(userInput) != null;
+    }
+
+    public boolean isAnswer(String userInput, Quiz2Dto quiz2Dto) {
+        return Objects.equals(progamerService.findByPid(userInput).getId(), quiz2Dto.getId());
+    }
 }
