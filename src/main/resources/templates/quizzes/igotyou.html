@@ -23,6 +23,7 @@
 
         <!-- 오버레이 HTML 구조 -->
         <div id="quiz-overlay" class="quiz-overlay" style="display: none;">
+            <canvas id="canvas"></canvas>
             <div class="quiz-overlay-content">
                 <h2>Finish!</h2>
                 <p>Correct : <span id="correct-count-overlay"></span> / Total : <span id="total-count-overlay"></span></p>
@@ -56,11 +57,12 @@
             <button onclick="closeGuide(10)" class="main-button">10</button>
             <button onclick="closeGuide(20)" class="main-button">20</button>
             <button onclick="closeGuide(30)" class="main-button">30</button>
-
         </div>
     </div>
 </div>
 <div th:replace="~{fragments/footer :: footer}"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script th:src="@{/js/confetti.js}"></script>
 <script th:src="@{/js/igotyou.js}"></script>
 </body>
 <script th:inline="javascript">

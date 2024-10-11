@@ -382,7 +382,8 @@ img.no-blur {
     display: none; /* 기본적으로 숨겨져 있음 */
 }
 
-
+/*----- 팡파레 ------*/
+canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1.1);}
 
 /*----- 메뉴 부분 -----*/
 .menu {

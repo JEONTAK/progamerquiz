@@ -290,6 +290,7 @@ function goToNextQuiz() {
                 document.getElementById('correct-count-overlay').textContent = data.correctCount;
                 document.getElementById('total-count-overlay').textContent = data.totalCount;
                 document.getElementById('quiz-overlay').style.display = 'flex';  // 오버레이 보이기
+                InitializeConfetti();
             })
             .catch(error => console.error("Error fetching quiz results:", error));
     } else {
