@@ -6,6 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.progamer.Progamer;
+import pq.progamerquiz.progamer.ProgamerDto;
 import pq.progamerquiz.progamer.ProgamerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,10 +31,8 @@ public class Quiz1Service {
     private ProgamerService progamerService;
 
     public Quiz1Dto getRandomProgamer() {
-        List<Progamer> progamerList = progamerService.findAll();
-        Random random = new Random();
-        Progamer answer = progamerList.get(random.nextInt(progamerList.size()));
-        Quiz1Dto quiz1Dto = convert(answer);
+        List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
+        Quiz1Dto quiz1Dto = convert(progamer.get(0));
         log.info(quiz1Dto.getId());
         log.info(quiz1Dto.getPid());
         return quiz1Dto;
@@ -53,15 +52,11 @@ public class Quiz1Service {
         return imagePath;
     }
 
-    public Optional<Progamer> findById(Long pid){
-        return Optional.ofNullable(progamerService.findOne(pid));
-    }
-
-    public Progamer findByPid(String pid){
+    public ProgamerDto findByPid(String pid){
         return progamerService.findByPid(pid);
     }
 
-    public static Quiz1Dto convert(Progamer submitProgamer) {
+    public static Quiz1Dto convert(ProgamerDto submitProgamer) {
         Quiz1Dto result = new Quiz1Dto(
                 submitProgamer.getId(),
                 submitProgamer.getPid(),

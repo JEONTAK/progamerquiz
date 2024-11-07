@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pq.progamerquiz.team.Team;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,7 +22,7 @@ public class ProgamerDto {
     private Long league_win;
     private Long intl_win;
     private String nationality;
-    private String teams;
+    private List<Team> teams;
 
 
     public ProgamerDto(Long id, String pid, String name) {
@@ -27,4 +30,5 @@ public class ProgamerDto {
         this.pid = pid;
         this.name = name;
     }
+
 }

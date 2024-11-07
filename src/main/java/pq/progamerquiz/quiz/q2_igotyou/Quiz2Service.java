@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.progamer.Progamer;
+import pq.progamerquiz.progamer.ProgamerDto;
 import pq.progamerquiz.progamer.ProgamerRepository;
 import pq.progamerquiz.progamer.ProgamerService;
 import pq.progamerquiz.quiz.q1_whoareyou.Quiz1Dto;
@@ -20,30 +21,19 @@ import pq.progamerquiz.team.Team;
 public class Quiz2Service {
 
     @Autowired
-    private ProgamerRepository progamerRepository;
-    @Autowired
     private ProgamerService progamerService;
 
     public List<Quiz2Dto> getProgamers(int totalCount) {
-        List<Progamer> progamerList = progamerRepository.findAll();
+        List<ProgamerDto> progamerList = progamerService.findRandomPlayers(totalCount);
         List<Quiz2Dto> result = new ArrayList<>();
-        Set<Integer> selectedIndexes = new HashSet<>();
-        Random random = new Random();
 
-        // 겹치지 않게 프로게이머 선택
-        while (selectedIndexes.size() < totalCount) {
-            int randomIndex = random.nextInt(progamerList.size());
-            if (!selectedIndexes.contains(randomIndex)) {
-                selectedIndexes.add(randomIndex);
-                Progamer answer = progamerList.get(randomIndex);
-                Quiz2Dto quiz2Dto = convert(selectedIndexes.size(), answer); // 인덱스는 1부터 시작
-                result.add(quiz2Dto);
-            }
+        for(int i = 1 ; i <= progamerList.size(); i++) {
+            result.add(convert(i, progamerList.get(i - 1)));
         }
         return result;
     }
 
-    public static Quiz2Dto convert(int idx, Progamer submitProgamer) {
+    public static Quiz2Dto convert(int idx, ProgamerDto submitProgamer) {
         List<Long> teamYears = new ArrayList<>();
         List<String> teamNames = new ArrayList<>();
         List<Long> teamImages = new ArrayList<>();

@@ -23,8 +23,8 @@ public class ProgamerMapper {
         progamer.setLeague_win(progamerDto.getLeague_win());
         progamer.setIntl_win(progamerDto.getIntl_win());
         progamer.setNationality(progamerDto.getNationality());
-
-        // teams 필드를 쉼표로 구분하여 리스트로 변환
+        progamer.setTeams(progamerDto.getTeams());
+/*        // teams 필드를 쉼표로 구분하여 리스트로 변환
         List<Team> teams = new ArrayList<>();
         if (progamerDto.getTeams() != null) {
             List<Long> teamIds = Arrays.stream(progamerDto.getTeams().split(","))
@@ -37,7 +37,7 @@ public class ProgamerMapper {
                     .filter(Objects::nonNull)  // null 체크
                     .collect(Collectors.toList());
         }
-        progamer.setTeams(teams);
+        progamer.setTeams(teams);*/
 
         return progamer;
     }

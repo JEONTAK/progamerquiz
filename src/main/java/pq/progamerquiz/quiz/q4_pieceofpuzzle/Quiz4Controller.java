@@ -47,7 +47,7 @@ public class Quiz4Controller {
         correctCount = 0;
         currentIndex = 0;
         quizList.clear();
-        quizList = quiz4Service.getTeams(totalIndex);
+        quizList = quiz4Service.getTeams(totalIndex, "LCK");
         for (Quiz4Dto quiz4Dto : quizList) {
             log.info("Index : " + quiz4Dto.getIndex() + " | Team : " + quiz4Dto.getTeamName() + " | Year : " + quiz4Dto.getTeamYear());
             for (Map<Long, Boolean> map : quiz4Dto.getAnswer()) {

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.progamer.Progamer;
+import pq.progamerquiz.progamer.ProgamerDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +80,7 @@ public class Quiz1Controller {
     @PostMapping("/{progamerId}")
     public String submitAnswer(@RequestParam("input") String submit, Model model, HttpSession session) {
         log.info(submit);
-        Progamer submitProgamer = quiz1Service.findByPid(submit);
+        ProgamerDto submitProgamer = quiz1Service.findByPid(submit);
         if (submitProgamer == null) {
             log.error("Submitted progamer is null");
             session.setAttribute("guessedList", guessedList);

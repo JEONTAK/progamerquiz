@@ -28,11 +28,21 @@ public class ProgamerService {
         return progamerRepository.findById(progamerId).orElse(null);
     }
 
-    public Progamer findByPid(String pid) {
-        return progamerRepository.findByPidIgnoreCase(pid);
+    public ProgamerDto findByPid(String pid) {
+        Progamer progamer = progamerRepository.findByPidIgnoreCase(pid);
+        return new ProgamerDto(progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(), progamer.getPosition().toString()
+                , progamer.getLeague_win(), progamer.getIntl_win(), progamer.getNationality(), progamer.getTeams());
     }
 
     public void saveProgamer(Progamer progamer) {
         progamerRepository.save(progamer);
+    }
+
+    public List<ProgamerDto> findRandomPlayers(int totalCount) {
+        List<Progamer> list = progamerRepository.findRandomPlayers(totalCount);
+        return list.stream()
+                .map(progamer -> new ProgamerDto(progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(), progamer.getPosition().toString()
+                        , progamer.getLeague_win(), progamer.getIntl_win(), progamer.getNationality(), progamer.getTeams()))
+                .collect(Collectors.toList());
     }
 }

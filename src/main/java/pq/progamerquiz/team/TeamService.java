@@ -1,10 +1,8 @@
 package pq.progamerquiz.team;
 
-import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.progamer.ProgamerDto;
 
 import java.util.Collection;
 import java.util.List;
@@ -16,7 +14,6 @@ public class TeamService {
 
     @Autowired
     private TeamRepository teamRepository;
-
 
     public void saveTeam(Team team) {
         teamRepository.save(team);
@@ -38,7 +35,16 @@ public class TeamService {
         return teamRepository.findNameById(teamName);
     }
 
-    public List<Team> findOnlyLCK() {
-        return teamRepository.findOnlyLCK();
+    public List<TeamDto> findRandomTeams(int totalCount, String league) {
+        List<Team> list = teamRepository.findRandomTeams(totalCount, league);
+        return list.stream()
+                .map(team -> new TeamDto(team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),team.getLeague().toString()
+                        ,team.getSpring_rank(), team.getSummer_rank(), team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank()
+                        ,team.getRoster(), team.getImage_path()))
+                .collect(Collectors.toList());
+    }
+
+    public List<Team> findByNameOrCallName(String teamName) {
+        return teamRepository.findByNameOrCallName(teamName);
     }
 }

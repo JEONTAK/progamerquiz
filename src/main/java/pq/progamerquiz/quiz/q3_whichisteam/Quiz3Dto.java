@@ -14,6 +14,7 @@ public class Quiz3Dto {
     private Long index;
     private Long teamId;
     private String teamName;
+    private String callName;
     private String teamLeague;
     private Long teamYear;
     private Long spring_ranking;

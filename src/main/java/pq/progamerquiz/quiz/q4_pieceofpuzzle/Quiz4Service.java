@@ -26,27 +26,14 @@ public class Quiz4Service {
     @Autowired
     private ProgamerService progamerService;
 
-    public List<Quiz4Dto> getTeams(int idx) {
-        List<TeamDto> teamList = findOnlyLCK();
+    public List<Quiz4Dto> getTeams(int totalCount, String league) {
+        List<TeamDto> teamList = teamService.findRandomTeams(totalCount, league);
         List<Quiz4Dto> quizList = new ArrayList<>();
-        Set<Integer> selectedIndexes = new HashSet<>();
-        Random random = new Random();
 
-        // 겹치지 않게 프로게이머 선택
-        while (selectedIndexes.size() < idx) {
-            int randomIndex = random.nextInt(teamList.size());
-            if (!selectedIndexes.contains(randomIndex)) {
-                selectedIndexes.add(randomIndex);
-                TeamDto answer = teamList.get(randomIndex);
-                log.info("answer : " + answer.getName());
-                Quiz4Dto quiz4Dto = convert(selectedIndexes.size(), answer); // 인덱스는 1부터 시작
-                if (quiz4Dto == null) {
-                    selectedIndexes.remove(selectedIndexes.size() - 1);
-                    continue;
-                }
-                quizList.add(quiz4Dto);
-            }
+        for(int i = 1 ; i <= teamList.size() ; i++){
+            quizList.add(convert(i, teamList.get(i - 1)));
         }
+
         return quizList;
     }
 
@@ -99,15 +86,6 @@ public class Quiz4Service {
             }
         }
         return false;
-    }
-
-    public List<TeamDto> findOnlyLCK() {
-        return teamService.findOnlyLCK().stream().map(m -> new TeamDto(m.getId(),
-                m.getName(),
-                m.getLeague().toString(),
-                m.getSeasonYear(),
-                m.getRoster(),
-                m.getImage_path())).toList();
     }
 
     public List<ProgamerDto> getRoster(TeamDto submitTeam) {

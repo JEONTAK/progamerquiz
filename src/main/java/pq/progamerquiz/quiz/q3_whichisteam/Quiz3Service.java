@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.team.Team;
+import pq.progamerquiz.team.TeamDto;
 import pq.progamerquiz.team.TeamService;
 
 import java.util.*;
@@ -20,30 +21,22 @@ public class Quiz3Service {
     @Autowired
     private TeamService teamService;
 
-    public List<Quiz3Dto> getTeams(int idx) {
-        List<Team> teamList = teamService.findAll();
+    public List<Quiz3Dto> getTeams(int totalCount, String league) {
+        List<TeamDto> teamList = teamService.findRandomTeams(totalCount, league);
         List<Quiz3Dto> quizList = new ArrayList<>();
-        Set<Integer> selectedIndexes = new HashSet<>();
-        Random random = new Random();
 
-        // 겹치지 않게 프로게이머 선택
-        while (selectedIndexes.size() < idx) {
-            int randomIndex = random.nextInt(teamList.size());
-            if (!selectedIndexes.contains(randomIndex)) {
-                selectedIndexes.add(randomIndex);
-                Team answer = teamList.get(randomIndex);
-                Quiz3Dto quiz3Dto = convert(selectedIndexes.size(), answer); // 인덱스는 1부터 시작
-                quizList.add(quiz3Dto);
-            }
+        for(int i = 1 ; i <= teamList.size(); i++) {
+            quizList.add(convert(i, teamList.get(i - 1)));
         }
         return quizList;
     }
 
-    public static Quiz3Dto convert(int idx, Team submitTeam) {
+    public static Quiz3Dto convert(int idx, TeamDto submitTeam) {
         return new Quiz3Dto(
                 (long) idx - 1,
                 submitTeam.getId(),
                 submitTeam.getName(),
+                submitTeam.getCallName(),
                 submitTeam.getLeague().toString(),
                 submitTeam.getSeasonYear(),
                 submitTeam.getSpring_rank(),
@@ -56,7 +49,7 @@ public class Quiz3Service {
     }
 
     public boolean isExist(String teamName) {
-        return !teamService.findByName(teamName).isEmpty();
+        return !teamService.findByNameOrCallName(teamName).isEmpty();
     }
 
     public Long getTeamId(String teamName) {
@@ -64,7 +57,7 @@ public class Quiz3Service {
     }
 
     public boolean isAnswer(String teamName, Quiz3Dto quiz3Dto) {
-        List<Team> teamList =teamService.findByName(teamName);
+        List<Team> teamList =teamService.findByNameOrCallName(teamName);
         for (Team team : teamList) {
             if (team.getName().equals(quiz3Dto.getTeamName())) {
                 return true;

@@ -13,4 +13,7 @@ public interface ProgamerRepository extends JpaRepository<Progamer, Long> {
 
     @Query("SELECT p FROM Progamer p WHERE LOWER(p.pid) = LOWER(:pid)")
     Progamer findByPidIgnoreCase(@Param("pid") String pid);
+
+    @Query("SELECT p FROM Progamer p ORDER BY RAND() LIMIT :totalCount")
+    List<Progamer> findRandomPlayers(int totalCount);
 }

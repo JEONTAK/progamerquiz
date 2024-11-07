@@ -20,6 +20,7 @@ We will produce the unchecked list later.
 
 
 - Who Are You?
+
   Who are you? is a quiz that combines hints to guess a specific player.
 
   There are a total of eight challenges, and six lists are given for each challenge.
@@ -31,6 +32,25 @@ We will produce the unchecked list later.
   the inconsistent list is maintained in color, and the specific list is given an up-down hint.
 
   You can solve the quiz by combining those hints.
+
+
+- I Got You!
+
+
+- What is Team?
+
+
+- Piece Of Puzzle
+
+
+- Player Bingo
+
+  Coming Soon
+
+
+- Tic Tac Toe
+
+  Coming Soon
 
 ## Diagram
 

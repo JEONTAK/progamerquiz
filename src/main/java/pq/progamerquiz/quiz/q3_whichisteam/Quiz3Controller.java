@@ -32,7 +32,7 @@ public class Quiz3Controller {
         correctCount = 0;
         currentIndex = 0;
         quizList.clear();
-        quizList = quiz3Service.getTeams(totalIndex);
+        quizList = quiz3Service.getTeams(totalIndex, null);
 
     }
 

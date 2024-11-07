@@ -34,4 +34,19 @@ public class TeamDto {
         this.roster = roster;
         this.image_path = image_path;
     }
+
+    public TeamDto(Long id, String name, String callName, Long seasonYear, String league, Long spring_rank, Long summer_rank, Long msi_rank, Long worlds_rank, Long winter_rank, List<Progamer> roster, Long image_path) {
+        this.id = id;
+        this.name = name;
+        this.callName = callName;
+        this.seasonYear = seasonYear;
+        this.league = league;
+        this.spring_rank = spring_rank;
+        this.summer_rank = summer_rank;
+        this.msi_rank = msi_rank;
+        this.worlds_rank = worlds_rank;
+        this.winter_rank = winter_rank;
+        this.roster = roster;
+        this.image_path = image_path;
+    }
 }
