@@ -57,12 +57,12 @@ public class Quiz1Service {
     }
 
     public static Quiz1Dto convert(ProgamerDto submitProgamer) {
-        Quiz1Dto result = new Quiz1Dto(
+        return new Quiz1Dto(
                 submitProgamer.getId(),
                 submitProgamer.getPid(),
                 submitProgamer.getName(),
                 submitProgamer.getBirth(),
-                submitProgamer.getPosition().toString(),
+                submitProgamer.getPosition(),
                 submitProgamer.getLeague_win(),
                 submitProgamer.getIntl_win(),
                 submitProgamer.getNationality(),
@@ -70,7 +70,6 @@ public class Quiz1Service {
                 submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getImage_path(),
                 submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getLeague().toString()
         );
-        return result;
     }
 
 }

@@ -24,20 +24,6 @@ public class ProgamerMapper {
         progamer.setIntl_win(progamerDto.getIntl_win());
         progamer.setNationality(progamerDto.getNationality());
         progamer.setTeams(progamerDto.getTeams());
-/*        // teams 필드를 쉼표로 구분하여 리스트로 변환
-        List<Team> teams = new ArrayList<>();
-        if (progamerDto.getTeams() != null) {
-            List<Long> teamIds = Arrays.stream(progamerDto.getTeams().split(","))
-                    .map(Long::parseLong)
-                    .toList();
-
-            // 데이터베이스에서 팀 ID로 Team 엔티티를 가져옴
-            teams = teamIds.stream()
-                    .map(id -> em.find(Team.class, id))
-                    .filter(Objects::nonNull)  // null 체크
-                    .collect(Collectors.toList());
-        }
-        progamer.setTeams(teams);*/
 
         return progamer;
     }
