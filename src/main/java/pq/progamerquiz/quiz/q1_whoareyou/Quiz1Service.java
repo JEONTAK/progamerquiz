@@ -1,14 +1,10 @@
 package pq.progamerquiz.quiz.q1_whoareyou;
 
-
-import jakarta.persistence.EntityManager;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.progamer.Progamer;
 import pq.progamerquiz.progamer.ProgamerDto;
-import pq.progamerquiz.progamer.ProgamerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pq.progamerquiz.progamer.ProgamerService;
 
@@ -17,24 +13,21 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Optional;
-import java.util.Random;
 
 
 //Quiz : Who are you?
 @Service
 @Log4j2
 @Transactional
+@RequiredArgsConstructor
 public class Quiz1Service {
 
-    @Autowired
     private ProgamerService progamerService;
 
     public Quiz1Dto getRandomProgamer() {
         List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
         Quiz1Dto quiz1Dto = convert(progamer.get(0));
-        log.info(quiz1Dto.getId());
-        log.info(quiz1Dto.getPid());
+        log.info("ID: {}, PID: {}", quiz1Dto.getId(), quiz1Dto.getPid());
         return quiz1Dto;
     }
 
@@ -43,12 +36,11 @@ public class Quiz1Service {
         try{
             Path path = Paths.get(new ClassPathResource("static" + imagePath).getURI());
             if (!Files.exists(path)) {
-                imagePath = "/images/none.png";
+                return "/images/none.png";
             }
         } catch (IOException e) {
-            imagePath = "/images/none.png";
+            return "/images/none.png";
         }
-
         return imagePath;
     }
 

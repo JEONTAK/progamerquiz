@@ -7,11 +7,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.progamer.Progamer;
 import pq.progamerquiz.progamer.ProgamerDto;
-import pq.progamerquiz.progamer.ProgamerRepository;
 import pq.progamerquiz.progamer.ProgamerService;
-import pq.progamerquiz.quiz.q1_whoareyou.Quiz1Dto;
 import pq.progamerquiz.team.Team;
 
 //Quiz : I Got you!

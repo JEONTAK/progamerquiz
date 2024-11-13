@@ -13,8 +13,7 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     List<Team> findByName(String name);
 
     @Query("SELECT t.id FROM Team t WHERE LOWER(t.name) = LOWER(:teamName)")
-    Long findNameById(String teamName);
-
+    Long findIdByName(String teamName);
 
     @Query("SELECT t FROM Team t WHERE (:league IS NULL OR t.league = :league) ORDER BY RAND() LIMIT :totalCount")
     List<Team> findRandomTeams(int totalCount, String league);

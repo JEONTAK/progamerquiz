@@ -73,7 +73,7 @@ public class UpdateDBList {
             for (JsonNode node : rootNode) {
                 ProgamerDto progamerDto = mapper.treeToValue(node, ProgamerDto.class);
                 Progamer progamer = ProgamerMapper.toEntity(progamerDto, em);
-                progamerService.saveProgamer(progamer);
+                progamerService.save(progamer);
             }
         } catch (IOException e) {
             e.printStackTrace();
