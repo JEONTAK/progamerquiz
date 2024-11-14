@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import pq.progamerquiz.progamer.ProgamerDto;
-import pq.progamerquiz.progamer.ProgamerService;
+import pq.progamerquiz.dto.ProgamerDto;
+import pq.progamerquiz.dto.Quiz1Dto;
+import pq.progamerquiz.service.ProgamerService;
+import pq.progamerquiz.service.Quiz1Service;
 
 import java.util.Collections;
 

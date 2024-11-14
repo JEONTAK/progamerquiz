@@ -1,0 +1,42 @@
+package pq.progamerquiz.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import pq.progamerquiz.domain.Progamer;
+
+import java.util.List;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProgamerDto {
+
+    private Long id;
+    private String pid;
+    private String name;
+    private Long birth;
+    private String position;
+    private Long league_win;
+    private Long intl_win;
+    private String nationality;
+    private List<TeamDto> teams;
+
+
+    public ProgamerDto(Long id, String pid, String name) {
+        this.id = id;
+        this.pid = pid;
+        this.name = name;
+    }
+
+
+    public static ProgamerDto toDto(Progamer progamer) {
+        return new ProgamerDto(
+                progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(),
+                progamer.getPosition().toString(), progamer.getLeague_win(),
+                progamer.getIntl_win(), progamer.getNationality(), TeamDto.listToDto(progamer.getTeams())
+        );
+    }
+}
