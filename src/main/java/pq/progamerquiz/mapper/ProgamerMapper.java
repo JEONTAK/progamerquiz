@@ -18,7 +18,7 @@ public class ProgamerMapper {
         progamer.setLeague_win(progamerDto.getLeague_win());
         progamer.setIntl_win(progamerDto.getIntl_win());
         progamer.setNationality(progamerDto.getNationality());
-        progamer.setTeams(progamerDto.getTeams());
+        progamer.setTeams(TeamMapper.toEntityList(progamerDto.getTeams()));
 
         return progamer;
     }

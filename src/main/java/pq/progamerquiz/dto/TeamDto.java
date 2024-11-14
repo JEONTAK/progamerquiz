@@ -30,15 +30,6 @@ public class TeamDto {
     private List<Progamer> roster = new ArrayList<>();
     private Long image_path;
 
-    public TeamDto(Long id, String name, String league, Long seasonYear, List<Progamer> roster, Long image_path) {
-        this.id = id;
-        this.name = name;
-        this.league = league;
-        this.seasonYear = seasonYear;
-        this.roster = roster;
-        this.image_path = image_path;
-    }
-
     public static TeamDto toDto(Team team) {
         return new TeamDto(
                 team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),

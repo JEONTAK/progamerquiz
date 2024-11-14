@@ -27,7 +27,7 @@ public class Quiz4Service {
         List<Quiz4Dto> quizList = new ArrayList<>();
 
         for(int i = 1 ; i <= teamList.size() ; i++){
-            quizList.add(Quiz4Dto.convert(i, teamList.get(i - 1)));
+            quizList.add(convert(i, teamList.get(i - 1)));
         }
 
         return quizList;

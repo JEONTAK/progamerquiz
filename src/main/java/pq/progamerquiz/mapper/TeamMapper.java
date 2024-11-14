@@ -4,6 +4,8 @@ import pq.progamerquiz.domain.Team;
 import pq.progamerquiz.dto.TeamDto;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class TeamMapper {
 
@@ -22,5 +24,12 @@ public class TeamMapper {
         team.setRoster(new ArrayList<>());
         team.setImage_path(teamDto.getImage_path());
         return team;
+    }
+
+    // Convert List<TeamDto> to List<Team>
+    public static List<Team> toEntityList(List<TeamDto> teamDtoList) {
+        return teamDtoList.stream()
+                .map(TeamMapper::toEntity)
+                .collect(Collectors.toList());
     }
 }
