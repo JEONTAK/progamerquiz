@@ -1,4 +1,4 @@
-package pq.progamerquiz.quiz.q1_whoareyou;
+package pq.progamerquiz.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,8 +7,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.dto.ProgamerDto;
 import pq.progamerquiz.dto.Quiz1Dto;
-import pq.progamerquiz.service.ProgamerService;
-import pq.progamerquiz.service.Quiz1Service;
 
 import java.util.Collections;
 

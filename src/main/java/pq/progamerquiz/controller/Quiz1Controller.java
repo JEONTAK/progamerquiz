@@ -89,7 +89,7 @@ public class Quiz1Controller {
             isSubmitted = "false";
             return "redirect:/whoareyou/" + answer.getId();
         }
-        Quiz1Dto curProgamer = Quiz1Service.convert(submitProgamer);
+        Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
         log.info(curProgamer.getId() + " " + curProgamer.getPid());
         isSubmitted = "true";
         if (curProgamer.getId().equals(answer.getId())) {

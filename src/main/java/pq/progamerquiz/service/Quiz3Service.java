@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.Team;
 import pq.progamerquiz.dto.Quiz3Dto;
 import pq.progamerquiz.dto.TeamDto;
 
@@ -37,9 +36,9 @@ public class Quiz3Service {
     }
 
     public boolean isAnswer(String teamName, Quiz3Dto quiz3Dto) {
-        List<Team> teamList =teamService.findByNameOrCallName(teamName);
-        for (Team team : teamList) {
-            if (team.getName().equals(quiz3Dto.getTeamName())) {
+        List<TeamDto> teamList =teamService.findByNameOrCallName(teamName);
+        for (TeamDto teamDto : teamList) {
+            if (teamDto.getName().equals(quiz3Dto.getTeamName())) {
                 return true;
             }
         }

@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pq.progamerquiz.domain.Progamer;
 import pq.progamerquiz.domain.Team;
 
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class TeamDto {
     private Long msi_rank;
     private Long worlds_rank;
     private Long winter_rank;
-    private List<Progamer> roster = new ArrayList<>();
+    private List<ProgamerDto> roster = new ArrayList<>();
     private Long image_path;
 
     public static TeamDto toDto(Team team) {
@@ -35,7 +34,7 @@ public class TeamDto {
                 team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),
                 team.getLeague().toString(), team.getSpring_rank(), team.getSummer_rank(),
                 team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank(),
-                team.getRoster(), team.getImage_path()
+                team.getRoster().stream().map(ProgamerDto::toDto).toList(), team.getImage_path()
         );
     }
 

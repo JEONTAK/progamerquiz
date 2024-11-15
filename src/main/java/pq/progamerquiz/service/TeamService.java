@@ -31,10 +31,11 @@ public class TeamService {
     }
 
 
-    public Team find(Long id) {
-        return teamRepository.findById(id).orElse(null);
+    public TeamDto find(Long id) {
+        return teamRepository.findById(id)
+                .map(TeamDto::toDto)
+                .orElse(null);
     }
-
 
     public Long findIdByName(String teamName) {
         return teamRepository.findIdByName(teamName);
@@ -48,7 +49,10 @@ public class TeamService {
     }
 
 
-    public List<Team> findByNameOrCallName(String teamName) {
-        return teamRepository.findByNameOrCallName(teamName);
+    public List<TeamDto> findByNameOrCallName(String teamName) {
+        return teamRepository.findByNameOrCallName(teamName)
+                .stream()
+                .map(TeamDto::toDto)
+                .toList();
     }
 }

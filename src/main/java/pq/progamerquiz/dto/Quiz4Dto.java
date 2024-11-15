@@ -11,7 +11,6 @@ import java.util.Map;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class Quiz4Dto {
 
     private Long index;
