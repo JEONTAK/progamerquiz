@@ -49,7 +49,9 @@ public class Quiz4Controller {
         correctCount = 0;
         currentIndex = 0;
         quizList.clear();
+        log.info("Set Quiz...");
         quizList = quiz4Service.getTeams(totalIndex, "LCK");
+        log.info("Finish Set Quiz...");
         for (Quiz4Dto quiz4Dto : quizList) {
             log.info("Index : " + quiz4Dto.getIndex() + " | Team : " + quiz4Dto.getTeamName() + " | Year : " + quiz4Dto.getTeamYear());
             for (Map<Long, Boolean> map : quiz4Dto.getAnswer()) {
@@ -67,6 +69,7 @@ public class Quiz4Controller {
     // 퀴즈 시작
     @GetMapping
     public String startQuiz(Model model) {
+        log.info("Piece of puzzle");
         initialize();
         return "redirect:/pieceofpuzzle/quiz";
     }
@@ -86,6 +89,8 @@ public class Quiz4Controller {
         model.addAttribute("isSubmitted", isSubmitted);
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("currentIndex", cIdx);
+        log.info("Current : " + cIdx + " / "
+                + quizList.get(cIdx).toString());
         return "quizzes/pieceofpuzzle";
     }
 
@@ -153,12 +158,12 @@ public class Quiz4Controller {
         response.put("isSubmitted", isSubmitted);
         response.put("isCorrect", isCorrect);
         response.put("correctId", correctId);
-        log.info("isFinish : " + isFinish);
-        log.info("isSubmitted : " + isSubmitted);
-        log.info("isCorrect : " + isCorrect);
-        log.info("correctId : " + correctId);
-        log.info("correctCount : " + correctCount);
-        log.info("currentIndex : " + currentIndex);
+        log.info("isFinish : " + isFinish
+        + "isSubmitted : " + isSubmitted
+        + "isCorrect : " + isCorrect
+        + "correctId : " + correctId
+        + "correctCount : " + correctCount
+        + "currentIndex : " + currentIndex);
         return ResponseEntity.ok(response);
     }
 
@@ -167,6 +172,7 @@ public class Quiz4Controller {
     @GetMapping("/end")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> quizEnd() {
+        log.info("Finish Quiz (I Got you!) Result : " + correctCount + " / " + totalIndex);
         Map<String, Object> result = new HashMap<>();
         result.put("correctCount", correctCount);
         result.put("totalCount", totalIndex);

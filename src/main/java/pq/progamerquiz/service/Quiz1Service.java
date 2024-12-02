@@ -31,6 +31,10 @@ public class Quiz1Service {
         return quiz1Dto;
     }
 
+    public boolean isExist(String pid) {
+        return progamerService.findByPid(pid) != null;
+    }
+
     public String getImagePath(Quiz1Dto answer) {
         String imagePath = "/images/player/" + answer.getId() + ".webp";
         try{

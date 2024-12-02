@@ -38,9 +38,18 @@ public class TeamDto {
         );
     }
 
+    public static TeamDto toDtoForUseProgamerDto(Team team){
+        return new TeamDto(
+                team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),
+                team.getLeague().toString(), team.getSpring_rank(), team.getSummer_rank(),
+                team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank(),
+                null, team.getImage_path()
+        );
+    }
+
     public static List<TeamDto> listToDto(List<Team> teams) {
         return teams.stream()
-                .map(TeamDto::toDto)
+                .map(TeamDto::toDtoForUseProgamerDto)
                 .collect(Collectors.toList());
     }
 }

@@ -33,12 +33,15 @@ public class Quiz1Controller {
 
     @GetMapping
     public String startQuiz(Model model) {
-        log.info("Make Answer Progamer");
+        log.info("Who Are you?");
         initialize();
+        log.info("Set Quiz...");
         answer = quiz1Service.getRandomProgamer();
+        log.info("Finish Set Quiz...");
         imagePath = quiz1Service.getImagePath(answer);
         model.addAttribute("answer", answer);
         model.addAttribute("imagePath", imagePath);
+        log.info("Answer : " + answer.getId() + " / " + answer.getPid() + " / " + answer.getName());
         return "redirect:/whoareyou/" + answer.getId();
     }
 
@@ -64,12 +67,11 @@ public class Quiz1Controller {
         model.addAttribute("attempts", attempts);
         model.addAttribute("maxAttempts", MAX_ATTEMPTS);
 
-        log.info("Progamer: " + answer);  // progamer가 null인지 확인
-        log.info("isSubmitted: " + isSubmitted);
-        log.info("Image Path: " + imagePath);
-        log.info("Try status: " + tryStatus);
-        log.info("Guessed List: " + guessedList);
-        log.info("Attempts: " + attempts);
+
+        log.info("isSubmitted : " + isSubmitted
+        + "\nTry status : " + tryStatus
+        + "\nGuessed List : " + guessedList
+        + "\nAttempts: " + attempts);
         // 세션 정보 초기화
         session.removeAttribute("try");
         session.removeAttribute("guessedList");
@@ -80,33 +82,32 @@ public class Quiz1Controller {
 
     @PostMapping("/{progamerId}")
     public String submitAnswer(@RequestParam("input") String submit, Model model, HttpSession session) {
-        log.info(submit);
-        ProgamerDto submitProgamer = quiz1Service.findByPid(submit);
-        if (submitProgamer == null) {
+        if (quiz1Service.isExist(submit)) {
+            ProgamerDto submitProgamer = quiz1Service.findByPid(submit);
+            Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
+            log.info("submit Progamer : " + curProgamer.getId() + " / " + curProgamer.getPid());
+            isSubmitted = "true";
+            if (curProgamer.getId().equals(answer.getId())) {
+                session.setAttribute("try", 1);
+                guessedList.add(curProgamer);
+                session.setAttribute("guessedList", guessedList);
+                session.setAttribute("attempts", attempts);
+                log.info("Correct answer!");
+            } else {
+                session.setAttribute("try", 0);
+                attempts++;
+                guessedList.add(curProgamer);
+                session.setAttribute("guessedList", guessedList);
+                session.setAttribute("attempts", attempts);
+                log.info("Incorrect answer.");
+            }
+        }else{
             log.error("Submitted progamer is null");
             session.setAttribute("guessedList", guessedList);
             session.setAttribute("attempts", attempts);
             isSubmitted = "false";
             return "redirect:/whoareyou/" + answer.getId();
         }
-        Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
-        log.info(curProgamer.getId() + " " + curProgamer.getPid());
-        isSubmitted = "true";
-        if (curProgamer.getId().equals(answer.getId())) {
-            session.setAttribute("try", 1);
-            guessedList.add(curProgamer);
-            session.setAttribute("guessedList", guessedList);
-            session.setAttribute("attempts", attempts);
-            log.info("Correct answer!");
-        } else {
-            session.setAttribute("try", 0);
-            attempts++;
-            guessedList.add(curProgamer);
-            session.setAttribute("guessedList", guessedList);
-            session.setAttribute("attempts", attempts);
-            log.info("Incorrect answer.");
-        }
-
         return "redirect:/whoareyou/" + answer.getId();
     }
 }

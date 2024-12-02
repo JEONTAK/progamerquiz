@@ -43,20 +43,21 @@ public class Quiz2Controller {
 
     @GetMapping
     public String startQuiz(Model model) {
-        log.info("Start Quiz2 I got You!");
+        log.info("I got You!");
         initialize();
         return "redirect:/igotyou/quiz";
     }
 
     @GetMapping("/quiz")
     public String gettingQuiz(@RequestParam(value = "currentIndex", required = false) Integer cIdx, Model model) {
-        log.info("Current Index: " + cIdx);
         currentIndex = cIdx == null ? 0 : cIdx;
         model.addAttribute("quizList", quizList);
         model.addAttribute("isSubmitted", isSubmitted);
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalCount", totalCount);
         model.addAttribute("currentIndex", currentIndex);
+        log.info("Current : " + cIdx + " / "
+                + quizList.get(cIdx).toString());
         return "quizzes/igotyou";
     }
 
@@ -101,11 +102,11 @@ public class Quiz2Controller {
         model.addAttribute("totalCount", totalCount);
         model.addAttribute("correctCount", correctCount);
 
-        log.info("isSubmitted: " + isSubmitted);
-        log.info("isCorrect: " + isCorrect);
-        log.info("currentIndex: " + currentIndex);
-        log.info("correctCount: " + correctCount);
-        log.info("totalCount: " + totalCount);
+        log.info("isSubmitted: " + isSubmitted
+        + "isCorrect: " + isCorrect
+        + "currentIndex: " + currentIndex
+        + "correctCount: " + correctCount
+        + "totalCount: " + totalCount);
         return ResponseEntity.ok(response);
     }
 
@@ -115,13 +116,13 @@ public class Quiz2Controller {
         initialize();
         totalCount = payload.get("totalCount");
         log.info("Request size : " + totalCount);
-        log.info("Set Progamers...");
+        log.info("Set Quiz...");
         quizList = quiz2Service.getProgamers(totalCount);
-        log.info("Start Quiz2 I got You!");
+        log.info("Finish Set Quiz...");
         for (Quiz2Dto quiz2Dto : quizList) {
             log.info(quiz2Dto.getIndex() + " : " + quiz2Dto.getPid());
             for (int i = 0; i < quiz2Dto.getTeamNames().size(); i++) {
-                log.info("    Team : " + quiz2Dto.getTeamNames().get(i) + " (" + quiz2Dto.getTeamYears().get(i) +")");
+                log.info("      Team : " + quiz2Dto.getTeamNames().get(i) + " (" + quiz2Dto.getTeamYears().get(i) +")");
             }
         }
 
@@ -137,6 +138,7 @@ public class Quiz2Controller {
     @GetMapping("/end")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> quizEnd() {
+        log.info("Finish Quiz (I Got you!) Result : " + correctCount + " / " + totalCount);
         Map<String, Object> result = new HashMap<>();
         result.put("correctCount", correctCount);
         result.put("totalCount", totalCount);

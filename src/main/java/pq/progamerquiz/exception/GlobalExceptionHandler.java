@@ -1,3 +1,4 @@
+/*
 package pq.progamerquiz.exception;
 
 import lombok.extern.slf4j.Slf4j;
@@ -44,4 +45,4 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     private List<StackTraceElement> getStackTrace(Exception ex) {
         return Arrays.asList(ex.getStackTrace());
     }
-}
+}*/

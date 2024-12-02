@@ -10,8 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ProgamerRepository extends JpaRepository<Progamer, Long> {
-
-    @Query("SELECT p FROM Progamer p WHERE LOWER(p.pid) = LOWER(:pid)")
+    @Query("SELECT p FROM Progamer p LEFT JOIN FETCH p.teams WHERE lower(p.pid) = lower(:pid)")
     Progamer findByPidIgnoreCase(@Param("pid") String pid);
 
     @Query("SELECT p FROM Progamer p ORDER BY RAND() LIMIT :totalCount")

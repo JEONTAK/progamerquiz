@@ -31,8 +31,22 @@ public class ProgamerDto {
         this.name = name;
     }
 
+    public ProgamerDto(Long id, String pid, String name, Long birth, String position, Long league_win, Long intl_win,
+                       String nationality) {
+        this.id = id;
+        this.pid = pid;
+        this.name = name;
+        this.birth = birth;
+        this.position = position;
+        this.league_win = league_win;
+        this.intl_win = intl_win;
+        this.nationality = nationality;
+    }
 
     public static ProgamerDto toDto(Progamer progamer) {
+        if (progamer == null) {
+            return null;
+        }
         return new ProgamerDto(
                 progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(),
                 progamer.getPosition().toString(), progamer.getLeague_win(),
@@ -40,3 +54,5 @@ public class ProgamerDto {
         );
     }
 }
+
+//

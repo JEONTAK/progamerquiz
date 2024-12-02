@@ -34,13 +34,17 @@ public class Quiz3Controller {
         correctCount = 0;
         currentIndex = 0;
         quizList.clear();
+        log.info("Set Quiz...");
         quizList = quiz3Service.getTeams(totalIndex, null);
-
+        log.info("Finish Set Quiz...");
+        for (Quiz3Dto quiz3Dto : quizList) {
+            log.info("      Team : " + quiz3Dto.getTeamId() + " / " + quiz3Dto.getTeamName());
+        }
     }
 
     @GetMapping
     public String startQuiz(Model model) {
-        log.info("Which is Team? Start");
+        log.info("Which is Team?");
         initialize();
         return "redirect:/whichisteam/quiz";
     }
@@ -57,6 +61,8 @@ public class Quiz3Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalIndex", totalIndex);
         model.addAttribute("currentIndex", cIdx);
+        log.info("Current : " + cIdx + " / "
+                + quizList.get(cIdx).toString());
         return "quizzes/whichisteam";
     }
 
@@ -92,9 +98,9 @@ public class Quiz3Controller {
         }
         response.put("isSubmitted", isSubmitted);
         response.put("isCorrect", isCorrect);
-        log.info("isSubmitted: " + isSubmitted);
-        log.info("isCorrect: " + isCorrect);
-        log.info("currentIndex: " + currentIndex);
+        log.info("isSubmitted: " + isSubmitted
+        + "isCorrect: " + isCorrect
+        + "currentIndex: " + currentIndex);
         return ResponseEntity.ok(response);
     }
 
@@ -102,6 +108,7 @@ public class Quiz3Controller {
     @GetMapping("/end")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> quizEnd() {
+        log.info("Finish Quiz (I Got you!) Result : " + correctCount + " / " + totalIndex);
         Map<String, Object> result = new HashMap<>();
         result.put("correctCount", correctCount);
         result.put("totalCount", totalIndex);
