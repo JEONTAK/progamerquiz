@@ -61,8 +61,8 @@ public class Quiz3Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalIndex", totalIndex);
         model.addAttribute("currentIndex", cIdx);
-        log.info("Current : " + cIdx + " / "
-                + quizList.get(cIdx).toString());
+        log.info("Current : " + currentIndex + " / "
+                + quizList.get(currentIndex).toString());
         return "quizzes/whichisteam";
     }
 

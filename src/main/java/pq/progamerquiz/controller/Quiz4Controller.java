@@ -89,8 +89,8 @@ public class Quiz4Controller {
         model.addAttribute("isSubmitted", isSubmitted);
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("currentIndex", cIdx);
-        log.info("Current : " + cIdx + " / "
-                + quizList.get(cIdx).toString());
+        log.info("Current : " + currentIndex + " / "
+                + quizList.get(currentIndex).toString());
         return "quizzes/pieceofpuzzle";
     }
 
