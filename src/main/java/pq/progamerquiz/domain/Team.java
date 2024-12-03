@@ -26,8 +26,7 @@ public class Team{
 
     private Long seasonYear;
 
-    @Enumerated(EnumType.STRING)
-    private League league;
+    private String league;
 
     private Long spring_rank;
 
@@ -41,10 +40,6 @@ public class Team{
 
     @ManyToMany(mappedBy = "teams")
     private List<Progamer> roster = new ArrayList<>();
-
-    public enum League {
-        LCK, LPL, LEC, LCS, CBLOL, PCS, LLA, VCS, LJL, LCO, LMS, TCL, LST
-    }
 
     public Long image_path;
 }

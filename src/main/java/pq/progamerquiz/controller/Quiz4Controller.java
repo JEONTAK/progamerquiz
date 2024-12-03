@@ -27,7 +27,7 @@ public class Quiz4Controller {
 
     @Autowired
     private Quiz4Service quiz4Service;
-    private List<Quiz4Dto> quizList = new ArrayList<>();
+    private List<Quiz4Dto> quizList;
     private String isSubmitted;
     private String isCorrect;
     private String isFinish;
@@ -48,10 +48,10 @@ public class Quiz4Controller {
         isFinish = "false";
         correctCount = 0;
         currentIndex = 0;
-        quizList.clear();
+        quizList = new ArrayList<>();
         log.info("Set Quiz...");
         quizList = quiz4Service.getTeams(totalIndex, "LCK");
-        log.info("Finish Set Quiz...");
+        log.info("Finish Set Quiz..." + " " + quizList.size());
         for (Quiz4Dto quiz4Dto : quizList) {
             log.info("Index : " + quiz4Dto.getIndex() + " | Team : " + quiz4Dto.getTeamName() + " | Year : " + quiz4Dto.getTeamYear());
             for (Map<Long, Boolean> map : quiz4Dto.getAnswer()) {

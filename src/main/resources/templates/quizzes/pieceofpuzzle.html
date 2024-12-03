@@ -30,14 +30,14 @@
             </div>
         </div>
         <div class="quiz-item">
-            <form id="playerForm" method="post">
+            <form id="playerForm" method="post"  autocomplete="off">
                 <div id="error-message-player" class="error-message" style="display: none;">
                 </div>
                 <div id="teamInfo" class="hints-container">
                     <span id = "team-name">Team Name</span><span id = "team-year">Year</span>
                     <img id="team-image" th:src="@{${imagePath}}" alt="Team Image">
                 </div>
-                <input id="player-input" name="input" type="text">
+                <input id="player-input" name="input" type="text" >
                 <div id="suggestions"></div>
                 <div id = "hintContainer" class="hints-container"></div>
             </form>

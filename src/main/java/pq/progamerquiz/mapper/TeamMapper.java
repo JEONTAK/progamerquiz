@@ -15,7 +15,7 @@ public class TeamMapper {
         team.setName(teamDto.getName());
         team.setCallName(teamDto.getCallName());
         team.setSeasonYear(teamDto.getSeasonYear());
-        team.setLeague(Team.League.valueOf(teamDto.getLeague())); // enum 변환
+        team.setLeague(teamDto.getLeague()); // enum 변환
         team.setSpring_rank(teamDto.getSpring_rank());
         team.setSummer_rank(teamDto.getSummer_rank());
         team.setMsi_rank(teamDto.getMsi_rank());

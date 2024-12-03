@@ -23,23 +23,31 @@ public class Quiz4Service {
     final private ProgamerService progamerService;
 
     public List<Quiz4Dto> getTeams(int totalCount, String league) {
-        List<TeamDto> teamList = teamService.findRandomTeams(totalCount, league);
         List<Quiz4Dto> quizList = new ArrayList<>();
+        int index = 1;
 
-        for(int i = 1 ; i <= teamList.size() ; i++){
-            quizList.add(convert(i, teamList.get(i - 1)));
+        // 부족한 경우 추가 로직
+        while (quizList.size() < totalCount) {
+            List<TeamDto> extraTeam = teamService.findRandomTeams(1, league); // 추가 팀 가져오기 메서드
+            if (extraTeam != null) {
+                Quiz4Dto extraQuiz = convert(index, extraTeam.get(0));
+                if (extraQuiz != null) {
+                    quizList.add(extraQuiz);
+                    index++;
+                }
+            }
         }
 
         return quizList;
     }
 
     static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerDto> roster) {
-        List<Map<Long, Boolean>> answer = new ArrayList<>();
-        List<ProgamerDto> mutableRoster = new ArrayList<>(roster);
-        Collections.shuffle(mutableRoster);
         if(roster.size() < 5) {
             return null;
         }
+        List<Map<Long, Boolean>> answer = new ArrayList<>();
+        List<ProgamerDto> mutableRoster = new ArrayList<>(roster);
+        Collections.shuffle(mutableRoster);
         for (ProgamerDto progamerDto : mutableRoster.subList(0, 2)) {
             Map<Long, Boolean> progamerMap = new HashMap<>();
             progamerMap.put(progamerDto.getId(), false);  // id를 키로 하고 초기 상태는 false

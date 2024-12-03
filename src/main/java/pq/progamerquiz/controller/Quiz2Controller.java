@@ -56,8 +56,11 @@ public class Quiz2Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("totalCount", totalCount);
         model.addAttribute("currentIndex", currentIndex);
-        log.info("Current : " + currentIndex + " / "
-                + quizList.get(currentIndex).toString());
+
+        if (!quizList.isEmpty() && quizList != null) {
+            log.info("Current : " + currentIndex + " / "
+                    + quizList.get(currentIndex).toString());
+        }
         return "quizzes/igotyou";
     }
 

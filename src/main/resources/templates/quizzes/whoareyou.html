@@ -24,7 +24,7 @@
         </button>
         <div class="quiz-item" data-answer="${answer.id}">
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
-            <form id="playerForm" method="post">
+            <form id="playerForm" method="post" autocomplete="off">
                 <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
                 <div id="error-message-player" class="error-message" style="display: none;">
                 </div>
