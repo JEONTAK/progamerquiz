@@ -1,5 +1,6 @@
 package pq.progamerquiz.controller;
 
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.dto.ProgamerDto;
 import pq.progamerquiz.dto.Quiz2Dto;
 import pq.progamerquiz.service.Quiz2Service;
 
@@ -30,7 +32,7 @@ public class Quiz2Controller {
     private int totalCount;
     private int correctCount;
     private int currentIndex;
-    private List<Quiz2Dto> quizList = new ArrayList<>();
+    private List<Quiz2Dto> quizList;
 
     private void initialize() {
         isSubmitted = "true";
@@ -38,11 +40,11 @@ public class Quiz2Controller {
         totalCount = 0;
         correctCount = 0;
         currentIndex = 0;
-        quizList.clear();
+        quizList = new ArrayList<>();
     }
 
     @GetMapping
-    public String startQuiz(Model model) {
+    public String startQuiz() {
         log.info("I got You!");
         initialize();
         return "redirect:/igotyou/quiz";
@@ -84,10 +86,10 @@ public class Quiz2Controller {
         String userInput = payload.get("input");
         log.info("Submitting answer: " + userInput);
         Map<String, Object> response = new HashMap<>();
-        if (quiz2Service.isExist(userInput)) {
+        Optional<ProgamerDto> submitProgamer = quiz2Service.findByPid(userInput);
+        if (!submitProgamer.isEmpty()) {
             isSubmitted = "true";
-
-            if (quiz2Service.isAnswer(userInput, quizList.get(currentIndex))) {
+            if (quiz2Service.isAnswer(submitProgamer, quizList.get(currentIndex))) {
                 isCorrect = "true";
                 correctCount++;
             } else {

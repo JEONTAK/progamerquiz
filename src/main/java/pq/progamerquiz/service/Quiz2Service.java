@@ -1,6 +1,7 @@
 package pq.progamerquiz.service;
 
 
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -29,11 +30,11 @@ public class Quiz2Service {
                 .collect(Collectors.toList());
     }
 
-    public boolean isExist(String userInput) {
-        return progamerService.findByPid(userInput) != null;
+    public boolean isAnswer(Optional<ProgamerDto> progamerDto, Quiz2Dto quiz2Dto) {
+        return Objects.equals(progamerDto.get().getId(), quiz2Dto.getId());
     }
 
-    public boolean isAnswer(String userInput, Quiz2Dto quiz2Dto) {
-        return Objects.equals(progamerService.findByPid(userInput).getId(), quiz2Dto.getId());
+    public Optional<ProgamerDto> findByPid(String pid){
+        return progamerService.findByPid(pid);
     }
 }

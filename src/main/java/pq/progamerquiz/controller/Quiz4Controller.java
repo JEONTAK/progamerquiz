@@ -134,7 +134,7 @@ public class Quiz4Controller {
             if (quiz4Service.isAnswer(input, currentTeam)) {
                 isCorrect = "true";
                 currentTeam.setCorrect(currentTeam.getCorrect() + 1);
-                correctId = progamerService.findByPid(input).getId();
+                correctId = progamerService.findByPid(input).get().getId();
             }
             //오답
             else {

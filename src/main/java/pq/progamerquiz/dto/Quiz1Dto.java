@@ -1,5 +1,6 @@
 package pq.progamerquiz.dto;
 
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,19 +27,21 @@ public class Quiz1Dto {
     private Long teamId;
     private String recentLeague;
 
-    public static Quiz1Dto convert(ProgamerDto submitProgamer) {
-        return new Quiz1Dto(
-                submitProgamer.getId(),
-                submitProgamer.getPid(),
-                submitProgamer.getName(),
-                submitProgamer.getBirth(),
-                submitProgamer.getPosition(),
-                submitProgamer.getLeague_win(),
-                submitProgamer.getIntl_win(),
-                submitProgamer.getNationality(),
-                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getName(),
-                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getImage_path(),
-                submitProgamer.getTeams().get(submitProgamer.getTeams().size() - 1).getLeague().toString()
-        );
+    public static Quiz1Dto convert(Optional<ProgamerDto> submitProgamer) {
+        return submitProgamer.map(progamer ->
+                new Quiz1Dto(
+                        progamer.getId(),
+                        progamer.getPid(),
+                        progamer.getName(),
+                        progamer.getBirth(),
+                        progamer.getPosition(),
+                        progamer.getLeague_win(),
+                        progamer.getIntl_win(),
+                        progamer.getNationality(),
+                        progamer.getTeams().isEmpty() ? null : progamer.getTeams().get(progamer.getTeams().size() - 1).getName(),
+                        progamer.getTeams().isEmpty() ? null : progamer.getTeams().get(progamer.getTeams().size() - 1).getImage_path(),
+                        progamer.getTeams().isEmpty() ? null : progamer.getTeams().get(progamer.getTeams().size() - 1).getLeague().toString()
+                )
+        ).orElseThrow(() -> new IllegalArgumentException("ProgamerDto is required"));
     }
 }

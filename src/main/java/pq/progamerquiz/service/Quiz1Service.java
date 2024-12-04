@@ -1,5 +1,6 @@
 package pq.progamerquiz.service;
 
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
@@ -24,15 +25,16 @@ public class Quiz1Service {
 
     final private ProgamerService progamerService;
 
-    public Quiz1Dto getRandomProgamer() {
-        List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
-        Quiz1Dto quiz1Dto = Quiz1Dto.convert(progamer.get(0));
-        log.info("ID: {}, PID: {}", quiz1Dto.getId(), quiz1Dto.getPid());
-        return quiz1Dto;
+    public Optional<ProgamerDto> findByPid(String pid){
+        return progamerService.findByPid(pid);
     }
 
-    public boolean isExist(String pid) {
-        return progamerService.findByPid(pid) != null;
+    public Quiz1Dto getRandomProgamer() {
+        List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
+        return progamer.stream()
+                .findFirst()
+                .map(progamerDto -> Quiz1Dto.convert(Optional.of(progamerDto)))
+                .orElseThrow(() -> new IllegalArgumentException("No progamer found"));
     }
 
     public String getImagePath(Quiz1Dto answer) {
@@ -48,9 +50,5 @@ public class Quiz1Service {
             return "/images/none.png";
         }
         return imagePath;
-    }
-
-    public ProgamerDto findByPid(String pid){
-        return progamerService.findByPid(pid);
     }
 }

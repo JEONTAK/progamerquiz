@@ -1,9 +1,13 @@
 package pq.progamerquiz.controller;
 
 import jakarta.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -53,7 +57,7 @@ public class Quiz1Controller {
 
     @Transactional
     @GetMapping("/{progamerId}")
-    public String showQuiz(@PathVariable Long progamerId, Model model, HttpSession session) {
+    public String showQuiz(Model model, HttpSession session) {
         // 모델에 데이터 추가
         model.addAttribute("answer", answer);
         model.addAttribute("imagePath", imagePath);
@@ -81,9 +85,9 @@ public class Quiz1Controller {
     }
 
     @PostMapping("/{progamerId}")
-    public String submitAnswer(@RequestParam("input") String submit, Model model, HttpSession session) {
-        if (quiz1Service.isExist(submit)) {
-            ProgamerDto submitProgamer = quiz1Service.findByPid(submit);
+    public String submitAnswer(@RequestParam("input") String submit, HttpSession session) {
+        Optional<ProgamerDto> submitProgamer = quiz1Service.findByPid(submit);
+        if (!submitProgamer.isEmpty()) {
             Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
             log.info("submit Progamer : " + curProgamer.getId() + " / " + curProgamer.getPid());
             isSubmitted = "true";
@@ -110,4 +114,36 @@ public class Quiz1Controller {
         }
         return "redirect:/whoareyou/" + answer.getId();
     }
+
+
+   /* @PostMapping("/submitAnswer")
+    @ResponseBody
+    public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, String> payload) {
+        Map<String, Object> response = new HashMap<>();
+        String userInput = payload.get("input");
+        Optional<ProgamerDto> submitProgamer = quiz1Service.findByPid(userInput);
+        if (submitProgamer.isPresent()) {
+
+            Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
+            log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getPid());
+            guessedList.add(curProgamer);
+
+            if (curProgamer.getId().equals(answer.getId())) {
+                response.put("isCorrect", "true");
+                log.info("Correct answer!");
+            } else {
+                response.put("isCorrect", "false");
+                attempts++;
+                log.info("Incorrect answer.");
+            }
+
+            response.put("isSubmitted", "true");
+            response.put("guessedList", guessedList);
+            response.put("attempts", attempts);
+        } else {
+            response.put("isSubmitted", "false");
+            log.info("Submitted progamer is null");
+        }
+        return ResponseEntity.ok(response);
+    }*/
 }

@@ -63,7 +63,7 @@ public class Quiz4Service {
     public boolean isAnswer(String pid, Quiz4Dto quiz4Dto) {
         for (Map<Long, Boolean> answer : quiz4Dto.getAnswer()) {
             for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
-                if (progamerService.findByPid(pid).getId().equals(entry.getKey()) && !entry.getValue()) {
+                if (progamerService.findByPid(pid).get().getId().equals(entry.getKey()) && !entry.getValue()) {
                     entry.setValue(true);
                     return true;
                 }
