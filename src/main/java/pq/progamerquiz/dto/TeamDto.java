@@ -32,16 +32,17 @@ public class TeamDto {
     public static TeamDto toDto(Team team) {
         return new TeamDto(
                 team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),
-                team.getLeague().toString(), team.getSpring_rank(), team.getSummer_rank(),
+                team.getLeague(), team.getSpring_rank(), team.getSummer_rank(),
                 team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank(),
                 team.getRoster().stream().map(ProgamerDto::toDto).toList(), team.getImage_path()
         );
     }
 
-    public static TeamDto toDtoForUseProgamerDto(Team team){
+
+    public static TeamDto toDtoForNotUseRoster(Team team){
         return new TeamDto(
                 team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),
-                team.getLeague().toString(), team.getSpring_rank(), team.getSummer_rank(),
+                team.getLeague(), team.getSpring_rank(), team.getSummer_rank(),
                 team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank(),
                 null, team.getImage_path()
         );
@@ -49,7 +50,7 @@ public class TeamDto {
 
     public static List<TeamDto> listToDto(List<Team> teams) {
         return teams.stream()
-                .map(TeamDto::toDtoForUseProgamerDto)
+                .map(TeamDto::toDtoForNotUseRoster)
                 .collect(Collectors.toList());
     }
 }

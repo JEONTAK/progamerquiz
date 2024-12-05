@@ -31,12 +31,12 @@ public class Quiz3Service {
         return quizList;
     }
 
-    public boolean isExist(String teamName) {
-        return !teamService.findByNameOrCallName(teamName).isEmpty();
+
+    public List<TeamDto> findByName(String teamName){
+        return teamService.findByNameOrCallName(teamName);
     }
 
-    public boolean isAnswer(String teamName, Quiz3Dto quiz3Dto) {
-        List<TeamDto> teamList =teamService.findByNameOrCallName(teamName);
+    public boolean isAnswer(List<TeamDto> teamList, Quiz3Dto quiz3Dto) {
         for (TeamDto teamDto : teamList) {
             if (teamDto.getName().equals(quiz3Dto.getTeamName())) {
                 return true;

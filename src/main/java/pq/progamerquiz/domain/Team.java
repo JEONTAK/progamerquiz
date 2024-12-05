@@ -13,7 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Team{
+public class  Team{
 
     @Id
     @GeneratedValue

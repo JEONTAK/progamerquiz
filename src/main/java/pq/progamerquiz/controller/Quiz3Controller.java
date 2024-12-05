@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.dto.Quiz3Dto;
+import pq.progamerquiz.dto.TeamDto;
 import pq.progamerquiz.service.Quiz3Service;
 
 import java.util.*;
@@ -83,11 +84,12 @@ public class Quiz3Controller {
         String userInput = payload.get("input");
         log.info("Submitting answer: " + userInput);
         Map<String, Object> response = new HashMap<>();
-        if (!quiz3Service.isExist(userInput)) {
+        List<TeamDto> submitTeam = quiz3Service.findByName(userInput);
+        if (submitTeam.isEmpty()) {
             isSubmitted = "false";
             isCorrect = "none";
         } else {
-            if (quiz3Service.isAnswer(userInput, quizList.get(currentIndex))) {
+            if (quiz3Service.isAnswer(submitTeam, quizList.get(currentIndex))) {
                 isSubmitted = "true";
                 isCorrect = "true";
                 correctCount++;

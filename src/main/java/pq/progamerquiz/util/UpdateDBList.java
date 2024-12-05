@@ -80,7 +80,7 @@ public class UpdateDBList {
                 } catch (JsonProcessingException e) {
                     throw new RuntimeException(e);
                 }
-                Progamer progamer = ProgamerMapper.toEntity(progamerDto, em);
+                Progamer progamer = ProgamerMapper.toEntity(progamerDto);
                 progamerService.saveProgamer(progamer);
             });
         } catch (IOException e) {

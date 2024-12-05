@@ -24,18 +24,19 @@ public class Quiz4Service {
 
     public List<Quiz4Dto> getTeams(int totalCount, String league) {
         List<Quiz4Dto> quizList = new ArrayList<>();
-        int index = 1;
-
+        List<TeamDto> teamList = teamService.findRandomTeams(totalCount * 3, league);
+        int quizIdx = 1, teamIdx = 0;
         // 부족한 경우 추가 로직
         while (quizList.size() < totalCount) {
-            List<TeamDto> extraTeam = teamService.findRandomTeams(1, league); // 추가 팀 가져오기 메서드
-            if (extraTeam != null) {
-                Quiz4Dto extraQuiz = convert(index, extraTeam.get(0));
+            // 추가 팀 가져오기 메서드
+            if (teamList.get(teamIdx) != null) {
+                Quiz4Dto extraQuiz = convert(quizIdx, teamList.get(teamIdx));
                 if (extraQuiz != null) {
                     quizList.add(extraQuiz);
-                    index++;
+                    quizIdx++;
                 }
             }
+            teamIdx++;
         }
 
         return quizList;
