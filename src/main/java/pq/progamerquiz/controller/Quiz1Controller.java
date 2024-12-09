@@ -1,9 +1,6 @@
 package pq.progamerquiz.controller;
 
 import jakarta.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +13,7 @@ import pq.progamerquiz.dto.ProgamerDto;
 import pq.progamerquiz.dto.Quiz1Dto;
 import pq.progamerquiz.service.Quiz1Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 //Quiz : Who are you?
 @Controller
@@ -84,39 +80,7 @@ public class Quiz1Controller {
         return "quizzes/whoareyou";
     }
 
-    @PostMapping("/{progamerId}")
-    public String submitAnswer(@RequestParam("input") String submit, HttpSession session) {
-        Optional<ProgamerDto> submitProgamer = quiz1Service.findByPid(submit);
-        if (!submitProgamer.isEmpty()) {
-            Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
-            log.info("submit Progamer : " + curProgamer.getId() + " / " + curProgamer.getPid());
-            isSubmitted = "true";
-            if (curProgamer.getId().equals(answer.getId())) {
-                session.setAttribute("try", 1);
-                guessedList.add(curProgamer);
-                session.setAttribute("guessedList", guessedList);
-                session.setAttribute("attempts", attempts);
-                log.info("Correct answer!");
-            } else {
-                session.setAttribute("try", 0);
-                attempts++;
-                guessedList.add(curProgamer);
-                session.setAttribute("guessedList", guessedList);
-                session.setAttribute("attempts", attempts);
-                log.info("Incorrect answer.");
-            }
-        }else{
-            log.error("Submitted progamer is null");
-            session.setAttribute("guessedList", guessedList);
-            session.setAttribute("attempts", attempts);
-            isSubmitted = "false";
-            return "redirect:/whoareyou/" + answer.getId();
-        }
-        return "redirect:/whoareyou/" + answer.getId();
-    }
-
-
-   /* @PostMapping("/submitAnswer")
+    @PostMapping("/submitAnswer")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, String> payload) {
         Map<String, Object> response = new HashMap<>();
@@ -132,11 +96,15 @@ public class Quiz1Controller {
                 response.put("isCorrect", "true");
                 log.info("Correct answer!");
             } else {
-                response.put("isCorrect", "false");
                 attempts++;
-                log.info("Incorrect answer.");
+                if (attempts == 7) {
+                    response.put("isCorrect", "end");
+                    log.info("Finish quiz.");
+                }else{
+                    response.put("isCorrect", "false");
+                    log.info("Incorrect answer.");
+                }
             }
-
             response.put("isSubmitted", "true");
             response.put("guessedList", guessedList);
             response.put("attempts", attempts);
@@ -145,5 +113,5 @@ public class Quiz1Controller {
             log.info("Submitted progamer is null");
         }
         return ResponseEntity.ok(response);
-    }*/
+    }
 }

@@ -60,40 +60,30 @@ document.addEventListener("DOMContentLoaded", function() {
         }).catch(error => console.error('Error fetching JSON:', error));
 });
 
-//Progamer 입력 제출
-document.addEventListener('DOMContentLoaded', function () {
-    const input = document.getElementById('player-input');
+const errorMessage = document.getElementById('error-message-player');
 
-    input.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault(); // 기본 Enter 동작을 막고
-            document.getElementById('playerForm').submit(); // form 제출
-        }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const errorMessage = document.getElementById('error-message-player');
-    console.log(isSubmitted);
-    if (isSubmitted === "true") {
+function displayErrorMessage() {
+    errorMessage.style.display = 'block';
+    setTimeout(() => {
         errorMessage.style.display = 'none';
-    } else {
-        errorMessage.style.display = 'block';
-        setTimeout(() => {
-            errorMessage.style.display = 'none';
 
-        }, 2000);  // 1000ms = 1초
-    }
+    }, 2000);  // 1000ms = 1초
+}
+
+function showHint(guessedList, isCorrect) {
+    errorMessage.style.display = 'none';
+
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
     const playerImage = document.getElementById("player-image");
+    const quizContainer = document.getElementById("quiz-container");
     const totalItems = 8; // 고정된 총 항목의 수
     const guessedListSize = guessedList.length; // guessedList의 사이즈
     playerInput.setAttribute("placeholder", `${guessedListSize} of ${totalItems}`);
     const failedMessage = document.getElementById("failed-message");
     const goMainButton = document.getElementById("go-to-main");
 
-    // hint-item 크기 설정 함수
+ /*   // hint-item 크기 설정 함수
     function setHintItemSizes() {
         const containerWidth = hintContainer.offsetWidth;
         const itemSize = containerWidth / 6; // hint-item 크기를 컨테이너 너비의 6등분으로 설정
@@ -115,7 +105,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 span.style.fontSize = `${itemSize * 0.15}px`; // 텍스트 크기 설정
             }
         });
-    }
+    }*/
+
+    hintContainer.innerHTML = "";
     const hintName = ['League', 'Team', 'Position', 'Birth', 'League Wins', 'Intl Wins'];
     // 힌트 행 생성
     const hintRow = document.createElement("div");
@@ -141,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const answerPidElement = document.getElementById('answer-pid');
     // TryStatus가 1인 경우, 즉 정답을 맞춘 경우
-    if (tryStatus === 1) {
+    if (isCorrect === "true") {
         // 버튼과 정답 PID 표시
         goMainButton.style.display = 'block'; // 메인 페이지로 이동하는 버튼 보이게 함
         answerPidElement.textContent = answer.pid; // 정답의 PID 표시
@@ -149,15 +141,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
         playerImage.style.filter = "none";
-        playerImage.style.backgroundColor = "green";
+        quizContainer.style.backgroundColor = "green";
 
         // 텍스트 필드 수정 불가능하게 설정
         playerInput.disabled = true;
-    }
-    else if (guessedListSize === totalItems) {
-        tryStatus = 2; // tryStatus를 2로 변경
-        // 추가로 필요한 동작을 여기에 넣을 수 있습니다.
-        console.log("Failed!");
+
+        setTimeout(function() {
+            quizContainer.style.backgroundColor = "#091428";
+        }, 1500);
+    } else if (isCorrect === "false") {
+        quizContainer.style.backgroundColor = "red";
+        setTimeout(function() {
+            quizContainer.style.backgroundColor = "#091428";
+        }, 1500);
+
+    } else{
         // Failed! 메시지 블록을 표시
         failedMessage.style.display = 'block';
         goMainButton.style.display = 'block';
@@ -170,16 +168,17 @@ document.addEventListener("DOMContentLoaded", function() {
         playerImage.style.filter = "none";
 
         // 이미지 배경색을 초록색으로 변경
-        playerImage.style.backgroundColor = "red";
+        quizContainer.style.backgroundColor = "red";
 
         // 텍스트 필드 수정 불가능하게 설정
         playerInput.disabled = true;
 
         // 3초 후에 메시지를 사라지게 함 (선택 사항)
-        setTimeout(function() {
+        setTimeout(function () {
             failedMessage.style.display = 'none';
         }, 3000);
     }
+
 
     // guessedList에서 데이터를 가져와 동적으로 추가
     guessedList.slice().reverse().forEach((progamer, index) => {
@@ -308,12 +307,6 @@ document.addEventListener("DOMContentLoaded", function() {
         hintContainer.appendChild(hintRow);
     });
 
-    // 페이지 로드 후 hint-item 크기 설정
-        setHintItemSizes();
-
-    // 창 크기가 변경될 때마다 hint-item 크기 다시 설정
-    window.addEventListener('resize', setHintItemSizes);
-
     function showAnswer(){
         // 힌트 행 생성
         const hintRow = document.createElement("div");
@@ -402,6 +395,33 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
         hintContainer.appendChild(hintRow);
+    }
+}
+
+
+//Progamer 입력 제출
+document.getElementById('player-input').addEventListener('keydown', function(event) {
+    const userInput = document.getElementById('player-input').value;
+
+    if (event.key === 'Enter') {
+        event.preventDefault(); // 기본 Enter 동작을 막고
+        fetch('/whoareyou/submitAnswer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ input: userInput }), // 사용자 입력값 전달
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from server:", data);
+                if (data.isSubmitted === "false") {
+                    displayErrorMessage();
+                } else {
+                    showHint(data.guessedList, data.isCorrect);
+                }
+            })
+            .catch(error => console.error("Error:", error));
     }
 });
 
