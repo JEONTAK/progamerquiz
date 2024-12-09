@@ -34,10 +34,9 @@ public class TeamDto {
                 team.getId(), team.getName(), team.getCallName(), team.getSeasonYear(),
                 team.getLeague(), team.getSpring_rank(), team.getSummer_rank(),
                 team.getMsi_rank(), team.getWorlds_rank(), team.getWinter_rank(),
-                team.getRoster().stream().map(ProgamerDto::toDto).toList(), team.getImage_path()
+                team.getRoster().stream().map(ProgamerDto::toDtoNotUsingTeam).toList(), team.getImage_path()
         );
     }
-
 
     public static TeamDto toDtoForNotUseRoster(Team team){
         return new TeamDto(

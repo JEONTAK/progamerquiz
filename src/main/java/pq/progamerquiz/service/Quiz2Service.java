@@ -1,7 +1,6 @@
 package pq.progamerquiz.service;
 
 
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -11,10 +10,11 @@ import pq.progamerquiz.dto.Quiz2Dto;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-//Quiz : I Got you!
+//Quiz : I Got You!
 @Service
 @Log4j2
 @Transactional

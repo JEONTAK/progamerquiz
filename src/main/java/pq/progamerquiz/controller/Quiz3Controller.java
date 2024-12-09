@@ -63,7 +63,7 @@ public class Quiz3Controller {
         model.addAttribute("totalIndex", totalIndex);
         model.addAttribute("currentIndex", cIdx);
         log.info("Current : " + currentIndex + " / "
-                + quizList.get(currentIndex).toString());
+                + quizList.get(currentIndex).getTeamName());
         return "quizzes/whichisteam";
     }
 
@@ -101,8 +101,8 @@ public class Quiz3Controller {
         response.put("isSubmitted", isSubmitted);
         response.put("isCorrect", isCorrect);
         log.info("isSubmitted: " + isSubmitted
-        + "isCorrect: " + isCorrect
-        + "currentIndex: " + currentIndex);
+        + "\nisCorrect: " + isCorrect
+        + "\ncurrentIndex: " + currentIndex);
         return ResponseEntity.ok(response);
     }
 

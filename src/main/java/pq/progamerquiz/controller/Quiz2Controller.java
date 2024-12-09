@@ -1,6 +1,5 @@
 package pq.progamerquiz.controller;
 
-import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,7 @@ import pq.progamerquiz.dto.ProgamerDto;
 import pq.progamerquiz.dto.Quiz2Dto;
 import pq.progamerquiz.service.Quiz2Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 //Quiz : I Got you!
 @Controller
@@ -61,7 +57,7 @@ public class Quiz2Controller {
 
         if (!quizList.isEmpty() && quizList != null) {
             log.info("Current : " + currentIndex + " / "
-                    + quizList.get(currentIndex).toString());
+                    + quizList.get(currentIndex).getName() + " / " + quizList.get(currentIndex).getPid());
         }
         return "quizzes/igotyou";
     }
@@ -108,10 +104,10 @@ public class Quiz2Controller {
         model.addAttribute("correctCount", correctCount);
 
         log.info("isSubmitted: " + isSubmitted
-        + "isCorrect: " + isCorrect
-        + "currentIndex: " + currentIndex
-        + "correctCount: " + correctCount
-        + "totalCount: " + totalCount);
+        + "\nisCorrect: " + isCorrect
+        + "\ncurrentIndex: " + currentIndex
+        + "\ncorrectCount: " + correctCount
+        + "\ntotalCount: " + totalCount);
         return ResponseEntity.ok(response);
     }
 

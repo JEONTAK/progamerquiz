@@ -18,21 +18,9 @@ import java.util.stream.Collectors;
 public class TeamService {
 
     final private TeamRepository teamRepository;
-    /*private Map<Long, TeamDto> teamCache;
-
-
-    @PostConstruct
-    public void init() {
-        teamCache = teamRepository.findAll().stream()
-                .collect(Collectors.toMap(Team::getId, this::toDto));
-    }*/
-
-
     public void saveTeam(Team team) {
         teamRepository.save(team);
     }
-
-
     public TeamDto find(Long id) {
         return teamRepository.findById(id)
                 .map(TeamDto::toDto)
@@ -58,5 +46,16 @@ public class TeamService {
                 .stream()
                 .map(TeamDto::toDtoForNotUseRoster)
                 .toList();
+    }
+
+    public List<TeamDto> findTeamsWithRosterSize(int totalCount, String league) {
+        // 1단계: 랜덤 ID 추출
+        Pageable pageable = PageRequest.of(0, totalCount); // LIMIT과 동일한 역할
+        List<Long> randomIds = teamRepository.findTeamIdsByLeagueWithRosterSize(pageable, league);
+       // 2단계: FETCH JOIN으로 연관 데이터 로드
+        return teamRepository.findTeamsByIds(randomIds)
+                .stream()
+                .map(TeamDto::toDto)
+                .collect(Collectors.toList());
     }
 }

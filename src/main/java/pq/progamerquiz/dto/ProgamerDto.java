@@ -53,6 +53,15 @@ public class ProgamerDto {
                 progamer.getIntl_win(), progamer.getNationality(), TeamDto.listToDto(progamer.getTeams())
         );
     }
-}
 
-//
+    public static ProgamerDto toDtoNotUsingTeam(Progamer progamer) {
+        if (progamer == null) {
+            return null;
+        }
+        return new ProgamerDto(
+                progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(),
+                progamer.getPosition().toString(), progamer.getLeague_win(),
+                progamer.getIntl_win(), progamer.getNationality(), null
+        );
+    }
+}

@@ -10,9 +10,10 @@ import pq.progamerquiz.dto.Quiz4Dto;
 import pq.progamerquiz.dto.TeamDto;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 
-//Quiz : Who are you?
+//Quiz : Piece Of Puzzle
 @Service
 @Log4j2
 @Transactional
@@ -22,24 +23,17 @@ public class Quiz4Service {
     final private TeamService teamService;
     final private ProgamerService progamerService;
 
-    public List<Quiz4Dto> getTeams(int totalCount, String league) {
-        List<Quiz4Dto> quizList = new ArrayList<>();
-        List<TeamDto> teamList = teamService.findRandomTeams(totalCount * 3, league);
-        int quizIdx = 1, teamIdx = 0;
-        // 부족한 경우 추가 로직
-        while (quizList.size() < totalCount) {
-            // 추가 팀 가져오기 메서드
-            if (teamList.get(teamIdx) != null) {
-                Quiz4Dto extraQuiz = convert(quizIdx, teamList.get(teamIdx));
-                if (extraQuiz != null) {
-                    quizList.add(extraQuiz);
-                    quizIdx++;
-                }
-            }
-            teamIdx++;
-        }
+    public Optional<ProgamerDto> findByPid(String pid){
+        return progamerService.findByPid(pid);
+    }
 
-        return quizList;
+    public List<Quiz4Dto> getTeams(int totalCount, String league) {
+        List<TeamDto> teamList = teamService.findTeamsWithRosterSize(totalCount, league);
+        AtomicInteger quizIdx = new AtomicInteger(1);
+        return teamList
+                .stream()
+                .map(team -> convert(quizIdx.getAndIncrement(), team))
+                .toList();
     }
 
     static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerDto> roster) {
@@ -57,14 +51,10 @@ public class Quiz4Service {
         return answer;
     }
 
-    public boolean isExist(String pid) {
-        return progamerService.findByPid(pid) != null;
-    }
-
-    public boolean isAnswer(String pid, Quiz4Dto quiz4Dto) {
+    public boolean isAnswer(Optional<ProgamerDto> input, Quiz4Dto quiz4Dto) {
         for (Map<Long, Boolean> answer : quiz4Dto.getAnswer()) {
             for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
-                if (progamerService.findByPid(pid).get().getId().equals(entry.getKey()) && !entry.getValue()) {
+                if (input.get().getId().equals(entry.getKey()) && !entry.getValue()) {
                     entry.setValue(true);
                     return true;
                 }
@@ -74,7 +64,7 @@ public class Quiz4Service {
     }
 
     public Quiz4Dto convert(int idx, TeamDto submitTeam) {
-        List<ProgamerDto> roster = getRoster(submitTeam);
+        List<ProgamerDto> roster = submitTeam.getRoster();
         List<Map<Long, Boolean>> answer = getTwoRandomProgamers(roster);
         if (answer == null) {
             return null;
@@ -91,14 +81,6 @@ public class Quiz4Service {
                 0,
                 0
         );
-    }
-
-    public List<ProgamerDto> getRoster(TeamDto submitTeam) {
-        return teamService.find(submitTeam.getId()).getRoster().stream().map(m -> new ProgamerDto(
-                m.getId(),
-                m.getPid(),
-                m.getName()
-        )).toList();
     }
 
 }

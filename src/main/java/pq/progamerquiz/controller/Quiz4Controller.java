@@ -9,14 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.dto.ProgamerDto;
+import pq.progamerquiz.repository.TeamRepository;
 import pq.progamerquiz.service.ProgamerService;
 import pq.progamerquiz.dto.Quiz4Dto;
 import pq.progamerquiz.service.Quiz4Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -40,6 +39,8 @@ public class Quiz4Controller {
     private Map<Integer, Integer> correctCountsForTeam = new HashMap<>();
     @Autowired
     private ProgamerService progamerService;
+    @Autowired
+    private TeamRepository teamRepository;
 
 
     private void initialize() {
@@ -90,7 +91,7 @@ public class Quiz4Controller {
         model.addAttribute("isCorrect", isCorrect);
         model.addAttribute("currentIndex", cIdx);
         log.info("Current : " + currentIndex + " / "
-                + quizList.get(currentIndex).toString());
+                + quizList.get(currentIndex).getTeamName() + " / " + quizList.get(currentIndex).getAnswer().stream().toList());
         return "quizzes/pieceofpuzzle";
     }
 
@@ -113,28 +114,29 @@ public class Quiz4Controller {
         Map<String, Object> response = new HashMap<>();
 
         // 유효성 검사
-        if (input == null || input.isEmpty()) {
+       /* if (input == null || input.isEmpty()) {
             response.put("message", "Input cannot be null or empty");
             return ResponseEntity.badRequest().body(response);
-        }
+        }*/
 
         if ( currentIndex < 0 || currentIndex >= quizList.size()) {
             response.put("message", "Invalid currentIndex");
             return ResponseEntity.badRequest().body(response);
         }
 
+        Optional<ProgamerDto> submitProgamer = quiz4Service.findByPid(input);
         Quiz4Dto currentTeam = quizList.get(currentIndex);
         Long correctId = null;
 
         //존재
-        if (quiz4Service.isExist(input)) {
+        if (submitProgamer.isPresent()) {
             isSubmitted = "true";
             currentTeam.setAttempts(currentTeam.getAttempts() + 1);
             //정답
-            if (quiz4Service.isAnswer(input, currentTeam)) {
+            if (quiz4Service.isAnswer(submitProgamer, currentTeam)) {
                 isCorrect = "true";
                 currentTeam.setCorrect(currentTeam.getCorrect() + 1);
-                correctId = progamerService.findByPid(input).get().getId();
+                correctId = submitProgamer.get().getId();
             }
             //오답
             else {
@@ -159,11 +161,11 @@ public class Quiz4Controller {
         response.put("isCorrect", isCorrect);
         response.put("correctId", correctId);
         log.info("isFinish : " + isFinish
-        + "isSubmitted : " + isSubmitted
-        + "isCorrect : " + isCorrect
-        + "correctId : " + correctId
-        + "correctCount : " + correctCount
-        + "currentIndex : " + currentIndex);
+        + "\nisSubmitted : " + isSubmitted
+        + "\nisCorrect : " + isCorrect
+        + "\ncorrectId : " + correctId
+        + "\ncorrectCount : " + correctCount
+        + "\ncurrentIndex : " + currentIndex);
         return ResponseEntity.ok(response);
     }
 
