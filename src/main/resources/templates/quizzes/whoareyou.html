@@ -52,12 +52,6 @@
 </div>
 </body>
 <script th:inline="javascript">
-    let tryStatus = /*[[${try}]]*/ 0;  // 서버에서 받아온 값을 사용할 때는 기본값도 설정
-    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const answer = /*[[${answer}]]*/ [];
-    const guessedList = /*[[${guessedList}]]*/ [];
-    console.log("Try Status from server: ", tryStatus);
-    console.log("Guessed List from server: ", guessedList);
     // 브라우저 언어 가져오기
     const userLang = navigator.language || navigator.userLanguage;
     let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'

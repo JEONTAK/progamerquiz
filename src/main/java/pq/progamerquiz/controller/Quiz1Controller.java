@@ -97,7 +97,7 @@ public class Quiz1Controller {
                 log.info("Correct answer!");
             } else {
                 attempts++;
-                if (attempts == 7) {
+                if (attempts >= 7) {
                     response.put("isCorrect", "end");
                     log.info("Finish quiz.");
                 }else{
@@ -108,6 +108,7 @@ public class Quiz1Controller {
             response.put("isSubmitted", "true");
             response.put("guessedList", guessedList);
             response.put("attempts", attempts);
+            response.put("answer", answer);
         } else {
             response.put("isSubmitted", "false");
             log.info("Submitted progamer is null");
