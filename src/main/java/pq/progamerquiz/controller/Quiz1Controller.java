@@ -97,7 +97,7 @@ public class Quiz1Controller {
                 log.info("Correct answer!");
             } else {
                 attempts++;
-                if (attempts >= 7) {
+                if (attempts >= 8) {
                     response.put("isCorrect", "end");
                     log.info("Finish quiz.");
                 }else{

@@ -1,62 +1,3 @@
-
-const playerInput = document.getElementById("player-input");
-
-// 가이드 오버레이 보이기
-function showGuide() {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'flex';
-}
-
-// 가이드 오버레이 닫기
-function closeGuide(totalC) {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'none';
-
-    // 서버로 totalCount 값을 전송 (POST 방식으로 변경됨)
-    fetch('/igotyou/select', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ totalCount: totalC }) // 데이터를 JSON 형식으로 전송
-    })
-        .then(response => response.json())
-        .then(data => {
-            if (data.error) {
-                console.error("Error initializing quiz:", data.error);
-            } else {
-                console.log('Quiz setup complete:', data);
-
-                // 첫 번째 퀴즈 데이터를 받아와서 표시
-                fetch(`/igotyou/quiz/data?currentIndex=0`)
-                    .then(response => response.json())
-                    .then(quizData => {
-                        console.log('First quiz data:', quizData);
-                        totalCount = quizData.totalCount;
-                        correctCount = quizData.correctCount;
-                        showHint(quizData.currentPlayer);  // 첫 번째 퀴즈 데이터를 화면에 표시
-                    })
-                    .catch(error => {
-                        console.error('Error fetching first quiz data:', error);
-                    });
-            }
-        })
-        .catch(error => {
-            console.error('Error setting up quiz:', error);
-        });
-
-    // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
-    localStorage.setItem('guideShown', 'true');
-}
-
-// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
-window.onload = function() {
-    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
-    if (!localStorage.getItem('guideShown')) {
-        showGuide();
-    }
-};
-
 function goToMainPage() {
     // localStorage에서 guideShown 값을 삭제 (초기화)
     localStorage.removeItem('guideShown');
@@ -69,18 +10,67 @@ function removeBlur(imageElement) {
     imageElement.style.maxLength = "auto";
 }
 
-// 메뉴 토글 기능
-function toggleMenu() {
-    document.body.classList.toggle('menu-open');
-    document.querySelector('.content-container').classList.toggle('menu-open');
+// 가이드 오버레이 보이기
+function showGuide() {
+    const guideOverlay = document.getElementById('guide-overlay');
+    guideOverlay.style.display = 'flex';
 }
 
+// 가이드 오버레이 닫기
+function closeGuide(totalC) {
+    const guideOverlay = document.getElementById('guide-overlay');
+    guideOverlay.style.display = 'none';
+
+    // 서버로 totalCount 값을 전송
+    fetch('/igotyou/select', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ totalCount: totalC }),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error("Error initializing quiz:", data.error);
+            } else {// 상태를 로컬로 저장
+                localStorage.setItem('quizData', JSON.stringify({
+                    quizList: data.quizList,
+                    correctCount: data.correctCount,
+                    totalCount: data.totalCount,
+                    currentIndex: 0, // 초기 상태
+                }));
+                showHint(data.quizList[0], 0, data.correctCount, data.totalCount); // 첫 번째 퀴즈 표시
+            }
+        })
+        .catch(error => {
+            console.error('Error setting up quiz:', error);
+        });
+
+    // 방문 기록 저장
+    localStorage.setItem('guideShown', 'true');
+}
+
+// 페이지 로드 시 가이드 보여주기
+window.onload = function () {
+    if (!localStorage.getItem('guideShown')) {
+        showGuide();
+    } else {
+        const savedQuizData = localStorage.getItem('quizData');
+        if (savedQuizData) {
+            const { quizList, currentIndex , correctCount, totalCount} = JSON.parse(savedQuizData);
+            showHint(quizList[currentIndex], currentIndex, correctCount, totalCount);
+        }
+    }
+};
+
+
+//프로게이머 제안 기능
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
     fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
-            console.log('JSON data:', data);
             const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
             const input = document.getElementById('player-input');
             const suggestions = document.getElementById('suggestions');
@@ -109,44 +99,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }).catch(error => console.error('Error fetching JSON:', error));
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const currentIndex = urlParams.get('currentIndex');
-    if (currentIndex === null) {
-        console.error("Invalid currentIndex. Please select quiz count first.");
-        return;  // 요청을 중단하고 더 이상 실행하지 않음
-    }
-    // 서버로부터 currentTeam 데이터를 가져옴
-    fetch(`/igotyou/quiz/data?currentIndex=${currentIndex}`)
-        .then(response => {
-            // 서버 응답이 정상적인 경우 (status code가 200)
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json(); // 응답을 JSON으로 파싱
-        })
-        .then(data => {
-            // 서버에서 받은 데이터를 처리
-            const currentPlayer = data.currentPlayer;
-            console.log('Current Player:', currentPlayer);
-            correctCount = data.correctCount;
-            showHint(currentPlayer);
-        })
-        .catch(error => {
-            console.error('Error fetching quiz data:', error);
-        });
-});
-
-
-// 현재 진행 중인 퀴즈 인덱스
-const quizItem = document.querySelector('.quiz-item');
-const answerPidElement = document.getElementById('answer-pid');  // pid를 표시할 요소 선택
-
 // quizList를 받아서 힌트(팀 정보)를 보여주는 함수
-function showHint(currentPlayer) {
+function showHint(currentPlayer, currentIndex, correctCount, totalCount) {
+    playerInput.disabled = false;
     const questionNumberElement = document.getElementById('question-number');
-    console.log("TC : " + totalCount);
     questionNumberElement.textContent = currentIndex + 1 + `(${currentPlayer.position})`;  // 문제 번호는 인덱스에 1을 더한 값
     document.getElementById('total-count').textContent = totalCount;
     // 맞춘 개수 / 전체 개수를 업데이트
@@ -195,13 +151,18 @@ function showHint(currentPlayer) {
         if (itemsInRow > 0) {
             hintContainer.appendChild(rowDiv);
         }
-
     } else {
         console.log('No player data available for this index.');
     }
 }
 
+//유저가 정답 제출
 document.getElementById('player-input').addEventListener('keydown', function(event) {
+    // 현재 진행 중인 퀴즈 인덱스
+    const quizItem = document.querySelector('.quiz-item');
+    const answerPidElement = document.getElementById('answer-pid');  // pid를 표시할 요소 선택
+    const savedQuizData = JSON.parse(localStorage.getItem('quizData'));
+
     if (event.key === 'Enter') {
         event.preventDefault();
         const userInput = document.getElementById('player-input').value;
@@ -212,7 +173,13 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ input: userInput })
+            body: JSON.stringify({
+                input: userInput,
+                quizList: savedQuizData.quizList,
+                currentIndex: savedQuizData.currentIndex,
+                correctCount: savedQuizData.correctCount,
+                totalCount : savedQuizData.totalCount
+            })
         })
             .then(response => response.json())
             .then(data => {
@@ -224,14 +191,15 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
                 }else{
                     errorMessage.style.display = 'none';
                     if (data.isCorrect === "true") {
-                        showCorrect(data.currentPlayer);
+                        savedQuizData.correctCount++;
+                        showCorrect(data.currentPlayer, quizItem, answerPidElement);
                         setTimeout(() => {
-                            goToNextQuiz()
+                            goToNextQuiz(quizItem, answerPidElement, savedQuizData)
                         }, 2000);  // 1000ms = 1초
                     } else if (data.isCorrect === "false") {
-                        showWrong(data.currentPlayer);
+                        showWrong(data.currentPlayer, quizItem, answerPidElement);
                         setTimeout(() => {
-                            goToNextQuiz()
+                            goToNextQuiz(quizItem, answerPidElement, savedQuizData)
                         }, 2000);  // 1000ms = 1초
                     } else{
 
@@ -244,7 +212,9 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
     }
 });
 
-function showCorrect(currentPlayer){
+const playerInput = document.getElementById("player-input");
+
+function showCorrect(currentPlayer, quizItem, answerPidElement){
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "green";
     // 텍스트 필드 수정 불가능하게 설정
@@ -254,7 +224,7 @@ function showCorrect(currentPlayer){
     answerPidElement.style.display = 'block';  // PID를 표시
 }
 
-function showWrong(currentPlayer){
+function showWrong(currentPlayer, quizItem, answerPidElement){
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "red";
     // 텍스트 필드 수정 불가능하게 설정
@@ -265,35 +235,41 @@ function showWrong(currentPlayer){
 }
 
 // 다음 퀴즈로 이동하는 로직을 currentIndex를 사용해 처리
-function goToNextQuiz() {
+function goToNextQuiz(quizItem, answerPidElement, savedQuizData) {
     // currentIndex 값이 제대로 설정되었는지 확인
-    if (isNaN(currentIndex)) {
+    if (isNaN(savedQuizData.currentIndex)) {
         console.error("currentIndex is not a number. Setting to 0 as default.");
-        currentIndex = 0;  // 기본값으로 0 설정
+        savedQuizData.currentIndex = 0;  // 기본값으로 0 설정
     }
     //선수 pid 초기화
     answerPidElement.textContent ='';
     answerPidElement.style.display = 'none';
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "#c0c3cf";
-    const nextIndex = parseInt(currentIndex) + 1;
-    console.log(nextIndex);
-    console.log(totalCount);
-    playerInput.enabled = true;
-    // currentIndex와 quizList 길이 비교
-    // 15번째 퀴즈 이후에는 끝내기 처리
-    if (nextIndex >= totalCount) {
-        // 퀴즈가 끝나면 서버에서 맞춘 개수와 전체 개수 가져오기
-        fetch("/igotyou/end")
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('correct-count-overlay').textContent = data.correctCount;
-                document.getElementById('total-count-overlay').textContent = data.totalCount;
-                document.getElementById('quiz-overlay').style.display = 'flex';  // 오버레이 보이기
-                InitializeConfetti();
-            })
-            .catch(error => console.error("Error fetching quiz results:", error));
-    } else {
-        window.location.href = `/igotyou/quiz?currentIndex=${nextIndex}`;
+
+    savedQuizData.currentIndex++;
+    localStorage.setItem('quizData', JSON.stringify(savedQuizData));
+    if (savedQuizData.currentIndex >= savedQuizData.totalCount) {
+        endQuiz(savedQuizData);
+    }else{
+        showHint(savedQuizData.quizList[savedQuizData.currentIndex], savedQuizData.currentIndex, savedQuizData.correctCount, savedQuizData.totalCount);
     }
+}
+
+// 퀴즈 종료 처리
+function endQuiz(savedQuizData) {
+    fetch('/igotyou/end', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(JSON.parse(localStorage.getItem('quizData'))),
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('correct-count-overlay').textContent = savedQuizData.correctCount;
+            document.getElementById('total-count-overlay').textContent = savedQuizData.totalCount;
+            document.getElementById('quiz-overlay').style.display = 'flex';
+        })
+        .catch(error => console.error('Error ending quiz:', error));
 }

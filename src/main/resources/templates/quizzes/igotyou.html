@@ -66,13 +66,8 @@
 <script th:src="@{/js/igotyou.js}"></script>
 </body>
 <script th:inline="javascript">
-    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const isCorrect = /*[[${isCorrect}]]*/ "start";
     const currentIndex = /*[[${currentIndex}]]*/ 0;
     const quizList = /*[[${quizList}]]*/ [];
-    let correctCount = /*[[${correctCount}]]*/ 0;
-    let totalCount = /*[[${totalCount}]]*/ 0;
-    console.log('QuizList from Server:', quizList);  // 전달된 데이터를 콘솔에 출력
 
     // 브라우저 언어 가져오기
     const userLang = navigator.language || navigator.userLanguage;
