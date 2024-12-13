@@ -12,7 +12,6 @@ function closeGuide() {
     localStorage.setItem('guideShown', 'true');
 }
 
-
 // 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
 window.onload = function() {
     // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
@@ -20,6 +19,28 @@ window.onload = function() {
         showGuide();
     }
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Quiz 데이터를 요청하여 초기화
+    fetch('/whoareyou/start', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json(); // JSON 파싱
+        })
+        .then(data => {
+            // 데이터 저장 (예: Local Storage 또는 전역 변수)
+            localStorage.setItem("quizData", JSON.stringify(data));
+            showHint(data.guessedList, data.isCorrect, data.answer, data.imagePath);
+        })
+        .catch(error => console.error("Error starting quiz:", error));
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
@@ -58,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
 document.getElementById('player-input').addEventListener('keydown', function(event) {
     const userInput = document.getElementById('player-input').value;
     const errorMessage = document.getElementById('error-message-player');
+    const quizData = JSON.parse(localStorage.getItem('quizData'));
 
     if (event.key === 'Enter') {
         event.preventDefault(); // 기본 Enter 동작을 막고
@@ -66,10 +88,17 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ input: userInput }), // 사용자 입력값 전달
+            body: JSON.stringify({
+                input: userInput,
+                attempts: quizData.attempts,
+                answer: quizData.answer,
+                guessedList: quizData.guessedList}), // 사용자 입력값 전달
         })
             .then(response => response.json())
             .then(data => {
+                quizData.attempts = data.attempts;
+                quizData.guessedList = data.guessedList;
+                localStorage.setItem('quizData', JSON.stringify(quizData));
                 if (data.isSubmitted === "false") {
                     showErrorMessage(errorMessage, 2000);
                 } else {
@@ -89,7 +118,7 @@ function showErrorMessage(element, duration) {
     }, duration);
 }
 
-function showHint(guessedList, isCorrect, answer) {
+function showHint(guessedList, isCorrect, answer, imagePath) {
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
     const playerImage = document.getElementById("player-image");
@@ -122,7 +151,7 @@ function showHint(guessedList, isCorrect, answer) {
         });
     });
     hintContainer.appendChild(hintRow);
-
+    playerImage.src = imagePath;
     const answerPidElement = document.getElementById('answer-pid');
     // TryStatus가 1인 경우, 즉 정답을 맞춘 경우
     if (isCorrect === "true") {
@@ -146,6 +175,8 @@ function showHint(guessedList, isCorrect, answer) {
         setTimeout(function() {
             quizContainer.style.backgroundColor = "#091428";
         }, 1500);
+
+    } else if(isCorrect === "start"){
 
     } else{
         goMainButton.style.display = 'block';
