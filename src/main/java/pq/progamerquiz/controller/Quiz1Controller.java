@@ -71,7 +71,7 @@ public class Quiz1Controller {
             Quiz1Dto curProgamer = Quiz1Dto.convert(submitProgamer);
             log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getPid());
             guessedList.add(curProgamer);
-
+            log.info("GuessedList Size : " + guessedList.size());
             if (curProgamer.getId().equals(answer.getId())) {
                 response.put("isCorrect", "true");
                 log.info("Correct answer!");
@@ -86,13 +86,14 @@ public class Quiz1Controller {
                 }
             }
             response.put("isSubmitted", "true");
-            response.put("guessedList", guessedList);
+            response.put("progamer", curProgamer);
             response.put("attempts", attempts);
             response.put("answer", answer);
         } else {
             response.put("isSubmitted", "false");
             log.info("Submitted progamer is null");
         }
+
         return ResponseEntity.ok(response);
     }
 

@@ -10,18 +10,6 @@ function closeGuide() {
     guideOverlay.style.display = 'none';
     // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
     localStorage.setItem('guideShown', 'true');
-}
-
-// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
-window.onload = function() {
-    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
-    if (!localStorage.getItem('guideShown')) {
-        showGuide();
-    }
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Quiz 데이터를 요청하여 초기화
     fetch('/whoareyou/start', {
         method: 'POST',
         headers: {
@@ -40,7 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
             showHint(data.guessedList, data.isCorrect, data.answer, data.imagePath);
         })
         .catch(error => console.error("Error starting quiz:", error));
-});
+}
+
+// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
+window.onload = function() {
+    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
+    if (!localStorage.getItem('guideShown')) {
+        showGuide();
+    }
+};
+
 
 document.addEventListener("DOMContentLoaded", function() {
     // JSON 파일을 fetch API로 로드
@@ -97,12 +94,14 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
             .then(response => response.json())
             .then(data => {
                 quizData.attempts = data.attempts;
-                quizData.guessedList = data.guessedList;
+                if (data.progamer) {
+                    quizData.guessedList.push(data.progamer);
+                }
                 localStorage.setItem('quizData', JSON.stringify(quizData));
                 if (data.isSubmitted === "false") {
                     showErrorMessage(errorMessage, 2000);
                 } else {
-                    showHint(data.guessedList, data.isCorrect, data.answer);
+                    showHint(quizData.guessedList, data.isCorrect, quizData.answer, quizData.imagePath);
                 }
             })
             .catch(error => console.error("Error:", error));
@@ -200,7 +199,6 @@ function showHint(guessedList, isCorrect, answer, imagePath) {
         }, 3000);
     }
 
-
     // guessedList에서 데이터를 가져와 동적으로 추가
     guessedList.slice().reverse().forEach((progamer) => {
         // 힌트 행 생성
@@ -289,9 +287,9 @@ function showHint(guessedList, isCorrect, answer, imagePath) {
             const img = document.createElement("img");
 
             img.src = hint.icon;  // 해당 힌트의 아이콘 경로
-            img.onerror = function () {
+            /*img.onerror = function () {
                 this.src = hint.fallbackIcon;
-            };
+            };*/
             img.alt = hint.label;
             removeBlur(img);
 

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 //Quiz : I Got you!
@@ -26,9 +27,12 @@ public class Quiz2Dto {
     private List<Long> teamImages;
 
     public static Quiz2Dto convert(int idx, ProgamerDto submitProgamer) {
+        List<TeamDto> teams = submitProgamer.getTeams();
+        teams.sort(Comparator.comparing(TeamDto::getSeasonYear));
         List<Long> teamYears = new ArrayList<>();
         List<String> teamNames = new ArrayList<>();
         List<Long> teamImages = new ArrayList<>();
+
         for (TeamDto team : submitProgamer.getTeams()) {
             teamYears.add(team.getSeasonYear());
             teamNames.add(team.getName());
