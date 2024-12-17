@@ -152,6 +152,8 @@ function showHint(guessedList, isCorrect, answer, imagePath) {
     hintContainer.appendChild(hintRow);
     playerImage.src = imagePath;
     const answerPidElement = document.getElementById('answer-pid');
+    quizContainer.style.transition = "background-color 1s ease";
+
     // TryStatus가 1인 경우, 즉 정답을 맞춘 경우
     if (isCorrect === "true") {
         // 버튼과 정답 PID 표시
@@ -305,6 +307,8 @@ function showHint(guessedList, isCorrect, answer, imagePath) {
                 cover.style.backgroundColor = "green";  // 이미지 배경색을 초록색으로 변경
             }
 
+            hintRow.style.opacity = '0';
+            hintRow.style.transition = 'opacity 1s ease';
             hintItem.appendChild(cover);
             hintItem.appendChild(span);
             hintRow.appendChild(hintItem);
@@ -315,7 +319,11 @@ function showHint(guessedList, isCorrect, answer, imagePath) {
             });// hintItem을 hintRow에 추가
         });
         hintContainer.appendChild(hintRow);
+        requestAnimationFrame(() => {
+            hintRow.style.opacity = '1';
+        });
     });
+
 }
 
 function showAnswer(answer){

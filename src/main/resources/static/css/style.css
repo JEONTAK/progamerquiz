@@ -1,3 +1,4 @@
+/*
 body {
     background: linear-gradient(to bottom, #3C3C41, #1E2328);
     color: white;
@@ -12,19 +13,19 @@ body {
     object-fit: cover;
 }
 .content-wrapper {
-    display: flex; /* 좌우 광고와 컨텐츠를 한 줄에 배치 */
-    justify-content: space-between; /* 공간을 양쪽으로 나눔 */
+    display: flex; !* 좌우 광고와 컨텐츠를 한 줄에 배치 *!
+    justify-content: space-between; !* 공간을 양쪽으로 나눔 *!
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
 }
 .content {
-    width: 50%; /* 남은 공간을 content가 차지 */
+    width: 50%; !* 남은 공간을 content가 차지 *!
     padding: 20px;
     box-sizing: border-box;
 }
 .ad-container {
-    width: 15%; /* 광고의 너비 설정 */
+    width: 15%; !* 광고의 너비 설정 *!
     background: linear-gradient(to bottom, #3C3C41, #1E2328);
     padding: 20px;
     box-sizing: border-box;
@@ -90,21 +91,21 @@ body {
     position: relative;
     z-index: 1;
     margin: 0;
-    font-size: 3vw; /* 화면 너비의 3%에 해당하는 글씨 크기 */
+    font-size: 3vw; !* 화면 너비의 3%에 해당하는 글씨 크기 *!
 }
 
 .grid-item p {
     position: relative;
     z-index: 1;
     margin: 0;
-    font-size: 2vw; /* 화면 너비의 2%에 해당하는 글씨 크기 */
+    font-size: 2vw; !* 화면 너비의 2%에 해당하는 글씨 크기 *!
 }
 
 .grid-item .play-button {
     position: relative;
     z-index: 1;
     margin: 0;
-    font-size: 2.5vw; /* 화면 너비의 2.5%에 해당하는 글씨 크기 */
+    font-size: 2.5vw; !* 화면 너비의 2.5%에 해당하는 글씨 크기 *!
     background-color: #ceff27;
     color: black;
     padding: 10px 20px;
@@ -113,7 +114,7 @@ body {
 }
 
 .quiz-item {
-    position: relative;  /* 문제 번호를 고정하기 위해 부모 요소를 상대적으로 설정 */
+    position: relative;  !* 문제 번호를 고정하기 위해 부모 요소를 상대적으로 설정 *!
     background-color: #091428;
     padding: 20px;
     border-radius: 10px;
@@ -122,10 +123,10 @@ body {
 }
 
 .question-number {
-    position: absolute;  /* 부모 요소 기준으로 절대 배치 */
-    top: 10px;  /* 상단에서 10px 떨어짐 */
-    left: 10px;  /* 좌측에서 10px 떨어짐 */
-    background-color: rgba(0, 0, 0, 0.7);  /* 반투명 배경 */
+    position: absolute;  !* 부모 요소 기준으로 절대 배치 *!
+    top: 10px;  !* 상단에서 10px 떨어짐 *!
+    left: 10px;  !* 좌측에서 10px 떨어짐 *!
+    background-color: rgba(0, 0, 0, 0.7);  !* 반투명 배경 *!
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
@@ -149,11 +150,11 @@ body {
     filter: none;
 }
 .quiz-item.correct {
-    transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
+    transition: background-color 1s ease; !* 1초 동안 배경색을 천천히 변경 *!
     background-color: #4CAF50;
 }
 .quiz-item.incorrect {
-    transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
+    transition: background-color 1s ease; !* 1초 동안 배경색을 천천히 변경 *!
     background-color: #f44336;
 }
 .suggestions {
@@ -175,7 +176,7 @@ body {
 }
 .hints-container {
     display: flex;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* 최소 150px의 크기로 그리드 요소를 자동으로 배치 */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); !* 최소 150px의 크기로 그리드 요소를 자동으로 배치 *!
     flex-direction: column;
     gap: 10px;
     width: 100%;
@@ -187,7 +188,7 @@ body {
 }
 .hint-row {
     display: flex;
-    justify-content: space-between; /* 아이템 간의 균일한 간격 */
+    justify-content: space-between; !* 아이템 간의 균일한 간격 *!
     margin-top: 10px;
     overflow: visible;
 }
@@ -201,7 +202,7 @@ body {
 }
 .hint-item.fade-in {
     display: flex;
-    animation: fadeIn 0.75s forwards;
+    animation: fadeIn 1s forwards;
 }
 .hint-item .hint-name{
     display: flex;
@@ -231,53 +232,53 @@ body {
     flex: 1 1 auto;
 }
 .hint-item img {
-    width: 70%; /* 이미지가 부모의 크기만큼 차지하도록 설정 */
-    height: auto; /* 비율을 유지하며 높이 설정 */
-    object-fit: contain; /* 이미지를 잘리지 않도록 설정 */
-    opacity: 1; /* 이미지가 투명하지 않게 */
+    width: 70%; !* 이미지가 부모의 크기만큼 차지하도록 설정 *!
+    height: auto; !* 비율을 유지하며 높이 설정 *!
+    object-fit: contain; !* 이미지를 잘리지 않도록 설정 *!
+    opacity: 1; !* 이미지가 투명하지 않게 *!
 }
 
 img.no-blur {
-    filter: none; /* 블러를 제거 */
+    filter: none; !* 블러를 제거 *!
 }
 
 .hint-item img[src*="number"] {
-    margin-top: -10%; /* src 속성에 "number"가 포함된 이미지에만 적용 */
+    margin-top: -10%; !* src 속성에 "number"가 포함된 이미지에만 적용 *!
 }
 
 #input[disabled] {
-    background-color: #e0e0e0; /* 비활성화된 상태일 때 배경색 */
-    color: #888; /* 비활성화된 상태일 때 텍스트 색 */
-    cursor: not-allowed; /* 마우스 커서 */
+    background-color: #e0e0e0; !* 비활성화된 상태일 때 배경색 *!
+    color: #888; !* 비활성화된 상태일 때 텍스트 색 *!
+    cursor: not-allowed; !* 마우스 커서 *!
 }
 #player-image {
     width: 50%;
     height: 50%;
-    transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
+    transition: background-color 1s ease; !* 1초 동안 배경색을 천천히 변경 *!
 }
 
-/* 팀 이미지를 특정 크기로 제한 */
+!* 팀 이미지를 특정 크기로 제한 *!
 #team-image {
     width: 50%;
     height: 50%;
-    transition: background-color 1s ease; /* 1초 동안 배경색을 천천히 변경 */
+    transition: background-color 1s ease; !* 1초 동안 배경색을 천천히 변경 *!
     justify-content: center;
     align-items: center;
 }
 
 .failed-message {
     display: none;
-    background-color: #f44336; /* 빨간색 배경 */
-    color: white; /* 흰색 텍스트 */
-    padding: 15px; /* 패딩 */
-    position: fixed; /* 화면에 고정 */
-    top: 20px; /* 화면 위에서 20px 위치 */
-    left: 50%; /* 화면 중앙에 위치 */
-    transform: translateX(-50%); /* 수평 중앙 정렬 */
-    z-index: 1000; /* 위쪽에 표시되도록 설정 */
-    border-radius: 8px; /* 모서리 둥글게 */
-    font-size: 18px; /* 폰트 크기 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    background-color: #f44336; !* 빨간색 배경 *!
+    color: white; !* 흰색 텍스트 *!
+    padding: 15px; !* 패딩 *!
+    position: fixed; !* 화면에 고정 *!
+    top: 20px; !* 화면 위에서 20px 위치 *!
+    left: 50%; !* 화면 중앙에 위치 *!
+    transform: translateX(-50%); !* 수평 중앙 정렬 *!
+    z-index: 1000; !* 위쪽에 표시되도록 설정 *!
+    border-radius: 8px; !* 모서리 둥글게 *!
+    font-size: 18px; !* 폰트 크기 *!
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* 그림자 *!
 }
 
 .main-button {
@@ -299,97 +300,97 @@ img.no-blur {
 
 .pid-overlay {
     color: white;
-    background-color: rgba(0, 0, 0, 0.7); /* 배경을 어둡게 처리 */
+    background-color: rgba(0, 0, 0, 0.7); !* 배경을 어둡게 처리 *!
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
     align-items: center;
-    z-index: 2; /* 이미지 위에 텍스트가 나오도록 z-index 설정 */
+    z-index: 2; !* 이미지 위에 텍스트가 나오도록 z-index 설정 *!
 }
 
 .cover {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 가운데 정렬 */
-    justify-content: space-between; /* 이미지와 텍스트 간격 조절 */
+    align-items: center; !* 가운데 정렬 *!
+    justify-content: space-between; !* 이미지와 텍스트 간격 조절 *!
     width: auto;
     max-width: 120px;
     padding: 10px;
-    height: 200px;  /* 각 cover 요소의 고정된 높이 설정 */
+    height: 200px;  !* 각 cover 요소의 고정된 높이 설정 *!
 }
 
 .cover img {
     max-width: 120px;
-    width: 90%;              /* 부모 컨테이너의 너비를 100%로 설정 */
+    width: 90%;              !* 부모 컨테이너의 너비를 100%로 설정 *!
     height: auto;
     object-fit: fill;
-    flex-shrink: 0;  /* 이미지 크기가 작을 때도 텍스트가 위로 붙지 않게 고정 */
-    margin: auto; /* 이미지를 위로 정렬 */
+    flex-shrink: 0;  !* 이미지 크기가 작을 때도 텍스트가 위로 붙지 않게 고정 *!
+    margin: auto; !* 이미지를 위로 정렬 *!
 }
 
 .team-name {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px;  /* 고정된 높이 설정 */
+    height: 40px;  !* 고정된 높이 설정 *!
     text-align: center;
-    margin-top: auto; /* 텍스트를 아래쪽으로 배치 */
+    margin-top: auto; !* 텍스트를 아래쪽으로 배치 *!
 }
 
 
 
-/* 텍스트 입력 박스 스타일 (ID 기반) */
+!* 텍스트 입력 박스 스타일 (ID 기반) *!
 .quiz-item #player-input {
-    width: 100%;                /* 부모 컨테이너 너비에 맞춤 */
-    max-width: 400px;            /* 최대 너비 */
-    padding: 10px 15px;          /* 안쪽 여백 */
-    margin: 15px 0;              /* 상하 여백 */
-    border-radius: 8px;          /* 모서리를 둥글게 */
-    border: 1px solid #ddd;      /* 연한 회색 테두리 */
-    background-color: #f9f9f9;   /* 연한 배경 */
-    font-size: 16px;             /* 기본 텍스트 크기 */
-    color: #333;                 /* 텍스트 색상 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 미세한 그림자 */
-    transition: all 0.3s ease;   /* 애니메이션 */
+    width: 100%;                !* 부모 컨테이너 너비에 맞춤 *!
+    max-width: 400px;            !* 최대 너비 *!
+    padding: 10px 15px;          !* 안쪽 여백 *!
+    margin: 15px 0;              !* 상하 여백 *!
+    border-radius: 8px;          !* 모서리를 둥글게 *!
+    border: 1px solid #ddd;      !* 연한 회색 테두리 *!
+    background-color: #f9f9f9;   !* 연한 배경 *!
+    font-size: 16px;             !* 기본 텍스트 크기 *!
+    color: #333;                 !* 텍스트 색상 *!
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); !* 미세한 그림자 *!
+    transition: all 0.3s ease;   !* 애니메이션 *!
 }
 
-/* 포커스된 텍스트 박스 스타일 */
+!* 포커스된 텍스트 박스 스타일 *!
 .quiz-item #player-input:focus {
-    border-color: #35aa3b;       /* 포커스 시 테두리 색 변경 */
-    outline: none;               /* 기본 포커스 스타일 제거 */
-    box-shadow: 0 0 10px rgba(53, 170, 59, 0.5); /* 초록색 그림자 */
-    background-color: #ffffff;   /* 포커스 시 배경색 변경 */
+    border-color: #35aa3b;       !* 포커스 시 테두리 색 변경 *!
+    outline: none;               !* 기본 포커스 스타일 제거 *!
+    box-shadow: 0 0 10px rgba(53, 170, 59, 0.5); !* 초록색 그림자 *!
+    background-color: #ffffff;   !* 포커스 시 배경색 변경 *!
 }
 
-/* 비활성화된 텍스트 입력 박스 스타일 */
+!* 비활성화된 텍스트 입력 박스 스타일 *!
 .quiz-item #player-input[disabled] {
-    background-color: #e0e0e0;   /* 비활성화 배경 */
-    cursor: not-allowed;         /* 비활성화 시 커서 */
-    opacity: 0.6;                /* 약간 투명도 */
+    background-color: #e0e0e0;   !* 비활성화 배경 *!
+    cursor: not-allowed;         !* 비활성화 시 커서 *!
+    opacity: 0.6;                !* 약간 투명도 *!
 }
 
 .error-message {
     color: white;
-    background-color: #f44336; /* 빨간색 배경 */
+    background-color: #f44336; !* 빨간색 배경 *!
     padding: 10px;
     margin-top: 10px;
     border-radius: 5px;
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    display: none; /* 기본적으로 숨겨져 있음 */
+    display: none; !* 기본적으로 숨겨져 있음 *!
 }
 
-/*----- 팡파레 ------*/
+!*----- 팡파레 ------*!
 canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1.1);}
 
-/*----- 메뉴 부분 -----*/
+!*----- 메뉴 부분 -----*!
 .menu {
     position: absolute;
     top: 0;
-    left: 0; /* 좌측 상단에 고정 */
+    left: 0; !* 좌측 상단에 고정 *!
     width: 200px;
     height: 100%;
     background-color: #1A0033;
@@ -398,7 +399,7 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
     overflow-y: auto;
-    z-index: 99; /* 메뉴가 열렸을 때 다른 요소 위에 표시되도록 */
+    z-index: 99; !* 메뉴가 열렸을 때 다른 요소 위에 표시되도록 *!
 }
 .menu a {
     color: white;
@@ -410,9 +411,9 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     background-color: #0AC8B9;
 }
 .menu-close {
-    position: absolute; /* 절대 배치 */
+    position: absolute; !* 절대 배치 *!
     top: 0;
-    right: 0; /* 메뉴의 오른쪽 끝에 배치 */
+    right: 0; !* 메뉴의 오른쪽 끝에 배치 *!
     background-color: transparent;
     color: white;
     border: none;
@@ -424,7 +425,7 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
 .menu-toggle {
     position: absolute;
     top: 0;
-    left: 0; /* 메뉴 버튼은 여전히 왼쪽에 */
+    left: 0; !* 메뉴 버튼은 여전히 왼쪽에 *!
     background-color: #1A0033;
     color: white;
     border: none;
@@ -454,20 +455,20 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
 
 
 
-/*----- 오버레이 부분 -----*/
+!*----- 오버레이 부분 -----*!
 
-/* 가이드 오버레이 스타일 */
+!* 가이드 오버레이 스타일 *!
 .guide-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 반투명한 검정 배경 */
+    background-color: rgba(0, 0, 0, 0.8); !* 반투명한 검정 배경 *!
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* 다른 요소보다 위에 표시 */
+    z-index: 1000; !* 다른 요소보다 위에 표시 *!
 }
 
 .guide-content {
@@ -478,9 +479,9 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     text-align: center;
     max-width: 500px;
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
-    position: relative;  /* 부모 요소 기준 위치 설정 */
-    margin: auto;  /* 중앙 정렬 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* 그림자 추가 *!
+    position: relative;  !* 부모 요소 기준 위치 설정 *!
+    margin: auto;  !* 중앙 정렬 *!
 }
 
 .guide-content h2 {
@@ -504,18 +505,18 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     font-size: 16px;
 }
 
-/* 오버레이 스타일 */
+!* 오버레이 스타일 *!
 .quiz-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 배경을 어둡게 */
+    background-color: rgba(0, 0, 0, 0.8); !* 배경을 어둡게 *!
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* 화면 위에 표시되도록 */
+    z-index: 1000; !* 화면 위에 표시되도록 *!
 }
 
 .quiz-overlay-content {
@@ -526,7 +527,7 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     text-align: center;
     max-width: 400px;
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 추가 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* 그림자 추가 *!
 }
 
 .quiz-overlay-content h2 {
@@ -553,18 +554,18 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     background-color: #2e8b57;
 }
 
-/* 오버레이 스타일 */
+!* 오버레이 스타일 *!
 .coming-soon-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 어두운 반투명 배경 */
+    background-color: rgba(0, 0, 0, 0.8); !* 어두운 반투명 배경 *!
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* 최상위에 표시 */
+    z-index: 1000; !* 최상위에 표시 *!
 }
 
 .overlay-content {
@@ -575,7 +576,7 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     text-align: center;
     max-width: 400px;
     width: 80%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); !* 그림자 *!
 }
 
 .overlay-content h2 {
@@ -598,6 +599,560 @@ canvas{z-index:10;pointer-events: none;position: fixed;top: 0;transform: scale(1
     font-size: 16px;
 }
 
+.overlay-content .main-button:hover {
+    background-color: #2e8b57;
+}*/
+body {
+    background: linear-gradient(to bottom, #3C3C41, #1E2328);
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.bh img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2vw;
+    box-sizing: border-box;
+}
+.content {
+    width: 50%;
+    padding: 2vw;
+    box-sizing: border-box;
+}
+.ad-container {
+    width: 15vw;
+    background: linear-gradient(to bottom, #3C3C41, #1E2328);
+    padding: 2vw;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.ad-container.adLeft {
+    left: 1vw;
+}
+.ad-container.adRight {
+    right: 1vw;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vw;
+    padding: 2vw;
+    width: 100%;
+    box-sizing: border-box;
+}
+.grid-item {
+    background-color: #091428;
+    position: relative;
+    border-radius: 1vw;
+    text-align: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-item::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.grid-item-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.grid-item:hover {
+    background-color: #0AC8B9;
+}
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: 0;
+}
+.grid-item h2 {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 3vw;
+}
+.grid-item p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 2vw;
+}
+.grid-item .play-button {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-size: 2.5vw;
+    background-color: #ceff27;
+    color: black;
+    padding: 1vw 2vw;
+    border-radius: 0.5vw;
+    font-weight: bold;
+}
+
+.quiz-item {
+    position: relative;
+    background-color: #091428;
+    padding: 2vw;
+    border-radius: 1vw;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+.question-number {
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    font-size: 1.8vw;
+    font-weight: bold;
+}
+.quiz-item img {
+    width: 100%;
+    border-radius: 1vw;
+    filter: blur(30px);
+    transition: filter 0.3s;
+    pointer-events: none;
+}
+.quiz-item input {
+    margin-top: 1vw;
+    padding: 0.5vw;
+    width: 80%;
+}
+.quiz-item.correct img {
+    filter: none;
+}
+.quiz-item.correct {
+    transition: background-color 1s ease;
+    background-color: #4CAF50;
+}
+.quiz-item.incorrect {
+    transition: background-color 1s ease;
+    background-color: #f44336;
+}
+.suggestions {
+    background-color: #091428;
+    border: 1px solid #ccc;
+    border-radius: 1vw;
+    margin-top: 1vw;
+    padding: 1vw;
+    max-height: 15vh;
+    overflow-y: auto;
+    display: block;
+}
+.suggestions div {
+    padding: 0.5vw;
+    cursor: pointer;
+}
+.suggestions div:hover {
+    background-color: #0AC8B9;
+}
+.hints-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 2vw;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+.hint-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1vw;
+    overflow: visible;
+}
+.hint-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    padding: 0.3vw;
+}
+.hint-item.fade-in {
+    display: flex;
+    animation: fadeIn 1s forwards;
+}
+.hint-item .hint-name {
+    display: flex;
+    width: 8vw;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+.hint-item .cover {
+    width: 8vw;
+    height: 8vw;
+    background-color: #808080;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5vw;
+    transition: background-color 0.75s;
+    overflow: visible;
+    flex: 1 1 auto;
+}
+.hint-item .hint-value {
+    display: flex;
+    width: 8vw;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+}
+.hint-item img {
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    opacity: 1;
+}
+img.no-blur {
+    filter: none;
+}
+.hint-item img[src*="number"] {
+    margin-top: -10%;
+}
+#input[disabled] {
+    background-color: #e0e0e0;
+    color: #888;
+    cursor: not-allowed;
+}
+#player-image {
+    width: 50vw;
+    height: 50vh;
+    transition: background-color 1s ease;
+}
+#team-image {
+    width: 50vw;
+    height: 50vh;
+    transition: background-color 1s ease;
+    justify-content: center;
+    align-items: center;
+}
+.failed-message {
+    display: none;
+    background-color: #f44336;
+    color: white;
+    padding: 1.5vw;
+    position: fixed;
+    top: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    border-radius: 0.8vw;
+    font-size: 1.8vw;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
+}
+.main-button {
+    margin-top: 1.5vw;
+    padding: 1vw 2vw;
+    background-color: white;
+    color: #f44336;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.6vw;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+.main-button:hover {
+    background-color: #e0e0e0;
+}
+.pid-overlay {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-align: center;
+    align-items: center;
+    z-index: 2;
+}
+.cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    max-width: 12vw;
+    padding: 1vw;
+    height: 20vw;
+}
+.cover img {
+    max-width: 12vw;
+    width: 90%;
+    height: auto;
+    object-fit: fill;
+    flex-shrink: 0;
+    margin: auto;
+}
+.team-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vw;
+    text-align: center;
+    margin-top: auto;
+}
+.quiz-item #player-input {
+    width: 100%;
+    max-width: 40vw;
+    padding: 1vw 1.5vw;
+    margin: 1.5vw 0;
+    border-radius: 0.8vw;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 1.6vw;
+    color: #333;
+    box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.quiz-item #player-input:focus {
+    border-color: #35aa3b;
+    outline: none;
+    box-shadow: 0 0 1vw rgba(53, 170, 59, 0.5);
+    background-color: #ffffff;
+}
+.quiz-item #player-input[disabled] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+.error-message {
+    color: white;
+    background-color: #f44336;
+    padding: 1vw;
+    margin-top: 1vw;
+    border-radius: 0.5vw;
+    font-size: 1.6vw;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+canvas {
+    z-index:10;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    transform: scale(1.1);
+}
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 100%;
+    background-color: #1A0033;
+    padding: 2vw;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 99;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 1vw 0;
+}
+.menu a:hover {
+    background-color: #0AC8B9;
+}
+.menu-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+}
+.menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #1A0033;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+}
+.menu-toggle:hover, .menu-close:hover {
+    background-color: #0AC8B9;
+}
+.menu-open .content-container {
+    margin-left: 0;
+}
+.menu-open .menu {
+    transform: translateX(0);
+}
+.menu-open .content {
+    margin-left: 0px;
+}
+.menu-open .menu-open-button {
+    display: none;
+}
+
+/* 가이드 오버레이 스타일 */
+.guide-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.guide-content {
+    background-color: white;
+    color: black;
+    padding: 2vw;
+    border-radius: 1vw;
+    text-align: center;
+    max-width: 50vw;
+    width: 80%;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: auto;
+}
+.guide-content h2 {
+    margin-top: 0;
+    font-size: 2.4vw;
+}
+.guide-content p {
+    font-size: 1.8vw;
+    margin: 1vw 0;
+}
+.guide-content .main-button {
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    background-color: #35aa3b;
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.6vw;
+}
+
+/* 퀴즈 오버레이 */
+.quiz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.quiz-overlay-content {
+    background-color: white;
+    color: black;
+    padding: 2vw;
+    border-radius: 1vw;
+    text-align: center;
+    max-width: 40vw;
+    width: 80%;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
+}
+.quiz-overlay-content h2 {
+    margin-top: 0;
+}
+.quiz-overlay-content p {
+    font-size: 1.8vw;
+    margin: 1vw 0;
+}
+.quiz-overlay-content .main-button {
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    background-color: #35aa3b;
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.6vw;
+}
+.quiz-overlay-content .main-button:hover {
+    background-color: #2e8b57;
+}
+
+/* Coming Soon 오버레이 */
+.coming-soon-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.overlay-content {
+    background-color: white;
+    color: black;
+    padding: 2vw;
+    border-radius: 1vw;
+    text-align: center;
+    max-width: 40vw;
+    width: 80%;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.2);
+}
+.overlay-content h2 {
+    margin-top: 0;
+}
+.overlay-content p {
+    font-size: 1.8vw;
+    margin: 1vw 0;
+}
+.overlay-content .main-button {
+    margin-top: 2vw;
+    padding: 1vw 2vw;
+    background-color: #35aa3b;
+    color: white;
+    border: none;
+    border-radius: 0.5vw;
+    cursor: pointer;
+    font-size: 1.6vw;
+}
 .overlay-content .main-button:hover {
     background-color: #2e8b57;
 }
