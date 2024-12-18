@@ -618,14 +618,10 @@ body {
 .content-wrapper {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     padding: 2vw;
-    box-sizing: border-box;
 }
-.content {
-    width: 50%;
-    padding: 2vw;
-    box-sizing: border-box;
+.content{
+    width : 50vw;
 }
 .ad-container {
     width: 15vw;
@@ -652,14 +648,11 @@ body {
     background-color: #091428;
     position: relative;
     border-radius: 1vw;
-    text-align: center;
-    font-size: 1.2em;
     cursor: pointer;
     transition: background-color 0.3s;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width : 20vw;
+    height : 20vw;
 }
 .grid-item::before {
     content: "";
@@ -668,6 +661,11 @@ body {
 }
 .grid-item-content {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
     top: 0;
     left: 0;
     width: 100%;
@@ -730,16 +728,12 @@ body {
     font-weight: bold;
 }
 .quiz-item img {
-    width: 100%;
+    max-width: 20vw;
+    max-height: 20vw;
     border-radius: 1vw;
     filter: blur(30px);
     transition: filter 0.3s;
     pointer-events: none;
-}
-.quiz-item input {
-    margin-top: 1vw;
-    padding: 0.5vw;
-    width: 80%;
 }
 .quiz-item.correct img {
     filter: none;
@@ -772,27 +766,26 @@ body {
 .hints-container {
     display: flex;
     flex-direction: column;
-    gap: 1vw;
+    gap: 2vw;
     width: 100%;
     max-width: 100%;
-    padding-top: 2vw;
-    overflow: hidden;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
 }
 .hint-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 1vw;
     overflow: visible;
 }
 .hint-item {
     display: none;
+    width : 6vw;
+    height: fit-content;
     flex-direction: column;
     align-items: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    padding: 0.3vw;
 }
 .hint-item.fade-in {
     display: flex;
@@ -800,14 +793,14 @@ body {
 }
 .hint-item .hint-name {
     display: flex;
-    width: 8vw;
+    width: auto;
     align-items: center;
     justify-content: center;
     flex: 1 1 auto;
 }
 .hint-item .cover {
-    width: 8vw;
-    height: 8vw;
+    width: 6vw;
+    height: 6vw;
     background-color: #808080;
     border-radius: 50%;
     display: flex;
@@ -820,7 +813,7 @@ body {
 }
 .hint-item .hint-value {
     display: flex;
-    width: 8vw;
+    width: 6vw;
     align-items: center;
     justify-content: center;
     flex: 1 1 auto;
@@ -895,21 +888,10 @@ img.no-blur {
     z-index: 2;
 }
 .cover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: auto;
-    max-width: 12vw;
-    padding: 1vw;
-    height: 20vw;
+    padding: 0.4vw;
 }
 .cover img {
-    max-width: 12vw;
     width: 90%;
-    height: auto;
-    object-fit: fill;
-    flex-shrink: 0;
     margin: auto;
 }
 .team-name {
@@ -920,15 +902,20 @@ img.no-blur {
     text-align: center;
     margin-top: auto;
 }
+.quiz-item #playerForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .quiz-item #player-input {
-    width: 100%;
-    max-width: 40vw;
+    max-width: 30vw;
     padding: 1vw 1.5vw;
     margin: 1.5vw 0;
     border-radius: 0.8vw;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
-    font-size: 1.6vw;
+    font-size: 1.3vw;
     color: #333;
     box-shadow: 0 0.4vw 0.6vw rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
