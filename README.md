@@ -1,61 +1,82 @@
-# Project For Progamer Quiz Web Site
+# ProgamerQuiz
 
-The website https://playfootball.games/ is a site where you can solve various quizzes on the subject of soccer players.
+## 프로젝트 개요
 
-I decided to proceed with the project because I thought it would be good to bring ideas for quizzes and incorporate them into professional gamers. 
+웹사이트 https://playfootball.games/는 축구 선수들을 주제로 한 다양한 퀴즈를 풀 수 있는 사이트입니다. 이 프로젝트는 축구 퀴즈 아이디어를 프로게이머 주제로 확장하여, 리그 오브 레전드(League of Legends, LOL) 프로게이머들의 역사와 각종 대회 우승 횟수 등의 정보를 활용한 퀴즈를 제공합니다.
 
-In this project, we organized a series of quizzes for users to solve using various information such as the history of professional 
-gamers in the game League of Legends (LOL) and the number of wins in various competitions.
+## 프로젝트 배경
 
-## Contents
-We will produce the unchecked list later.
+축구 선수 퀴즈의 아이디어를 프로게이머로 확장하면 흥미로운 콘텐츠를 만들 수 있을 것이라는 생각에서 프로젝트를 시작했습니다.
 
-- [x] Main Page
-- [x] Who Are You?
-- [x] I Got You!
-- [x] What is Team?
-- [x] Piece Of Puzzle
-- [ ] Player Bingo
-- [ ] Tic Tac Toe
+## 콘텐츠
 
+퀴즈는 아래와 같은 항목들로 구성되어 있으며, 일부는 개발 중입니다.
 
-- Who Are You?
+[x] Who Are You?
 
-  Who are you? is a quiz that combines hints to guess a specific player.
+[x] I Got You!
 
-  There are a total of eight challenges, and six lists are given for each challenge.
+[x] Which is Team?
 
-  The list is league, team, position, age, number of wins in domestic competitions, 
-  and number of wins in international competitions, respectively.
-
-  The list that matches the correct player in that list is shown in green, 
-  the inconsistent list is maintained in color, and the specific list is given an up-down hint.
-
-  You can solve the quiz by combining those hints.
+[x] Piece Of Puzzle
 
 
-- I Got You!
+## 주요 퀴즈 설명
+
+### Who Are You?
+
+설명: 특정 프로게이머를 힌트를 조합해 맞추는 퀴즈입니다.
+
+구성: 총 8개의 챌린지로 구성되며, 각 챌린지마다 6개의 힌트가 제공됩니다.
+
+힌트 목록: 리그, 팀, 포지션, 나이, 국내 대회 우승 횟수, 국제 대회 우승 횟수
+
+정답 플레이어와 일치하는 힌트는 초록색으로 표시되고, 불일치하는 힌트는 기본 색상을 유지합니다.
+
+특정 힌트에는 상향/하향 화살표 힌트가 추가로 제공됩니다.
+
+게임 방식: 힌트를 조합하여 정답 플레이어를 추측합니다.
+
+### I Got You!
+
+설명: 특정 프로게이머의 팀을 나열해 보여주면, 해당 선수를 맞추는 퀴즈입니다.
+
+구성: 10개, 15개, 20개 등 문제 개수를 선택할 수 있으며, 한 문제당 3번의 기회가 주어집니다.
+
+힌트 목록: 해당 선수의 팀 연혁
+
+정답일 경우 초록색 배경화면과 선수의 이미지가 나오고 다음 문제로 넘어갑니다.
+
+오답일 경우 빨간색 배경화면이 표시됩니다.
+
+게임 방식: 힌트를 조합하여 정답 플레이어를 추측합니다.
+
+### Which is Team?
+
+설명: 특정 팀의 특정 연도 로스터를 제시하면, 해당 팀을 맞추는 퀴즈입니다.
+
+구성: 10개, 15개, 20개 등 문제 개수를 선택할 수 있으며, 한 문제당 3번의 기회가 주어집니다.
+
+힌트 목록: 특정 팀의 특정 연도 로스터
+
+정답일 경우 초록색 배경화면과 팀의 이미지가 나오고 다음 문제로 넘어갑니다.
+
+오답일 경우 빨간색 배경화면이 표시됩니다.
+
+게임 방식: 힌트를 조합하여 정답 플레이어를 추측합니다.
+
+### Piece Of Puzzle
+
+설명: 특정 팀의 특정 연도 로스터 중 랜덤으로 비어있는 선수를 맞추는 퀴즈입니다.
+
+구성: 10개, 15개, 20개 등 문제 개수를 선택할 수 있으며, 한 문제당 3번의 기회가 주어집니다.
+
+힌트 목록: 특정 팀의 특정 연도 로스터, 특정 팀 이름, 특정 연도
+
+한 문제에 여러 선수를 맞추어야 할 경우 주어진 기회 내에 다 맞춘다면 초록색 배경화면과 선수들의 이미지가 나타납니다.
+
+오답일 경우 빨간색 배경화면이 표시됩니다.
+
+게임 방식: 힌트를 조합하여 정답 플레이어를 추측합니다.
 
 
-- What is Team?
-
-
-- Piece Of Puzzle
-
-
-- Player Bingo
-
-  Coming Soon
-
-
-- Tic Tac Toe
-
-  Coming Soon
-
-## Diagram
-
-
-
-
-## CopyRights
-- # 

@@ -24,11 +24,20 @@ repositories {
 }
 
 dependencies {
+	// Spring Boot Data JPA
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+	// Spring Boot Web
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-devtools'
+
+	// Spring Boot Validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Spring Boot Devtools
+	implementation 'org.springframework.boot:spring-boot-devtools'
 
 	//log
 	implementation 'org.slf4j:slf4j-api:2.0.9'
@@ -40,12 +49,16 @@ dependencies {
 	// Gson for parsing JSON
 	implementation 'com.google.code.gson:gson:2.8.8'
 
+	// Lombok
 	compileOnly 'org.projectlombok:lombok'
-	implementation 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
+
+	// H2
+	implementation 'com.h2database:h2'
+
+	//Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
 	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
 	testImplementation 'org.mockito:mockito-core:4.11.0'
 	testImplementation 'org.mockito:mockito-junit-jupiter:4.11.0'

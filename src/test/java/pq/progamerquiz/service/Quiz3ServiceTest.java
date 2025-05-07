@@ -5,8 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import pq.progamerquiz.dto.Quiz3Dto;
-import pq.progamerquiz.dto.TeamDto;
+import pq.progamerquiz.domain.team.service.TeamService;
+import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
+import pq.progamerquiz.domain.whichisteam.dto.WhichIsTeamDto;
+import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.List;
 
@@ -16,7 +18,7 @@ import static org.mockito.Mockito.when;
 class Quiz3ServiceTest {
 
     @InjectMocks
-    private Quiz3Service quiz3Service;
+    private WhichIsTeamService whichIsTeamService;
 
     @Mock
     private TeamService teamService;
@@ -38,7 +40,7 @@ class Quiz3ServiceTest {
         when(teamService.findRandomTeams(2, "LCK")).thenReturn(mockTeams);
 
         // When
-        List<Quiz3Dto> result = quiz3Service.getTeams(2, "LCK");
+        List<WhichIsTeamDto> result = whichIsTeamService.getTeams(2, "LCK");
 
         // Then
         assertThat(result).hasSize(2);
@@ -56,7 +58,7 @@ class Quiz3ServiceTest {
         ));
 
         // When
-        boolean result = quiz3Service.isExist(teamName);
+        boolean result = whichIsTeamService.isExist(teamName);
 
         // Then
         assertThat(result).isTrue();
@@ -66,14 +68,14 @@ class Quiz3ServiceTest {
     void isAnswer() {
         // Given
         String teamName = "Team A";
-        Quiz3Dto quiz3Dto = new Quiz3Dto(
+        WhichIsTeamDto whichIsTeamDto = new WhichIsTeamDto(
                 0L, 1L, "Team A", "Call A", "LCK", 2023L, 1L,
                 2L, 3L, 4L, 5L, 101L);
         when(teamService.findByNameOrCallName(teamName))
                 .thenReturn(List.of(new TeamDto(1L, "Team A", "Call A", 2023L, "LCK",
                         1L, 2L, 3L, 4L, 5L, List.of(), 101L)));
         // When
-        boolean result = quiz3Service.isAnswer(teamName, quiz3Dto);
+        boolean result = whichIsTeamService.isAnswer(teamName, whichIsTeamDto);
 
         // Then
         assertThat(result).isTrue();

@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         // suggestionItem 클릭 시 해당 값을 input에 넣음
                         suggestionItem.addEventListener('click', function() {
                             input.value = progamer.pid;
-                            suggestions.innerHTML = '';  // 클릭 후 suggestion 목록을 비움
+                            suggestions.innerHTML = '';  // 클릭 후 suggestion 목록을 비움rㅅㄱㄷㄱㅅㄱㄷㄱㄱㅅㅅㅅㅅㅅ
                         });
 
                         suggestions.appendChild(suggestionItem);
