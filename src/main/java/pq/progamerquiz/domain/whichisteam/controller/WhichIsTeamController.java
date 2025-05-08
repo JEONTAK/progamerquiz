@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.whichisteam.dto.WhichIsTeamDto;
+import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
 
@@ -22,7 +22,7 @@ public class WhichIsTeamController {
 
     @Autowired
     private WhichIsTeamService whichIsTeamService;
-    private List<WhichIsTeamDto> quizList = new ArrayList<>();
+    private List<WhichIsTeamResponse> quizList = new ArrayList<>();
     private String isSubmitted;
     private String isCorrect;
     private final int totalIndex = 15;
@@ -38,8 +38,8 @@ public class WhichIsTeamController {
         log.info("Set Quiz...");
         quizList = whichIsTeamService.getTeams(totalIndex, null);
         log.info("Finish Set Quiz...");
-        for (WhichIsTeamDto whichIsTeamDto : quizList) {
-            log.info("      Team : " + whichIsTeamDto.getTeamId() + " / " + whichIsTeamDto.getTeamName());
+        for (WhichIsTeamResponse whichIsTeamResponse : quizList) {
+            log.info("      Team : " + whichIsTeamResponse.getTeamId() + " / " + whichIsTeamResponse.getTeamName());
         }
     }
 

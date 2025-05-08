@@ -9,7 +9,7 @@ import pq.progamerquiz.domain.pieceofpuzzle.service.PieceOfPuzzleService;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.team.service.TeamService;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.pieceofpuzzle.dto.PieceOfPuzzleDto;
+import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.List;
@@ -36,12 +36,12 @@ class PieceOfPuzzleServiceTest {
     @Test
     void getTeams() {
         // Given
-        List<PieceOfPuzzleDto> mockQuiz4 = pieceOfPuzzleService.getTeams(2, "LCK");
+        List<PieceOfPuzzleResponse> mockQuiz4 = pieceOfPuzzleService.getTeams(2, "LCK");
 
         when(teamService.findRandomTeams(2, "LCK")).thenReturn(mockTeams);
 
         // When
-        List<PieceOfPuzzleDto> result = pieceOfPuzzleService.getTeams(2, "LCK");
+        List<PieceOfPuzzleResponse> result = pieceOfPuzzleService.getTeams(2, "LCK");
 
         // Then
         assertThat(result).hasSize(2);
@@ -96,7 +96,7 @@ class PieceOfPuzzleServiceTest {
         // Given
         String userInput = "progamer1";
         List<Map<Long, Boolean>> answerList = List.of(Map.of(1L, true));
-        PieceOfPuzzleDto pieceOfPuzzleDto = new PieceOfPuzzleDto(
+        PieceOfPuzzleResponse pieceOfPuzzleResponse = new PieceOfPuzzleResponse(
                 1L, null, "Team A", null, null, answerList, null, 0, 0
         );
 
@@ -104,7 +104,7 @@ class PieceOfPuzzleServiceTest {
                 .thenReturn(new ProgamerDto(1L, "progamer1", "Player One"));
 
         // When
-        boolean result = pieceOfPuzzleService.isAnswer(userInput, pieceOfPuzzleDto);
+        boolean result = pieceOfPuzzleService.isAnswer(userInput, pieceOfPuzzleResponse);
 
         // Then
         assertThat(result).isTrue();
@@ -116,7 +116,7 @@ class PieceOfPuzzleServiceTest {
         TeamDto teamDto = new TeamDto(1L, "Team A", "Call A", 2023L, "LCK", 1L, 2L, 3L, 4L, 5L, List.of(), 101L);
 
         // When
-        PieceOfPuzzleDto result = pieceOfPuzzleService.convert(1, teamDto);
+        PieceOfPuzzleResponse result = pieceOfPuzzleService.convert(1, teamDto);
 
         // Then
         assertThat(result.getIndex()).isEqualTo(1L);

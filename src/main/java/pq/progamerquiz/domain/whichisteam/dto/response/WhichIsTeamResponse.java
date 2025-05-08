@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.whichisteam.dto;
+package pq.progamerquiz.domain.whichisteam.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import pq.progamerquiz.domain.team.dto.TeamDto;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class WhichIsTeamDto {
+public class WhichIsTeamResponse {
     private Long index;
     private Long teamId;
     private String teamName;
@@ -25,8 +25,8 @@ public class WhichIsTeamDto {
     private Long msi_ranking;
     private Long image_path;
 
-    public static WhichIsTeamDto convert(int idx, TeamDto submitTeam) {
-        return new WhichIsTeamDto(
+    public static WhichIsTeamResponse of(int idx, TeamDto submitTeam) {
+        return new WhichIsTeamResponse(
                 (long) idx - 1,
                 submitTeam.getId(),
                 submitTeam.getName(),

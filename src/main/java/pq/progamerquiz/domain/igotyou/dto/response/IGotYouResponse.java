@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.igotyou.dto;
+package pq.progamerquiz.domain.igotyou.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class IGotYouDto {
+public class IGotYouResponse {
 
     private Long index;
     private Long id;
@@ -28,7 +28,7 @@ public class IGotYouDto {
     private List<String> teamNames;
     private List<Long> teamImages;
 
-    public static IGotYouDto convert(int idx, ProgamerDto submitProgamer) {
+    public static IGotYouResponse of(int idx, ProgamerDto submitProgamer) {
         List<TeamDto> teams = submitProgamer.getTeams();
         teams.sort(Comparator.comparing(TeamDto::getSeasonYear));
         List<Long> teamYears = new ArrayList<>();
@@ -41,7 +41,7 @@ public class IGotYouDto {
             teamImages.add(team.getImage_path());
         }
 
-        IGotYouDto result = new IGotYouDto(
+        IGotYouResponse result = new IGotYouResponse(
                 (long) idx,
                 submitProgamer.getId(),
                 submitProgamer.getPid(),

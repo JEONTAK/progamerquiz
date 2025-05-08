@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.pieceofpuzzle.dto.PieceOfPuzzleDto;
+import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.team.service.TeamService;
@@ -29,7 +29,7 @@ public class PieceOfPuzzleService {
         return progamerService.findByPid(pid);
     }
 
-    public List<PieceOfPuzzleDto> getTeams(int totalCount, String league) {
+    public List<PieceOfPuzzleResponse> getTeams(int totalCount, String league) {
         List<TeamDto> teamList = teamService.findTeamsWithRosterSize(totalCount, league);
         AtomicInteger quizIdx = new AtomicInteger(1);
         return teamList
@@ -53,8 +53,8 @@ public class PieceOfPuzzleService {
         return answer;
     }
 
-    public boolean isAnswer(Optional<ProgamerDto> input, PieceOfPuzzleDto pieceOfPuzzleDto) {
-        for (Map<Long, Boolean> answer : pieceOfPuzzleDto.getAnswer()) {
+    public boolean isAnswer(Optional<ProgamerDto> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
+        for (Map<Long, Boolean> answer : pieceOfPuzzleResponse.getAnswer()) {
             for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
                 if (input.get().getId().equals(entry.getKey()) && !entry.getValue()) {
                     entry.setValue(true);
@@ -65,14 +65,14 @@ public class PieceOfPuzzleService {
         return false;
     }
 
-    public PieceOfPuzzleDto convert(int idx, TeamDto submitTeam) {
+    public PieceOfPuzzleResponse convert(int idx, TeamDto submitTeam) {
         List<ProgamerDto> roster = submitTeam.getRoster();
         List<Map<Long, Boolean>> answer = getTwoRandomProgamers(roster);
         if (answer == null) {
             return null;
         }
 
-        return new PieceOfPuzzleDto(
+        return new PieceOfPuzzleResponse(
                 (long) idx - 1,
                 submitTeam.getId(),
                 submitTeam.getName(),

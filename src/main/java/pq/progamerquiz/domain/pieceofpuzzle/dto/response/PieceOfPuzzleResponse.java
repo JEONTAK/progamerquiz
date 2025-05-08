@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.pieceofpuzzle.dto;
+package pq.progamerquiz.domain.pieceofpuzzle.dto.response;
 
 import lombok.*;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
@@ -7,12 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-//Quiz : What is Team?
 @Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PieceOfPuzzleDto {
+public class PieceOfPuzzleResponse {
 
     private Long index;
     private Long teamId;
@@ -24,4 +22,12 @@ public class PieceOfPuzzleDto {
     private int correct;
     private int attempts;
 
+
+    public void updateAttempts() {
+        this.attempts++;
+    }
+
+    public void updateCorrect() {
+        this.correct++;
+    }
 }

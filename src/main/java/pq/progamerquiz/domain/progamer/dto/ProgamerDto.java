@@ -7,6 +7,7 @@ import lombok.Setter;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Getter
@@ -18,7 +19,7 @@ public class ProgamerDto {
     private Long id;
     private String pid;
     private String name;
-    private Long birth;
+    private LocalDate birth;
     private String position;
     private Long league_win;
     private Long intl_win;
@@ -32,7 +33,7 @@ public class ProgamerDto {
         this.name = name;
     }
 
-    public ProgamerDto(Long id, String pid, String name, Long birth, String position, Long league_win, Long intl_win,
+    public ProgamerDto(Long id, String pid, String name, LocalDate birth, String position, Long league_win, Long intl_win,
                        String nationality) {
         this.id = id;
         this.pid = pid;
@@ -49,7 +50,7 @@ public class ProgamerDto {
             return null;
         }
         return new ProgamerDto(
-                progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(),
+                progamer.getId(), progamer.getProgamerTag(), progamer.getName(), progamer.getBirth(),
                 progamer.getPosition().toString(), progamer.getLeague_win(),
                 progamer.getIntl_win(), progamer.getNationality(), TeamDto.listToDto(progamer.getTeams())
         );
@@ -60,7 +61,7 @@ public class ProgamerDto {
             return null;
         }
         return new ProgamerDto(
-                progamer.getId(), progamer.getPid(), progamer.getName(), progamer.getBirth(),
+                progamer.getId(), progamer.getProgamerTag(), progamer.getName(), progamer.getBirth(),
                 progamer.getPosition().toString(), progamer.getLeague_win(),
                 progamer.getIntl_win(), progamer.getNationality(), null
         );

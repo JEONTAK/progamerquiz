@@ -8,7 +8,7 @@ import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.whoareyou.service.WheAreYouService;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.WheAreYouDto;
+import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
 
 import java.util.Collections;
 
@@ -32,7 +32,7 @@ public class WheAreYouServiceTest {
     @Test
     public void getImagePath() {
         // Given
-        WheAreYouDto quiz1Dto = new WheAreYouDto(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
+        WheAreYouResponse quiz1Dto = new WheAreYouResponse(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
 
         // When
         String imagePath = wheAreYouService.getImagePath(quiz1Dto);

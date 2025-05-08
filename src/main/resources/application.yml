@@ -1,24 +1,46 @@
 spring:
+  application:
+    name: ProgamerQuiz
+
   datasource:
-    url: jdbc:h2:tcp://localhost/~/progamerquiz
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://localhost:3306/progamerquiz-mysql?rewriteBatchedStatements=true
+    username: test
+    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
+    show-sql: true
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
         format_sql: true
-        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
 
-  h2:
-    console:
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  show-login-endpoint: true
+  api-docs:
+    path: /v3/api-docs
+
+
+# Monitoring
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus
+server:
+  tomcat:
+    mbeanregistry:
       enabled: true
-      settings:
-        web-allow-others: true
-
-logging.level:
-  org.hibernate.SQL: debug
-  org.hibernate.orm.jdbc.bind: trace
+  # Session
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        secure: false # 개발 환경에서는 false, 프로덕션에서는 true
+        same-site: strict

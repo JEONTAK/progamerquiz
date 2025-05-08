@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.WheAreYouDto;
+import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
 import pq.progamerquiz.domain.whoareyou.service.WheAreYouService;
 
 import java.util.*;
@@ -39,7 +39,7 @@ public class WhoAreYouController {
     public ResponseEntity<Map<String, Object>> startQuiz() {
 
         log.info("Set Quiz...");
-        WheAreYouDto answer = wheAreYouService.getRandomProgamer();
+        WheAreYouResponse answer = wheAreYouService.getRandomProgamer();
         String imagePath = wheAreYouService.getImagePath(answer);
         log.info("Finish Set Quiz...");
         log.info("Answer : " + answer.getId() + " / " + answer.getPid() + " / " + answer.getName());
@@ -60,15 +60,15 @@ public class WhoAreYouController {
 
         String userInput = (String) payload.get("input");
         int attempts = payload.get("attempts") != null ? (int) payload.get("attempts") : 0; // 기본값 0
-        WheAreYouDto answer = jacksonObjectMapper.convertValue(payload.get("answer"), WheAreYouDto.class);
-        List<WheAreYouDto> guessedList = ((List<?>) payload.get("guessedList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, WheAreYouDto.class))
+        WheAreYouResponse answer = jacksonObjectMapper.convertValue(payload.get("answer"), WheAreYouResponse.class);
+        List<WheAreYouResponse> guessedList = ((List<?>) payload.get("guessedList")).stream()
+                .map(item -> jacksonObjectMapper.convertValue(item, WheAreYouResponse.class))
                 .collect(Collectors.toCollection(ArrayList::new));
 
         Map<String, Object> response = new HashMap<>();
         Optional<ProgamerDto> submitProgamer = wheAreYouService.findByPid(userInput);
         if (submitProgamer.isPresent()) {
-            WheAreYouDto curProgamer = WheAreYouDto.convert(submitProgamer);
+            WheAreYouResponse curProgamer = WheAreYouResponse.of(submitProgamer);
             log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getPid());
             guessedList.add(curProgamer);
             log.info("GuessedList Size : " + guessedList.size());

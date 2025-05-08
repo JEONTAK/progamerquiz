@@ -10,7 +10,7 @@ public class ProgamerMapper {
     public static Progamer toEntity(ProgamerDto progamerDto) {
         Progamer progamer = new Progamer();
         progamer.setId(progamerDto.getId());
-        progamer.setPid(progamerDto.getPid());
+        progamer.setProgamerTag(progamerDto.getPid());
         progamer.setName(progamerDto.getName());
         progamer.setBirth(progamerDto.getBirth());
         progamer.setPosition(Progamer.Position.valueOf(progamerDto.getPosition()));

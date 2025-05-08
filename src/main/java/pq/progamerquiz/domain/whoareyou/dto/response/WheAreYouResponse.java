@@ -1,8 +1,9 @@
-package pq.progamerquiz.domain.whoareyou.dto;
+package pq.progamerquiz.domain.whoareyou.dto.response;
 
 import lombok.*;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 //Quiz : Who are you?
@@ -11,12 +12,12 @@ import java.util.Optional;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class WheAreYouDto {
+public class WheAreYouResponse {
 
     private Long id;
     private String pid;
     private String name;
-    private Long birth;
+    private LocalDate birth;
     private String position;
     private Long league_win;
     private Long intl_win;
@@ -25,9 +26,9 @@ public class WheAreYouDto {
     private Long teamId;
     private String recentLeague;
 
-    public static WheAreYouDto convert(Optional<ProgamerDto> submitProgamer) {
+    public static WheAreYouResponse of(Optional<ProgamerDto> submitProgamer) {
         return submitProgamer.map(progamer ->
-                new WheAreYouDto(
+                new WheAreYouResponse(
                         progamer.getId(),
                         progamer.getPid(),
                         progamer.getName(),

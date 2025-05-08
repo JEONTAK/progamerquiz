@@ -6,7 +6,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.WheAreYouDto;
+import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 
 import java.io.IOException;
@@ -30,15 +30,15 @@ public class WheAreYouService {
         return progamerService.findByPid(pid);
     }
 
-    public WheAreYouDto getRandomProgamer() {
+    public WheAreYouResponse getRandomProgamer() {
         List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
         return progamer.stream()
                 .findFirst()
-                .map(progamerDto -> WheAreYouDto.convert(Optional.of(progamerDto)))
+                .map(progamerDto -> WheAreYouResponse.of(Optional.of(progamerDto)))
                 .orElseThrow(() -> new IllegalArgumentException("No progamer found"));
     }
 
-    public String getImagePath(WheAreYouDto answer) {
+    public String getImagePath(WheAreYouResponse answer) {
         String imagePath = "/images/player/" + answer.getId() + ".webp";
         try{
             Path path = Paths.get(new ClassPathResource("static" + imagePath).getURI());

@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.team.service.TeamService;
 import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
-import pq.progamerquiz.domain.whichisteam.dto.WhichIsTeamDto;
+import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
-class Quiz3ServiceTest {
+class WhichIsTeamServiceTest {
 
     @InjectMocks
     private WhichIsTeamService whichIsTeamService;
@@ -40,7 +40,7 @@ class Quiz3ServiceTest {
         when(teamService.findRandomTeams(2, "LCK")).thenReturn(mockTeams);
 
         // When
-        List<WhichIsTeamDto> result = whichIsTeamService.getTeams(2, "LCK");
+        List<WhichIsTeamResponse> result = whichIsTeamService.getTeams(2, "LCK");
 
         // Then
         assertThat(result).hasSize(2);
@@ -68,14 +68,14 @@ class Quiz3ServiceTest {
     void isAnswer() {
         // Given
         String teamName = "Team A";
-        WhichIsTeamDto whichIsTeamDto = new WhichIsTeamDto(
+        WhichIsTeamResponse whichIsTeamResponse = new WhichIsTeamResponse(
                 0L, 1L, "Team A", "Call A", "LCK", 2023L, 1L,
                 2L, 3L, 4L, 5L, 101L);
         when(teamService.findByNameOrCallName(teamName))
                 .thenReturn(List.of(new TeamDto(1L, "Team A", "Call A", 2023L, "LCK",
                         1L, 2L, 3L, 4L, 5L, List.of(), 101L)));
         // When
-        boolean result = whichIsTeamService.isAnswer(teamName, whichIsTeamDto);
+        boolean result = whichIsTeamService.isAnswer(teamName, whichIsTeamResponse);
 
         // Then
         assertThat(result).isTrue();

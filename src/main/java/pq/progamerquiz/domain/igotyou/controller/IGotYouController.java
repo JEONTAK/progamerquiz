@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.igotyou.dto.IGotYouDto;
+import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
 
 import java.util.*;
@@ -38,12 +38,12 @@ public class IGotYouController {
         int totalCount = payload.get("totalCount");
         log.info("Request size : " + totalCount);
         log.info("Set Quiz...");
-        List<IGotYouDto> quizList = IGotYouService.getProgamers(totalCount);
+        List<IGotYouResponse> quizList = IGotYouService.getProgamers(totalCount);
         log.info("Finish Set Quiz...");
-        for (IGotYouDto IGotYouDto : quizList) {
-            log.info(IGotYouDto.getIndex() + " : " + IGotYouDto.getPid());
-            for (int i = 0; i < IGotYouDto.getTeamNames().size(); i++) {
-                log.info("      Team : " + IGotYouDto.getTeamNames().get(i) + " (" + IGotYouDto.getTeamYears().get(i) +")");
+        for (IGotYouResponse IGotYouResponse : quizList) {
+            log.info(IGotYouResponse.getIndex() + " : " + IGotYouResponse.getPid());
+            for (int i = 0; i < IGotYouResponse.getTeamNames().size(); i++) {
+                log.info("      Team : " + IGotYouResponse.getTeamNames().get(i) + " (" + IGotYouResponse.getTeamYears().get(i) +")");
             }
         }
 
@@ -58,8 +58,8 @@ public class IGotYouController {
     @PostMapping("/quiz")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> gettingQuiz(@RequestBody Map<String, Object> payload) {
-        List<IGotYouDto> quizList = ((List<?>) payload.get("quizList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouDto.class))
+        List<IGotYouResponse> quizList = ((List<?>) payload.get("quizList")).stream()
+                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouResponse.class))
                 .toList();
         int currentIndex = (int) payload.get("currentIndex");
         log.info("Current : " + currentIndex + " / "
@@ -80,8 +80,8 @@ public class IGotYouController {
         int currentIndex = (int) payload.get("currentIndex");
         int correctCount = (int) payload.get("correctCount");
         int totalCount = (int) payload.get("totalCount");
-        List<IGotYouDto> quizList = ((List<?>) payload.get("quizList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouDto.class))
+        List<IGotYouResponse> quizList = ((List<?>) payload.get("quizList")).stream()
+                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouResponse.class))
                 .toList();
         String isSubmitted = "true";
         String isCorrect = "none";

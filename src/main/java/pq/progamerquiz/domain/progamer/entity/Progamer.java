@@ -5,8 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pq.progamerquiz.domain.team.entity.Team;
+import pq.progamerquiz.domain.whoareyou.entity.Whoareyou;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -17,20 +20,25 @@ public class Progamer {
 
     @Id
     @GeneratedValue
-    @Column(name = "progamer_id")
     private Long id;
 
-    private String pid;
+    @Column(nullable = false)
+    private String progamerTag;
 
+    @Column(nullable = false)
     private String name;
 
-    private Long birth;
+    @Column(nullable = false)
+    private LocalDate birth;
 
     @Enumerated(EnumType.STRING)
     private Position position;
 
-    private Long league_win; // Last Week Wins
-    private Long intl_win; // Current Week Wins
+    @Column(nullable = false)
+    private Long league_win;
+    @Column(nullable = false)
+    private Long intl_win;
+    @Column(nullable = false)
     private String nationality;
 
     @ManyToMany  // 중간 테이블을 활용한 다대다 매핑
@@ -43,6 +51,17 @@ public class Progamer {
 
     public enum Position {
         TOP, JGL, MID, ADC, SUP,
+    }
+
+    @OneToMany(mappedBy = "quizProgamer")
+    private Collection<Whoareyou> whoareyou;
+
+    public Collection<Whoareyou> getWhoareyou() {
+        return whoareyou;
+    }
+
+    public void setWhoareyou(Collection<Whoareyou> whoareyou) {
+        this.whoareyou = whoareyou;
     }
 }
 

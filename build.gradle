@@ -39,13 +39,6 @@ dependencies {
 	// Spring Boot Devtools
 	implementation 'org.springframework.boot:spring-boot-devtools'
 
-	//log
-	implementation 'org.slf4j:slf4j-api:2.0.9'
-	implementation 'ch.qos.logback:logback-classic:1.4.11'
-
-	// HttpClient for making HTTP requests
-	implementation 'org.apache.httpcomponents.client5:httpclient5:5.1'
-
 	// Gson for parsing JSON
 	implementation 'com.google.code.gson:gson:2.8.8'
 
@@ -53,15 +46,27 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
-	// H2
-	implementation 'com.h2database:h2'
+	// MySQL
+	runtimeOnly 'com.mysql:mysql-connector-j'
 
-	//Test
+	// Swagger
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+
+	// Monitoring
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+
+	// ㄴpring security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	// 타임리프에서 스프링시큐리티를 쓸수있게.
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
+	implementation 'org.jsoup:jsoup:1.14.3'
+
+	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
-	testImplementation 'org.mockito:mockito-core:4.11.0'
-	testImplementation 'org.mockito:mockito-junit-jupiter:4.11.0'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

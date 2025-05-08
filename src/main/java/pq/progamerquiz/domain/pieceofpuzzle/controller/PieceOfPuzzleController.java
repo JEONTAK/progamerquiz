@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
 import pq.progamerquiz.domain.team.repository.TeamRepository;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.pieceofpuzzle.dto.PieceOfPuzzleDto;
+import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
 import pq.progamerquiz.domain.pieceofpuzzle.service.PieceOfPuzzleService;
 
 import java.util.*;
@@ -26,7 +26,7 @@ public class PieceOfPuzzleController {
 
     @Autowired
     private PieceOfPuzzleService pieceOfPuzzleService;
-    private List<PieceOfPuzzleDto> quizList;
+    private List<PieceOfPuzzleResponse> quizList;
     private String isSubmitted;
     private String isCorrect;
     private String isFinish;
@@ -53,11 +53,11 @@ public class PieceOfPuzzleController {
         log.info("Set Quiz...");
         quizList = pieceOfPuzzleService.getTeams(totalIndex, "LCK");
         log.info("Finish Set Quiz..." + " " + quizList.size());
-        for (PieceOfPuzzleDto pieceOfPuzzleDto : quizList) {
-            log.info("Index : " + pieceOfPuzzleDto.getIndex() + " | Team : " + pieceOfPuzzleDto.getTeamName() + " | Year : " + pieceOfPuzzleDto.getTeamYear());
-            for (Map<Long, Boolean> map : pieceOfPuzzleDto.getAnswer()) {
+        for (PieceOfPuzzleResponse pieceOfPuzzleResponse : quizList) {
+            log.info("Index : " + pieceOfPuzzleResponse.getIndex() + " | Team : " + pieceOfPuzzleResponse.getTeamName() + " | Year : " + pieceOfPuzzleResponse.getTeamYear());
+            for (Map<Long, Boolean> map : pieceOfPuzzleResponse.getAnswer()) {
                 for (Map.Entry<Long, Boolean> answer : map.entrySet()) {
-                    log.info("Answer : " + progamerService.findOne(answer.getKey()).getPid() + " : " + answer.getValue());
+                    log.info("Answer : " + progamerService.findOne(answer.getKey()).getProgamerTag() + " : " + answer.getValue());
                 }
             }
         }
@@ -125,17 +125,17 @@ public class PieceOfPuzzleController {
         }
 
         Optional<ProgamerDto> submitProgamer = pieceOfPuzzleService.findByPid(input);
-        PieceOfPuzzleDto currentTeam = quizList.get(currentIndex);
+        PieceOfPuzzleResponse currentTeam = quizList.get(currentIndex);
         Long correctId = null;
 
         //존재
         if (submitProgamer.isPresent()) {
             isSubmitted = "true";
-            currentTeam.setAttempts(currentTeam.getAttempts() + 1);
+            currentTeam.updateAttempts();
             //정답
             if (pieceOfPuzzleService.isAnswer(submitProgamer, currentTeam)) {
                 isCorrect = "true";
-                currentTeam.setCorrect(currentTeam.getCorrect() + 1);
+                currentTeam.updateCorrect();
                 correctId = submitProgamer.get().getId();
             }
             //오답

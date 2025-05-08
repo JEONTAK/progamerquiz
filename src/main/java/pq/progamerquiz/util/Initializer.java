@@ -4,7 +4,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+/*@Component
 public class Initializer implements ApplicationRunner {
 
     private final UpdateDBList updateDBList;
@@ -20,4 +20,4 @@ public class Initializer implements ApplicationRunner {
         updateDBList.initializeProgamers();
         updateDBList.initializeQuizzes();
     }
-}
+}*/

@@ -8,7 +8,7 @@ import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.igotyou.dto.IGotYouDto;
+import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.List;
@@ -65,7 +65,7 @@ class IGotYouServiceTest {
         when(progamerService.findRandomPlayers(2)).thenReturn(mockProgamerList);
 
         // When
-        List<IGotYouDto> result = IGotYouService.getProgamers(2);
+        List<IGotYouResponse> result = IGotYouService.getProgamers(2);
 
         // Then
         assertThat(result).hasSize(2);
@@ -90,7 +90,7 @@ class IGotYouServiceTest {
     void isAnswer() {
         // Given
         String userInput = "progamer1";
-        IGotYouDto IGotYouDto = new IGotYouDto(
+        IGotYouResponse IGotYouResponse = new IGotYouResponse(
                 1L,  // index
                 1L,  // id
                 "progamer1",  // pid
@@ -105,7 +105,7 @@ class IGotYouServiceTest {
                 .thenReturn(Optional.of(new ProgamerDto(1L, "progamer1", "Player One")));
 
         // When
-        boolean result = IGotYouService.isAnswer(userInput, IGotYouDto);
+        boolean result = IGotYouService.isAnswer(userInput, IGotYouResponse);
 
         // Then
         assertThat(result).isTrue();
