@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ public class IGotYouResponse {
     private List<String> teamNames;
     private List<Long> teamImages;
 
-    public static IGotYouResponse of(int idx, ProgamerDto submitProgamer) {
+    public static IGotYouResponse of(int idx, ProgamerResponse submitProgamer) {
         List<TeamDto> teams = submitProgamer.getTeams();
         teams.sort(Comparator.comparing(TeamDto::getSeasonYear));
         List<Long> teamYears = new ArrayList<>();

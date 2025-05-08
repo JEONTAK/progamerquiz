@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
 
@@ -88,7 +88,7 @@ public class IGotYouController {
 
         log.info("Submitting answer: " + userInput);
         Map<String, Object> response = new HashMap<>();
-        Optional<ProgamerDto> submitProgamer = IGotYouService.findByPid(userInput);
+        Optional<ProgamerResponse> submitProgamer = IGotYouService.findByPid(userInput);
         if (!submitProgamer.isEmpty()) {
             isSubmitted = "true";
             if (IGotYouService.isAnswer(submitProgamer, quizList.get(currentIndex))) {

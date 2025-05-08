@@ -7,9 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
-import pq.progamerquiz.domain.whoareyou.service.WheAreYouService;
+import pq.progamerquiz.common.annotation.Auth;
+import pq.progamerquiz.common.dto.AuthUser;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
+import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
+import pq.progamerquiz.domain.whoareyou.entity.Whoareyou;
+import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -18,18 +22,31 @@ import java.util.stream.Collectors;
 @Controller
 @RequiredArgsConstructor
 @Log4j2
-@RequestMapping("/whoareyou")
-public class WhoAreYouController {
+@RequestMapping("/api/v1/whoareyou")
+public class WhoareyouController {
 
-    @Autowired
-    private WheAreYouService wheAreYouService;
-    private static final int MAX_ATTEMPTS = 8;
+    private final WheareyouService wheareyouService;
+    private final ProgamerMapper progamerMapper;
+
     @Autowired
     private ObjectMapper jacksonObjectMapper;
 
+    @PostMapping("/start")
+    public ResponseEntity<WhoareyouResponse> startWhoareyou(@Auth AuthUser authUser) {
+        Whoareyou whoareyou = wheareyouService.startQuiz(authUser);
+        return ResponseEntity.ok(
+                WhoareyouResponse.of(
+                        whoareyou.getId(),
+                        progamerMapper.toDto(whoareyou.getQuizProgamer()),
+                        whoareyou.getAttempt(),
+                        whoareyou.isCorrect()
+                )
+        );
+    }
 
     @GetMapping
     public String renderQuizPage() {
+
         log.info("Who Are you?");
         return "quizzes/whoareyou"; // Thymeleaf 또는 정적 페이지를 반환
     }
@@ -39,10 +56,10 @@ public class WhoAreYouController {
     public ResponseEntity<Map<String, Object>> startQuiz() {
 
         log.info("Set Quiz...");
-        WheAreYouResponse answer = wheAreYouService.getRandomProgamer();
+        WhoareyouResponse answer = wheAreYouService.getRandomProgamer();
         String imagePath = wheAreYouService.getImagePath(answer);
         log.info("Finish Set Quiz...");
-        log.info("Answer : " + answer.getId() + " / " + answer.getPid() + " / " + answer.getName());
+        log.info("Answer : " + answer.getId() + " / " + answer.getProgamerTag() + " / " + answer.getName());
 
         Map<String, Object> response = new HashMap<>();
         response.put("answer", answer);
@@ -60,16 +77,16 @@ public class WhoAreYouController {
 
         String userInput = (String) payload.get("input");
         int attempts = payload.get("attempts") != null ? (int) payload.get("attempts") : 0; // 기본값 0
-        WheAreYouResponse answer = jacksonObjectMapper.convertValue(payload.get("answer"), WheAreYouResponse.class);
-        List<WheAreYouResponse> guessedList = ((List<?>) payload.get("guessedList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, WheAreYouResponse.class))
+        WhoareyouResponse answer = jacksonObjectMapper.convertValue(payload.get("answer"), WhoareyouResponse.class);
+        List<WhoareyouResponse> guessedList = ((List<?>) payload.get("guessedList")).stream()
+                .map(item -> jacksonObjectMapper.convertValue(item, WhoareyouResponse.class))
                 .collect(Collectors.toCollection(ArrayList::new));
 
         Map<String, Object> response = new HashMap<>();
-        Optional<ProgamerDto> submitProgamer = wheAreYouService.findByPid(userInput);
+        Optional<ProgamerResponse> submitProgamer = wheAreYouService.findByPid(userInput);
         if (submitProgamer.isPresent()) {
-            WheAreYouResponse curProgamer = WheAreYouResponse.of(submitProgamer);
-            log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getPid());
+            WhoareyouResponse curProgamer = WhoareyouResponse.of(submitProgamer);
+            log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getProgamerTag());
             guessedList.add(curProgamer);
             log.info("GuessedList Size : " + guessedList.size());
             if (curProgamer.getId().equals(answer.getId())) {
@@ -80,7 +97,7 @@ public class WhoAreYouController {
                 if (attempts >= 8) {
                     response.put("isCorrect", "end");
                     log.info("Finish quiz.");
-                }else{
+                } else {
                     response.put("isCorrect", "false");
                     log.info("Incorrect answer.");
                 }

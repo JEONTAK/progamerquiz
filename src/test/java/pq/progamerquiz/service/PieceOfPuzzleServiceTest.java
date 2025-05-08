@@ -6,9 +6,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.pieceofpuzzle.service.PieceOfPuzzleService;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.team.service.TeamService;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
 import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
@@ -56,10 +56,10 @@ class PieceOfPuzzleServiceTest {
     @Test
     void getTwoRandomProgamers() {
         // Given
-        List<ProgamerDto> roster = List.of(
-                new ProgamerDto(1L, "progamer1", "Player One"),
-                new ProgamerDto(2L, "progamer2", "Player Two"),
-                new ProgamerDto(3L, "progamer3", "Player Three")
+        List<ProgamerResponse> roster = List.of(
+                new ProgamerResponse(1L, "progamer1", "Player One"),
+                new ProgamerResponse(2L, "progamer2", "Player Two"),
+                new ProgamerResponse(3L, "progamer3", "Player Three")
         );
 
         // When
@@ -101,7 +101,7 @@ class PieceOfPuzzleServiceTest {
         );
 
         when(progamerService.findByPid(userInput))
-                .thenReturn(new ProgamerDto(1L, "progamer1", "Player One"));
+                .thenReturn(new ProgamerResponse(1L, "progamer1", "Player One"));
 
         // When
         boolean result = pieceOfPuzzleService.isAnswer(userInput, pieceOfPuzzleResponse);
@@ -128,14 +128,14 @@ class PieceOfPuzzleServiceTest {
         // Given
         TeamDto teamDto = new TeamDto(1L, "Team A", "Call A", 2023L, "LCK", 1L, 2L, 3L, 4L, 5L,
                 List.of(
-                        new ProgamerDto(1L, "progamer1", "Player One"),
-                        new ProgamerDto(2L, "progamer2", "Player Two")
+                        new ProgamerResponse(1L, "progamer1", "Player One"),
+                        new ProgamerResponse(2L, "progamer2", "Player Two")
                 ), 101L
         );
         when(teamService.find(1L)).thenReturn(teamDto);
 
         // When
-        List<ProgamerDto> result = pieceOfPuzzleService.getRoster(teamDto);
+        List<ProgamerResponse> result = pieceOfPuzzleService.getRoster(teamDto);
 
         // Then
         assertThat(result).hasSize(2);

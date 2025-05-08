@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.whoareyou.service.WheAreYouService;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
+import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
+import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
 
 import java.util.Collections;
 
@@ -16,13 +16,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
-public class WheAreYouServiceTest {
+public class WheareyouServiceTest {
 
     @Mock
     private ProgamerService progamerService;
 
     @InjectMocks
-    private WheAreYouService wheAreYouService;
+    private WheareyouService wheAreYouService;
 
     @BeforeEach
     void setUp() {
@@ -32,7 +32,7 @@ public class WheAreYouServiceTest {
     @Test
     public void getImagePath() {
         // Given
-        WheAreYouResponse quiz1Dto = new WheAreYouResponse(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
+        WhoareyouResponse quiz1Dto = new WhoareyouResponse(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
 
         // When
         String imagePath = wheAreYouService.getImagePath(quiz1Dto);
@@ -45,11 +45,11 @@ public class WheAreYouServiceTest {
     @Test
     public void findByPid() {
         // Given
-        ProgamerDto mockProgamerDto = new ProgamerDto(1L, "progamer123", "PlayerName", 1998L, "LCK", 5L, 3L, "Korea", Collections.emptyList());
-        when(progamerService.findByPid("progamer123")).thenReturn(mockProgamerDto);
+        ProgamerResponse mockProgamerResponse = new ProgamerResponse(1L, "progamer123", "PlayerName", 1998L, "LCK", 5L, 3L, "Korea", Collections.emptyList());
+        when(progamerService.findByPid("progamer123")).thenReturn(mockProgamerResponse);
 
         // When
-        ProgamerDto result = wheAreYouService.findByPid("progamer123");
+        ProgamerResponse result = wheAreYouService.findByPid("progamer123");
 
         // Then
         assertNotNull(result);

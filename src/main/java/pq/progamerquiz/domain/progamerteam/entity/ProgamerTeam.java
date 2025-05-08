@@ -1,30 +1,27 @@
-package pq.progamerquiz.domain.whoareyou.entity;
+package pq.progamerquiz.domain.progamerteam.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pq.progamerquiz.common.entity.BaseEntity;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
+import pq.progamerquiz.domain.team.entity.Team;
 
 @Entity
-@Table(name = "whoareyou")
+@Table(name = "progamer_team")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Whoareyou extends BaseEntity {
+public class ProgamerTeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long attempt;
-
-    @Column(nullable = false)
-    private boolean correct;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "progamer_id", nullable = false)
-    private Progamer quizProgamer;
+    private Progamer progamer;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "team_id", nullable = false)
+    private Team team;
 }

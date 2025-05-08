@@ -6,8 +6,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
 import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 
@@ -33,8 +33,8 @@ class IGotYouServiceTest {
     @Test
     void getProgamers() {
         // Given
-        List<ProgamerDto> mockProgamerList = List.of(
-                new ProgamerDto(
+        List<ProgamerResponse> mockProgamerList = List.of(
+                new ProgamerResponse(
                         1L, // id
                         "progamer1", // pid
                         "Player One", // name
@@ -48,7 +48,7 @@ class IGotYouServiceTest {
                                 new TeamDto()
                         )
                 ),
-                new ProgamerDto(
+                new ProgamerResponse(
                         2L, // id
                         "progamer2", // pid
                         "Player Two", // name
@@ -77,7 +77,7 @@ class IGotYouServiceTest {
     void isExist() {
         // Given
         String userInput = "progamer1";
-        when(progamerService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerDto(1L, "progamer1", "Player One")));
+        when(progamerService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerResponse(1L, "progamer1", "Player One")));
 
         // When
         boolean result = IGotYouService.isExist(userInput);
@@ -102,7 +102,7 @@ class IGotYouServiceTest {
         );
 
         when(progamerService.findByPid(userInput))
-                .thenReturn(Optional.of(new ProgamerDto(1L, "progamer1", "Player One")));
+                .thenReturn(Optional.of(new ProgamerResponse(1L, "progamer1", "Player One")));
 
         // When
         boolean result = IGotYouService.isAnswer(userInput, IGotYouResponse);

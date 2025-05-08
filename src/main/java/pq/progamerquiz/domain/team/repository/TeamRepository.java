@@ -37,4 +37,11 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
     @Query("SELECT DISTINCT t FROM Team t LEFT JOIN FETCH t.roster WHERE t.id IN :ids")
     List<Team> findTeamsByIds(@Param("ids") List<Long> ids);
 
+
+    @Query("SELECT pt.team FROM ProgamerTeam pt " +
+            "WHERE pt.progamer.id = :progamerId " +
+            "ORDER BY pt.team.seasonYear DESC " +
+            "FETCH FIRST 1 ROWS ONLY")
+    Team findLatestTeamByProgamerId(Long progamerId);
+    
 }

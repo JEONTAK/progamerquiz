@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.team.repository.TeamRepository;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
@@ -124,7 +124,7 @@ public class PieceOfPuzzleController {
             return ResponseEntity.badRequest().body(response);
         }
 
-        Optional<ProgamerDto> submitProgamer = pieceOfPuzzleService.findByPid(input);
+        Optional<ProgamerResponse> submitProgamer = pieceOfPuzzleService.findByPid(input);
         PieceOfPuzzleResponse currentTeam = quizList.get(currentIndex);
         Long correctId = null;
 

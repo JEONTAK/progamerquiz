@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
 import pq.progamerquiz.domain.team.dto.TeamDto;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
@@ -25,7 +25,7 @@ public class PieceOfPuzzleService {
     final private TeamService teamService;
     final private ProgamerService progamerService;
 
-    public Optional<ProgamerDto> findByPid(String pid){
+    public Optional<ProgamerResponse> findByPid(String pid){
         return progamerService.findByPid(pid);
     }
 
@@ -38,22 +38,22 @@ public class PieceOfPuzzleService {
                 .toList();
     }
 
-    static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerDto> roster) {
+    static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerResponse> roster) {
         if(roster.size() < 5) {
             return null;
         }
         List<Map<Long, Boolean>> answer = new ArrayList<>();
-        List<ProgamerDto> mutableRoster = new ArrayList<>(roster);
+        List<ProgamerResponse> mutableRoster = new ArrayList<>(roster);
         Collections.shuffle(mutableRoster);
-        for (ProgamerDto progamerDto : mutableRoster.subList(0, 2)) {
+        for (ProgamerResponse progamerResponse : mutableRoster.subList(0, 2)) {
             Map<Long, Boolean> progamerMap = new HashMap<>();
-            progamerMap.put(progamerDto.getId(), false);  // id를 키로 하고 초기 상태는 false
+            progamerMap.put(progamerResponse.getId(), false);  // id를 키로 하고 초기 상태는 false
             answer.add(progamerMap);
         }
         return answer;
     }
 
-    public boolean isAnswer(Optional<ProgamerDto> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
+    public boolean isAnswer(Optional<ProgamerResponse> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
         for (Map<Long, Boolean> answer : pieceOfPuzzleResponse.getAnswer()) {
             for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
                 if (input.get().getId().equals(entry.getKey()) && !entry.getValue()) {
@@ -66,7 +66,7 @@ public class PieceOfPuzzleService {
     }
 
     public PieceOfPuzzleResponse convert(int idx, TeamDto submitTeam) {
-        List<ProgamerDto> roster = submitTeam.getRoster();
+        List<ProgamerResponse> roster = submitTeam.getRoster();
         List<Map<Long, Boolean>> answer = getTwoRandomProgamers(roster);
         if (answer == null) {
             return null;

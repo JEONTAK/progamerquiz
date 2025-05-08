@@ -1,46 +1,51 @@
 package pq.progamerquiz.domain.team.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import pq.progamerquiz.domain.progamer.entity.Progamer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
+@Table(name = "teams")
 @Getter
-@Setter
-@NoArgsConstructor
-public class  Team{
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Team {
 
     @Id
     @GeneratedValue
-    @Column(name = "team_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String callName;
 
+    @Column(nullable = false)
     private Long seasonYear;
 
+    @Column(nullable = false)
     private String league;
 
-    private Long spring_rank;
+    @Column
+    private Long springRank;
 
-    private Long summer_rank;
+    @Column
+    private Long summerRank;
 
-    private Long msi_rank;
+    @Column
+    private Long msiRank;
 
-    private Long worlds_rank;
+    @Column
+    private Long worldsRank;
 
-    private Long winter_rank;
+    @Column
+    private Long winterRank;
 
-    @ManyToMany(mappedBy = "teams")
-    private List<Progamer> roster = new ArrayList<>();
+    @Column(nullable = false)
+    public Long imageId;
 
-    public Long image_path;
+    /*    @ManyToMany(mappedBy = "teams")
+    private List<Progamer> roster = new ArrayList<>();*/
 }

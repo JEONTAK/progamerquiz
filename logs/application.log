@@ -121,7 +121,7 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: org.h2.Dri
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
 2025-05-08 14:25:52 ERROR o.s.boot.SpringApplication - Application run failed
 java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.ArrayList<pq.progamerquiz.domain.team.dto.TeamDto>` from String value (token `JsonToken.VALUE_STRING`)
- at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: pq.progamerquiz.domain.progamer.dto.ProgamerDto["teams"])
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse["teams"])
 	at pq.progamerquiz.util.UpdateDBList.lambda$initializeProgamers$1(UpdateDBList.java:81)
 	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
 	at pq.progamerquiz.util.UpdateDBList.initializeProgamers(UpdateDBList.java:76)
@@ -166,7 +166,7 @@ java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.MismatchedInputEx
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
 Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.util.ArrayList<pq.progamerquiz.domain.team.dto.TeamDto>` from String value (token `JsonToken.VALUE_STRING`)
- at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: pq.progamerquiz.domain.progamer.dto.ProgamerDto["teams"])
+ at [Source: UNKNOWN; byte offset: #UNKNOWN] (through reference chain: pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse["teams"])
 	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
 	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1767)
 	at com.fasterxml.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1541)

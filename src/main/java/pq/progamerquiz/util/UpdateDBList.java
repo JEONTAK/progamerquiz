@@ -8,9 +8,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.progamer.dto.ProgamerMapper;
+import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.quiz.entity.Quiz;
 import pq.progamerquiz.domain.quiz.dto.QuizDto;
@@ -18,7 +18,7 @@ import pq.progamerquiz.domain.quiz.dto.QuizMapper;
 import pq.progamerquiz.domain.quiz.service.QuizService;
 import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.dto.TeamDto;
-import pq.progamerquiz.domain.team.dto.TeamMapper;
+import pq.progamerquiz.domain.team.mapper.TeamMapper;
 import pq.progamerquiz.domain.team.service.TeamService;
 
 import java.io.File;
@@ -74,13 +74,13 @@ public class UpdateDBList {
             File jsonFile = new File("src/main/resources/static/database/Progamer.json");
             JsonNode rootNode = mapper.readTree(jsonFile);
             rootNode.forEach(node ->{
-                ProgamerDto progamerDto = null;
+                ProgamerResponse progamerResponse = null;
                 try {
-                    progamerDto = mapper.treeToValue(node, ProgamerDto.class);
+                    progamerResponse = mapper.treeToValue(node, ProgamerResponse.class);
                 } catch (JsonProcessingException e) {
                     throw new RuntimeException(e);
                 }
-                Progamer progamer = ProgamerMapper.toEntity(progamerDto);
+                Progamer progamer = ProgamerMapper.toEntity(progamerResponse);
                 progamerService.saveProgamer(progamer);
             });
         } catch (IOException e) {

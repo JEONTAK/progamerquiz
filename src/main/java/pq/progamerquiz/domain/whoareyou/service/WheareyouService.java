@@ -5,8 +5,8 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
-import pq.progamerquiz.domain.whoareyou.dto.response.WheAreYouResponse;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 
 import java.io.IOException;
@@ -22,23 +22,24 @@ import java.util.Optional;
 @Log4j2
 @Transactional
 @RequiredArgsConstructor
-public class WheAreYouService {
+public class WheareyouService {
 
     final private ProgamerService progamerService;
+    private static final int MAX_ATTEMPTS = 8;
 
-    public Optional<ProgamerDto> findByPid(String pid){
+    public Optional<ProgamerResponse> findByPid(String pid){
         return progamerService.findByPid(pid);
     }
 
-    public WheAreYouResponse getRandomProgamer() {
-        List<ProgamerDto> progamer = progamerService.findRandomPlayers(1);
+    public WhoareyouResponse getRandomProgamer() {
+        List<ProgamerResponse> progamer = progamerService.findRandomPlayers(1);
         return progamer.stream()
                 .findFirst()
-                .map(progamerDto -> WheAreYouResponse.of(Optional.of(progamerDto)))
+                .map(progamerDto -> WhoareyouResponse.of(Optional.of(progamerDto)))
                 .orElseThrow(() -> new IllegalArgumentException("No progamer found"));
     }
 
-    public String getImagePath(WheAreYouResponse answer) {
+    public String getImagePath(WhoareyouResponse answer) {
         String imagePath = "/images/player/" + answer.getId() + ".webp";
         try{
             Path path = Paths.get(new ClassPathResource("static" + imagePath).getURI());

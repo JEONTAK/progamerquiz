@@ -6,8 +6,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
-import pq.progamerquiz.domain.progamer.dto.ProgamerDto;
 import pq.progamerquiz.domain.progamer.repository.ProgamerRepository;
 
 import java.util.List;
@@ -29,11 +29,11 @@ public class ProgamerService {
         return progamerRepository.findById(progamerId).orElse(null);
     }
 
-    public Optional<ProgamerDto> findByPid(String pid) {
-        return Optional.ofNullable(ProgamerDto.toDto(progamerRepository.findByPidIgnoreCase(pid)));
+    public Optional<ProgamerResponse> findByPid(String pid) {
+        return Optional.ofNullable(ProgamerResponse.toDto(progamerRepository.findByPidIgnoreCase(pid)));
     }
 
-    public List<ProgamerDto> findRandomPlayers(int totalCount) {
+    public List<ProgamerResponse> findRandomPlayers(int totalCount) {
         // 1단계: 랜덤 ID 추출
         Pageable pageable = PageRequest.of(0, totalCount); // LIMIT과 동일한 역할
         List<Long> randomIds = progamerRepository.findRandomProgamerIds(pageable);
@@ -41,7 +41,7 @@ public class ProgamerService {
         // 2단계: FETCH JOIN으로 연관 데이터 로드
         return progamerRepository.findProgamersWithTeamsByIds(randomIds)
                 .stream()
-                .map(ProgamerDto::toDto)
+                .map(ProgamerResponse::toDto)
                 .collect(Collectors.toList());
     }
 
