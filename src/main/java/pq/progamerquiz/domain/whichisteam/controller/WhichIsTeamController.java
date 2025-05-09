@@ -3,13 +3,9 @@ package pq.progamerquiz.domain.whichisteam.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
 import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
 
 import java.util.*;
@@ -29,7 +25,7 @@ public class WhichIsTeamController {
     private int correctCount;
     private int currentIndex;
 
-    private void initialize() {
+    /*private void initialize() {
         isSubmitted = "true";
         isCorrect = "start";
         correctCount = 0;
@@ -115,5 +111,5 @@ public class WhichIsTeamController {
         result.put("correctCount", correctCount);
         result.put("totalCount", totalIndex);
         return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
-    }
+    }*/
 }

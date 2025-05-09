@@ -2,7 +2,7 @@ package pq.progamerquiz.domain.progamer.mapper;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerNotIncludeTeamResponse;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
 import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.mapper.TeamMapper;
@@ -32,9 +32,9 @@ public class ProgamerMapper {
     }
 */
 
-    public ProgamerNotIncludeTeamResponse toDto(Progamer progamer){
+    public ProgamerWithRecentTeamResponse toDto(Progamer progamer){
         Team recentTeam = teamQueryService.findRecentTeamByProgamer(progamer.getId());
-        return ProgamerNotIncludeTeamResponse.of(
+        return ProgamerWithRecentTeamResponse.of(
                 progamer.getId(),
                 progamer.getProgamerTag(),
                 progamer.getName(),

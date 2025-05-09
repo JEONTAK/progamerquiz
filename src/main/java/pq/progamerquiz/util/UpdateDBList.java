@@ -1,87 +1,120 @@
 package pq.progamerquiz.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.common.exception.CustomException;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
-import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.quiz.entity.Quiz;
+import pq.progamerquiz.domain.progamer.repository.ProgamerRepository;
+import pq.progamerquiz.domain.progamerteam.entity.ProgamerTeam;
+import pq.progamerquiz.domain.progamerteam.repository.ProgamerTeamRepository;
 import pq.progamerquiz.domain.quiz.dto.QuizDto;
 import pq.progamerquiz.domain.quiz.dto.QuizMapper;
+import pq.progamerquiz.domain.quiz.entity.Quiz;
 import pq.progamerquiz.domain.quiz.service.QuizService;
+import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 import pq.progamerquiz.domain.team.entity.Team;
-import pq.progamerquiz.domain.team.dto.TeamDto;
-import pq.progamerquiz.domain.team.mapper.TeamMapper;
-import pq.progamerquiz.domain.team.service.TeamService;
+import pq.progamerquiz.domain.team.repository.TeamRepository;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @Transactional
 @Service
-@Log4j2
+@Slf4j
 @RequiredArgsConstructor
 public class UpdateDBList {
 
 
     private final EntityManager em;
     private final ObjectMapper mapper = new ObjectMapper();
-    private final ProgamerService progamerService;
+    private final ProgamerRepository progamerRepository;
     private final QuizService quizService;
-    private final TeamService teamService;
+    private final TeamRepository teamRepository;
+    private final ProgamerTeamRepository progamerTeamRepository;
 
     public void initializeTeams() {
-        List<Team> existingTeams = em.createQuery("SELECT t FROM Team t", Team.class).getResultList();
+  /*      List<Team> existingTeams = em.createQuery("SELECT t FROM Team t", Team.class).getResultList();
         if (!existingTeams.isEmpty()) {
             log.info("Teams already exist in the database. Skipping initialization.");
             return;
         }
-        log.info("No teams found in the database. Loading data from JSON.");
+        log.info("No teams found in the database. Loading data from JSON.");*/
         try {
-            File jsonFile = new File("src/main/resources/static/database/Team.json");
-            JsonNode rootNode = mapper.readTree(jsonFile);
-            rootNode.forEach(node ->{
-                TeamDto teamDto = null;
-                try {
-                    teamDto = mapper.treeToValue(node, TeamDto.class);
-                } catch (JsonProcessingException e) {
-                    throw new RuntimeException(e);
-                }
-                Team team = TeamMapper.toEntity(teamDto);
-                teamService.saveTeam(team);
-            });
+            // JSON 파일에서 ProGamer 객체 리스트로 읽기
+            List<TeamInsertResponse> teams = mapper.readValue(
+                    new File("src/main/resources/static/database/Team.json"),
+                    new TypeReference<List<TeamInsertResponse>>() {}
+            );
+
+            // 파싱된 데이터 출력
+            teams.stream().map(response -> Team.create(
+                    response.getId(),
+                    response.getName(),
+                    response.getCallName(),
+                    response.getSeasonYear(),
+                    response.getLeague(),
+                    response.getSpringRank(),
+                    response.getSummerRank(),
+                    response.getMsiRank(),
+                    response.getWorldsRank(),
+                    response.getWinterRank(),
+                    response.getImageId()
+            )).forEach(teamRepository::save);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void initializeProgamers() {
-        List<Progamer> existingProgamers = em.createQuery("SELECT p FROM Progamer p", Progamer.class).getResultList();
+   /*     List<Progamer> existingProgamers = em.createQuery("SELECT p FROM Progamer p", Progamer.class).getResultList();
         if (!existingProgamers.isEmpty()) {
             log.info("Quizzes already exist in the database. Skipping initialization.");
             return;
         }
-        log.info("No Quizzes found in the database. Loading data from JSON.");
+        log.info("No Quizzes found in the database. Loading data from JSON.");*/
         try {
-            File jsonFile = new File("src/main/resources/static/database/Progamer.json");
-            JsonNode rootNode = mapper.readTree(jsonFile);
-            rootNode.forEach(node ->{
-                ProgamerResponse progamerResponse = null;
-                try {
-                    progamerResponse = mapper.treeToValue(node, ProgamerResponse.class);
-                } catch (JsonProcessingException e) {
-                    throw new RuntimeException(e);
-                }
-                Progamer progamer = ProgamerMapper.toEntity(progamerResponse);
-                progamerService.saveProgamer(progamer);
+            // JSON 파일에서 ProGamer 객체 리스트로 읽기
+            List<ProgamerInsertResponse> progamers = mapper.readValue(
+                    new File("src/main/resources/static/database/Progamer.json"),
+                    new TypeReference<List<ProgamerInsertResponse>>() {}
+            );
+
+            // 파싱된 데이터 출력
+            progamers.forEach(response -> {
+                Progamer progamer = Progamer.create(
+                        response.getId(),
+                        response.getProgamerTag(),
+                        response.getName(),
+                        response.getBirth(),
+                        response.getPosition(),
+                        response.getLeagueWin(),
+                        response.getIntlWin(),
+                        response.getNationality()
+                );
+                Progamer savedProgamer = progamerRepository.save(progamer);
+                log.info("프로게이머 저장 : " + savedProgamer.getId() + " | " + progamer.getProgamerTag());
+                List<Long> teamIds = Arrays.stream(response.getTeamIds().split(","))
+                        .map(String::trim)  // 각 항목의 앞뒤 공백 제거
+                        .filter(s -> !s.isEmpty())  // 빈 문자열 필터링
+                        .map(Long::parseLong)  // String을 Long으로 변환
+                        .toList();
+
+                teamIds.forEach(teamId -> {
+                    Team team = teamRepository.findById(teamId).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, teamId + " | 해당 팀을 찾을 수 없습니다."));
+                    ProgamerTeam progamerTeam = ProgamerTeam.create(savedProgamer, team);
+                    progamerTeamRepository.save(progamerTeam);
+                });
             });
         } catch (IOException e) {
             e.printStackTrace();
@@ -89,12 +122,6 @@ public class UpdateDBList {
     }
 
     public void initializeQuizzes() {
-        List<Quiz> existingQuizzes= em.createQuery("SELECT q FROM Quiz q", Quiz.class).getResultList();
-        if (!existingQuizzes.isEmpty()) {
-            log.info("Progamers already exist in the database. Skipping initialization.");
-            return;
-        }
-        log.info("No Progamers found in the database. Loading data from JSON.");
         try {
             File jsonFile = new File("src/main/resources/static/database/Quiz.json");
             JsonNode rootNode = mapper.readTree(jsonFile);

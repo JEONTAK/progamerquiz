@@ -2,19 +2,9 @@ package pq.progamerquiz.domain.whoareyou.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Optional;
 
 
 //Quiz : Who are you?
@@ -27,12 +17,12 @@ public class WheareyouService {
     final private ProgamerService progamerService;
     private static final int MAX_ATTEMPTS = 8;
 
-    public Optional<ProgamerResponse> findByPid(String pid){
+    /*public Optional<ProgamerInsertResponse> findByPid(String pid){
         return progamerService.findByPid(pid);
     }
 
     public WhoareyouResponse getRandomProgamer() {
-        List<ProgamerResponse> progamer = progamerService.findRandomPlayers(1);
+        List<ProgamerInsertResponse> progamer = progamerService.findRandomPlayers(1);
         return progamer.stream()
                 .findFirst()
                 .map(progamerDto -> WhoareyouResponse.of(Optional.of(progamerDto)))
@@ -52,5 +42,5 @@ public class WheareyouService {
             return "/images/none.png";
         }
         return imagePath;
-    }
+    }*/
 }

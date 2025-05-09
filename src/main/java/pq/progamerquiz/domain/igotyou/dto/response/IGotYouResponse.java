@@ -5,11 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 //Quiz : I Got you!
@@ -28,7 +24,7 @@ public class IGotYouResponse {
     private List<String> teamNames;
     private List<Long> teamImages;
 
-    public static IGotYouResponse of(int idx, ProgamerResponse submitProgamer) {
+    /*public static IGotYouResponse of(int idx, ProgamerInsertResponse submitProgamer) {
         List<TeamDto> teams = submitProgamer.getTeams();
         teams.sort(Comparator.comparing(TeamDto::getSeasonYear));
         List<Long> teamYears = new ArrayList<>();
@@ -38,13 +34,13 @@ public class IGotYouResponse {
         for (TeamDto team : submitProgamer.getTeams()) {
             teamYears.add(team.getSeasonYear());
             teamNames.add(team.getName());
-            teamImages.add(team.getImage_path());
+            teamImages.add(team.getImageId());
         }
 
         IGotYouResponse result = new IGotYouResponse(
                 (long) idx,
                 submitProgamer.getId(),
-                submitProgamer.getPid(),
+                submitProgamer.getProgamerTag(),
                 submitProgamer.getName(),
                 submitProgamer.getPosition().toString(),
                 teamYears,
@@ -52,5 +48,5 @@ public class IGotYouResponse {
                 teamImages
         );
         return result;
-    }
+    }*/
 }

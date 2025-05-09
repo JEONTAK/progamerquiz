@@ -6,10 +6,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
+import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,8 +33,8 @@ class IGotYouServiceTest {
     @Test
     void getProgamers() {
         // Given
-        List<ProgamerResponse> mockProgamerList = List.of(
-                new ProgamerResponse(
+        List<ProgamerInsertResponse> mockProgamerList = List.of(
+                new ProgamerInsertResponse(
                         1L, // id
                         "progamer1", // pid
                         "Player One", // name
@@ -44,11 +44,11 @@ class IGotYouServiceTest {
                         2L, // intl_win
                         "Korea", // nationality
                         List.of( // teams
-                                new TeamDto(),
-                                new TeamDto()
+                                new TeamInsertResponse(),
+                                new TeamInsertResponse()
                         )
                 ),
-                new ProgamerResponse(
+                new ProgamerInsertResponse(
                         2L, // id
                         "progamer2", // pid
                         "Player Two", // name
@@ -58,7 +58,7 @@ class IGotYouServiceTest {
                         0L, // intl_win
                         "China", // nationality
                         List.of( // teams
-                                new TeamDto()
+                                new TeamInsertResponse()
                         )
                 )
         );
@@ -77,7 +77,7 @@ class IGotYouServiceTest {
     void isExist() {
         // Given
         String userInput = "progamer1";
-        when(progamerService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerResponse(1L, "progamer1", "Player One")));
+        when(progamerService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerInsertResponse(1L, "progamer1", "Player One")));
 
         // When
         boolean result = IGotYouService.isExist(userInput);
@@ -102,7 +102,7 @@ class IGotYouServiceTest {
         );
 
         when(progamerService.findByPid(userInput))
-                .thenReturn(Optional.of(new ProgamerResponse(1L, "progamer1", "Player One")));
+                .thenReturn(Optional.of(new ProgamerInsertResponse(1L, "progamer1", "Player One")));
 
         // When
         boolean result = IGotYouService.isAnswer(userInput, IGotYouResponse);

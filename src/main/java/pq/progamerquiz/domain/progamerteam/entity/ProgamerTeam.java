@@ -24,4 +24,13 @@ public class ProgamerTeam {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;
+
+    private ProgamerTeam(Progamer progamer, Team team) {
+        this.progamer = progamer;
+        this.team = team;
+    }
+
+    public static ProgamerTeam create(Progamer progamer, Team team) {
+        return new ProgamerTeam(progamer, team);
+    }
 }

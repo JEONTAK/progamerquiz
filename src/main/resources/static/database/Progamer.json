@@ -1,2752 +1,2752 @@
 [
     {
         "id": "1",
-        "pid": "5Kid",
+        "progamerTag": "5Kid",
         "name": "Park Jeon-hyeon",
         "birth": "1999",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "63,77,610,621,632"
+        "teamIds": "63,77,610,621,632"
     },
     {
         "id": "2",
-        "pid": "Acorn",
+        "progamerTag": "Acorn",
         "name": "Choi Cheon-ju",
         "birth": "1990",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "112,141"
+        "teamIds": "112,141"
     },
     {
         "id": "3",
-        "pid": "ADD",
+        "progamerTag": "ADD",
         "name": "Kang Geon-mo",
         "birth": "1998",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "24,28,44,179,199,212,613"
+        "teamIds": "24,28,44,179,199,212,613"
     },
     {
         "id": "4",
-        "pid": "Aiming",
+        "progamerTag": "Aiming",
         "name": "Kim Ha-ram",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "29,37,56,63,217,87,93,104"
+        "teamIds": "29,37,56,63,217,87,93,104"
     },
     {
         "id": "5",
-        "pid": "Ambition",
+        "progamerTag": "Ambition",
         "name": "Kang Chan-yong",
         "birth": "1992",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "3,18,27,40,46"
+        "teamIds": "3,18,27,40,46"
     },
     {
         "id": "6",
-        "pid": "Andil",
+        "progamerTag": "Andil",
         "name": "Moon Gwan-bin",
         "birth": "2002",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "97,106"
+        "teamIds": "97,106"
     },
     {
         "id": "7",
-        "pid": "Arrow",
+        "progamerTag": "Arrow",
         "name": "Noh Dong-hyeon",
         "birth": "1994",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,15,407,423,432"
+        "teamIds": "5,15,407,423,432"
     },
     {
         "id": "8",
-        "pid": "Bang",
+        "progamerTag": "Bang",
         "name": "Bae Jun-sik",
         "birth": "1996",
         "position": "ADC",
-        "league_win": "4",
-        "intl_win": "4",
+        "leagueWin": "4",
+        "intlWin": "4",
         "nationality": "KOR",
-        "teams": "1,3,25,39,434,437,79"
+        "teamIds": "1,3,25,39,434,437,79"
     },
     {
         "id": "9",
-        "pid": "BAO",
+        "progamerTag": "BAO",
         "name": "Jeong Hyeon-woo",
         "birth": "2001",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "75,970,974"
+        "teamIds": "75,970,974"
     },
     {
         "id": "10",
-        "pid": "Bay",
+        "progamerTag": "Bay",
         "name": "Park Jun-byeong",
         "birth": "2002",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "68,69,76,795"
+        "teamIds": "68,69,76,795"
     },
     {
         "id": "11",
-        "pid": "Bdd",
+        "progamerTag": "Bdd",
         "name": "Gwak Bo-seong",
         "birth": "1999",
         "position": "MID",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "20,30,36,57,60,72,93,105"
+        "teamIds": "20,30,36,57,60,72,93,105"
     },
     {
         "id": "12",
-        "pid": "Bengi",
+        "progamerTag": "Bengi",
         "name": "Bae Seong-woong",
         "birth": "1993",
         "position": "JGL",
-        "league_win": "5",
-        "intl_win": "3",
+        "leagueWin": "5",
+        "intlWin": "3",
         "nationality": "KOR",
-        "teams": "1,13,151"
+        "teamIds": "1,13,151"
     },
     {
         "id": "13",
-        "pid": "BeryL",
+        "progamerTag": "BeryL",
         "name": "Cho Geon-hee",
         "birth": "1997",
         "position": "SUP",
-        "league_win": "3",
-        "intl_win": "2",
+        "leagueWin": "3",
+        "intlWin": "2",
         "nationality": "KOR",
-        "teams": "52,62,71,85,99,105"
+        "teamIds": "52,62,71,85,99,105"
     },
     {
         "id": "14",
-        "pid": "Beyond",
+        "progamerTag": "Beyond",
         "name": "Kim Kyu-seok",
         "birth": "1997",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "69"
+        "teamIds": "69"
     },
     {
         "id": "15",
-        "pid": "Bible",
+        "progamerTag": "Bible",
         "name": "Yoon Seol",
         "birth": "1999",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "83,95"
+        "teamIds": "83,95"
     },
     {
         "id": "16",
-        "pid": "Blanc",
+        "progamerTag": "Blanc",
         "name": "Jin Seong-min",
         "birth": "1995",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "16,314"
+        "teamIds": "16,314"
     },
     {
         "id": "17",
-        "pid": "Bless",
+        "progamerTag": "Bless",
         "name": "Choi Hyeon-woong",
         "birth": "1996",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,32"
+        "teamIds": "23,32"
     },
     {
         "id": "18",
-        "pid": "Bonnie",
+        "progamerTag": "Bonnie",
         "name": "Lee Gwang-su",
         "birth": "2001",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "77,256"
+        "teamIds": "77,256"
     },
     {
         "id": "19",
-        "pid": "Bono",
+        "progamerTag": "Bono",
         "name": "Kim Gi-beon",
         "birth": "1995",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "32,43,54,63,959"
+        "teamIds": "32,43,54,63,959"
     },
     {
         "id": "20",
-        "pid": "Bubbling",
+        "progamerTag": "Bubbling",
         "name": "Park Jun-hyeong",
         "birth": "1993",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "20"
+        "teamIds": "20"
     },
     {
         "id": "21",
-        "pid": "Bull",
+        "progamerTag": "Bull",
         "name": "Song Seon-gyu",
         "birth": "2003",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "106"
+        "teamIds": "106"
     },
     {
         "id": "22",
-        "pid": "BuLLDoG",
+        "progamerTag": "BuLLDoG",
         "name": "Lee Tae-yeong",
         "birth": "2005",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "97,106"
+        "teamIds": "97,106"
     },
     {
         "id": "23",
-        "pid": "Burdol",
+        "progamerTag": "Burdol",
         "name": "Noh Tae-yoon",
         "birth": "2003",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "72,83,96,270"
+        "teamIds": "72,83,96,270"
     },
     {
         "id": "24",
-        "pid": "callme",
+        "progamerTag": "callme",
         "name": "Oh Ji-hoon",
         "birth": "2003",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "100,108"
+        "teamIds": "100,108"
     },
     {
         "id": "25",
-        "pid": "Canna",
+        "progamerTag": "Canna",
         "name": "Kim Chang-dong",
         "birth": "2000",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "59,74,88,95,379"
+        "teamIds": "59,74,88,95,379"
     },
     {
         "id": "26",
-        "pid": "Canyon",
+        "progamerTag": "Canyon",
         "name": "Kim Geon-bu",
         "birth": "2001",
         "position": "JGL",
-        "league_win": "4",
-        "intl_win": "2",
+        "leagueWin": "4",
+        "intlWin": "2",
         "nationality": "KOR",
-        "teams": "52,62,71,83,95,101"
+        "teamIds": "52,62,71,83,95,101"
     },
     {
         "id": "27",
-        "pid": "Cepted",
+        "progamerTag": "Cepted",
         "name": "Park Wi-rim",
         "birth": "1997",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "35,925,165,612"
+        "teamIds": "35,925,165,612"
     },
     {
         "id": "28",
-        "pid": "Chaser",
+        "progamerTag": "Chaser",
         "name": "Lee Sang-hyun",
         "birth": "1995",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,19,409,929,516"
+        "teamIds": "4,19,409,929,516"
     },
     {
         "id": "29",
-        "pid": "Chei",
+        "progamerTag": "Chei",
         "name": "Choi Sun-ho",
         "birth": "1996",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,16,303"
+        "teamIds": "4,16,303"
     },
     {
         "id": "30",
-        "pid": "Chieftain",
+        "progamerTag": "Chieftain",
         "name": "kee Jae-yub",
         "birth": "2000",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "161,179,198,80,241,968,623,976"
+        "teamIds": "161,179,198,80,241,968,623,976"
     },
     {
         "id": "31",
-        "pid": "Chovy",
+        "progamerTag": "Chovy",
         "name": "Jeong Ji-hoon",
         "birth": "2001",
         "position": "MID",
-        "league_win": "4",
-        "intl_win": "1",
+        "leagueWin": "4",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "48,50,61,73,82,91,101"
+        "teamIds": "48,50,61,73,82,91,101"
     },
     {
         "id": "32",
-        "pid": "Clid",
+        "progamerTag": "Clid",
         "name": "Kim Tae-min",
         "birth": "1999",
         "position": "JGL",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "149,155,163,49,60,72,234,94"
+        "teamIds": "149,155,163,49,60,72,234,94"
     },
     {
         "id": "33",
-        "pid": "Clear",
+        "progamerTag": "Clear",
         "name": "Song Hyeon-min",
         "birth": "2002",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "96,107"
+        "teamIds": "96,107"
     },
     {
         "id": "34",
-        "pid": "Clozer",
+        "progamerTag": "Clozer",
         "name": "Lee Ju-hyeon",
         "birth": "2003",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "59,74,89,96,107"
+        "teamIds": "59,74,89,96,107"
     },
     {
         "id": "35",
-        "pid": "Coco",
+        "progamerTag": "Coco",
         "name": "Shin Jin-yeong",
         "birth": "1994",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,19,146,926,169,"
+        "teamIds": "3,19,146,926,169,"
     },
     {
         "id": "36",
-        "pid": "CoreJJ",
+        "progamerTag": "CoreJJ",
         "name": "Jo Yong-in",
         "birth": "1994",
         "position": "SUP",
-        "league_win": "3",
-        "intl_win": "1",
+        "leagueWin": "3",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "388,18,27,40,46,425,443,446,457,472,476"
+        "teamIds": "388,18,27,40,46,425,443,446,457,472,476"
     },
     {
         "id": "37",
-        "pid": "Cpt Jack",
+        "progamerTag": "Cpt Jack",
         "name": "Kang Hyung-woo",
         "birth": "1993",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,19"
+        "teamIds": "4,19"
     },
     {
         "id": "38",
-        "pid": "Crash",
+        "progamerTag": "Crash",
         "name": "Lee Dong-woo",
         "birth": "1997",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "19,30,151,169,744,753,780,868,970,616"
+        "teamIds": "19,30,151,169,744,753,780,868,970,616"
     },
     {
         "id": "39",
-        "pid": "Crazy",
+        "progamerTag": "Crazy",
         "name": "Kim Jae-hee",
         "birth": "1996",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,32,43,49,202,957,965"
+        "teamIds": "23,32,43,49,202,957,965"
     },
     {
         "id": "40",
-        "pid": "Croco",
+        "progamerTag": "Croco",
         "name": "Kim Dong-beom",
         "birth": "2000",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "78,89,99,269"
+        "teamIds": "78,89,99,269"
     },
     {
         "id": "41",
-        "pid": "Crown",
+        "progamerTag": "Crown",
         "name": "Lee Min-hoi",
         "birth": "1995",
         "position": "MID",
-        "league_win": null,
-        "intl_win": "1",
+        "leagueWin": 0,
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "8,18,27,40,46,432,444"
+        "teamIds": "8,18,27,40,46,432,444"
     },
     {
         "id": "42",
-        "pid": "CuVee",
+        "progamerTag": "CuVee",
         "name": "Lee Seong-jin",
         "birth": "1996",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": "1",
+        "leagueWin": 0,
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "8,18,27,40,46,55,66"
+        "teamIds": "8,18,27,40,46,55,66"
     },
     {
         "id": "43",
-        "pid": "Cuzz",
+        "progamerTag": "Cuzz",
         "name": "Moon Woo-chan",
         "birth": "1999",
         "position": "JGL",
-        "league_win": "3",
-        "intl_win": null,
+        "leagueWin": "3",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "30,36,51,59,74,87,93,106"
+        "teamIds": "30,36,51,59,74,87,93,106"
     },
     {
         "id": "44",
-        "pid": "dade",
+        "progamerTag": "dade",
         "name": "Bae Eo-jin",
         "birth": "1994",
         "position": "MID",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "119,129,140"
+        "teamIds": "119,129,140"
     },
     {
         "id": "45",
-        "pid": "DanDy",
+        "progamerTag": "DanDy",
         "name": "Choi In-kyu",
         "birth": "1994",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "116,131"
+        "teamIds": "116,131"
     },
     {
         "id": "46",
-        "pid": "Deft",
+        "progamerTag": "Deft",
         "name": "Kim Hyuk-kyu",
         "birth": "1996",
         "position": "ADC",
-        "league_win": "4",
-        "intl_win": "2",
+        "leagueWin": "4",
+        "intlWin": "2",
         "nationality": "KOR",
-        "teams": "111,127,26,38,51,61,73,85,95,105"
+        "teamIds": "111,127,26,38,51,61,73,85,95,105"
     },
     {
         "id": "47",
-        "pid": "Delight",
+        "progamerTag": "Delight",
         "name": "Yoo Hwan-joong",
         "birth": "2002",
         "position": "SUP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "80,86,91,103"
+        "teamIds": "80,86,91,103"
     },
     {
         "id": "48",
-        "pid": "deokdam",
+        "progamerTag": "deokdam",
         "name": "Seo Dae-gil",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "590,69,76,83,99,263"
+        "teamIds": "590,69,76,83,99,263"
     },
     {
         "id": "49",
-        "pid": "DnDn",
+        "progamerTag": "DnDn",
         "name": "Park Geun-woo",
         "birth": "2003",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "100,108"
+        "teamIds": "100,108"
     },
     {
         "id": "50",
-        "pid": "Doran",
+        "progamerTag": "Doran",
         "name": "Choi Hyeon-joon",
         "birth": "2000",
         "position": "TOP",
-        "league_win": "3",
-        "intl_win": null,
+        "leagueWin": "3",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "50,61,77,82,91,103"
+        "teamIds": "50,61,77,82,91,103"
     },
     {
         "id": "51",
-        "pid": "Dove",
+        "progamerTag": "Dove",
         "name": "Kim Jae-yeon",
         "birth": "1998",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "89,252,481,709"
+        "teamIds": "89,252,481,709"
     },
     {
         "id": "52",
-        "pid": "Dread",
+        "progamerTag": "Dread",
         "name": "Lee Jin-hyeok",
         "birth": "2000",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "56,64,79,88"
+        "teamIds": "56,64,79,88"
     },
     {
         "id": "53",
-        "pid": "DuDu",
+        "progamerTag": "DuDu",
         "name": "Lee Dong-ju",
         "birth": "2001",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "66,73,90,97,106"
+        "teamIds": "66,73,90,97,106"
     },
     {
         "id": "54",
-        "pid": "Duke",
+        "progamerTag": "Duke",
         "name": "Lee Ho-seong",
         "birth": "1994",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": "3",
+        "leagueWin": "2",
+        "intlWin": "3",
         "nationality": "KOR",
-        "teams": "6,13,148,160,171"
+        "teamIds": "6,13,148,160,171"
     },
     {
         "id": "55",
-        "pid": "Duro",
+        "progamerTag": "Duro",
         "name": "Joo Min-kyu",
         "birth": "2002",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "107"
+        "teamIds": "107"
     },
     {
         "id": "56",
-        "pid": "Easyhoon",
+        "progamerTag": "Easyhoon",
         "name": "Lee Ji-hoon",
         "birth": "1992",
         "position": "MID",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "1,131,151,169"
+        "teamIds": "1,131,151,169"
     },
     {
         "id": "57",
-        "pid": "Edge",
+        "progamerTag": "Edge",
         "name": "Lee Ho-sung",
         "birth": "1997",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,22,34,45"
+        "teamIds": "5,22,34,45"
     },
     {
         "id": "58",
-        "pid": "Effort",
+        "progamerTag": "Effort",
         "name": "Lee Sang-ho",
         "birth": "2000",
         "position": "SUP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "39,49,59,78,88,98,"
+        "teamIds": "39,49,59,78,88,98,"
     },
     {
         "id": "59",
-        "pid": "Ellim",
+        "progamerTag": "Ellim",
         "name": "Choi El-lim",
         "birth": "2000",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "59,74,84,625,892"
+        "teamIds": "59,74,84,625,892"
     },
     {
         "id": "60",
-        "pid": "Emperor",
+        "progamerTag": "Emperor",
         "name": "Kim Jin-hyun",
         "birth": "1993",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "485,391,287,19"
+        "teamIds": "485,391,287,19"
     },
     {
         "id": "61",
-        "pid": "Envyy",
+        "progamerTag": "Envyy",
         "name": "Lee Myeong-joon",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "89,96,255,110"
+        "teamIds": "89,96,255,110"
     },
     {
         "id": "62",
-        "pid": "Execute",
+        "progamerTag": "Execute",
         "name": "Lee Jeong-hoon",
         "birth": "2000",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "359,365,107"
+        "teamIds": "359,365,107"
     },
     {
         "id": "63",
-        "pid": "Expession",
+        "progamerTag": "Expession",
         "name": "Koo Bon-taek",
         "birth": "1992",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "19,30"
+        "teamIds": "19,30"
     },
     {
         "id": "64",
-        "pid": "Faker",
+        "progamerTag": "Faker",
         "name": "Lee Sang-hyeok",
         "birth": "1996",
         "position": "MID",
-        "league_win": "10",
-        "intl_win": "6",
+        "leagueWin": "10",
+        "intlWin": "6",
         "nationality": "KOR",
-        "teams": "1,13,25,39,49,59,74,81,92,102"
+        "teamIds": "1,13,25,39,49,59,74,81,92,102"
     },
     {
         "id": "65",
-        "pid": "FATE",
+        "progamerTag": "FATE",
         "name": "Yoo Su-hyeok",
         "birth": "2000",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "67,78,84,99,110"
+        "teamIds": "67,78,84,99,110"
     },
     {
         "id": "66",
-        "pid": "FIESTA",
+        "progamerTag": "FIESTA",
         "name": "An Hyeon-seo",
         "birth": "2003",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "100,108,983"
+        "teamIds": "100,108,983"
     },
     {
         "id": "67",
-        "pid": "Fisher",
+        "progamerTag": "Fisher",
         "name": "Lee Jeong-tae",
         "birth": "2004",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "244,274,108"
+        "teamIds": "244,274,108"
     },
     {
         "id": "68",
-        "pid": "Flame",
+        "progamerTag": "Flame",
         "name": "Lee Ho-jong",
         "birth": "1992",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "112,19,411,422,52,62"
+        "teamIds": "112,19,411,422,52,62"
     },
     {
         "id": "69",
-        "pid": "Flawless",
+        "progamerTag": "Flawless",
         "name": "Sung Yeon-jun",
         "birth": "1998",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "12,21,147,159,172,65,70,72,876,572"
+        "teamIds": "12,21,147,159,172,65,70,72,876,572"
     },
     {
         "id": "70",
-        "pid": "Fly",
+        "progamerTag": "Fly",
         "name": "Song Yong-jun",
         "birth": "1996",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "15,30,422,40,46,55,64,79"
+        "teamIds": "15,30,422,40,46,55,64,79"
     },
     {
         "id": "71",
-        "pid": "Frog",
+        "progamerTag": "Frog",
         "name": "Lee Min-hoi",
         "birth": "2005",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "109"
+        "teamIds": "109"
     },
     {
         "id": "72",
-        "pid": "Frozen",
+        "progamerTag": "Frozen",
         "name": "Kim Tae-il",
         "birth": "1994",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "19,917,929,934,598"
+        "teamIds": "19,917,929,934,598"
     },
     {
         "id": "73",
-        "pid": "Fury",
+        "progamerTag": "Fury",
         "name": "Lee Jin-yong",
         "birth": "1995",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "8,19,154"
+        "teamIds": "8,19,154"
     },
     {
         "id": "74",
-        "pid": "Gango",
+        "progamerTag": "Gango",
         "name": "Byun Se-hoon",
         "birth": "1997",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "843,57,860,868,874"
+        "teamIds": "843,57,860,868,874"
     },
     {
         "id": "75",
-        "pid": "GBM",
+        "progamerTag": "GBM",
         "name": "Lee Chang-seok",
         "birth": "1994",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,397,305,924,936,930"
+        "teamIds": "4,397,305,924,936,930"
     },
     {
         "id": "76",
-        "pid": "Ggoong",
+        "progamerTag": "Ggoong",
         "name": "Yu Byeong-jun",
         "birth": "1993",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "6,170"
+        "teamIds": "6,170"
     },
     {
         "id": "77",
-        "pid": "Ghost",
+        "progamerTag": "Ghost",
         "name": "Jang Yong-jun",
         "birth": "1999",
         "position": "ADC",
-        "league_win": "3",
-        "intl_win": "1",
+        "leagueWin": "3",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "20,32,43,53,62,71,88"
+        "teamIds": "20,32,43,53,62,71,88"
     },
     {
         "id": "78",
-        "pid": "GIDEON",
+        "progamerTag": "GIDEON",
         "name": "Kim Min-seong",
         "birth": "2003",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "68,87,252,110"
+        "teamIds": "68,87,252,110"
     },
     {
         "id": "79",
-        "pid": "GimGoon",
+        "progamerTag": "GimGoon",
         "name": "Kim Han-saem",
         "birth": "1995",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "165,173,192"
+        "teamIds": "165,173,192"
     },
     {
         "id": "80",
-        "pid": "Gori",
+        "progamerTag": "Gori",
         "name": "Kim Tae-woo",
         "birth": "2000",
         "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "49,59,209,76,234,795,466,819"
+        "teamIds": "49,59,209,76,234,795,466,819"
     },
     {
         "id": "81",
-        "pid": "GorillA",
+        "progamerTag": "GorillA",
         "name": "Kang Beom-hyeon",
         "birth": "1994",
         "position": "SUP",
-        "league_win": "3",
-        "intl_win": null,
+        "leagueWin": "3",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "2,9,14,30,36,327,67"
+        "teamIds": "2,9,14,30,36,327,67"
     },
     {
         "id": "82",
-        "pid": "Grizzly",
+        "progamerTag": "Grizzly",
         "name": "Jo Seung-hoon",
         "birth": "2005",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "94"
+        "teamIds": "94"
     },
     {
         "id": "83",
-        "pid": "GuGer",
+        "progamerTag": "GuGer",
         "name": "Kim Do-yeop",
         "birth": "1994",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "716,22,34,844,69,108"
+        "teamIds": "716,22,34,844,69,108"
     },
     {
         "id": "84",
-        "pid": "Gumayusi",
+        "progamerTag": "Gumayusi",
         "name": "Lee Min-hyeong",
         "birth": "2002",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "59,74,81,92,102"
+        "teamIds": "59,74,81,92,102"
     },
     {
         "id": "85",
-        "pid": "Hachani",
+        "progamerTag": "Hachani",
         "name": "Ha Seung-chan",
         "birth": "1994",
         "position": "SUP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,15,305,35"
+        "teamIds": "5,15,305,35"
     },
     {
         "id": "86",
-        "pid": "Harp",
+        "progamerTag": "Harp",
         "name": "Lee Ji-yoong",
         "birth": "2001",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "77,873,881,890"
+        "teamIds": "77,873,881,890"
     },
     {
         "id": "87",
-        "pid": "Haru",
+        "progamerTag": "Haru",
         "name": "Kang Min-seung",
         "birth": "1998",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "384,27,40,46,49,66,609,354,976"
+        "teamIds": "384,27,40,46,49,66,609,354,976"
     },
     {
         "id": "88",
-        "pid": "Helios",
+        "progamerTag": "Helios",
         "name": "Shin Dong-jin",
         "birth": "1993",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "387,388"
+        "teamIds": "387,388"
     },
     {
         "id": "89",
-        "pid": "Helper",
+        "progamerTag": "Helper",
         "name": "Kwon Young-jae",
         "birth": "1995",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,18,35"
+        "teamIds": "3,18,35"
     },
     {
         "id": "90",
-        "pid": "Hena",
+        "progamerTag": "Hena",
         "name": "Park Jeung-hwan",
         "birth": "1999",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "80,86,98,107"
+        "teamIds": "80,86,98,107"
     },
     {
         "id": "91",
-        "pid": "Hoit",
+        "progamerTag": "Hoit",
         "name": "Ryu Ho-seong",
         "birth": "1999",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "52,62,74,84"
+        "teamIds": "52,62,74,84"
     },
     {
         "id": "92",
-        "pid": "Hojin",
+        "progamerTag": "Hojin",
         "name": "Lee Ho-jin",
         "birth": "1992",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "2,9"
+        "teamIds": "2,9"
     },
     {
         "id": "93",
-        "pid": "Hoya",
+        "progamerTag": "Hoya",
         "name": "Yoon Yong-ho",
         "birth": "2000",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "68,80,83,241,250,271"
+        "teamIds": "68,80,83,241,250,271"
     },
     {
         "id": "94",
-        "pid": "Huni",
+        "progamerTag": "Huni",
         "name": "Heo Seung-hoon",
         "birth": "1997",
         "position": "TOP",
-        "league_win": "3",
-        "intl_win": "1",
+        "leagueWin": "3",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "276,394,25,417,433,441,437,447,463"
+        "teamIds": "276,394,25,417,433,441,437,447,463"
     },
     {
         "id": "95",
-        "pid": "HyBriD",
+        "progamerTag": "HyBriD",
         "name": "Lee Woo-jin",
         "birth": "1999",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "30,65,70,77,877"
+        "teamIds": "30,65,70,77,877"
     },
     {
         "id": "96",
-        "pid": "Ian",
+        "progamerTag": "Ian",
         "name": "An Jun-hyeong",
         "birth": "1998",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "24,28,44,181,186"
+        "teamIds": "24,28,44,181,186"
     },
     {
         "id": "97",
-        "pid": "Ice",
+        "progamerTag": "Ice",
         "name": "Yoon Sang-hoon",
         "birth": "2001",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "89,372"
+        "teamIds": "89,372"
     },
     {
         "id": "98",
-        "pid": "IgNar",
+        "progamerTag": "IgNar",
         "name": "Lee Dong-geun",
         "birth": "1996",
         "position": "SUP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "387,10,15,301,316,43,326,436,450,464,474,475,377"
+        "teamIds": "387,10,15,301,316,43,326,436,450,464,474,475,377"
     },
     {
         "id": "99",
-        "pid": "ikssu",
+        "progamerTag": "ikssu",
         "name": "Jeon ik-soo",
         "birth": "1996",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,17,33,747,65,70"
+        "teamIds": "5,17,33,747,65,70"
     },
     {
         "id": "100",
-        "pid": "imp",
+        "progamerTag": "imp",
         "name": "Gu Seung-bin",
         "birth": "1995",
         "position": "ADC",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "112,133,152,168,164,172"
+        "teamIds": "112,133,152,168,164,172"
     },
     {
         "id": "101",
-        "pid": "Impact",
+        "progamerTag": "Impact",
         "name": "Jeong Eon-young",
         "birth": "1995",
         "position": "TOP",
-        "league_win": "9",
-        "intl_win": "1",
+        "leagueWin": "9",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "383,397,396,406,415,425,443,450,455,467,476"
+        "teamIds": "383,397,396,406,415,425,443,450,455,467,476"
     },
     {
         "id": "102",
-        "pid": "inSec",
+        "progamerTag": "inSec",
         "name": "Choi In-seok",
         "birth": "1993",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "120,117,126,143"
+        "teamIds": "120,117,126,143"
     },
     {
         "id": "103",
-        "pid": "Jelly",
+        "progamerTag": "Jelly",
         "name": "Son Ho-gyeong",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "37,56,64,608,613,622"
+        "teamIds": "37,56,64,608,613,622"
     },
     {
         "id": "104",
-        "pid": "Jett",
+        "progamerTag": "Jett",
         "name": "Bae Ho-young",
         "birth": "2001",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "188,194,216,75,874,882,892"
+        "teamIds": "188,194,216,75,874,882,892"
     },
     {
         "id": "105",
-        "pid": "Jiwoo",
+        "progamerTag": "Jiwoo",
         "name": "Jung Ji-woo",
         "birth": "2004",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "100,108"
+        "teamIds": "100,108"
     },
     {
         "id": "106",
-        "pid": "Joker",
+        "progamerTag": "Joker",
         "name": "Cho Jae-eup",
         "birth": "1991",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "53,67"
+        "teamIds": "53,67"
     },
     {
         "id": "107",
-        "pid": "Juhan",
+        "progamerTag": "Juhan",
         "name": "Lee Ju-han",
         "birth": "2001",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": "1",
+        "leagueWin": 0,
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "76,795,85,99,377"
+        "teamIds": "76,795,85,99,377"
     },
     {
         "id": "108",
-        "pid": "Jun",
+        "progamerTag": "Jun",
         "name": "Yoon Se-jun",
         "birth": "2000",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "75,97,373"
+        "teamIds": "75,97,373"
     },
     {
         "id": "109",
-        "pid": "Justice",
+        "progamerTag": "Justice",
         "name": "Yoon Seok-joon",
         "birth": "1998",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "30,42,53"
+        "teamIds": "30,42,53"
     },
     {
         "id": "110",
-        "pid": "Kabbie",
+        "progamerTag": "Kabbie",
         "name": "Jeong Sang-hyeon",
         "birth": "2001",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "50,68,67,581"
+        "teamIds": "50,68,67,581"
     },
     {
         "id": "111",
-        "pid": "Kael",
+        "progamerTag": "Kael",
         "name": "Kim Jin-hong",
         "birth": "2004",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "89,96,269"
+        "teamIds": "89,96,269"
     },
     {
         "id": "112",
-        "pid": "KaKAO",
+        "progamerTag": "KaKAO",
         "name": "Lee Byung-kwon",
         "birth": "1995",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "113,301,928,42,948"
+        "teamIds": "113,301,928,42,948"
     },
     {
         "id": "113",
-        "pid": "Kanavi",
+        "progamerTag": "Kanavi",
         "name": "Seo Jin-hyeok",
         "birth": "2000",
         "position": "JGL",
-        "league_win": "4",
-        "intl_win": "1",
+        "leagueWin": "4",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "50,172,1990,211,228,242,261"
+        "teamIds": "50,172,199,211,228,242,261"
     },
     {
         "id": "114",
-        "pid": "Karis",
+        "progamerTag": "Karis",
         "name": "Kim Hong-jo",
         "birth": "2003",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "90,98,110"
+        "teamIds": "90,98,110"
     },
     {
         "id": "115",
-        "pid": "Keine",
+        "progamerTag": "Keine",
         "name": "Kim Joon-cheol",
         "birth": "1999",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "65,70,615,621,628"
+        "teamIds": "65,70,615,621,628"
     },
     {
         "id": "116",
-        "pid": "Kellin",
+        "progamerTag": "Kellin",
         "name": "Kim Hyeong-gyu",
         "birth": "2001",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "58,60,76,83,95,104"
+        "teamIds": "58,60,76,83,95,104"
     },
     {
         "id": "117",
-        "pid": "Keria",
+        "progamerTag": "Keria",
         "name": "Ryu Min-seok",
         "birth": "2002",
         "position": "SUP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "61,74,81,92,102"
+        "teamIds": "61,74,81,92,102"
     },
     {
         "id": "118",
-        "pid": "Key",
+        "progamerTag": "Key",
         "name": "Kim Han-gi",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,31,41,47,54,539"
+        "teamIds": "23,31,41,47,54,539"
     },
     {
         "id": "119",
-        "pid": "Khan",
+        "progamerTag": "Khan",
         "name": "Kim Dong-ha",
         "birth": "1995",
         "position": "TOP",
-        "league_win": "6",
-        "intl_win": null,
+        "leagueWin": "6",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "149,30,36,49,192,71"
+        "teamIds": "149,30,36,49,192,71"
     },
     {
         "id": "120",
-        "pid": "Kiin",
+        "progamerTag": "Kiin",
         "name": "Kim Gi-in",
         "birth": "1999",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "35,37,56,64,79,84,93,101"
+        "teamIds": "35,37,56,64,79,84,93,101"
     },
     {
         "id": "121",
-        "pid": "Kingen",
+        "progamerTag": "Kingen",
         "name": "Hwang Seong-hoon",
         "birth": "2000",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "38,57,199,75,85,94,104"
+        "teamIds": "38,57,199,75,85,94,104"
     },
     {
         "id": "122",
-        "pid": "Kramer",
+        "progamerTag": "Kramer",
         "name": "Ha Jong-hun",
         "birth": "1996",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "715,20,29,37,181,204,220"
+        "teamIds": "715,20,29,37,181,204,220"
     },
     {
         "id": "123",
-        "pid": "Kuro",
+        "progamerTag": "Kuro",
         "name": "Lee Seo-haeng",
         "birth": "1994",
         "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "2,9,14,29,37,179,63"
+        "teamIds": "2,9,14,29,37,179,63"
     },
     {
         "id": "124",
-        "pid": "Kuzan",
+        "progamerTag": "Kuzan",
         "name": "Lee Seong-hyeok",
         "birth": "1997",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "41,47,55,69"
+        "teamIds": "41,47,55,69"
     },
     {
         "id": "125",
-        "pid": "kyeahoo",
+        "progamerTag": "kyeahoo",
         "name": "Kang Ye-hoo",
         "birth": "2005",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "99"
+        "teamIds": "99"
     },
     {
         "id": "126",
-        "pid": "Lava",
+        "progamerTag": "Lava",
         "name": "Kim Tae-hoon",
         "birth": "1999",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "31,41,47,54,66,80,86,567,575,628"
+        "teamIds": "31,41,47,54,66,80,86,567,575,628"
     },
     {
         "id": "127",
-        "pid": "Leaper",
+        "progamerTag": "Leaper",
         "name": "Choi Gi-myeong",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "106"
+        "teamIds": "106"
     },
     {
         "id": "128",
-        "pid": "Lehends",
+        "progamerTag": "Lehends",
         "name": "Son Si-woo",
         "birth": "1998",
         "position": "SUP",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "21,48,50,66,79,82,93,101"
+        "teamIds": "21,48,50,66,79,82,93,101"
     },
     {
         "id": "129",
-        "pid": "Leo",
+        "progamerTag": "Leo",
         "name": "Han Gyeo-re",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "39,49,67,78,79,84,883"
+        "teamIds": "39,49,67,78,79,84,883"
     },
     {
         "id": "130",
-        "pid": "Life",
+        "progamerTag": "Life",
         "name": "Kim Jeong-min",
         "birth": "2000",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "46,55,60,72,87,94,263"
+        "teamIds": "46,55,60,72,87,94,263"
     },
     {
         "id": "131",
-        "pid": "Lindarang",
+        "progamerTag": "Lindarang",
         "name": "Heo Man-heung",
         "birth": "1997",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,31,41,47,58"
+        "teamIds": "17,31,41,47,58"
     },
     {
         "id": "132",
-        "pid": "LirA",
+        "progamerTag": "LirA",
         "name": "Nam Tae-yoo",
         "birth": "1995",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,414,418,433"
+        "teamIds": "17,414,418,433"
     },
     {
         "id": "133",
-        "pid": "LokeN",
+        "progamerTag": "LokeN",
         "name": "Lee Dong-wook",
         "birth": "1997",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,149,155,187,190,211,882"
+        "teamIds": "23,149,155,187,190,211,882"
     },
     {
         "id": "134",
-        "pid": "Looper",
+        "progamerTag": "Looper",
         "name": "Jang Hyeong-seok",
         "birth": "1993",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "119,126,412"
+        "teamIds": "119,126,412"
     },
     {
         "id": "135",
-        "pid": "Lucid",
+        "progamerTag": "Lucid",
         "name": "Choi Yong-hyeok",
         "birth": "2005",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "104"
+        "teamIds": "104"
     },
     {
         "id": "136",
-        "pid": "MadLife",
+        "progamerTag": "MadLife",
         "name": "Hong Min-gi",
         "birth": "1992",
         "position": "SUP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,20"
+        "teamIds": "3,20"
     },
     {
         "id": "137",
-        "pid": "MaHa",
+        "progamerTag": "MaHa",
         "name": "Oh Hyun-sik",
         "birth": "1995",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "24,28,44"
+        "teamIds": "24,28,44"
     },
     {
         "id": "138",
-        "pid": "Malrang",
+        "progamerTag": "Malrang",
         "name": "Kim Geun-seong",
         "birth": "2000",
         "position": "JGL",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "35,925,58,63,71,351,362,580"
+        "teamIds": "35,925,58,63,71,351,362,580"
     },
     {
         "id": "139",
-        "pid": "MaRin",
+        "progamerTag": "MaRin",
         "name": "Jang Gyeong-hwan",
         "birth": "1991",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "1,133,29,170"
+        "teamIds": "1,133,29,170"
     },
     {
         "id": "140",
-        "pid": "Mata",
+        "progamerTag": "Mata",
         "name": "Cho Se-hyeong",
         "birth": "1994",
         "position": "SUP",
-        "league_win": "5",
-        "intl_win": "1",
+        "leagueWin": "5",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "116,126,26,38,49"
+        "teamIds": "116,126,26,38,49"
     },
     {
         "id": "141",
-        "pid": "Max",
+        "progamerTag": "Max",
         "name": "Jeong Jong-bin",
         "birth": "1996",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,24,28,44"
+        "teamIds": "3,24,28,44"
     },
     {
         "id": "142",
-        "pid": "Mia",
+        "progamerTag": "Mia",
         "name": "Choi Sang-in",
         "birth": "1998",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "839,38,57,65,70,606,611,463,976,620"
+        "teamIds": "839,38,57,65,70,606,611,463,976,620"
     },
     {
         "id": "143",
-        "pid": "Mickey",
+        "progamerTag": "Mickey",
         "name": "Son Young-min",
         "birth": "1997",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,31,413,424,336,65,70"
+        "teamIds": "17,31,413,424,336,65,70"
     },
     {
         "id": "144",
-        "pid": "Mightybear",
+        "progamerTag": "Mightybear",
         "name": "Kim Min-su",
         "birth": "1995",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "31,41,47,606"
+        "teamIds": "31,41,47,606"
     },
     {
         "id": "145",
-        "pid": "Mihile",
+        "progamerTag": "Mihile",
         "name": "Baek Sang-hwi",
         "birth": "2003",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "108"
+        "teamIds": "108"
     },
     {
         "id": "146",
-        "pid": "Mir",
+        "progamerTag": "Mir",
         "name": "Park Mi-reu",
         "birth": "2000",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "73,632"
+        "teamIds": "73,632"
     },
     {
         "id": "147",
-        "pid": "Mireu",
+        "progamerTag": "Mireu",
         "name": "Jeong Jo-bin",
         "birth": "2001",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "66,611,618,984"
+        "teamIds": "66,611,618,984"
     },
     {
         "id": "148",
-        "pid": "Moham",
+        "progamerTag": "Moham",
         "name": "Jeong Jae-hun",
         "birth": "2002",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "84,97,104"
+        "teamIds": "84,97,104"
     },
     {
         "id": "149",
-        "pid": "Moojin",
+        "progamerTag": "Moojin",
         "name": "Kim Moo-jin",
         "birth": "1998",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "741,54,866"
+        "teamIds": "741,54,866"
     },
     {
         "id": "150",
-        "pid": "Morgan",
+        "progamerTag": "Morgan",
         "name": "Park Gi-tae",
         "birth": "2001",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "172,194,73,86,98,110"
+        "teamIds": "172,194,73,86,98,110"
     },
     {
         "id": "151",
-        "pid": "Mowgil",
+        "progamerTag": "Mowgil",
         "name": "Lee Jae-ha",
         "birth": "1998",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "29,37,325,339"
+        "teamIds": "29,37,325,339"
     },
     {
         "id": "152",
-        "pid": "Mystic",
+        "progamerTag": "Mystic",
         "name": "Jin Seong-jun",
         "birth": "1995",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "115,128,142,164,177,64,211"
+        "teamIds": "115,128,142,164,177,64,211"
     },
     {
         "id": "153",
-        "pid": "NaeHyun",
+        "progamerTag": "NaeHyun",
         "name": "Yoo Nae-hyun",
         "birth": "1996",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "307,915,51,68,869,877"
+        "teamIds": "307,915,51,68,869,877"
     },
     {
         "id": "154",
-        "pid": "Nagne",
+        "progamerTag": "Nagne",
         "name": "Kim Sang-moon",
         "birth": "1994",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,308,939"
+        "teamIds": "5,308,939"
     },
     {
         "id": "155",
-        "pid": "Noah",
+        "progamerTag": "Noah",
         "name": "Oh Hyeon-taek",
         "birth": "2001",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "87,368,373"
+        "teamIds": "87,368,373"
     },
     {
         "id": "156",
-        "pid": "Nova",
+        "progamerTag": "Nova",
         "name": "Park Chan-ho",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "42,58"
+        "teamIds": "42,58"
     },
     {
         "id": "157",
-        "pid": "Nuclear",
+        "progamerTag": "Nuclear",
         "name": "Sin Jeong-hyeon",
         "birth": "1997",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "12,21,303,52,62"
+        "teamIds": "12,21,303,52,62"
     },
     {
         "id": "158",
-        "pid": "Nuguri",
+        "progamerTag": "Nuguri",
         "name": "Jang Ha-gwon",
         "birth": "1999",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "52,62,208,83"
+        "teamIds": "52,62,208,83"
     },
     {
         "id": "159",
-        "pid": "Ohq",
+        "progamerTag": "Ohq",
         "name": "Oh Gyu-min",
         "birth": "1996",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "6,397,150"
+        "teamIds": "6,397,150"
     },
     {
         "id": "160",
-        "pid": "Oner",
+        "progamerTag": "Oner",
         "name": "Moon Hyeon-joon",
         "birth": "2002",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "74,81,92,102"
+        "teamIds": "74,81,92,102"
     },
     {
         "id": "161",
-        "pid": "OnFleek",
+        "progamerTag": "OnFleek",
         "name": "Kim Jang-gyeon",
         "birth": "1997",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "53,67,78,90,619,629"
+        "teamIds": "53,67,78,90,619,629"
     },
     {
         "id": "162",
-        "pid": "Paduck",
+        "progamerTag": "Paduck",
         "name": "Park Seok-hyeon",
         "birth": "2005",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "99"
+        "teamIds": "99"
     },
     {
         "id": "163",
-        "pid": "Part",
+        "progamerTag": "Part",
         "name": "Jin Jae-seung",
         "birth": "1995",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "21,23,32"
+        "teamIds": "21,23,32"
     },
     {
         "id": "164",
-        "pid": "PawN",
+        "progamerTag": "PawN",
         "name": "Heo Won-seok",
         "birth": "1997",
         "position": "MID",
-        "league_win": "3",
-        "intl_win": "2",
+        "leagueWin": "3",
+        "intlWin": "2",
         "nationality": "KOR",
-        "teams": "111,127,26,38,51"
+        "teamIds": "111,127,26,38,51"
     },
     {
         "id": "165",
-        "pid": "Peanut",
+        "progamerTag": "Peanut",
         "name": "Han Wang-ho",
         "birth": "1998",
         "position": "JGL",
-        "league_win": "6",
-        "intl_win": "1",
+        "leagueWin": "6",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "6,14,25,36,55,204,76,82,91,103"
+        "teamIds": "6,14,25,36,55,204,76,82,91,103"
     },
     {
         "id": "166",
-        "pid": "PerfecT",
+        "progamerTag": "PerfecT",
         "name": "Lee Seung-min",
         "birth": "2004",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "87,105"
+        "teamIds": "87,105"
     },
     {
         "id": "167",
-        "pid": "Peter",
+        "progamerTag": "Peter",
         "name": "Jeong Yoon-su",
         "birth": "2003",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "88,100,108"
+        "teamIds": "88,100,108"
     },
     {
         "id": "168",
-        "pid": "Peyz",
+        "progamerTag": "Peyz",
         "name": "Kim Su-hwan",
         "birth": "2005",
         "position": "ADC",
-        "league_win": "3",
-        "intl_win": "1",
+        "leagueWin": "3",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "91,101"
+        "teamIds": "91,101"
     },
     {
         "id": "169",
-        "pid": "Piccaboo",
+        "progamerTag": "Piccaboo",
         "name": "Lee Jong-beom",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "1,5"
+        "teamIds": "1,5"
     },
     {
         "id": "170",
-        "pid": "Piglet",
+        "progamerTag": "Piglet",
         "name": "Chae Gwang-jin",
         "birth": "1994",
         "position": "ADC",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "382,395,413,433"
+        "teamIds": "382,395,413,433"
     },
     {
         "id": "171",
-        "pid": "Pilot",
+        "progamerTag": "Pilot",
         "name": "Na Woo-hyung",
         "birth": "1995",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,16,44,936,961"
+        "teamIds": "4,16,44,936,961"
     },
     {
         "id": "172",
-        "pid": "Pirean",
+        "progamerTag": "Pirean",
         "name": "Choi Jun-sik",
         "birth": "1998",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "400,414,407,39,324,858"
+        "teamIds": "400,414,407,39,324,858"
     },
     {
         "id": "173",
-        "pid": "Pleata",
+        "progamerTag": "Pleata",
         "name": "Son Min-woo",
         "birth": "2003",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "75,109"
+        "teamIds": "75,109"
     },
     {
         "id": "174",
-        "pid": "Pollu",
+        "progamerTag": "Pollu",
         "name": "Oh Dong-gyu",
         "birth": "2006",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "110"
+        "teamIds": "110"
     },
     {
         "id": "175",
-        "pid": "PraY",
+        "progamerTag": "PraY",
         "name": "Kim Jong-in",
         "birth": "1994",
         "position": "ADC",
-        "league_win": "4",
-        "intl_win": null,
+        "leagueWin": "4",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "2,9,14,30,36,57"
+        "teamIds": "2,9,14,30,36,57"
     },
     {
         "id": "176",
-        "pid": "Prince",
+        "progamerTag": "Prince",
         "name": "Lee Chae-hwan",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "43,52,78,89,467,265"
+        "teamIds": "43,52,78,89,467,265"
     },
     {
         "id": "177",
-        "pid": "Profit",
+        "progamerTag": "Profit",
         "name": "Kim Jun-hyung",
         "birth": "1995",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "25,308,314"
+        "teamIds": "25,308,314"
     },
     {
         "id": "178",
-        "pid": "Pullbae",
+        "progamerTag": "Pullbae",
         "name": "Jeong Ji-hoon",
         "birth": "2004",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "110"
+        "teamIds": "110"
     },
     {
         "id": "179",
-        "pid": "Punch",
+        "progamerTag": "Punch",
         "name": "Son Min-hyuk",
         "birth": "1998",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "22,34,52,67"
+        "teamIds": "22,34,52,67"
     },
     {
         "id": "180",
-        "pid": "Pyosik",
+        "progamerTag": "Pyosik",
         "name": "Hong Chang-hyeon",
         "birth": "2000",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": "1",
+        "leagueWin": 0,
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "61,75,85,472,105"
+        "teamIds": "61,75,85,472,105"
     },
     {
         "id": "181",
-        "pid": "Quad",
+        "progamerTag": "Quad",
         "name": "Song Su-hyeong",
         "birth": "2002",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "61,75,100,477"
+        "teamIds": "61,75,100,477"
     },
     {
         "id": "182",
-        "pid": "Quantum",
+        "progamerTag": "Quantum",
         "name": "Son Jeon-hwan",
         "birth": "2004",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "106"
+        "teamIds": "106"
     },
     {
         "id": "183",
-        "pid": "Raise",
+        "progamerTag": "Raise",
         "name": "Oh Ji-hwan",
         "birth": "1997",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "295,33,45,742,754"
+        "teamIds": "295,33,45,742,754"
     },
     {
         "id": "184",
-        "pid": "Raptor",
+        "progamerTag": "Raptor",
         "name": "Jeon Eo-jin",
         "birth": "2004",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "86,107"
+        "teamIds": "86,107"
     },
     {
         "id": "185",
-        "pid": "Rascal",
+        "progamerTag": "Rascal",
         "name": "Kim Kwang-hee",
         "birth": "1997",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "837,30,36,51,87,99,109"
+        "teamIds": "837,30,36,51,87,99,109"
     },
     {
         "id": "186",
-        "pid": "Reignover",
+        "progamerTag": "Reignover",
         "name": "Kim Yeu-jin",
         "birth": "1995",
         "position": "JGL",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "276,394,413,421"
+        "teamIds": "276,394,413,421"
     },
     {
         "id": "187",
-        "pid": "Rich",
+        "progamerTag": "Rich",
         "name": "Lee Jae-won",
         "birth": "1998",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "55,69,76,227,474,481"
+        "teamIds": "55,69,76,227,474,481"
     },
     {
         "id": "188",
-        "pid": "Roach",
+        "progamerTag": "Roach",
         "name": "Kim Kang-hui",
         "birth": "1999",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "22,34,45,55,59"
+        "teamIds": "22,34,45,55,59"
     },
     {
         "id": "189",
-        "pid": "Rookie",
+        "progamerTag": "Rookie",
         "name": "Song Eui-jin",
         "birth": "1997",
         "position": "MID",
-        "league_win": "2",
-        "intl_win": "1",
+        "leagueWin": "2",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "113,132,148,160,171,193,215,227,248,262"
+        "teamIds": "113,132,148,160,171,193,215,227,248,262"
     },
     {
         "id": "190",
-        "pid": "Route",
+        "progamerTag": "Route",
         "name": "Moon Geom-su",
         "birth": "1999",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "928,931,58,67,78,565,576"
+        "teamIds": "928,931,58,67,78,565,576"
     },
     {
         "id": "191",
-        "pid": "Ruler",
+        "progamerTag": "Ruler",
         "name": "Park Jae-hyuk",
         "birth": "1998",
         "position": "ADC",
-        "league_win": "3",
-        "intl_win": "2",
+        "leagueWin": "3",
+        "intlWin": "2",
         "nationality": "KOR",
-        "teams": "18,27,40,46,55,60,72,82,242,261"
+        "teamIds": "18,27,40,46,55,60,72,82,242,261"
     },
     {
         "id": "192",
-        "pid": "Rush",
+        "progamerTag": "Rush",
         "name": "Lee Yoon-jae",
         "birth": "1993",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "383,396,38,429"
+        "teamIds": "383,396,38,429"
     },
     {
         "id": "193",
-        "pid": "Ryu",
+        "progamerTag": "Ryu",
         "name": "Yoo Sang-wook",
         "birth": "1994",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "278,290,407,416,434"
+        "teamIds": "278,290,407,416,434"
     },
     {
         "id": "194",
-        "pid": "SamD",
+        "progamerTag": "SamD",
         "name": "Lee Jae-hoon",
         "birth": "2001",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "206,219,90,620,"
+        "teamIds": "206,219,90,620,"
     },
     {
         "id": "195",
-        "pid": "Samver",
+        "progamerTag": "Samver",
         "name": "Lee Seung-yong",
         "birth": "2001",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "966,110"
+        "teamIds": "966,110"
     },
     {
         "id": "196",
-        "pid": "Sangyoon",
+        "progamerTag": "Sangyoon",
         "name": "Gwon Sang-yun",
         "birth": "1995",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,31,41,47,54"
+        "teamIds": "17,31,41,47,54"
     },
     {
         "id": "197",
-        "pid": "Save",
+        "progamerTag": "Save",
         "name": "Baek Young-jin",
         "birth": "1993",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "113,132,148"
+        "teamIds": "113,132,148"
     },
     {
         "id": "198",
-        "pid": "Score",
+        "progamerTag": "Score",
         "name": "Go Dong-bin",
         "birth": "1992",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,15,26,38,57"
+        "teamIds": "5,15,26,38,57"
     },
     {
         "id": "199",
-        "pid": "Scout",
+        "progamerTag": "Scout",
         "name": "Lee Ye-chan",
         "birth": "1998",
         "position": "MID",
-        "league_win": "4",
-        "intl_win": "1",
+        "leagueWin": "4",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "1,127,144,158,178,195,209,232,246,266"
+        "teamIds": "1,127,144,158,178,195,209,232,246,266"
     },
     {
         "id": "200",
-        "pid": "Secret",
+        "progamerTag": "Secret",
         "name": "Park Ki-sun",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "12,21,34,45,65,70,867,875"
+        "teamIds": "12,21,34,45,65,70,867,875"
     },
     {
         "id": "201",
-        "pid": "SeongHwan",
+        "progamerTag": "SeongHwan",
         "name": "Yoon Seong-hwan",
         "birth": "1997",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,31,41,47,55,539,955,970"
+        "teamIds": "17,31,41,47,55,539,955,970"
     },
     {
         "id": "202",
-        "pid": "SeTab",
+        "progamerTag": "SeTab",
         "name": "Song Kyeong-jin",
         "birth": "2004",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "109"
+        "teamIds": "109"
     },
     {
         "id": "203",
-        "pid": "ShowMaker",
+        "progamerTag": "ShowMaker",
         "name": "Heo Su",
         "birth": "2000",
         "position": "MID",
-        "league_win": "3",
-        "intl_win": "1",
+        "leagueWin": "3",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "52,62,71,83,95,104"
+        "teamIds": "52,62,71,83,95,104"
     },
     {
         "id": "204",
-        "pid": "Shy",
+        "progamerTag": "Shy",
         "name": "Park Sang-myeon",
         "birth": "1991",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,20,31"
+        "teamIds": "3,20,31"
     },
     {
         "id": "205",
-        "pid": "Sky",
+        "progamerTag": "Sky",
         "name": "Kim Ha-neul",
         "birth": "1998",
         "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "20,25,516,590"
+        "teamIds": "20,25,516,590"
     },
     {
         "id": "206",
-        "pid": "Smeb",
+        "progamerTag": "Smeb",
         "name": "Song Kyung-ho",
         "birth": "1995",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "2,9,14,26,38,57,63"
+        "teamIds": "2,9,14,26,38,57,63"
     },
     {
         "id": "207",
-        "pid": "SnowFlower",
+        "progamerTag": "SnowFlower",
         "name": "No Hoi-jong",
         "birth": "1997",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "17,33,924,57,948,88"
+        "teamIds": "17,33,924,57,948,88"
     },
     {
         "id": "208",
-        "pid": "SoHwan",
+        "progamerTag": "SoHwan",
         "name": "Kim Jun-yeong",
         "birth": "1996",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,16,33,42,54,63,959,612"
+        "teamIds": "4,16,33,42,54,63,959,612"
     },
     {
         "id": "209",
-        "pid": "Space",
+        "progamerTag": "Space",
         "name": "Seon Ho-san",
         "birth": "1993",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3"
+        "teamIds": "3"
     },
     {
         "id": "210",
-        "pid": "Spirit",
+        "progamerTag": "Spirit",
         "name": "Lee Da-yoon",
         "birth": "1996",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "115,289,29,37,56,64"
+        "teamIds": "115,289,29,37,56,64"
     },
     {
         "id": "211",
-        "pid": "Sponge",
+        "progamerTag": "Sponge",
         "name": "Bae Young-jun",
         "birth": "2004",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "109"
+        "teamIds": "109"
     },
     {
         "id": "212",
-        "pid": "SSol",
+        "progamerTag": "SSol",
         "name": "Seo Jin-sol",
         "birth": "1998",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "22,34,45,56,64,867,875,883,893"
+        "teamIds": "22,34,45,56,64,867,875,883,893"
     },
     {
         "id": "213",
-        "pid": "Ssumday",
+        "progamerTag": "Ssumday",
         "name": "Kim Chan-ho",
         "birth": "1996",
         "position": "TOP",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "5,15,409,416,434,440,448,456,468,469"
+        "teamIds": "5,15,409,416,434,440,448,456,468,469"
     },
     {
         "id": "214",
-        "pid": "Stitch",
+        "progamerTag": "Stitch",
         "name": "Lee Seung-ju",
         "birth": "1996",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "18,27,742,58"
+        "teamIds": "18,27,742,58"
     },
     {
         "id": "215",
-        "pid": "Summit",
+        "progamerTag": "Summit",
         "name": "Park Woo-tae",
         "birth": "1998",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "37,53,67,78,458,234,472,628"
+        "teamIds": "37,53,67,78,458,234,472,628"
     },
     {
         "id": "216",
-        "pid": "Sword",
+        "progamerTag": "Sword",
         "name": "Choi Seong-won",
         "birth": "1997",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "48,50,68,86"
+        "teamIds": "48,50,68,86"
     },
     {
         "id": "217",
-        "pid": "Sylvie",
+        "progamerTag": "Sylvie",
         "name": "Lee Seung-bok",
         "birth": "2002",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "88,100,108"
+        "teamIds": "88,100,108"
     },
     {
         "id": "218",
-        "pid": "Taeyoon",
+        "progamerTag": "Taeyoon",
         "name": "Kim Tae-yoon",
         "birth": "2002",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "75,85,97"
+        "teamIds": "75,85,97"
     },
     {
         "id": "219",
-        "pid": "Tank",
+        "progamerTag": "Tank",
         "name": "Park Dan-won",
         "birth": "1995",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "6,130,150,784"
+        "teamIds": "6,130,150,784"
     },
     {
         "id": "220",
-        "pid": "Tarzan",
+        "progamerTag": "Tarzan",
         "name": "Lee Seung-yong",
         "birth": "1999",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "48,50,68,216,229,246,264"
+        "teamIds": "48,50,68,216,229,246,264"
     },
     {
         "id": "221",
-        "pid": "Teddy",
+        "progamerTag": "Teddy",
         "name": "Park Jin-seong",
         "birth": "1998",
         "position": "ADC",
-        "league_win": "3",
-        "intl_win": null,
+        "leagueWin": "3",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "33,42,49,59,74,84,96,109"
+        "teamIds": "33,42,49,59,74,84,96,109"
     },
     {
         "id": "222",
-        "pid": "Tempt",
+        "progamerTag": "Tempt",
         "name": "Kang Myung-gu",
         "birth": "1998",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,32,43,54,66,975"
+        "teamIds": "23,32,43,54,66,975"
     },
     {
         "id": "223",
-        "pid": "Thal",
+        "progamerTag": "Thal",
         "name": "Park Kwon-hyuk",
         "birth": "1998",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "39,54"
+        "teamIds": "39,54"
     },
     {
         "id": "224",
-        "pid": "Tom",
+        "progamerTag": "Tom",
         "name": "Im Jae-hyeon",
         "birth": "1995",
         "position": "JGL",
-        "league_win": "2",
-        "intl_win": null,
+        "leagueWin": "2",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "1,130"
+        "teamIds": "1,130"
     },
     {
         "id": "225",
-        "pid": "Totoro",
+        "progamerTag": "Totoro",
         "name": "Eun Jong-seop",
         "birth": "1996",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "23,32,319,53"
+        "teamIds": "23,32,319,53"
     },
     {
         "id": "226",
-        "pid": "TrAce",
+        "progamerTag": "TrAce",
         "name": "Yeo Chang-dong",
         "birth": "1989",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,16"
+        "teamIds": "4,16"
     },
     {
         "id": "227",
-        "pid": "Trick",
+        "progamerTag": "Trick",
         "name": "Kim Gang-yun",
         "birth": "1995",
         "position": "JGL",
-        "league_win": "4",
-        "intl_win": null,
+        "leagueWin": "4",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "3,287,298,43,941,326,338,575"
+        "teamIds": "3,287,298,43,941,326,338,575"
     },
     {
         "id": "228",
-        "pid": "Trigger",
+        "progamerTag": "Trigger",
         "name": "Kim Eui-joo",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "218,633"
+        "teamIds": "218,633"
     },
     {
         "id": "229",
-        "pid": "TusiN",
+        "progamerTag": "TusiN",
         "name": "Park Jong-ik",
         "birth": "1995",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "29,37,51,63"
+        "teamIds": "29,37,51,63"
     },
     {
         "id": "230",
-        "pid": "Ucal",
+        "progamerTag": "Ucal",
         "name": "Son Woo-hyeon",
         "birth": "2001",
         "position": "MID",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "38,56,68,63,77,241,250,271"
+        "teamIds": "38,56,68,63,77,241,250,271"
     },
     {
         "id": "231",
-        "pid": "Umti",
+        "progamerTag": "Umti",
         "name": "Eom Seong-hyeon",
         "birth": "1999",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "33,42,57,80,86,476"
+        "teamIds": "33,42,57,80,86,476"
     },
     {
         "id": "232",
-        "pid": "Untara",
+        "progamerTag": "Untara",
         "name": "Park Ui-jin",
         "birth": "1996",
         "position": "TOP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "120,20,25,39,933,68"
+        "teamIds": "120,20,25,39,933,68"
     },
     {
         "id": "233",
-        "pid": "VicLa",
+        "progamerTag": "VicLa",
         "name": "Lee Dae-kwang",
         "birth": "2003",
         "position": "MID",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "77,87,467,273"
+        "teamIds": "77,87,467,273"
     },
     {
         "id": "234",
-        "pid": "Viper",
+        "progamerTag": "Viper",
         "name": "Park Do-hyeon",
         "birth": "2000",
         "position": "ADC",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "48,50,68,90,209,232,94,103"
+        "teamIds": "48,50,68,90,209,232,94,103"
     },
     {
         "id": "235",
-        "pid": "vital",
+        "progamerTag": "vital",
         "name": "Ha In-seong",
         "birth": "2002",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "874,100"
+        "teamIds": "874,100"
     },
     {
         "id": "236",
-        "pid": "Vsta",
+        "progamerTag": "Vsta",
         "name": "Oh Hyo-seong",
         "birth": "2000",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "66,73,90,884,889"
+        "teamIds": "66,73,90,884,889"
     },
     {
         "id": "237",
-        "pid": "Watch",
+        "progamerTag": "Watch",
         "name": "Cho Jae-geol",
         "birth": "1992",
         "position": "JGL",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "6"
+        "teamIds": "6"
     },
     {
         "id": "238",
-        "pid": "Willer",
+        "progamerTag": "Willer",
         "name": "Kim Jeon-hyeon",
         "birth": "2003",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "73,90,96,107"
+        "teamIds": "73,90,96,107"
     },
     {
         "id": "239",
-        "pid": "Winged",
+        "progamerTag": "Winged",
         "name": "Park Tae-jin",
         "birth": "1992",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "4,16,516"
+        "teamIds": "4,16,516"
     },
     {
         "id": "240",
-        "pid": "Wiz",
+        "progamerTag": "Wiz",
         "name": "Na Yoo-joon",
         "birth": "1998",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "45,933,534,539,557,584"
+        "teamIds": "45,933,534,539,557,584"
     },
     {
         "id": "241",
-        "pid": "Wolf",
+        "progamerTag": "Wolf",
         "name": "Lee Jae-wan",
         "birth": "1996",
         "position": "SUP",
-        "league_win": "4",
-        "intl_win": "4",
+        "leagueWin": "4",
+        "intlWin": "4",
         "nationality": "KOR",
-        "teams": "1,13,25,39,934"
+        "teamIds": "1,13,25,39,934"
     },
     {
         "id": "242",
-        "pid": "Wraith",
+        "progamerTag": "Wraith",
         "name": "Kwon Ji-min",
         "birth": "1995",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "8,18,27,42"
+        "teamIds": "8,18,27,42"
     },
     {
         "id": "243",
-        "pid": "yoHan",
+        "progamerTag": "yoHan",
         "name": "Kim Yo-han",
         "birth": "1999",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "73,989"
+        "teamIds": "73,989"
     },
     {
         "id": "244",
-        "pid": "Youngjae",
+        "progamerTag": "Youngjae",
         "name": "Ko Yeong-jae",
         "birth": "2002",
         "position": "JGL",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "66,72,82,97,110"
+        "teamIds": "66,72,82,97,110"
     },
     {
         "id": "245",
-        "pid": "Zefa",
+        "progamerTag": "Zefa",
         "name": "Lee Jae-min",
         "birth": "1988",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "6"
+        "teamIds": "6"
     },
     {
         "id": "246",
-        "pid": "Zeka",
+        "progamerTag": "Zeka",
         "name": "Kim Geon-woo",
         "birth": "2002",
         "position": "MID",
-        "league_win": null,
-        "intl_win": "1",
+        "leagueWin": 0,
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "198,217,85,94,103"
+        "teamIds": "198,217,85,94,103"
     },
     {
         "id": "247",
-        "pid": "Zenit",
+        "progamerTag": "Zenit",
         "name": "Jeon Tae-gwon",
         "birth": "2000",
         "position": "ADC",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "57,66,870"
+        "teamIds": "57,66,870"
     },
     {
         "id": "248",
-        "pid": "Zero",
+        "progamerTag": "Zero",
         "name": "Yoon Kyung-sup",
         "birth": "1994",
         "position": "SUP",
-        "league_win": "1",
-        "intl_win": null,
+        "leagueWin": "1",
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "120,117,128,142,164"
+        "teamIds": "120,117,128,142,164"
     },
     {
         "id": "249",
-        "pid": "Zeus",
+        "progamerTag": "Zeus",
         "name": "Choi Woo-je",
         "birth": "2004",
         "position": "TOP",
-        "league_win": "1",
-        "intl_win": "1",
+        "leagueWin": "1",
+        "intlWin": "1",
         "nationality": "KOR",
-        "teams": "74,81,92,102"
+        "teamIds": "74,81,92,102"
     },
     {
         "id": "250",
-        "pid": "Zzus",
+        "progamerTag": "Zzus",
         "name": "Jang Joon-soo",
         "birth": "1998",
         "position": "SUP",
-        "league_win": null,
-        "intl_win": null,
+        "leagueWin": 0,
+        "intlWin": 0,
         "nationality": "KOR",
-        "teams": "19,926,77"
+        "teamIds": "19,926,77"
     }
 ]

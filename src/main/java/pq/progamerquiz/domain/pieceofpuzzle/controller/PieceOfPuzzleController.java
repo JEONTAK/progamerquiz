@@ -1,41 +1,26 @@
 package pq.progamerquiz.domain.pieceofpuzzle.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.team.repository.TeamRepository;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pq.progamerquiz.domain.pieceofpuzzle.service.PieceOfPuzzleService;
-
-import java.util.*;
 
 @Controller
 @RequiredArgsConstructor
-@Log4j2
 @RequestMapping("/pieceofpuzzle")
-@Transactional
 public class PieceOfPuzzleController {
 
-    @Autowired
-    private PieceOfPuzzleService pieceOfPuzzleService;
-    private List<PieceOfPuzzleResponse> quizList;
+    private final PieceOfPuzzleService pieceOfPuzzleService;
+/*    private List<PieceOfPuzzleResponse> quizList;
     private String isSubmitted;
     private String isCorrect;
     private String isFinish;
     private final int totalIndex = 15;
     private final int attemptsPerTeam = 3;
     private int correctCount;
-    private int currentIndex;
+    private int currentIndex;*/
 
-    // 각 팀에서 맞춘 선수 카운트 (두 명 맞춰야 정답 처리)
+   /* // 각 팀에서 맞춘 선수 카운트 (두 명 맞춰야 정답 처리)
     private Map<Integer, Integer> correctCountsForTeam = new HashMap<>();
     @Autowired
     private ProgamerService progamerService;
@@ -114,17 +99,17 @@ public class PieceOfPuzzleController {
         Map<String, Object> response = new HashMap<>();
 
         // 유효성 검사
-       /* if (input == null || input.isEmpty()) {
+       *//* if (input == null || input.isEmpty()) {
             response.put("message", "Input cannot be null or empty");
             return ResponseEntity.badRequest().body(response);
-        }*/
+        }*//*
 
         if ( currentIndex < 0 || currentIndex >= quizList.size()) {
             response.put("message", "Invalid currentIndex");
             return ResponseEntity.badRequest().body(response);
         }
 
-        Optional<ProgamerResponse> submitProgamer = pieceOfPuzzleService.findByPid(input);
+        Optional<ProgamerInsertResponse> submitProgamer = pieceOfPuzzleService.findByPid(input);
         PieceOfPuzzleResponse currentTeam = quizList.get(currentIndex);
         Long correctId = null;
 
@@ -179,5 +164,5 @@ public class PieceOfPuzzleController {
         result.put("correctCount", correctCount);
         result.put("totalCount", totalIndex);
         return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
-    }
+    }*/
 }

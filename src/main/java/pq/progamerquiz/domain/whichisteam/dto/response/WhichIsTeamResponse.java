@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pq.progamerquiz.domain.team.dto.TeamDto;
+import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 
 //Quiz : What is Team?
 @Getter
@@ -25,7 +25,7 @@ public class WhichIsTeamResponse {
     private Long msi_ranking;
     private Long image_path;
 
-    public static WhichIsTeamResponse of(int idx, TeamDto submitTeam) {
+    public static WhichIsTeamResponse of(int idx, TeamInsertResponse submitTeam) {
         return new WhichIsTeamResponse(
                 (long) idx - 1,
                 submitTeam.getId(),
@@ -33,12 +33,12 @@ public class WhichIsTeamResponse {
                 submitTeam.getCallName(),
                 submitTeam.getLeague().toString(),
                 submitTeam.getSeasonYear(),
-                submitTeam.getSpring_rank(),
-                submitTeam.getSummer_rank(),
-                submitTeam.getWinter_rank(),
-                submitTeam.getWorlds_rank(),
-                submitTeam.getMsi_rank(),
-                submitTeam.getImage_path()
+                submitTeam.getSpringRank(),
+                submitTeam.getSummerRank(),
+                submitTeam.getWinterRank(),
+                submitTeam.getWorldsRank(),
+                submitTeam.getMsiRank(),
+                submitTeam.getImageId()
         );
     }
 }

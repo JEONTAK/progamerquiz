@@ -5,14 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
-import pq.progamerquiz.domain.team.service.TeamService;
-
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 //Quiz : Piece Of Puzzle
@@ -21,11 +13,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Transactional
 @RequiredArgsConstructor
 public class PieceOfPuzzleService {
+/*
+    private final TeamService teamService;
+    private final ProgamerService progamerService;*/
 
-    final private TeamService teamService;
-    final private ProgamerService progamerService;
-
-    public Optional<ProgamerResponse> findByPid(String pid){
+  /*  public Optional<ProgamerInsertResponse> findByPid(String pid){
         return progamerService.findByPid(pid);
     }
 
@@ -38,22 +30,22 @@ public class PieceOfPuzzleService {
                 .toList();
     }
 
-    static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerResponse> roster) {
+    static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerInsertResponse> roster) {
         if(roster.size() < 5) {
             return null;
         }
         List<Map<Long, Boolean>> answer = new ArrayList<>();
-        List<ProgamerResponse> mutableRoster = new ArrayList<>(roster);
+        List<ProgamerInsertResponse> mutableRoster = new ArrayList<>(roster);
         Collections.shuffle(mutableRoster);
-        for (ProgamerResponse progamerResponse : mutableRoster.subList(0, 2)) {
+        for (ProgamerInsertResponse progamerInsertResponse : mutableRoster.subList(0, 2)) {
             Map<Long, Boolean> progamerMap = new HashMap<>();
-            progamerMap.put(progamerResponse.getId(), false);  // id를 키로 하고 초기 상태는 false
+            progamerMap.put(progamerInsertResponse.getId(), false);  // id를 키로 하고 초기 상태는 false
             answer.add(progamerMap);
         }
         return answer;
     }
 
-    public boolean isAnswer(Optional<ProgamerResponse> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
+    public boolean isAnswer(Optional<ProgamerInsertResponse> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
         for (Map<Long, Boolean> answer : pieceOfPuzzleResponse.getAnswer()) {
             for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
                 if (input.get().getId().equals(entry.getKey()) && !entry.getValue()) {
@@ -66,7 +58,7 @@ public class PieceOfPuzzleService {
     }
 
     public PieceOfPuzzleResponse convert(int idx, TeamDto submitTeam) {
-        List<ProgamerResponse> roster = submitTeam.getRoster();
+        List<ProgamerInsertResponse> roster = submitTeam.getRoster();
         List<Map<Long, Boolean>> answer = getTwoRandomProgamers(roster);
         if (answer == null) {
             return null;
@@ -79,10 +71,10 @@ public class PieceOfPuzzleService {
                 submitTeam.getSeasonYear(),
                 roster,
                 answer,
-                submitTeam.getImage_path(),
+                submitTeam.getImageId(),
                 0,
                 0
         );
-    }
+    }*/
 
 }

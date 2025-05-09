@@ -1,22 +1,10 @@
 package pq.progamerquiz.domain.whoareyou.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.common.annotation.Auth;
-import pq.progamerquiz.common.dto.AuthUser;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
-import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
-import pq.progamerquiz.domain.whoareyou.entity.Whoareyou;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
-
-import java.util.*;
-import java.util.stream.Collectors;
 
 //Quiz : Who are you?
 @Controller
@@ -26,12 +14,12 @@ import java.util.stream.Collectors;
 public class WhoareyouController {
 
     private final WheareyouService wheareyouService;
-    private final ProgamerMapper progamerMapper;
+/*    private final ProgamerMapper progamerMapper;
 
     @Autowired
-    private ObjectMapper jacksonObjectMapper;
+    private ObjectMapper jacksonObjectMapper;*/
 
-    @PostMapping("/start")
+   /* @PostMapping("/start")
     public ResponseEntity<WhoareyouResponse> startWhoareyou(@Auth AuthUser authUser) {
         Whoareyou whoareyou = wheareyouService.startQuiz(authUser);
         return ResponseEntity.ok(
@@ -83,7 +71,7 @@ public class WhoareyouController {
                 .collect(Collectors.toCollection(ArrayList::new));
 
         Map<String, Object> response = new HashMap<>();
-        Optional<ProgamerResponse> submitProgamer = wheAreYouService.findByPid(userInput);
+        Optional<ProgamerInsertResponse> submitProgamer = wheAreYouService.findByPid(userInput);
         if (submitProgamer.isPresent()) {
             WhoareyouResponse curProgamer = WhoareyouResponse.of(submitProgamer);
             log.info("Submit Progamer: " + curProgamer.getId() + " / " + curProgamer.getProgamerTag());
@@ -112,7 +100,7 @@ public class WhoareyouController {
         }
 
         return ResponseEntity.ok(response);
-    }
+    }*/
 
 /*    @Transactional
     @GetMapping("/{progamerId}")

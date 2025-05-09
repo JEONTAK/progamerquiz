@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 import pq.progamerquiz.domain.team.service.TeamService;
 import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
 import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
 
 import java.util.List;
 
@@ -31,10 +31,10 @@ class WhichIsTeamServiceTest {
     @Test
     void getTeams() {
         // Given
-        List<TeamDto> mockTeams = List.of(
-                new TeamDto(1L, "Team A", "Call A", 2023L, "LCK", 1L,
+        List<TeamInsertResponse> mockTeams = List.of(
+                new TeamInsertResponse(1L, "Team A", "Call A", 2023L, "LCK", 1L,
                         2L, 3L, 4L, 5L, List.of(), 101L),
-                new TeamDto(2L, "Team B", "Call B", 2023L, "LPL", 6L,
+                new TeamInsertResponse(2L, "Team B", "Call B", 2023L, "LPL", 6L,
                         7L, 8L, 9L, 10L, List.of(), 102L)
         );
         when(teamService.findRandomTeams(2, "LCK")).thenReturn(mockTeams);
@@ -52,7 +52,7 @@ class WhichIsTeamServiceTest {
     void isExist() {
         // Given
         String teamName = "Team A";
-        when(teamService.findByNameOrCallName(teamName)).thenReturn(List.of(new TeamDto(1L, "Team A", "Call A",
+        when(teamService.findByNameOrCallName(teamName)).thenReturn(List.of(new TeamInsertResponse(1L, "Team A", "Call A",
                         2023L, "LCK", 1L, 2L,
                         3L, 4L, 5L, List.of(), 101L)
         ));
@@ -72,7 +72,7 @@ class WhichIsTeamServiceTest {
                 0L, 1L, "Team A", "Call A", "LCK", 2023L, 1L,
                 2L, 3L, 4L, 5L, 101L);
         when(teamService.findByNameOrCallName(teamName))
-                .thenReturn(List.of(new TeamDto(1L, "Team A", "Call A", 2023L, "LCK",
+                .thenReturn(List.of(new TeamInsertResponse(1L, "Team A", "Call A", 2023L, "LCK",
                         1L, 2L, 3L, 4L, 5L, List.of(), 101L)));
         // When
         boolean result = whichIsTeamService.isAnswer(teamName, whichIsTeamResponse);

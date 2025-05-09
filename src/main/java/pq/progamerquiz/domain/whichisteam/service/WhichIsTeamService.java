@@ -5,12 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
-import pq.progamerquiz.domain.team.dto.TeamDto;
 import pq.progamerquiz.domain.team.service.TeamService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 //Quiz : Which Is Team?
@@ -22,7 +17,7 @@ public class WhichIsTeamService {
 
     final private TeamService teamService;
 
-    public List<WhichIsTeamResponse> getTeams(int totalCount, String league) {
+   /* public List<WhichIsTeamResponse> getTeams(int totalCount, String league) {
         List<TeamDto> teamList = teamService.findRandomTeams(totalCount, league);
         List<WhichIsTeamResponse> quizList = new ArrayList<>();
 
@@ -44,5 +39,5 @@ public class WhichIsTeamService {
             }
         }
         return false;
-    }
+    }*/
 }

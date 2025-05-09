@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerService;
 import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
 import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
@@ -45,15 +45,15 @@ public class WheareyouServiceTest {
     @Test
     public void findByPid() {
         // Given
-        ProgamerResponse mockProgamerResponse = new ProgamerResponse(1L, "progamer123", "PlayerName", 1998L, "LCK", 5L, 3L, "Korea", Collections.emptyList());
-        when(progamerService.findByPid("progamer123")).thenReturn(mockProgamerResponse);
+        ProgamerInsertResponse mockProgamerInsertResponse = new ProgamerInsertResponse(1L, "progamer123", "PlayerName", 1998L, "LCK", 5L, 3L, "Korea", Collections.emptyList());
+        when(progamerService.findByPid("progamer123")).thenReturn(mockProgamerInsertResponse);
 
         // When
-        ProgamerResponse result = wheAreYouService.findByPid("progamer123");
+        ProgamerInsertResponse result = wheAreYouService.findByPid("progamer123");
 
         // Then
         assertNotNull(result);
-        assertEquals("progamer123", result.getPid());
+        assertEquals("progamer123", result.getProgamerTag());
     }
 
     /*@Test

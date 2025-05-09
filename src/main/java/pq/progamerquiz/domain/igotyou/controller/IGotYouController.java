@@ -4,15 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
-import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
-
-import java.util.*;
 
 //Quiz : I Got you!
 @Controller
@@ -21,8 +16,7 @@ import java.util.*;
 @RequestMapping("/igotyou")
 public class IGotYouController {
 
-    @Autowired
-    private IGotYouService IGotYouService;
+    private final IGotYouService IGotYouService;
     @Autowired
     private ObjectMapper jacksonObjectMapper;
 
@@ -32,7 +26,7 @@ public class IGotYouController {
         return "quizzes/igotyou"; // Thymeleaf 또는 정적 페이지를 반환
     }
 
-    @PostMapping("/select")
+    /*@PostMapping("/select")
     @ResponseBody
     public ResponseEntity<?> setQuiz(@RequestBody Map<String, Integer> payload) {
         int totalCount = payload.get("totalCount");
@@ -88,7 +82,7 @@ public class IGotYouController {
 
         log.info("Submitting answer: " + userInput);
         Map<String, Object> response = new HashMap<>();
-        Optional<ProgamerResponse> submitProgamer = IGotYouService.findByPid(userInput);
+        Optional<ProgamerInsertResponse> submitProgamer = IGotYouService.findByPid(userInput);
         if (!submitProgamer.isEmpty()) {
             isSubmitted = "true";
             if (IGotYouService.isAnswer(submitProgamer, quizList.get(currentIndex))) {
@@ -127,6 +121,6 @@ public class IGotYouController {
         result.put("correctCount", correctCount);
         result.put("totalCount", totalCount);
         return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
-    }
+    }*/
 }
 

@@ -1,7 +1,7 @@
 package pq.progamerquiz.domain.pieceofpuzzle.dto.response;
 
 import lombok.*;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerResponse;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +16,7 @@ public class PieceOfPuzzleResponse {
     private Long teamId;
     private String teamName;
     private Long teamYear;
-    private List<ProgamerResponse> roster = new ArrayList<>();
+    private List<ProgamerInsertResponse> roster = new ArrayList<>();
     private List<Map<Long, Boolean>> answer = new ArrayList<>();
     private Long image_path;
     private int correct;

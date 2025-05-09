@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pq.progamerquiz.common.enums.Position;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "progamers")
 @Getter
@@ -25,28 +23,32 @@ public class Progamer {
     private String name;
 
     @Column(nullable = false)
-    private LocalDate birth;
+    private String birth;
 
     @Enumerated(EnumType.STRING)
     private Position position;
 
-    @Column(nullable = false)
     private Long leagueWin;
 
-    @Column(nullable = false)
     private Long intlWin;
 
     @Column(nullable = false)
     private String nationality;
 
-/*
-    @ManyToMany  // 중간 테이블을 활용한 다대다 매핑
-    @JoinTable(
-            name = "progamer_team",
-            joinColumns = @JoinColumn(name = "progamer_id"),
-            inverseJoinColumns = @JoinColumn(name = "team_id")
-    )
-    private List<Team> teams = new ArrayList<>();*/
+    private Progamer(Long id, String progamerTag, String name, String birth, Position position, Long leagueWin, Long intlWin, String nationality) {
+        this.id = id;
+        this.progamerTag = progamerTag;
+        this.name = name;
+        this.birth = birth;
+        this.position = position;
+        this.leagueWin = leagueWin;
+        this.intlWin = intlWin;
+        this.nationality = nationality;
 
+    }
+
+    public static Progamer create(Long id, String progamerTag, String name, String birth, Position position, Long leagueWin, Long intlWin, String nationality) {
+        return new Progamer(id, progamerTag, name, birth, position, leagueWin, intlWin, nationality);
+    }
 }
 
