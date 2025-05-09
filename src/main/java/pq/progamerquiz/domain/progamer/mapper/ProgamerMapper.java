@@ -2,6 +2,7 @@ package pq.progamerquiz.domain.progamer.mapper;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
 import pq.progamerquiz.domain.team.entity.Team;
@@ -10,6 +11,7 @@ import pq.progamerquiz.domain.team.service.TeamQueryService;
 
 @Getter
 @RequiredArgsConstructor
+@Component
 public class ProgamerMapper {
 
     private final TeamQueryService teamQueryService;

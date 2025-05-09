@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.igotyou.service.IGotYouService;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
+import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
 import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 
@@ -23,7 +23,7 @@ class IGotYouServiceTest {
     private IGotYouService IGotYouService;
 
     @Mock
-    private ProgamerService progamerService;
+    private ProgamerCommandService progamerCommandService;
 
     @BeforeEach
     void setUp() {
@@ -62,7 +62,7 @@ class IGotYouServiceTest {
                         )
                 )
         );
-        when(progamerService.findRandomPlayers(2)).thenReturn(mockProgamerList);
+        when(progamerCommandService.findRandomPlayers(2)).thenReturn(mockProgamerList);
 
         // When
         List<IGotYouResponse> result = IGotYouService.getProgamers(2);
@@ -77,7 +77,7 @@ class IGotYouServiceTest {
     void isExist() {
         // Given
         String userInput = "progamer1";
-        when(progamerService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerInsertResponse(1L, "progamer1", "Player One")));
+        when(progamerCommandService.findByPid(userInput)).thenReturn(Optional.of(new ProgamerInsertResponse(1L, "progamer1", "Player One")));
 
         // When
         boolean result = IGotYouService.isExist(userInput);
@@ -101,7 +101,7 @@ class IGotYouServiceTest {
                 List.of(101L, 102L)  // teamImages
         );
 
-        when(progamerService.findByPid(userInput))
+        when(progamerCommandService.findByPid(userInput))
                 .thenReturn(Optional.of(new ProgamerInsertResponse(1L, "progamer1", "Player One")));
 
         // When

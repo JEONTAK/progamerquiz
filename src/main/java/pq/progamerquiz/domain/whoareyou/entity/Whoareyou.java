@@ -27,4 +27,13 @@ public class Whoareyou extends BaseEntity {
     @JoinColumn(name = "progamer_id", nullable = false)
     private Progamer quizProgamer;
 
+    private Whoareyou(Long attempt, boolean correct, Progamer quizProgamer) {
+        this.attempt = attempt;
+        this.correct = correct;
+        this.quizProgamer = quizProgamer;
+    }
+
+    public static Whoareyou create(Long attempt, boolean correct, Progamer quizProgamer) {
+        return new Whoareyou(attempt, correct, quizProgamer);
+    }
 }

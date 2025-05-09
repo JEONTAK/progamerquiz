@@ -1,27 +1,31 @@
 package pq.progamerquiz.domain.whoareyou.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
+import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
+import pq.progamerquiz.domain.whoareyou.entity.Whoareyou;
 import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
 
 //Quiz : Who are you?
 @Controller
 @RequiredArgsConstructor
-@Log4j2
-@RequestMapping("/api/v1/whoareyou")
+@Slf4j
+@RequestMapping("/whoareyou")
 public class WhoareyouController {
 
     private final WheareyouService wheareyouService;
-/*    private final ProgamerMapper progamerMapper;
+    private final ProgamerMapper progamerMapper;
 
-    @Autowired
-    private ObjectMapper jacksonObjectMapper;*/
 
-   /* @PostMapping("/start")
-    public ResponseEntity<WhoareyouResponse> startWhoareyou(@Auth AuthUser authUser) {
-        Whoareyou whoareyou = wheareyouService.startQuiz(authUser);
+    @PostMapping("/start")
+    public ResponseEntity<WhoareyouResponse> startWhoareyou() {
+        Whoareyou whoareyou = wheareyouService.startQuiz();
         return ResponseEntity.ok(
                 WhoareyouResponse.of(
                         whoareyou.getId(),
@@ -39,6 +43,7 @@ public class WhoareyouController {
         return "quizzes/whoareyou"; // Thymeleaf 또는 정적 페이지를 반환
     }
 
+    /*
     @PostMapping("/start")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> startQuiz() {
@@ -59,7 +64,7 @@ public class WhoareyouController {
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/submitAnswer")
+  @PostMapping("/submitAnswer")
     @ResponseBody
     public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, Object> payload) {
 
@@ -100,9 +105,9 @@ public class WhoareyouController {
         }
 
         return ResponseEntity.ok(response);
-    }*/
+    }
 
-/*    @Transactional
+    @Transactional
     @GetMapping("/{progamerId}")
     public String showQuiz(Model model, HttpSession session) {
         // 모델에 데이터 추가

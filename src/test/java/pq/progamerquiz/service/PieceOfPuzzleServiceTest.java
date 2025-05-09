@@ -7,7 +7,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.pieceofpuzzle.service.PieceOfPuzzleService;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
+import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
 import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 import pq.progamerquiz.domain.team.service.TeamService;
 import pq.progamerquiz.domain.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
@@ -26,7 +26,7 @@ class PieceOfPuzzleServiceTest {
     @Mock
     private TeamService teamService;
     @Mock
-    private ProgamerService progamerService;
+    private ProgamerCommandService progamerCommandService;
 
     @BeforeEach
     void setUp() {
@@ -100,7 +100,7 @@ class PieceOfPuzzleServiceTest {
                 1L, null, "Team A", null, null, answerList, null, 0, 0
         );
 
-        when(progamerService.findByPid(userInput))
+        when(progamerCommandService.findByPid(userInput))
                 .thenReturn(new ProgamerInsertResponse(1L, "progamer1", "Player One"));
 
         // When

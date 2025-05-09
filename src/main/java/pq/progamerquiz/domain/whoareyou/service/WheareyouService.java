@@ -1,21 +1,32 @@
 package pq.progamerquiz.domain.whoareyou.service;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
+import pq.progamerquiz.domain.progamer.entity.Progamer;
+import pq.progamerquiz.domain.progamer.service.ProgamerQueryService;
+import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
+import pq.progamerquiz.domain.whoareyou.entity.Whoareyou;
+import pq.progamerquiz.domain.whoareyou.repository.WhoareyouRepository;
 
 
 //Quiz : Who are you?
 @Service
-@Log4j2
 @Transactional
 @RequiredArgsConstructor
 public class WheareyouService {
 
-    final private ProgamerService progamerService;
+    final private ProgamerCommandService progamerCommandService;
+    private final ProgamerQueryService progamerQueryService;
+    private final WhoareyouRepository whoareyouRepository;
     private static final int MAX_ATTEMPTS = 8;
+
+    public Whoareyou startQuiz() {
+        Progamer randomProgamer = progamerQueryService.findRandomProgamer();
+        Whoareyou whoareyou = Whoareyou.create(0L, false, randomProgamer);
+        whoareyou = whoareyouRepository.save(whoareyou);
+        return whoareyou;
+    }
 
     /*public Optional<ProgamerInsertResponse> findByPid(String pid){
         return progamerService.findByPid(pid);

@@ -6,7 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
-import pq.progamerquiz.domain.progamer.service.ProgamerService;
+import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
 import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
 import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
 
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.when;
 public class WheareyouServiceTest {
 
     @Mock
-    private ProgamerService progamerService;
+    private ProgamerCommandService progamerCommandService;
 
     @InjectMocks
     private WheareyouService wheAreYouService;
@@ -46,7 +46,7 @@ public class WheareyouServiceTest {
     public void findByPid() {
         // Given
         ProgamerInsertResponse mockProgamerInsertResponse = new ProgamerInsertResponse(1L, "progamer123", "PlayerName", 1998L, "LCK", 5L, 3L, "Korea", Collections.emptyList());
-        when(progamerService.findByPid("progamer123")).thenReturn(mockProgamerInsertResponse);
+        when(progamerCommandService.findByPid("progamer123")).thenReturn(mockProgamerInsertResponse);
 
         // When
         ProgamerInsertResponse result = wheAreYouService.findByPid("progamer123");
