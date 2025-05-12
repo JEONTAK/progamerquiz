@@ -41,7 +41,7 @@ public class WheareyouService {
     }
 
     public WhoareyouSummitAnswerResponse submitAnswer(String input, Integer attempts, ProgamerWithRecentTeamResponse answer, List<String> guessedList) {
-        log.info("Input : " + input, " | Answer : " + answer, " | Attempt : " + attempts);
+        log.info("Input : " + input +  " | Answer : " + answer.getProgamerTag(), " | Attempt : " + attempts);
         // 시도 횟수 증가
         attempts++;
 
@@ -67,7 +67,7 @@ public class WheareyouService {
         Progamer inputProgamer = progamerQueryService.findByProgamerTag(input);
         Progamer answerProgamer = progamerQueryService.findByProgamerTag(answer);
         Team inputRecentTeam = teamQueryService.findRecentTeamByProgamerTag(input);
-        Team answerRecentTeam = teamQueryService.findRecentTeamByProgamerTag(input);
+        Team answerRecentTeam = teamQueryService.findRecentTeamByProgamerTag(answer);
 
         // 힌트 목록 (예: 6가지 힌트)
         String[] hintNames = {"league", "team", "position", "birth", "leagueWin", "intlWin"};

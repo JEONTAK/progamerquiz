@@ -135,6 +135,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
 });
 
 function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
+    console.log(hintResults);
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
     const playerImage = document.getElementById("player-image");

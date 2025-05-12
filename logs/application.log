@@ -18214,3 +18214,1165 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [home]
 2025-05-12 17:14:17 INFO  p.p.controller.HomeController - Home Controller
 2025-05-12 17:14:17 INFO  p.p.d.w.c.WhoareyouController - Who Are you?
 2025-05-12 17:14:20 INFO  p.p.d.w.service.WheareyouService - Input : faker
+2025-05-12 17:15:10 INFO  p.p.d.w.service.WheareyouService - Input : bang
+2025-05-12 17:15:16 INFO  p.p.d.w.service.WheareyouService - Input : keria
+2025-05-12 17:15:20 INFO  p.p.d.w.service.WheareyouService - Input : zeus
+2025-05-12 17:15:23 INFO  p.p.d.w.service.WheareyouService - Input : oner
+2025-05-12 17:15:27 INFO  p.p.d.w.service.WheareyouService - Input : tom
+2025-05-12 17:15:45 INFO  p.p.d.w.service.WheareyouService - Input : peanut
+2025-05-12 17:16:03 INFO  p.p.d.w.service.WheareyouService - Input : viper
+2025-05-12 17:16:47 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:16:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-12 17:16:47 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-12 17:16:50 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-12 17:16:50 INFO  p.p.ProgamerquizApplication - Starting ProgamerquizApplication using Java 17.0.12 with PID 38638 (/Users/jeontak/Desktop/coding/progamerquiz/build/classes/java/main started by jeontak in /Users/jeontak/Desktop/coding/progamerquiz)
+2025-05-12 17:16:50 INFO  p.p.ProgamerquizApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-12 17:16:50 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 17:16:50 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 5 JPA repository interfaces.
+2025-05-12 17:16:50 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-12 17:16:50 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:16:50 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-12 17:16:50 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-05-12 17:16:51 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-12 17:16:51 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 865 ms
+2025-05-12 17:16:51 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 17:16:51 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-12 17:16:51 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-12 17:16:51 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 17:16:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-12 17:16:51 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a053795
+2025-05-12 17:16:51 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-12 17:16:51 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 17:16:52 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 17:16:52 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:16:52 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 17:16:53 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-12 17:16:53 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-05-12 17:16:53 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:16:53 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-12 17:16:53 INFO  p.p.ProgamerquizApplication - Started ProgamerquizApplication in 3.478 seconds (process running for 3.79)
+2025-05-12 17:16:53 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 17:16:53 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-12 17:16:53 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-12 17:16:53 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 1 | 5Kid
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 2 | Acorn
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 3 | ADD
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 4 | Aiming
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 5 | Ambition
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 6 | Andil
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 7 | Arrow
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 8 | Bang
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 9 | BAO
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 10 | Bay
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 11 | Bdd
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 12 | Bengi
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 13 | BeryL
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 14 | Beyond
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 15 | Bible
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 16 | Blanc
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 17 | Bless
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 18 | Bonnie
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 19 | Bono
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 20 | Bubbling
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 21 | Bull
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 22 | BuLLDoG
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 23 | Burdol
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 24 | callme
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 25 | Canna
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 26 | Canyon
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 27 | Cepted
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 28 | Chaser
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 29 | Chei
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 30 | Chieftain
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 31 | Chovy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 32 | Clid
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 33 | Clear
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 34 | Clozer
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 35 | Coco
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 36 | CoreJJ
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 37 | Cpt Jack
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 38 | Crash
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 39 | Crazy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 40 | Croco
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 41 | Crown
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 42 | CuVee
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 43 | Cuzz
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 44 | dade
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 45 | DanDy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 46 | Deft
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 47 | Delight
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 48 | deokdam
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 49 | DnDn
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 50 | Doran
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 51 | Dove
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 52 | Dread
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 53 | DuDu
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 54 | Duke
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 55 | Duro
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 56 | Easyhoon
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 57 | Edge
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 58 | Effort
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 59 | Ellim
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 60 | Emperor
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 61 | Envyy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 62 | Execute
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 63 | Expession
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 64 | Faker
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 65 | FATE
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 66 | FIESTA
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 67 | Fisher
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 68 | Flame
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 69 | Flawless
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 70 | Fly
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 71 | Frog
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 72 | Frozen
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 73 | Fury
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 74 | Gango
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 75 | GBM
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 76 | Ggoong
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 77 | Ghost
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 78 | GIDEON
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 79 | GimGoon
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 80 | Gori
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 81 | GorillA
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 82 | Grizzly
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 83 | GuGer
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 84 | Gumayusi
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 85 | Hachani
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 86 | Harp
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 87 | Haru
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 88 | Helios
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 89 | Helper
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 90 | Hena
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 91 | Hoit
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 92 | Hojin
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 93 | Hoya
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 94 | Huni
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 95 | HyBriD
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 96 | Ian
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 97 | Ice
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 98 | IgNar
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 99 | ikssu
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 100 | imp
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 101 | Impact
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 102 | inSec
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 103 | Jelly
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 104 | Jett
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 105 | Jiwoo
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 106 | Joker
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 107 | Juhan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 108 | Jun
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 109 | Justice
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 110 | Kabbie
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 111 | Kael
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 112 | KaKAO
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 113 | Kanavi
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 114 | Karis
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 115 | Keine
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 116 | Kellin
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 117 | Keria
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 118 | Key
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 119 | Khan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 120 | Kiin
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 121 | Kingen
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 122 | Kramer
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 123 | Kuro
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 124 | Kuzan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 125 | kyeahoo
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 126 | Lava
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 127 | Leaper
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 128 | Lehends
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 129 | Leo
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 130 | Life
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 131 | Lindarang
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 132 | LirA
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 133 | LokeN
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 134 | Looper
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 135 | Lucid
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 136 | MadLife
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 137 | MaHa
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 138 | Malrang
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 139 | MaRin
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 140 | Mata
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 141 | Max
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 142 | Mia
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 143 | Mickey
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 144 | Mightybear
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 145 | Mihile
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 146 | Mir
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 147 | Mireu
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 148 | Moham
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 149 | Moojin
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 150 | Morgan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 151 | Mowgil
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 152 | Mystic
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 153 | NaeHyun
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 154 | Nagne
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 155 | Noah
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 156 | Nova
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 157 | Nuclear
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 158 | Nuguri
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 159 | Ohq
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 160 | Oner
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 161 | OnFleek
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 162 | Paduck
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 163 | Part
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 164 | PawN
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 165 | Peanut
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 166 | PerfecT
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 167 | Peter
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 168 | Peyz
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 169 | Piccaboo
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 170 | Piglet
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 171 | Pilot
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 172 | Pirean
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 173 | Pleata
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 174 | Pollu
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 175 | PraY
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 176 | Prince
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 177 | Profit
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 178 | Pullbae
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 179 | Punch
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 180 | Pyosik
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 181 | Quad
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 182 | Quantum
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 183 | Raise
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 184 | Raptor
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 185 | Rascal
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 186 | Reignover
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 187 | Rich
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 188 | Roach
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 189 | Rookie
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 190 | Route
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 191 | Ruler
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 192 | Rush
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 193 | Ryu
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 194 | SamD
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 195 | Samver
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 196 | Sangyoon
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 197 | Save
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 198 | Score
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 199 | Scout
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 200 | Secret
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 201 | SeongHwan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 202 | SeTab
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 203 | ShowMaker
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 204 | Shy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 205 | Sky
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 206 | Smeb
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 207 | SnowFlower
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 208 | SoHwan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 209 | Space
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 210 | Spirit
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 211 | Sponge
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 212 | SSol
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 213 | Ssumday
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 214 | Stitch
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 215 | Summit
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 216 | Sword
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 217 | Sylvie
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 218 | Taeyoon
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 219 | Tank
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 220 | Tarzan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 221 | Teddy
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 222 | Tempt
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 223 | Thal
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 224 | Tom
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 225 | Totoro
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 226 | TrAce
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 227 | Trick
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 228 | Trigger
+2025-05-12 17:16:54 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 229 | TusiN
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 230 | Ucal
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 231 | Umti
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 232 | Untara
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 233 | VicLa
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 234 | Viper
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 235 | vital
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 236 | Vsta
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 237 | Watch
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 238 | Willer
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 239 | Winged
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 240 | Wiz
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 241 | Wolf
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 242 | Wraith
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 243 | yoHan
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 244 | Youngjae
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 245 | Zefa
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 246 | Zeka
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 247 | Zenit
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 248 | Zero
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 249 | Zeus
+2025-05-12 17:16:54 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 250 | Zzus
+2025-05-12 17:16:55 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:16:56 INFO  p.p.d.w.c.WhoareyouController - Who Are you?
+2025-05-12 17:17:00 INFO  p.p.d.w.service.WheareyouService - Input : faker
+2025-05-12 17:17:58 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:17:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-12 17:17:58 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-12 17:18:00 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-12 17:18:00 INFO  p.p.ProgamerquizApplication - Starting ProgamerquizApplication using Java 17.0.12 with PID 38783 (/Users/jeontak/Desktop/coding/progamerquiz/build/classes/java/main started by jeontak in /Users/jeontak/Desktop/coding/progamerquiz)
+2025-05-12 17:18:00 INFO  p.p.ProgamerquizApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-12 17:18:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 17:18:01 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2025-05-12 17:18:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-12 17:18:01 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:01 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-12 17:18:01 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-05-12 17:18:01 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-12 17:18:01 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 829 ms
+2025-05-12 17:18:01 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 17:18:01 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-12 17:18:01 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-12 17:18:01 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 17:18:01 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-12 17:18:02 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a053795
+2025-05-12 17:18:02 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-12 17:18:02 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 17:18:02 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 17:18:03 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:18:03 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 17:18:03 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-12 17:18:03 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-05-12 17:18:03 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-12 17:18:03 INFO  p.p.ProgamerquizApplication - Started ProgamerquizApplication in 3.156 seconds (process running for 3.439)
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 1 | 5Kid
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 2 | Acorn
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 3 | ADD
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 4 | Aiming
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 5 | Ambition
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 6 | Andil
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 7 | Arrow
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 8 | Bang
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 9 | BAO
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 10 | Bay
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 11 | Bdd
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 12 | Bengi
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 13 | BeryL
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 14 | Beyond
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 15 | Bible
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 16 | Blanc
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 17 | Bless
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 18 | Bonnie
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 19 | Bono
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 20 | Bubbling
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 21 | Bull
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 22 | BuLLDoG
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 23 | Burdol
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 24 | callme
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 25 | Canna
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 26 | Canyon
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 27 | Cepted
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 28 | Chaser
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 29 | Chei
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 30 | Chieftain
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 31 | Chovy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 32 | Clid
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 33 | Clear
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 34 | Clozer
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 35 | Coco
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 36 | CoreJJ
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 37 | Cpt Jack
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 38 | Crash
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 39 | Crazy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 40 | Croco
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 41 | Crown
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 42 | CuVee
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 43 | Cuzz
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 44 | dade
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 45 | DanDy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 46 | Deft
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 47 | Delight
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 48 | deokdam
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 49 | DnDn
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 50 | Doran
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 51 | Dove
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 52 | Dread
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 53 | DuDu
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 54 | Duke
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 55 | Duro
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 56 | Easyhoon
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 57 | Edge
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 58 | Effort
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 59 | Ellim
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 60 | Emperor
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 61 | Envyy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 62 | Execute
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 63 | Expession
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 64 | Faker
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 65 | FATE
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 66 | FIESTA
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 67 | Fisher
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 68 | Flame
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 69 | Flawless
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 70 | Fly
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 71 | Frog
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 72 | Frozen
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 73 | Fury
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 74 | Gango
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 75 | GBM
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 76 | Ggoong
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 77 | Ghost
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 78 | GIDEON
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 79 | GimGoon
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 80 | Gori
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 81 | GorillA
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 82 | Grizzly
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 83 | GuGer
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 84 | Gumayusi
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 85 | Hachani
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 86 | Harp
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 87 | Haru
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 88 | Helios
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 89 | Helper
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 90 | Hena
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 91 | Hoit
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 92 | Hojin
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 93 | Hoya
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 94 | Huni
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 95 | HyBriD
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 96 | Ian
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 97 | Ice
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 98 | IgNar
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 99 | ikssu
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 100 | imp
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 101 | Impact
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 102 | inSec
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 103 | Jelly
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 104 | Jett
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 105 | Jiwoo
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 106 | Joker
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 107 | Juhan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 108 | Jun
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 109 | Justice
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 110 | Kabbie
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 111 | Kael
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 112 | KaKAO
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 113 | Kanavi
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 114 | Karis
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 115 | Keine
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 116 | Kellin
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 117 | Keria
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 118 | Key
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 119 | Khan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 120 | Kiin
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 121 | Kingen
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 122 | Kramer
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 123 | Kuro
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 124 | Kuzan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 125 | kyeahoo
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 126 | Lava
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 127 | Leaper
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 128 | Lehends
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 129 | Leo
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 130 | Life
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 131 | Lindarang
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 132 | LirA
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 133 | LokeN
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 134 | Looper
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 135 | Lucid
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 136 | MadLife
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 137 | MaHa
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 138 | Malrang
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 139 | MaRin
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 140 | Mata
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 141 | Max
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 142 | Mia
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 143 | Mickey
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 144 | Mightybear
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 145 | Mihile
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 146 | Mir
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 147 | Mireu
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 148 | Moham
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 149 | Moojin
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 150 | Morgan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 151 | Mowgil
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 152 | Mystic
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 153 | NaeHyun
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 154 | Nagne
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 155 | Noah
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 156 | Nova
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 157 | Nuclear
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 158 | Nuguri
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 159 | Ohq
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 160 | Oner
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 161 | OnFleek
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 162 | Paduck
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 163 | Part
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 164 | PawN
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 165 | Peanut
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 166 | PerfecT
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 167 | Peter
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 168 | Peyz
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 169 | Piccaboo
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 170 | Piglet
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 171 | Pilot
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 172 | Pirean
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 173 | Pleata
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 174 | Pollu
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 175 | PraY
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 176 | Prince
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 177 | Profit
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 178 | Pullbae
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 179 | Punch
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 180 | Pyosik
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 181 | Quad
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 182 | Quantum
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 183 | Raise
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 184 | Raptor
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 185 | Rascal
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 186 | Reignover
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 187 | Rich
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 188 | Roach
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 189 | Rookie
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 190 | Route
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 191 | Ruler
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 192 | Rush
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 193 | Ryu
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 194 | SamD
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 195 | Samver
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 196 | Sangyoon
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 197 | Save
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 198 | Score
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 199 | Scout
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 200 | Secret
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 201 | SeongHwan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 202 | SeTab
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 203 | ShowMaker
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 204 | Shy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 205 | Sky
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 206 | Smeb
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 207 | SnowFlower
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 208 | SoHwan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 209 | Space
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 210 | Spirit
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 211 | Sponge
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 212 | SSol
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 213 | Ssumday
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 214 | Stitch
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 215 | Summit
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 216 | Sword
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 217 | Sylvie
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 218 | Taeyoon
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 219 | Tank
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 220 | Tarzan
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 221 | Teddy
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 222 | Tempt
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 223 | Thal
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 224 | Tom
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 225 | Totoro
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 226 | TrAce
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 227 | Trick
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 228 | Trigger
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 229 | TusiN
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 230 | Ucal
+2025-05-12 17:18:04 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 231 | Umti
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 232 | Untara
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 233 | VicLa
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 234 | Viper
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 235 | vital
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 236 | Vsta
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 237 | Watch
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 238 | Willer
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 239 | Winged
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 240 | Wiz
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 241 | Wolf
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 242 | Wraith
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 243 | yoHan
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 244 | Youngjae
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 245 | Zefa
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 246 | Zeka
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 247 | Zenit
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 248 | Zero
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 249 | Zeus
+2025-05-12 17:18:05 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 250 | Zzus
+2025-05-12 17:18:05 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 17:18:05 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-12 17:18:05 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-05-12 17:18:11 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:11 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:12 INFO  p.p.d.w.c.WhoareyouController - Who Are you?
+2025-05-12 17:18:14 INFO  p.p.d.w.service.WheareyouService - Input : faker | Answer : pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamResponse@5186d6e8
+2025-05-12 17:18:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:18:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-12 17:18:25 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-12 17:18:27 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-12 17:18:27 INFO  p.p.ProgamerquizApplication - Starting ProgamerquizApplication using Java 17.0.12 with PID 38851 (/Users/jeontak/Desktop/coding/progamerquiz/build/classes/java/main started by jeontak in /Users/jeontak/Desktop/coding/progamerquiz)
+2025-05-12 17:18:27 INFO  p.p.ProgamerquizApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-12 17:18:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 17:18:27 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 5 JPA repository interfaces.
+2025-05-12 17:18:27 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-12 17:18:27 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:27 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-12 17:18:27 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-05-12 17:18:27 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-12 17:18:27 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 874 ms
+2025-05-12 17:18:28 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 17:18:28 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-12 17:18:28 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-12 17:18:28 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 17:18:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-12 17:18:28 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a364e1c
+2025-05-12 17:18:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-12 17:18:28 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 17:18:28 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 17:18:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:18:29 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 17:18:30 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-12 17:18:30 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-05-12 17:18:30 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-12 17:18:30 INFO  p.p.ProgamerquizApplication - Started ProgamerquizApplication in 3.664 seconds (process running for 4.067)
+2025-05-12 17:18:30 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 17:18:30 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-12 17:18:30 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-05-12 17:18:31 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 1 | 5Kid
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 2 | Acorn
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 3 | ADD
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 4 | Aiming
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 5 | Ambition
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 6 | Andil
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 7 | Arrow
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 8 | Bang
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 9 | BAO
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 10 | Bay
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 11 | Bdd
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 12 | Bengi
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 13 | BeryL
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 14 | Beyond
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 15 | Bible
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 16 | Blanc
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 17 | Bless
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 18 | Bonnie
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 19 | Bono
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 20 | Bubbling
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 21 | Bull
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 22 | BuLLDoG
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 23 | Burdol
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 24 | callme
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 25 | Canna
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 26 | Canyon
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 27 | Cepted
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 28 | Chaser
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 29 | Chei
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 30 | Chieftain
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 31 | Chovy
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 32 | Clid
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 33 | Clear
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 34 | Clozer
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 35 | Coco
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 36 | CoreJJ
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 37 | Cpt Jack
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 38 | Crash
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 39 | Crazy
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 40 | Croco
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 41 | Crown
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 42 | CuVee
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 43 | Cuzz
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 44 | dade
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 45 | DanDy
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 46 | Deft
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 47 | Delight
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 48 | deokdam
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 49 | DnDn
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 50 | Doran
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 51 | Dove
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 52 | Dread
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 53 | DuDu
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 54 | Duke
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 55 | Duro
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 56 | Easyhoon
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 57 | Edge
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 58 | Effort
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 59 | Ellim
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 60 | Emperor
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 61 | Envyy
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 62 | Execute
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 63 | Expession
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 64 | Faker
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 65 | FATE
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 66 | FIESTA
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 67 | Fisher
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 68 | Flame
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 69 | Flawless
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 70 | Fly
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 71 | Frog
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 72 | Frozen
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 73 | Fury
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 74 | Gango
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 75 | GBM
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 76 | Ggoong
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 77 | Ghost
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 78 | GIDEON
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 79 | GimGoon
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 80 | Gori
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 81 | GorillA
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 82 | Grizzly
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 83 | GuGer
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 84 | Gumayusi
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 85 | Hachani
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 86 | Harp
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 87 | Haru
+2025-05-12 17:18:31 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 88 | Helios
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 89 | Helper
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 90 | Hena
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 91 | Hoit
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 92 | Hojin
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 93 | Hoya
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 94 | Huni
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 95 | HyBriD
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 96 | Ian
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 97 | Ice
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 98 | IgNar
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 99 | ikssu
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 100 | imp
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 101 | Impact
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 102 | inSec
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 103 | Jelly
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 104 | Jett
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 105 | Jiwoo
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 106 | Joker
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 107 | Juhan
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 108 | Jun
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 109 | Justice
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 110 | Kabbie
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 111 | Kael
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 112 | KaKAO
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 113 | Kanavi
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 114 | Karis
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 115 | Keine
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 116 | Kellin
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 117 | Keria
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 118 | Key
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 119 | Khan
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 120 | Kiin
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 121 | Kingen
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 122 | Kramer
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 123 | Kuro
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 124 | Kuzan
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 125 | kyeahoo
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 126 | Lava
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 127 | Leaper
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 128 | Lehends
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 129 | Leo
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 130 | Life
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 131 | Lindarang
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 132 | LirA
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 133 | LokeN
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 134 | Looper
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 135 | Lucid
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 136 | MadLife
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 137 | MaHa
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 138 | Malrang
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 139 | MaRin
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 140 | Mata
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 141 | Max
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 142 | Mia
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 143 | Mickey
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 144 | Mightybear
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 145 | Mihile
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 146 | Mir
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 147 | Mireu
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 148 | Moham
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 149 | Moojin
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 150 | Morgan
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 151 | Mowgil
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 152 | Mystic
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 153 | NaeHyun
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 154 | Nagne
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 155 | Noah
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 156 | Nova
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 157 | Nuclear
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 158 | Nuguri
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 159 | Ohq
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 160 | Oner
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 161 | OnFleek
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 162 | Paduck
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 163 | Part
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 164 | PawN
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 165 | Peanut
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 166 | PerfecT
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 167 | Peter
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 168 | Peyz
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 169 | Piccaboo
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 170 | Piglet
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 171 | Pilot
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 172 | Pirean
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 173 | Pleata
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 174 | Pollu
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 175 | PraY
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 176 | Prince
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 177 | Profit
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 178 | Pullbae
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 179 | Punch
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 180 | Pyosik
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 181 | Quad
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 182 | Quantum
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 183 | Raise
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 184 | Raptor
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 185 | Rascal
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 186 | Reignover
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 187 | Rich
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 188 | Roach
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 189 | Rookie
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 190 | Route
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 191 | Ruler
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 192 | Rush
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 193 | Ryu
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 194 | SamD
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 195 | Samver
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 196 | Sangyoon
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 197 | Save
+2025-05-12 17:18:31 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 198 | Score
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 199 | Scout
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 200 | Secret
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 201 | SeongHwan
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 202 | SeTab
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 203 | ShowMaker
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 204 | Shy
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 205 | Sky
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 206 | Smeb
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 207 | SnowFlower
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 208 | SoHwan
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 209 | Space
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 210 | Spirit
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 211 | Sponge
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 212 | SSol
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 213 | Ssumday
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 214 | Stitch
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 215 | Summit
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 216 | Sword
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 217 | Sylvie
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 218 | Taeyoon
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 219 | Tank
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 220 | Tarzan
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 221 | Teddy
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 222 | Tempt
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 223 | Thal
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 224 | Tom
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 225 | Totoro
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 226 | TrAce
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 227 | Trick
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 228 | Trigger
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 229 | TusiN
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 230 | Ucal
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 231 | Umti
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 232 | Untara
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 233 | VicLa
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 234 | Viper
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 235 | vital
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 236 | Vsta
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 237 | Watch
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 238 | Willer
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 239 | Winged
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 240 | Wiz
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 241 | Wolf
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 242 | Wraith
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 243 | yoHan
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 244 | Youngjae
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 245 | Zefa
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 246 | Zeka
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 247 | Zenit
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 248 | Zero
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 249 | Zeus
+2025-05-12 17:18:32 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 250 | Zzus
+2025-05-12 17:18:32 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:33 INFO  p.p.d.w.c.WhoareyouController - Who Are you?
+2025-05-12 17:18:35 INFO  p.p.d.w.service.WheareyouService - Input : faker | Answer : Grizzly
+2025-05-12 17:18:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:18:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-05-12 17:18:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-05-12 17:18:55 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-05-12 17:18:55 INFO  p.p.ProgamerquizApplication - Starting ProgamerquizApplication using Java 17.0.12 with PID 38884 (/Users/jeontak/Desktop/coding/progamerquiz/build/classes/java/main started by jeontak in /Users/jeontak/Desktop/coding/progamerquiz)
+2025-05-12 17:18:55 INFO  p.p.ProgamerquizApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-12 17:18:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-12 17:18:55 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 5 JPA repository interfaces.
+2025-05-12 17:18:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-12 17:18:56 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:56 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-05-12 17:18:56 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-05-12 17:18:56 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-05-12 17:18:56 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 901 ms
+2025-05-12 17:18:56 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-12 17:18:56 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-05-12 17:18:56 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-05-12 17:18:56 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-12 17:18:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-05-12 17:18:56 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@73eae5f
+2025-05-12 17:18:56 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-05-12 17:18:56 WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-12 17:18:57 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-12 17:18:57 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-12 17:18:57 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-12 17:18:58 INFO  o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2025-05-12 17:18:58 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-05-12 17:18:58 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-12 17:18:58 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-12 17:18:58 INFO  p.p.ProgamerquizApplication - Started ProgamerquizApplication in 3.558 seconds (process running for 3.86)
+2025-05-12 17:18:58 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-12 17:18:58 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-12 17:18:58 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-05-12 17:18:58 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:59 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:59 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 1 | 5Kid
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 2 | Acorn
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 3 | ADD
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 4 | Aiming
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 5 | Ambition
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 6 | Andil
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 7 | Arrow
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 8 | Bang
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 9 | BAO
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 10 | Bay
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 11 | Bdd
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 12 | Bengi
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 13 | BeryL
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 14 | Beyond
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 15 | Bible
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 16 | Blanc
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 17 | Bless
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 18 | Bonnie
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 19 | Bono
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 20 | Bubbling
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 21 | Bull
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 22 | BuLLDoG
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 23 | Burdol
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 24 | callme
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 25 | Canna
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 26 | Canyon
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 27 | Cepted
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 28 | Chaser
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 29 | Chei
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 30 | Chieftain
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 31 | Chovy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 32 | Clid
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 33 | Clear
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 34 | Clozer
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 35 | Coco
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 36 | CoreJJ
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 37 | Cpt Jack
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 38 | Crash
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 39 | Crazy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 40 | Croco
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 41 | Crown
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 42 | CuVee
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 43 | Cuzz
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 44 | dade
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 45 | DanDy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 46 | Deft
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 47 | Delight
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 48 | deokdam
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 49 | DnDn
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 50 | Doran
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 51 | Dove
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 52 | Dread
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 53 | DuDu
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 54 | Duke
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 55 | Duro
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 56 | Easyhoon
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 57 | Edge
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 58 | Effort
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 59 | Ellim
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 60 | Emperor
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 61 | Envyy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 62 | Execute
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 63 | Expession
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 64 | Faker
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 65 | FATE
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 66 | FIESTA
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 67 | Fisher
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 68 | Flame
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 69 | Flawless
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 70 | Fly
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 71 | Frog
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 72 | Frozen
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 73 | Fury
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 74 | Gango
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 75 | GBM
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 76 | Ggoong
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 77 | Ghost
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 78 | GIDEON
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 79 | GimGoon
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 80 | Gori
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 81 | GorillA
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 82 | Grizzly
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 83 | GuGer
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 84 | Gumayusi
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 85 | Hachani
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 86 | Harp
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 87 | Haru
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 88 | Helios
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 89 | Helper
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 90 | Hena
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 91 | Hoit
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 92 | Hojin
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 93 | Hoya
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 94 | Huni
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 95 | HyBriD
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 96 | Ian
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 97 | Ice
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 98 | IgNar
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 99 | ikssu
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 100 | imp
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 101 | Impact
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 102 | inSec
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 103 | Jelly
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 104 | Jett
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 105 | Jiwoo
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 106 | Joker
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 107 | Juhan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 108 | Jun
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 109 | Justice
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 110 | Kabbie
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 111 | Kael
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 112 | KaKAO
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 113 | Kanavi
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 114 | Karis
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 115 | Keine
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 116 | Kellin
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 117 | Keria
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 118 | Key
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 119 | Khan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 120 | Kiin
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 121 | Kingen
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 122 | Kramer
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 123 | Kuro
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 124 | Kuzan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 125 | kyeahoo
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 126 | Lava
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 127 | Leaper
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 128 | Lehends
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 129 | Leo
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 130 | Life
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 131 | Lindarang
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 132 | LirA
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 133 | LokeN
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 134 | Looper
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 135 | Lucid
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 136 | MadLife
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 137 | MaHa
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 138 | Malrang
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 139 | MaRin
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 140 | Mata
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 141 | Max
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 142 | Mia
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 143 | Mickey
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 144 | Mightybear
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 145 | Mihile
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 146 | Mir
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 147 | Mireu
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 148 | Moham
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 149 | Moojin
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 150 | Morgan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 151 | Mowgil
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 152 | Mystic
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 153 | NaeHyun
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 154 | Nagne
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 155 | Noah
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 156 | Nova
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 157 | Nuclear
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 158 | Nuguri
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 159 | Ohq
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 160 | Oner
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 161 | OnFleek
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 162 | Paduck
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 163 | Part
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 164 | PawN
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 165 | Peanut
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 166 | PerfecT
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 167 | Peter
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 168 | Peyz
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 169 | Piccaboo
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 170 | Piglet
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 171 | Pilot
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 172 | Pirean
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 173 | Pleata
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 174 | Pollu
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 175 | PraY
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 176 | Prince
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 177 | Profit
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 178 | Pullbae
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 179 | Punch
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 180 | Pyosik
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 181 | Quad
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 182 | Quantum
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 183 | Raise
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 184 | Raptor
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 185 | Rascal
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 186 | Reignover
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 187 | Rich
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 188 | Roach
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 189 | Rookie
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 190 | Route
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 191 | Ruler
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 192 | Rush
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 193 | Ryu
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 194 | SamD
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 195 | Samver
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 196 | Sangyoon
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 197 | Save
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 198 | Score
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 199 | Scout
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 200 | Secret
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 201 | SeongHwan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 202 | SeTab
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 203 | ShowMaker
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 204 | Shy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 205 | Sky
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 206 | Smeb
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 207 | SnowFlower
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 208 | SoHwan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 209 | Space
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 210 | Spirit
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 211 | Sponge
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 212 | SSol
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 213 | Ssumday
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 214 | Stitch
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 215 | Summit
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 216 | Sword
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 217 | Sylvie
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 218 | Taeyoon
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 219 | Tank
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 220 | Tarzan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 221 | Teddy
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 222 | Tempt
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 223 | Thal
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 224 | Tom
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 225 | Totoro
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 226 | TrAce
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 227 | Trick
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 228 | Trigger
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 229 | TusiN
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 230 | Ucal
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 231 | Umti
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 232 | Untara
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 233 | VicLa
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 234 | Viper
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 235 | vital
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 236 | Vsta
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 237 | Watch
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 238 | Willer
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 239 | Winged
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 240 | Wiz
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 241 | Wolf
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 242 | Wraith
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 243 | yoHan
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 244 | Youngjae
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 245 | Zefa
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 246 | Zeka
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 247 | Zenit
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 248 | Zero
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 249 | Zeus
+2025-05-12 17:18:59 INFO  pq.progamerquiz.util.UpdateDBList - 프로게이머 저장 : 250 | Zzus
+2025-05-12 17:19:00 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:19:00 INFO  p.p.controller.HomeController - Home Controller
+2025-05-12 17:19:00 INFO  p.p.d.w.c.WhoareyouController - Who Are you?
+2025-05-12 17:19:03 INFO  p.p.d.w.service.WheareyouService - Input : faker | Answer : Paduck
+2025-05-12 17:19:09 INFO  p.p.d.w.service.WheareyouService - Input : andil | Answer : Paduck
+2025-05-12 17:19:14 INFO  p.p.d.w.service.WheareyouService - Input : paduck | Answer : Paduck
