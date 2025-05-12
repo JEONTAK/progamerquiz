@@ -14,4 +14,9 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
             "FETCH FIRST 1 ROWS ONLY")
     Team findLatestTeamByProgamerId(Long progamerId);
 
+    @Query("SELECT pt.team FROM ProgamerTeam pt " +
+            "WHERE pt.progamer.progamerTag = :progamerTag " +
+            "ORDER BY pt.team.seasonYear DESC " +
+            "FETCH FIRST 1 ROWS ONLY")
+    Team findLatestTeamByProgamerTag(String progamerTag);
 }

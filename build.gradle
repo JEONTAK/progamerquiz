@@ -36,9 +36,6 @@ dependencies {
 	// Spring Boot Validation
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-	// Spring Boot Devtools
-	implementation 'org.springframework.boot:spring-boot-devtools'
-
 	// Library for parsing JSON
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
 
@@ -55,13 +52,6 @@ dependencies {
 	// Monitoring
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'io.micrometer:micrometer-registry-prometheus'
-
-/*	// Spring security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
-
-	// 타임리프에서 스프링시큐리티를 쓸수있게.
-	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.2.RELEASE'
-	implementation 'org.jsoup:jsoup:1.14.3'*/
 
 	// Test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

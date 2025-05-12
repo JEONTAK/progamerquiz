@@ -8,7 +8,7 @@ import pq.progamerquiz.domain.team.dto.response.TeamInfoResponse;
 public class ProgamerWithRecentTeamResponse {
 
     private final Long id;
-    private final String pid;
+    private final String progamerTag;
     private final String name;
     private final String birth;
     private final Position position;
@@ -17,9 +17,9 @@ public class ProgamerWithRecentTeamResponse {
     private final String nationality;
     private final TeamInfoResponse recentTeam;
 
-    private ProgamerWithRecentTeamResponse(Long id, String pid, String name, String birth, Position position, Long leagueWin, Long intlWin, String nationality, TeamInfoResponse recentTeam) {
+    private ProgamerWithRecentTeamResponse(Long id, String progamerTag, String name, String birth, Position position, Long leagueWin, Long intlWin, String nationality, TeamInfoResponse recentTeam) {
         this.id = id;
-        this.pid = pid;
+        this.progamerTag = progamerTag;
         this.name = name;
         this.birth = birth;
         this.position = position;
@@ -29,7 +29,7 @@ public class ProgamerWithRecentTeamResponse {
         this.recentTeam = recentTeam;
     }
 
-    public static ProgamerWithRecentTeamResponse of(Long id, String pid, String name, String birth, Position position, Long league_win, Long intl_win, String nationality, TeamInfoResponse recentTeam) {
-        return new ProgamerWithRecentTeamResponse(id, pid, name, birth, position, league_win, intl_win, nationality, recentTeam);
+    public static ProgamerWithRecentTeamResponse of(Long id, String progamerTag, String name, String birth, Position position, Long league_win, Long intl_win, String nationality, TeamInfoResponse recentTeam) {
+        return new ProgamerWithRecentTeamResponse(id, progamerTag, name, birth, position, league_win, intl_win, nationality, recentTeam);
     }
 }

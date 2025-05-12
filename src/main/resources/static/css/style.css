@@ -731,7 +731,6 @@ body {
     max-width: 20vw;
     max-height: 20vw;
     border-radius: 1vw;
-    filter: blur(30px);
     transition: filter 0.3s;
     pointer-events: none;
 }
@@ -773,19 +772,28 @@ body {
     align-items: stretch;
 }
 .hint-row {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1vw;
-    overflow: visible;
+    display: flex; /* 한 줄에 표시 */
+    flex-wrap: nowrap; /* 줄 바꿈 방지 */
+    justify-content: space-between; /* 힌트 간 간격 균등 */
+    margin-bottom: 10px;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 .hint-item {
-    display: none;
+    flex: 1; /* 동일한 너비로 확장 */
+    margin: 0 5px; /* 힌트 간 간격 */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+ /*   display: none;
     width : 6vw;
     height: fit-content;
     flex-direction: column;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;*/
 }
 .hint-item.fade-in {
     display: flex;
@@ -838,7 +846,11 @@ img.no-blur {
 #player-image {
     width: 50vw;
     height: 50vh;
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, filter 0.3s ease;
+    filter: blur(5px);
+}
+#player-image.correct {
+    filter: blur(0);
 }
 #team-image {
     width: 50vw;

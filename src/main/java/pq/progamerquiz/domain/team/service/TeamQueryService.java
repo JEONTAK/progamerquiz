@@ -19,4 +19,8 @@ public class TeamQueryService {
     public Team findRecentTeamByProgamer(Long progamerId) {
         return teamRepository.findLatestTeamByProgamerId(progamerId);
     }
+
+    public Team findRecentTeamByProgamerTag(String progamerTag) {
+        return teamRepository.findLatestTeamByProgamerTag(progamerTag);
+    }
 }
