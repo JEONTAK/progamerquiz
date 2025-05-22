@@ -2,8 +2,10 @@ package pq.progamerquiz.domain.whoareyou.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.common.exception.CustomException;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
 import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
@@ -47,6 +49,10 @@ public class WheareyouService {
 
         // 정답 확인
         boolean isCorrect = input.trim().equalsIgnoreCase(answer.getProgamerTag());
+
+        if(attempts >= MAX_ATTEMPTS) {
+            input = answer.getProgamerTag();
+        }
 
         // 추측 목록 업데이트
         if (!isCorrect && !guessedList.contains(input)) {
@@ -105,30 +111,10 @@ public class WheareyouService {
         }
     }
 
-    /*public Optional<ProgamerInsertResponse> findByPid(String pid){
-        return progamerService.findByPid(pid);
+    @Transactional
+    public void saveResult(Long id, Long attempts, boolean isCorrect) {
+        log.info(id + " "  + attempts + " " + isCorrect);
+        Whoareyou currentQuiz = whoareyouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
+        currentQuiz.updateResult(attempts, isCorrect);
     }
-
-    public WhoareyouResponse getRandomProgamer() {
-        List<ProgamerInsertResponse> progamer = progamerService.findRandomPlayers(1);
-        return progamer.stream()
-                .findFirst()
-                .map(progamerDto -> WhoareyouResponse.of(Optional.of(progamerDto)))
-                .orElseThrow(() -> new IllegalArgumentException("No progamer found"));
-    }
-
-    public String getImagePath(WhoareyouResponse answer) {
-        String imagePath = "/images/player/" + answer.getId() + ".webp";
-        try{
-            Path path = Paths.get(new ClassPathResource("static" + imagePath).getURI());
-            if (!Files.exists(path)) {
-                log.warn("Image not found for ID: {}, using default image.", answer.getId());
-                return "/images/none.png";
-            }
-        } catch (IOException e) {
-            log.error("Failed to load image for ID: {}, error: {}", answer.getId(), e.getMessage());
-            return "/images/none.png";
-        }
-        return imagePath;
-    }*/
 }

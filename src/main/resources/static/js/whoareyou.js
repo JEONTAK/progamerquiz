@@ -82,6 +82,9 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
     const userInput = document.getElementById('player-input').value.trim();
     const quizData = JSON.parse(localStorage.getItem('quizData'));
     const errorMessage = document.getElementById('error-message-player');
+    const playerImage = document.getElementById("player-image");
+    const quizContainer = document.getElementById("quiz-container");
+    const answerPid = document.getElementById("answer-pid");
 
     if (!userInput) {
         errorMessage.textContent = "Please enter a player name.";
@@ -120,8 +123,13 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
             if (data.attempts >= 8 && !data.correct) {
                 document.getElementById('player-input').disabled = true;
                 document.getElementById('go-to-main').style.display = 'block';
-                errorMessage.textContent = `Game over! The answer was ${data.answer.progamerTag}.`;
-                errorMessage.style.display = 'block';
+                playerImage.classList.add("correct");
+                quizContainer.classList.add("correct");
+                playerImage.style.filter = 'none'; // 블러 처리 해제
+                answerPid.textContent = data.answer.progamerTag;
+                answerPid.style.display = 'block';
+                // 서버에 오답 결과 저장
+                saveQuizResult(quizData, false, data.attempts);
             }
 
             // 입력란 초기화
@@ -135,7 +143,6 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
 });
 
 function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
-    console.log(hintResults);
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
     const playerImage = document.getElementById("player-image");
@@ -143,6 +150,7 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
     const errorMessage = document.getElementById("error-message-player");
     const goMainButton = document.getElementById("go-to-main");
     const totalItems = 8;
+    const answerPid = document.getElementById("answer-pid");
 
     playerInput.setAttribute("placeholder", `${attempts} of ${totalItems}`);
 
@@ -193,7 +201,9 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
         const img = document.createElement("img");
         img.src = hint.icon;
         img.alt = hint.label;
-        img.onerror = () => { img.src = hint.fallbackIcon; };
+        img.onerror = () => {
+            img.src = hint.fallbackIcon;
+        };
         cover.appendChild(img);
 
         const span = document.createElement("span");
@@ -219,13 +229,19 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
         playerInput.disabled = true;
         goMainButton.style.display = "block";
         errorMessage.style.display = "none";
+        answerPid.textContent = answer.progamerTag;
+        answerPid.style.display = 'block';
+        // 정답 시 서버에 결과 저장
+        const quizData = JSON.parse(localStorage.getItem('quizData'));
+        saveQuizResult(quizData, true, attempts);
     } else {
         quizContainer.classList.add("error");
-        errorMessage.textContent = "Wrong answer! Try again.";
+        errorMessage.textContent = "Wrong Answer!";
         errorMessage.style.display = "block";
         setTimeout(() => {
             quizContainer.classList.remove("error");
             quizContainer.style.backgroundColor = "#091428";
+            errorMessage.style.display = "none";
         }, 1000);
     }
 }
@@ -234,11 +250,41 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
 function getHintIcon(hintName, value) {
     if (!value || value === "Unknown") return "/images/none.png";
     switch (hintName) {
-        case "league": return `/images/league/${value}.webp`;
-        case "position": return `/images/position/${value}.png`;
-        case "birth": return `/images/number/number_${value.slice(-2)}.png`;
-        case "leagueWin": return `/images/number/number_${value}.png`;
-        case "intlWin": return `/images/number/number_${value}.png`;
-        default: return "/images/none.png";
+        case "league":
+            return `/images/league/${value}.webp`;
+        case "position":
+            return `/images/position/${value}.png`;
+        case "birth":
+            return `/images/number/number_${value.slice(-2)}.png`;
+        case "leagueWin":
+            return `/images/number/number_${value}.png`;
+        case "intlWin":
+            return `/images/number/number_${value}.png`;
+        default:
+            return "/images/none.png";
     }
+}
+
+// 퀴즈 결과를 서버에 저장하는 함수
+function saveQuizResult(quizData, isCorrect, attempts) {
+    fetch('/whoareyou/saveResult', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: quizData.id,
+            attempts: attempts,
+            isCorrect: isCorrect,
+        })
+    })
+        .catch(error => {
+            console.error('Error saving quiz result:', error);
+        });
+}
+
+function goToMainPage() {
+    // localStorage에서 guideShown 값을 삭제 (초기화)
+    localStorage.removeItem('guideShown');
+    window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
 }

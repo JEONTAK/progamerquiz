@@ -36,4 +36,9 @@ public class Whoareyou extends BaseEntity {
     public static Whoareyou create(Long attempt, boolean correct, Progamer quizProgamer) {
         return new Whoareyou(attempt, correct, quizProgamer);
     }
+
+    public void updateResult(Long attempts, boolean correct) {
+        this.attempt = attempts;
+        this.correct = correct;
+    }
 }
