@@ -1,24 +1,22 @@
 package pq.progamerquiz.domain.team.dto.response;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import pq.progamerquiz.domain.team.entity.Team;
 
 @Getter
-@NoArgsConstructor
 public class TeamInsertResponse {
 
-    private Long id;
-    private String name;
-    private String callName;
-    private Long seasonYear;
-    private String league;
-    private Long springRank;
-    private Long summerRank;
-    private Long msiRank;
-    private Long worldsRank;
-    private Long winterRank;
-    private Long imageId;
+    private final Long id;
+    private final String name;
+    private final String callName;
+    private final Long seasonYear;
+    private final String league;
+    private final Long springRank;
+    private final Long summerRank;
+    private final Long msiRank;
+    private final Long worldsRank;
+    private final Long winterRank;
+    private final Long imageId;
 
     private TeamInsertResponse(Long id, String name, String callName, Long seasonYear, String league, Long springRank, Long summerRank, Long msiRank, Long worldsRank, Long winterRank, Long imageId) {
         this.id = id;

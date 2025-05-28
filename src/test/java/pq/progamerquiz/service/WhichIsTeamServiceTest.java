@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 import pq.progamerquiz.domain.team.service.TeamService;
-import pq.progamerquiz.domain.whichisteam.service.WhichIsTeamService;
-import pq.progamerquiz.domain.whichisteam.dto.response.WhichIsTeamResponse;
+import pq.progamerquiz.domain.quizzes.whichisteam.service.WhichIsTeamService;
+import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamResponse;
 
 import java.util.List;
 

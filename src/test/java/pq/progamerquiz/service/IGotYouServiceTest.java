@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import pq.progamerquiz.domain.igotyou.service.IGotYouService;
+import pq.progamerquiz.domain.quizzes.igotyou.service.IGotYouService;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
-import pq.progamerquiz.domain.igotyou.dto.response.IGotYouResponse;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
 
 import java.util.List;

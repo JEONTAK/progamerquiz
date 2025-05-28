@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
-import pq.progamerquiz.domain.whoareyou.service.WheareyouService;
-import pq.progamerquiz.domain.whoareyou.dto.response.WhoareyouResponse;
+import pq.progamerquiz.domain.quizzes.whoareyou.service.WheareyouService;
+import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoareyouResponse;
 
 import java.util.Collections;
 
