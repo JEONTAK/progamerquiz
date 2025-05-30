@@ -1,9 +1,11 @@
 package pq.progamerquiz.domain.team.dto.response;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import pq.progamerquiz.domain.team.entity.Team;
 
 @Getter
+@NoArgsConstructor(force = true)
 public class TeamInsertResponse {
 
     private final Long id;

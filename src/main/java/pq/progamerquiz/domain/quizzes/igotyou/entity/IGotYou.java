@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "igotyou")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Igotyou {
+public class IGotYou {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +21,12 @@ public class Igotyou {
     @Column(nullable = false)
     private Integer correctQuizCount;
 
+    private IGotYou(Integer totalQuizCount, Integer correctQuizCount) {
+        this.totalQuizCount = totalQuizCount;
+        this.correctQuizCount = correctQuizCount;
+    }
+
+    public static IGotYou create(Integer totalQuizCount, Integer correctQuizCount) {
+        return new IGotYou(totalQuizCount, correctQuizCount);
+    }
 }

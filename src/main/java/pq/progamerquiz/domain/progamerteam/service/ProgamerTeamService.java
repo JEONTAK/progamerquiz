@@ -21,6 +21,6 @@ public class ProgamerTeamService {
     }
 
     public List<TeamSimpleInfoResponse> findTeamsByProgamerId(Long progamerId) {
-        progamerTeamRepository.findTeamsByProgamerId(progamerId);
+        return progamerTeamRepository.findTeamsByProgamerId(progamerId);
     }
 }

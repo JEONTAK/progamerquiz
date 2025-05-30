@@ -111,6 +111,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
             return response.json();
         })
         .then(data => {
+            document.getElementById('player-input').value = "";
             // quizData 업데이트
             quizData.attempts = data.attempts;
             quizData.guessedList = data.guessedList;

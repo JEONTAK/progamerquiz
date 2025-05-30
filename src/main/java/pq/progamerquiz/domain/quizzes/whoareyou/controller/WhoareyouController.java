@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pq.progamerquiz.domain.progamer.mapper.ProgamerMapper;
 import pq.progamerquiz.domain.quizzes.whoareyou.dto.request.WhoareyouRequest;
-import pq.progamerquiz.domain.quizzes.whoareyou.dto.request.WhoareyouSummitAnswerRequest;
+import pq.progamerquiz.domain.quizzes.whoareyou.dto.request.WhoareyouSubmitAnswerRequest;
 import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoareyouResponse;
 import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoareyouSummitAnswerResponse;
 import pq.progamerquiz.domain.quizzes.whoareyou.entity.Whoareyou;
@@ -52,7 +52,7 @@ public class WhoareyouController {
     }
 
     @PostMapping("/submitAnswer")
-    public ResponseEntity<WhoareyouSummitAnswerResponse> submitAnswer(@RequestBody WhoareyouSummitAnswerRequest request) {
+    public ResponseEntity<WhoareyouSummitAnswerResponse> submitAnswer(@RequestBody WhoareyouSubmitAnswerRequest request) {
         WhoareyouSummitAnswerResponse response = wheareyouService.submitAnswer(
                 request.getInput(),
                 request.getAttempts(),

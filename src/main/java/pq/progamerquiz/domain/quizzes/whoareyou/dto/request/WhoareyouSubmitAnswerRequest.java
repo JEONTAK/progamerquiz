@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 @NoArgsConstructor
-public class WhoareyouSummitAnswerRequest {
+public class WhoareyouSubmitAnswerRequest {
 
     private String input;
     private Integer attempts;

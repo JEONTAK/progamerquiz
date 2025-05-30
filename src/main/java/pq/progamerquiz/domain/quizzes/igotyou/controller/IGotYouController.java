@@ -2,15 +2,19 @@ package pq.progamerquiz.domain.quizzes.igotyou.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.request.IGotYouSaveResultRequest;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.request.IGotYouStartRequest;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.request.IGotYouSubmitAnswerRequest;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouQuizResponse;
 import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouResponse;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouResultResponse;
+import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouSubmitAnswerResponse;
 import pq.progamerquiz.domain.quizzes.igotyou.service.IGotYouService;
 
-import java.util.*;
+import java.util.List;
 
 ;
 
@@ -23,7 +27,6 @@ public class IGotYouController {
 
     private final IGotYouService iGotYouService;
 
-
     @GetMapping
     public String renderQuizPage() {
         log.info("I got You!");
@@ -32,99 +35,36 @@ public class IGotYouController {
 
     @PostMapping("/select")
     @ResponseBody
-    public ResponseEntity<IGotYouResponse> setQuiz(@RequestBody Map<String, Integer> payload) {
-        int totalCount = payload.get("totalCount");
-        log.info("Request size : " + totalCount);
+    public ResponseEntity<IGotYouResponse> setQuiz(@RequestBody IGotYouStartRequest request) {
+        log.info("Request size : " + request.getTotalQuizCount());
         log.info("Set Quiz...");
-        List<IGotYouResponse> quizList = iGotYouService.setQuizLists(totalCount);
+        List<IGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount());
         log.info("Finish Set Quiz...");
-        for (IGotYouResponse IGotYouResponse : quizList) {
-            log.info(IGotYouResponse.getIndex() + " : " + IGotYouResponse.getProgamerTag());
-            for (int i = 0; i < IGotYouResponse.getTeams().size(); i++) {
-                log.info("      Team : " + IGotYouResponse.getTeams().get(i).getCallName() + " (" + IGotYouResponse.getTeamYears().get(i) +")");
+        for (IGotYouQuizResponse IGotYouQuizResponse : quizList) {
+            log.info(IGotYouQuizResponse.getIndex() + " : " + IGotYouQuizResponse.getProgamerTag());
+            for (int i = 0; i < IGotYouQuizResponse.getTeams().size(); i++) {
+                log.info("      Team : " + IGotYouQuizResponse.getTeams().get(i).getCallName() + " (" + IGotYouQuizResponse.getTeams().get(i).getSeasonYear() +")");
             }
         }
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("quizList", quizList);
-        response.put("correctCount", 0);
-        response.put("totalCount", totalCount);
-        response.put("currentIndex", 0);
-        return ResponseEntity.ok(response);
-    }
-
-    @PostMapping("/quiz")
-    @ResponseBody
-    public ResponseEntity<Map<String, Object>> gettingQuiz(@RequestBody Map<String, Object> payload) {
-        List<IGotYouResponse> quizList = ((List<?>) payload.get("quizList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouResponse.class))
-                .toList();
-        int currentIndex = (int) payload.get("currentIndex");
-        log.info("Current : " + currentIndex + " / "
-                + quizList.get(currentIndex).getName() + " / " + quizList.get(currentIndex).getProgamerTag());
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("quizList", quizList);
-        response.put("currentIndex", currentIndex);
-        response.put("currentPlayer", quizList.get(currentIndex));
-
+        IGotYouResponse response = iGotYouService.setQuiz(quizList.get(0).getId(), quizList);
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/submitAnswer")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> submitAnswer(@RequestBody Map<String, Object> payload) {
-        String userInput = (String) payload.get("input");
-        int currentIndex = (int) payload.get("currentIndex");
-        int correctCount = (int) payload.get("correctCount");
-        int totalCount = (int) payload.get("totalCount");
-        List<IGotYouResponse> quizList = ((List<?>) payload.get("quizList")).stream()
-                .map(item -> jacksonObjectMapper.convertValue(item, IGotYouResponse.class))
-                .toList();
-        String isSubmitted = "true";
-        String isCorrect = "none";
-
-        log.info("Submitting answer: " + userInput);
-        Map<String, Object> response = new HashMap<>();
-        Optional<ProgamerInsertResponse> submitProgamer = iGotYouService.findByPid(userInput);
-        if (!submitProgamer.isEmpty()) {
-            isSubmitted = "true";
-            if (iGotYouService.isAnswer(submitProgamer, quizList.get(currentIndex))) {
-                isCorrect = "true";
-                correctCount++;
-            } else {
-                isCorrect = "false";
-            }
-        } else {
-            isSubmitted = "false";
-            isCorrect = "none";
-        }
-        response.put("isSubmitted", isSubmitted);
-        response.put("isCorrect", isCorrect);
-        response.put("correctCount", correctCount);
-        response.put("currentPlayer", quizList.get(currentIndex));
-        response.put("totalCount", totalCount);
-        response.put("currentIndex", ++currentIndex);
-
-        log.info("isSubmitted: " + isSubmitted
-                + "\nisCorrect: " + isCorrect
-                + "\ncurrentIndex: " + currentIndex
-                + "\ncorrectCount: " + correctCount
-                + "\ntotalCount: " + payload.get("totalCount"));
+    public ResponseEntity<IGotYouSubmitAnswerResponse> submitAnswer(@RequestBody IGotYouSubmitAnswerRequest request) {
+        log.info("Submitting answer: " + request.getInput());
+        IGotYouSubmitAnswerResponse response = iGotYouService.submitAnswer(request.getId(), request.getIndex(), request.getCorrectQuizCount(), request.getTotalQuizCount(), request.getInput());
         return ResponseEntity.ok(response);
     }
 
     // 퀴즈 끝난 후, 맞춘 개수와 전체 개수를 넘기는 /end 처리
-    @GetMapping("/end")
+    @PostMapping("/end")
     @ResponseBody
-    public ResponseEntity<Map<String, Object>> quizEnd(@RequestBody Map<String, Object> payload) {
-        int correctCount = (int) payload.get("correctCount");
-        int totalCount = (int) payload.get("totalCount");
-        log.info("Finish Quiz (I Got you!) Result : " + correctCount + " / " + totalCount);
-        Map<String, Object> result = new HashMap<>();
-        result.put("correctCount", correctCount);
-        result.put("totalCount", totalCount);
-        return new ResponseEntity<>(result, HttpStatus.OK); // 결과를 JSON 형태로 반환
+    public ResponseEntity<IGotYouResultResponse> quizEnd(@RequestBody IGotYouSaveResultRequest request) {
+        log.info("Finish Quiz (I Got you!) Result : " + request.getCorrectQuizCount() + " / " + request.getTotalQuizCount());
+        IGotYouResultResponse response = iGotYouService.saveResult(request.getId(), request.getCorrectQuizCount(), request.getTotalQuizCount());
+        return ResponseEntity.ok(response);
     }
 }
 

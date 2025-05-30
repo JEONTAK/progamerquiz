@@ -2,8 +2,6 @@ package pq.progamerquiz.domain.quizzes.igotyou.dto.response;
 
 
 import lombok.Getter;
-import pq.progamerquiz.common.enums.Position;
-import pq.progamerquiz.domain.team.dto.response.TeamSimpleInfoResponse;
 
 import java.util.List;
 
@@ -11,21 +9,21 @@ import java.util.List;
 @Getter
 public class IGotYouResponse {
 
-    private final Long index;
     private final Long id;
-    private final String progamerTag;
-    private final Position position;
-    private final List<TeamSimpleInfoResponse> teams;
+    private final Integer index;
+    private final Integer totalQuizCount;
+    private final Integer correctQuizCount;
+    private final List<IGotYouQuizResponse> quizList;
 
-    private IGotYouResponse(Long index, Long id, String progamerTag, Position position, List<TeamSimpleInfoResponse> teams) {
-        this.index = index;
+    private IGotYouResponse(Long id, Integer index, Integer totalQuizCount, Integer correctQuizCount, List<IGotYouQuizResponse> quizList) {
         this.id = id;
-        this.progamerTag = progamerTag;
-        this.position = position;
-        this.teams = teams;
+        this.index = index;
+        this.totalQuizCount = totalQuizCount;
+        this.correctQuizCount = correctQuizCount;
+        this.quizList = quizList;
     }
 
-    public static IGotYouResponse of(Long idx, Long id, String progamerTag, Position position, List<TeamSimpleInfoResponse> teams) {
-        return new IGotYouResponse(idx, id, progamerTag, position, teams);
+    public static IGotYouResponse of(Long id, Integer index, Integer totalQuizCount, Integer correctQuizCount, List<IGotYouQuizResponse> list) {
+        return new IGotYouResponse(id, index, totalQuizCount, correctQuizCount, list);
     }
 }
