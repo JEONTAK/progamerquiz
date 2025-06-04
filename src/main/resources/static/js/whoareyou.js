@@ -124,9 +124,9 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
             if (data.attempts >= 8 && !data.correct) {
                 document.getElementById('player-input').disabled = true;
                 document.getElementById('go-to-main').style.display = 'block';
-                playerImage.classList.add("correct");
-                quizContainer.classList.add("correct");
+                playerImage.classList.add("error");
                 playerImage.style.filter = 'none'; // 블러 처리 해제
+                playerImage.style.backgroundColor = "#dc3545";
                 answerPid.textContent = data.answer.progamerTag;
                 answerPid.style.display = 'block';
                 // 서버에 오답 결과 저장
@@ -138,7 +138,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
         })
         .catch(error => {
             console.error("Error:", error);
-            errorMessage.textContent = "An error occurred. Please try again.";
+            errorMessage.textContent = "해당 선수는 존재하지 않습니다. 다시 입력해 주세요.";
             errorMessage.style.display = "block";
         });
 });
@@ -226,22 +226,19 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
     quizContainer.style.transition = "background-color 1s ease";
     if (isCorrect) {
         playerImage.classList.add("correct");
-        quizContainer.classList.add("correct");
         playerInput.disabled = true;
         goMainButton.style.display = "block";
         errorMessage.style.display = "none";
         answerPid.textContent = answer.progamerTag;
         answerPid.style.display = 'block';
+        playerImage.style.backgroundColor = "#28a745";
         // 정답 시 서버에 결과 저장
         const quizData = JSON.parse(localStorage.getItem('quizData'));
         saveQuizResult(quizData, true, attempts);
     } else {
-        quizContainer.classList.add("error");
-        errorMessage.textContent = "Wrong Answer!";
+        errorMessage.textContent = "틀렸습니다!";
         errorMessage.style.display = "block";
         setTimeout(() => {
-            quizContainer.classList.remove("error");
-            quizContainer.style.backgroundColor = "#091428";
             errorMessage.style.display = "none";
         }, 1000);
     }

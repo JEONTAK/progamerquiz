@@ -40,6 +40,7 @@ public class WhoareyouController {
     public ResponseEntity<WhoareyouResponse> startWhoareyou() {
         Whoareyou whoareyou = wheareyouService.startQuiz();
         List<String> guessedList = new ArrayList<>();
+        log.info(whoareyou.getQuizProgamer().getProgamerTag());
         return ResponseEntity.ok(
                 WhoareyouResponse.of(
                         whoareyou.getId(),
