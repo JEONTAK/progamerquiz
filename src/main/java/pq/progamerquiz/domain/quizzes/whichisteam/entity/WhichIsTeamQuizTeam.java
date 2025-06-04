@@ -10,7 +10,7 @@ import pq.progamerquiz.domain.team.entity.Team;
 @Table(name = "whichisteam_team")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class WhichisteamTeam {
+public class WhichIsTeamQuizTeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,9 +18,18 @@ public class WhichisteamTeam {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "whichisteam_id", nullable = false)
-    private Whichisteam whichisteam;
+    private WhichIsTeam whichisteam;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
     private Team team;
+
+    private WhichIsTeamQuizTeam(WhichIsTeam whichisteam, Team team) {
+        this.whichisteam = whichisteam;
+        this.team = team;
+    }
+
+    public static WhichIsTeamQuizTeam create(WhichIsTeam whichisteam, Team team) {
+        return new WhichIsTeamQuizTeam(whichisteam, team);
+    }
 }

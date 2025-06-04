@@ -19,4 +19,7 @@ public interface TeamRepository extends JpaRepository<Team, Long> {
             "ORDER BY pt.team.seasonYear DESC " +
             "FETCH FIRST 1 ROWS ONLY")
     Team findLatestTeamByProgamerTag(String progamerTag);
+
+    @Query("SELECT t FROM Team t ORDER BY RAND() LIMIT 1")
+    Team findRandomTeam();
 }

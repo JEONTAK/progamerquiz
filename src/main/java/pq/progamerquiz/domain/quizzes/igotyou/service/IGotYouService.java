@@ -15,8 +15,8 @@ import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouResponse;
 import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouResultResponse;
 import pq.progamerquiz.domain.quizzes.igotyou.dto.response.IGotYouSubmitAnswerResponse;
 import pq.progamerquiz.domain.quizzes.igotyou.entity.IGotYou;
-import pq.progamerquiz.domain.quizzes.igotyou.entity.IGotYouProgamer;
-import pq.progamerquiz.domain.quizzes.igotyou.repository.IGotYouProgamerRepository;
+import pq.progamerquiz.domain.quizzes.igotyou.entity.IGotYouQuizProgamer;
+import pq.progamerquiz.domain.quizzes.igotyou.repository.IGotYouQuizProgamerRepository;
 import pq.progamerquiz.domain.quizzes.igotyou.repository.IGotYouRepository;
 import pq.progamerquiz.domain.team.dto.response.TeamSimpleInfoResponse;
 
@@ -34,7 +34,7 @@ public class IGotYouService {
     private final ProgamerQueryService progamerQueryService;
     private final ProgamerTeamService progamerTeamService;
     private final IGotYouRepository iGotYouRepository;
-    private final IGotYouProgamerRepository igotYouProgamerRepository;
+    private final IGotYouQuizProgamerRepository igotYouQuizProgamerRepository;
 
     public List<IGotYouQuizResponse> setQuizLists(int totalCount) {
         IGotYou iGotYou = IGotYou.create(totalCount, 0);
@@ -43,7 +43,7 @@ public class IGotYouService {
         return LongStream.range(0, progamerList.size())
                 .mapToObj(i -> {
                     Progamer progamer = progamerList.get((int) i);
-                    igotYouProgamerRepository.save(IGotYouProgamer.create(savedIGotYou, progamer));
+                    igotYouQuizProgamerRepository.save(IGotYouQuizProgamer.create(savedIGotYou, progamer));
                     List<TeamSimpleInfoResponse> teams = progamerTeamService.findTeamsByProgamerId(progamer.getId());
                     return IGotYouQuizResponse.of(savedIGotYou.getId(), i + 1, progamer.getId(), progamer.getProgamerTag(), progamer.getPosition(), teams);
                 })
@@ -56,7 +56,7 @@ public class IGotYouService {
     }
 
     public IGotYouSubmitAnswerResponse submitAnswer(Long id, Integer index, Integer correctQuizCount, Integer totalQuizCount, String input) {
-        List<IGotYouProgamer> quizList = igotYouProgamerRepository.findByIgotyouIdWithProgamer(id);
+        List<IGotYouQuizProgamer> quizList = igotYouQuizProgamerRepository.findByIgotyouIdWithProgamer(id);
         Progamer submitProgamer = progamerQueryService.findByProgamerTag(input);
         if(submitProgamer.getProgamerTag().equalsIgnoreCase(quizList.get(index).getAnswerProgamer().getProgamerTag())) {
             correctQuizCount++;

@@ -40,10 +40,10 @@ public class IGotYouController {
         log.info("Set Quiz...");
         List<IGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount());
         log.info("Finish Set Quiz...");
-        for (IGotYouQuizResponse IGotYouQuizResponse : quizList) {
-            log.info(IGotYouQuizResponse.getIndex() + " : " + IGotYouQuizResponse.getProgamerTag());
-            for (int i = 0; i < IGotYouQuizResponse.getTeams().size(); i++) {
-                log.info("      Team : " + IGotYouQuizResponse.getTeams().get(i).getCallName() + " (" + IGotYouQuizResponse.getTeams().get(i).getSeasonYear() +")");
+        for (IGotYouQuizResponse iGotYouQuizResponse : quizList) {
+            log.info(iGotYouQuizResponse.getIndex() + " : " + iGotYouQuizResponse.getProgamerTag());
+            for (int i = 0; i < iGotYouQuizResponse.getTeams().size(); i++) {
+                log.info("      Team : " + iGotYouQuizResponse.getTeams().get(i).getCallName() + " (" + iGotYouQuizResponse.getTeams().get(i).getSeasonYear() +")");
             }
         }
         IGotYouResponse response = iGotYouService.setQuiz(quizList.get(0).getId(), quizList);

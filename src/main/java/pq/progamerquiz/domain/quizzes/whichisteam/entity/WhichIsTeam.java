@@ -4,16 +4,12 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import pq.progamerquiz.domain.progamer.entity.Progamer;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "whichisteam")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Whichisteam {
+public class WhichIsTeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +21,12 @@ public class Whichisteam {
     @Column(nullable = false)
     private Integer correctQuizCount;
 
-    @OneToMany(mappedBy = "whichisteam", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<WhichisteamTeam> quizTeamList = new ArrayList<>();
+    private WhichIsTeam(Integer totalQuizCount, Integer correctQuizCount) {
+        this.totalQuizCount = totalQuizCount;
+        this.correctQuizCount = correctQuizCount;
+    }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "progamer_id", nullable = false)
-    private Progamer quizProgamer;
-
+    public static WhichIsTeam create(Integer totalQuizCount, Integer correctQuizCount) {
+        return new WhichIsTeam(totalQuizCount, correctQuizCount);
+    }
 }

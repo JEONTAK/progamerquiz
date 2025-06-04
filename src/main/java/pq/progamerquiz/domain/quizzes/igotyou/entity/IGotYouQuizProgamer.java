@@ -10,7 +10,7 @@ import pq.progamerquiz.domain.progamer.entity.Progamer;
 @Table(name = "igotyou_progamer")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class IGotYouProgamer {
+public class IGotYouQuizProgamer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,12 +24,12 @@ public class IGotYouProgamer {
     @JoinColumn(name = "progamer_id", nullable = false)
     private Progamer answerProgamer;
 
-    private IGotYouProgamer(IGotYou igotyou, Progamer answerProgamer) {
+    private IGotYouQuizProgamer(IGotYou igotyou, Progamer answerProgamer) {
         this.igotyou = igotyou;
         this.answerProgamer = answerProgamer;
     }
 
-    public static IGotYouProgamer create(IGotYou igotyou, Progamer answerProgamer) {
-        return new IGotYouProgamer(igotyou, answerProgamer);
+    public static IGotYouQuizProgamer create(IGotYou igotyou, Progamer answerProgamer) {
+        return new IGotYouQuizProgamer(igotyou, answerProgamer);
     }
 }

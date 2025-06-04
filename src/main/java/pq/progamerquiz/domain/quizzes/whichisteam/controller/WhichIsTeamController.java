@@ -1,29 +1,46 @@
 package pq.progamerquiz.domain.quizzes.whichisteam.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.quizzes.whichisteam.service.WhichIsTeamService;
+import pq.progamerquiz.domain.quizzes.whichisteam.dto.request.WhichIsTeamStartRequest;
+import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamQuizResponse;
 import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamResponse;
+import pq.progamerquiz.domain.quizzes.whichisteam.service.WhichIsTeamService;
 
-import java.util.*;
+import java.util.List;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-@Log4j2
+@Slf4j
 @RequestMapping("/whichisteam")
 public class WhichIsTeamController {
 
-    @Autowired
-    private WhichIsTeamService whichIsTeamService;
-    private List<WhichIsTeamResponse> quizList = new ArrayList<>();
-    private String isSubmitted;
-    private String isCorrect;
-    private final int totalIndex = 15;
-    private int correctCount;
-    private int currentIndex;
+    private final WhichIsTeamService whichIsTeamService;
+
+    @GetMapping
+    public String renderQuizPage() {
+        log.info("Which Is Team?");
+        return "quizzes/whichisteam";
+    }
+
+    @PostMapping("/select")
+    @ResponseBody
+    public ResponseEntity<WhichIsTeamResponse> setQuiz(@RequestBody WhichIsTeamStartRequest request) {
+        log.info("Request size : " + request.getTotalQuizCount());
+        log.info("Set Quiz...");
+        List<WhichIsTeamQuizResponse> quizList = whichIsTeamService.setQuizLists(request.getTotalQuizCount());
+        log.info("Finish Set Quiz...");
+        for (WhichIsTeamQuizResponse whichIsTeamQuizResponse : quizList) {
+            log.info(whichIsTeamQuizResponse.getIndex() + " : " + whichIsTeamQuizResponse.getTeamName());
+            for (int i = 0; i < whichIsTeamQuizResponse.getRosters().size(); i++) {
+                log.info("      Progamer : " + whichIsTeamQuizResponse.getRosters().get(i).getProgamerTag());
+            }
+        }
+        WhichIsTeamResponse response = whichIsTeamService.setQuiz(quizList.get(0).getId(), quizList);
+        return ResponseEntity.ok(response);
+    }
 
     /*private void initialize() {
         isSubmitted = "true";

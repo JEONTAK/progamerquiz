@@ -7,6 +7,10 @@ import pq.progamerquiz.domain.progamerteam.repository.ProgamerTeamRepository;
 import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.repository.TeamRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 @Transactional
 @Service
 @RequiredArgsConstructor
@@ -22,5 +26,9 @@ public class TeamQueryService {
 
     public Team findRecentTeamByProgamerTag(String progamerTag) {
         return teamRepository.findLatestTeamByProgamerTag(progamerTag);
+    }
+
+    public List<Team> findRandomTeams(Integer totalQuizCount) {
+        return IntStream.range(0, totalQuizCount).mapToObj(i -> teamRepository.findRandomTeam()).collect(Collectors.toList());
     }
 }
