@@ -29,13 +29,17 @@
             </div>
         </div>
         <div class="quiz-item" data-answer="${answer.id}">
-            <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
+            <div id="question-number" class="question-number">1</div>
+            <!-- 맞춘 개수 / 전체 개수를 표시할 영역 -->
+            <div id="quiz-progress" style="font-size: 18px; font-weight: bold; color: white;">
+                Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
+            </div>
             <form id="playerForm" method="post" autocomplete="off">
                 <div id="error-message-team" class="error-message" style="display: none;">
                 </div>
                 <input id="player-input" name="input" type="text">
                 <div id="suggestions"></div>
-                <img id="player-image" th:src="@{${imagePath}}" alt="Player Image">
+                <img id="team-image" alt="Player Image">
                 <div id = "hintContainer" class="hints-container"></div>
             </form>
         </div>

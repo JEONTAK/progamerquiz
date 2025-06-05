@@ -28,4 +28,8 @@ public class ProgamerTeamService {
     public List<ProgamerSimpleInfoResponse> findProgamersByTeamId(Long teamId) {
         return progamerTeamRepository.findProgamersByTeamId(teamId);
     }
+
+    public List<Long> findTeamIdsWithFiveOrMoreProgamers() {
+        return progamerTeamRepository.findTeamIdsWithFiveOrMoreProgamers();
+    }
 }

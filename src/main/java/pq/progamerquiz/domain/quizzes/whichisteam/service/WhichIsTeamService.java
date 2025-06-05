@@ -5,11 +5,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.common.exception.CustomException;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerSimpleInfoResponse;
 import pq.progamerquiz.domain.progamerteam.service.ProgamerTeamService;
 import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamQuizResponse;
 import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamResponse;
+import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamResultResponse;
+import pq.progamerquiz.domain.quizzes.whichisteam.dto.response.WhichIsTeamSubmitAnswerResponse;
 import pq.progamerquiz.domain.quizzes.whichisteam.entity.WhichIsTeam;
 import pq.progamerquiz.domain.quizzes.whichisteam.entity.WhichIsTeamQuizTeam;
 import pq.progamerquiz.domain.quizzes.whichisteam.repository.WhichIsTeamQuizTeamRepository;
@@ -18,6 +21,7 @@ import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.service.TeamQueryService;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
@@ -25,6 +29,7 @@ import java.util.stream.LongStream;
 @Slf4j
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class WhichIsTeamService {
 
     private final WhichIsTeamRepository whichIsTeamRepository;
@@ -35,7 +40,8 @@ public class WhichIsTeamService {
     public List<WhichIsTeamQuizResponse> setQuizLists(Integer totalQuizCount) {
         WhichIsTeam whichIsTeam = WhichIsTeam.create(totalQuizCount, 0);
         WhichIsTeam savedWhichIsTeam = whichIsTeamRepository.save(whichIsTeam);
-        List<Team> teamList = teamQueryService.findRandomTeams(totalQuizCount);
+        List<Long> teamIds = progamerTeamService.findTeamIdsWithFiveOrMoreProgamers();
+        List<Team> teamList = teamQueryService.findRandomTeams(totalQuizCount, teamIds);
         return LongStream.range(0, teamList.size())
                 .mapToObj(i -> {
                     Team team = teamList.get((int) i);
@@ -49,30 +55,21 @@ public class WhichIsTeamService {
     public WhichIsTeamResponse setQuiz(Long id, List<WhichIsTeamQuizResponse> quizList) {
         WhichIsTeam whichIsTeam = whichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
         return WhichIsTeamResponse.of(whichIsTeam.getId(), 0, whichIsTeam.getTotalQuizCount(), whichIsTeam.getCorrectQuizCount(), quizList);
-
     }
 
-   /* public List<WhichIsTeamResponse> getTeams(int totalCount, String league) {
-        List<TeamDto> teamList = teamService.findRandomTeams(totalCount, league);
-        List<WhichIsTeamResponse> quizList = new ArrayList<>();
-
-        for(int i = 1 ; i <= teamList.size(); i++) {
-            quizList.add(WhichIsTeamResponse.of(i, teamList.get(i - 1)));
+    public WhichIsTeamSubmitAnswerResponse submitAnswer(Long id, Integer index, Integer correctQuizCount, Integer totalQuizCount, String input) {
+        List<WhichIsTeamQuizTeam> quizList = whichIsTeamQuizTeamRepository.findByWhichIsTeamIddWithTeam(id);
+        List<Team> submitTeam = teamQueryService.findByTeamName(input);
+        if (submitTeam.stream().anyMatch(team -> Objects.equals(team.getId(), quizList.get(index).getTeam().getId()))) {
+            correctQuizCount++;
         }
-        return quizList;
+
+        return WhichIsTeamSubmitAnswerResponse.of(id, index, correctQuizCount, totalQuizCount);
     }
 
-
-    public List<TeamDto> findByName(String teamName){
-        return teamService.findByNameOrCallName(teamName);
+    public WhichIsTeamResultResponse saveResult(Long id, Integer correctQuizCount, Integer totalQuizCount) {
+        WhichIsTeam whichIsTeam = whichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        whichIsTeamRepository.updateCorrectQuizCount(id, correctQuizCount);
+        return WhichIsTeamResultResponse.of(whichIsTeam.getId(), correctQuizCount, totalQuizCount);
     }
-
-    public boolean isAnswer(List<TeamDto> teamList, WhichIsTeamResponse whichIsTeamResponse) {
-        for (TeamDto teamDto : teamList) {
-            if (teamDto.getName().equals(whichIsTeamResponse.getTeamName())) {
-                return true;
-            }
-        }
-        return false;
-    }*/
 }

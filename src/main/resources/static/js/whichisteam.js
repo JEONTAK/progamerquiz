@@ -9,6 +9,35 @@ function showGuide() {
 function closeGuide() {
     const guideOverlay = document.getElementById('guide-overlay');
     guideOverlay.style.display = 'none';
+
+    // 서버로 totalCount 값을 전송
+    fetch('/whichisteam/select', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({totalQuizCount: 15}),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                console.error("Error initializing quiz:", data.error);
+            } else {// 상태를 로컬로 저장
+                localStorage.setItem('quizData', JSON.stringify({
+                    id : data.id,
+                    index: data.index,
+                    totalQuizCount: data.totalQuizCount,
+                    correctQuizCount: data.correctQuizCount,
+                    quizList: data.quizList
+                }));
+                console.log(data);
+                showHint(data.quizList[0], data.index, data.correctQuizCount, data.totalQuizCount); // 첫 번째 퀴즈 표시
+            }
+        })
+        .catch(error => {
+            console.error('Error setting up quiz:', error);
+        });
+
     // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
     localStorage.setItem('guideShown', 'true');
 }
@@ -21,11 +50,7 @@ window.onload = function() {
         showGuide();
     }
 };
-// 메뉴 토글 기능
-function toggleMenu() {
-    document.body.classList.toggle('menu-open');
-    document.querySelector('.content-container').classList.toggle('menu-open');
-}
+
 
 function goToMainPage() {
     // localStorage에서 guideShown 값을 삭제 (초기화)
@@ -101,38 +126,12 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error('Error fetching JSON:', error));
 });
 
-const playerImage =  document.getElementById('player-image');
+const teamImage =  document.getElementById('team-image');
 const playerInput = document.getElementById("player-input");
 
-document.addEventListener('DOMContentLoaded', function () {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const currentIndex = urlParams.get('currentIndex') || 0; // currentIndex를 URL에서 가져옴
-
-    // 서버로부터 currentTeam 데이터를 가져옴
-    fetch(`/whichisteam/quiz/data?currentIndex=${currentIndex}`)
-        .then(response => {
-            // 서버 응답이 정상적인 경우 (status code가 200)
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json(); // 응답을 JSON으로 파싱
-        })
-        .then(data => {
-            // 서버에서 받은 데이터를 처리
-            const currentTeam = data.currentTeam;
-            console.log('Current Team:', currentTeam);
-
-            // 필요한 처리 로직 추가: 예를 들어, 팀 정보를 화면에 표시
-            playerImage.src = `/images/team/${currentTeam.image_path}.webp`;
-            showHint(currentTeam); // currentTeam으로 힌트 표시
-        })
-        .catch(error => {
-            console.error('Error fetching quiz data:', error);
-        });
-});
-
 document.getElementById('player-input').addEventListener('keydown', function(event) {
+    const savedQuizData = JSON.parse(localStorage.getItem('quizData'));
+
     if (event.key === 'Enter') {
         event.preventDefault();
         const userInput = document.getElementById('player-input').value;
@@ -144,222 +143,158 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ input: userInput })
+            body: JSON.stringify({
+                id: savedQuizData.id,
+                index: savedQuizData.index,
+                input: userInput,
+                correctQuizCount: savedQuizData.correctQuizCount,
+                totalQuizCount: savedQuizData.totalQuizCount
+            })
         })
             .then(response => response.json())
             .then(data => {
-                if (data.isSubmitted === "false") {
-                    errorMessage.style.display = 'block';
+                document.getElementById('player-input').value = "";
+                console.log(savedQuizData.correctQuizCount + " " + data.correctQuizCount);
+                if (savedQuizData.correctQuizCount < data.correctQuizCount) {
+                    savedQuizData.correctQuizCount++;
+                    showCorrect(savedQuizData.quizList[savedQuizData.index], quizItem);
+                    savedQuizData.index++;
+
                     setTimeout(() => {
-                        errorMessage.style.display = 'none';
-
+                        goToNextQuiz(quizItem, savedQuizData, savedQuizData.index)
                     }, 2000);  // 1000ms = 1초
-                }else{
-                    errorMessage.style.display = 'none';
-                    if (data.isCorrect === "true") {
-                        showCorrect();
-
-                        setTimeout(() => {
-                            goToNextQuiz()
-                        }, 2000);  // 1000ms = 1초
-                    } else if (data.isCorrect === "false") {
-                        showWrong();
-
-                        setTimeout(() => {
-                            goToNextQuiz()
-                        }, 2000);  // 1000ms = 1초
-                    } else{
-
-                    }
+                } else {
+                    showWrong(savedQuizData.quizList[savedQuizData.index], quizItem);
+                    savedQuizData.index++;
+                    setTimeout(() => {
+                        goToNextQuiz(quizItem, savedQuizData, savedQuizData.index)
+                    }, 2000);  // 1000ms = 1초
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error("Error:", error);
+                errorMessage.textContent = "An error occurred. Please try again.";
+                errorMessage.style.display = "block";
             });
     }
 });
 
 const quizItem = document.querySelector('.quiz-item');
 
-function showCorrect(){
-    // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
-    playerImage.style.filter = "none";
+
+function showCorrect(currentPlayer, quizItem, answerPidElement) {
+    quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "green";
-
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
+    teamImage.style.filter = "none";
 }
 
-function showWrong(){
-    // 이미지 블러 해제 및 배경색 변경 (정답일 때 초록색으로 변경)
-    playerImage.style.filter = "none";
+function showWrong(currentPlayer, quizItem, answerPidElement) {
+    quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "red";
-
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
+    teamImage.style.filter = "none";
 }
 
+// 다음 퀴즈로 이동하는 로직을 index를 사용해 처리
+function goToNextQuiz(quizItem, savedQuizData, index) {
+    // index 값이 제대로 설정되었는지 확인
+    if (isNaN(index)) {
+        console.error("index is not a number. Setting to 0 as default.");
+        savedQuizData.index = 0;  // 기본값으로 0 설정
+    }
+    quizItem.style.transition = 'background-color 1s ease';
+    quizItem.style.backgroundColor = "#c0c3cf";
 
-// 다음 퀴즈로 이동하는 로직을 currentIndex를 사용해 처리
-function goToNextQuiz() {
-    const nextIndex = parseInt(currentIndex) + 1;
-    playerImage.style.filter = "blur(30px)";
-    quizItem.style.backgroundColor = "#091428";
-    playerInput.enabled = true;
-    // currentIndex와 quizList 길이 비교
-    // 15번째 퀴즈 이후에는 끝내기 처리
-    if (nextIndex >= quizList.length) {
-        // 퀴즈가 끝나면 서버에서 맞춘 개수와 전체 개수 가져오기
-        fetch("/whichisteam/end")
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('correct-count-overlay').textContent = data.correctCount;
-                document.getElementById('total-count-overlay').textContent = data.totalCount;
-                document.getElementById('quiz-overlay').style.display = 'flex';  // 오버레이 보이기
-                InitializeConfetti();
-            })
-            .catch(error => console.error("Error fetching quiz results:", error));
+    localStorage.setItem('quizData', JSON.stringify(savedQuizData));
+    if (savedQuizData.index >= savedQuizData.totalQuizCount) {
+        endQuiz(savedQuizData);
     } else {
-        window.location.href = `/whichisteam/quiz?currentIndex=${nextIndex}`;
+        showHint(savedQuizData.quizList[index], savedQuizData.index, savedQuizData.correctQuizCount, savedQuizData.totalQuizCount);
     }
 }
 
-function showHint(currentTeam){
-    const hintContainer = document.getElementById("hintContainer");
-    function showHintNames() {
-        const hintName = ['LEAGUE', 'YEAR', 'SPRING', 'SUMMER', 'WINTER', 'MSI', 'WORLDS'];
-        // 힌트 행 생성
-        const hintRow = document.createElement("div");
-        hintRow.classList.add("hint-row");
-        hintName.forEach(hint => {
-            const hintItem = document.createElement("div");
-            hintItem.classList.add("hint-item");
-            hintItem.style.display = "block";   // 반드시 보이도록 설정
-            hintItem.style.opacity = "1";      // 투명도를 명확히 설정
-            const hintLabel = document.createElement("span");
-            hintLabel.classList.add("hint-name");
-            hintLabel.textContent = hint; // 각 힌트의 라벨 설정
-            hintLabel.style.fontWeight = "bold";  // 강조 효과
-            hintItem.appendChild(hintLabel); // 컨테이너에 라벨을 추가
-            hintRow.appendChild(hintItem);
-            hintRow.classList.add("fade-in");  // hintRow에 fade-in 적용
-            hintRow.childNodes.forEach(item => {
-                item.style.display = "block";   // 모든 자식 요소가 보이게 설정
-                item.style.opacity = "1";      // 모든 자식 요소의 투명도 설정
-            });
-        });
-        hintContainer.appendChild(hintRow);
-    }
+function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
+    playerInput.disabled = false;
+    teamImage.style.filter = "blur(30px)";
+    teamImage.src = `/images/team/${currentTeam.imageId}.webp`;  // 이미지 경로
+    const questionNumberElement = document.getElementById('question-number');
+    questionNumberElement.textContent = index + 1 + `(${currentTeam.seasonYear})` + `(${currentTeam.league})`;  // 문제 번호는 인덱스에 1을 더한 값
+    document.getElementById('total-count').textContent = totalQuizCount;
+    // 맞춘 개수 / 전체 개수를 업데이트
+    document.getElementById('correct-count').textContent = correctQuizCount;
+    const hintContainer = document.getElementById('hintContainer');
+    hintContainer.innerHTML = ''; // 이전 힌트들을 초기화
 
-    showHintNames();
-    function setHintItemSizes() {
-        const containerWidth = hintContainer.offsetWidth;
-        const itemSize = containerWidth / 6; // hint-item 크기를 컨테이너 너비의 6등분으로 설정
+    if (currentTeam) {
+        // 새로운 행을 담을 변수 선언
+        let rowDiv = document.createElement('div');
+        rowDiv.classList.add('hint-row');  // 행을 만들기 위해 클래스를 추가
+        let itemsInRow = 0;  // 현재 행에 추가된 항목 수
+        currentTeam.rosters.forEach((progamer) => {
+            // 팀 항목을 감쌀 div 생성
+            const cover = document.createElement('div');
+            cover.classList.add('cover');  // 스타일 적용을 위한 클래스
 
-        const hintItems = document.querySelectorAll('.hint-item');
-        hintItems.forEach(item => {
-            const cover = item.querySelector('.cover');
-            const img = cover.querySelector('img');
-            const span = item.querySelector('span');
+            // 팀 이미지 추가
+            const progamerImage = document.createElement('img');
+            cover.appendChild(progamerImage);
+            progamerImage.src = `/images/player/${progamer.id}.webp`;  // 이미지 경로
+            progamerImage.alt = progamer.progamerTag;
+            removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 
-            if (cover && img) {
-                cover.style.width = `${itemSize * 0.7}px`;  // cover의 크기 설정
-                cover.style.height = `${itemSize * 0.7}px`; // cover의 크기 설정
-                img.style.width = `${itemSize * 0.6}px`;    // img의 크기 설정
-                img.style.height = `${itemSize * 0.6}px`;   // img의 크기 설정
+
+            // 팀 이름 추가
+            const progamerNameDiv = document.createElement('div');
+            cover.appendChild(progamerNameDiv);
+            progamerNameDiv.classList.add('team-name');
+            progamerNameDiv.textContent = `${progamer.progamerTag}`;
+
+
+            // 현재 행에 항목 추가
+            rowDiv.appendChild(cover);
+            itemsInRow++;
+
+            // 3개 항목이 채워지면 새로운 행 생성
+            if (itemsInRow === 3) {
+                hintContainer.appendChild(rowDiv);  // 완성된 행을 hintContainer에 추가
+                rowDiv = document.createElement('div');  // 새로운 행 생성
+                rowDiv.classList.add('hint-row');
+                itemsInRow = 0;  // 행의 항목 수 초기화
             }
-
-            if (span) {
-                span.style.fontSize = `${itemSize * 0.15}px`; // 텍스트 크기 설정
-            }
         });
-    }
 
-    const hintRow = document.createElement("div");
-    hintRow.classList.add("hint-row");
-    const hintData = [
-        {
-            label: 'League',
-            value: currentTeam.teamLeague,  // answer 값 추가
-            icon: `/images/league/${currentTeam.teamLeague}.webp`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'Year',
-            value: currentTeam.teamYear,  // answer 값 추가
-            icon: `/images/number/number_${currentTeam.teamYear.toString().slice(-2)}.png`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'Spring',
-            value: currentTeam.spring_ranking != null ? currentTeam.spring_ranking : 0,  // answer 값 추가
-            icon: `/images/number/number_${currentTeam.spring_ranking != null ? currentTeam.spring_ranking : 0}.png`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'Summer',
-            value: currentTeam.summer_ranking != null ? currentTeam.summer_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${ currentTeam.summer_ranking != null ? currentTeam.summer_ranking : 0}.png`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'Winter',
-            value: currentTeam.winter_ranking != null ? currentTeam.winter_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${currentTeam.winter_ranking != null ? currentTeam.winter_ranking : 0}.png`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'MSI',
-            value: currentTeam.msi_ranking != null ? currentTeam.msi_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${currentTeam.msi_ranking != null ? currentTeam.msi_ranking : 0}.png`,
-            fallbackIcon: '/images/none.png'
-        },
-        {
-            label: 'WORLDS',
-            value: currentTeam.worlds_ranking != null ? currentTeam.worlds_ranking : 0, // answer 값 추가
-            icon: `/images/number/number_${currentTeam.worlds_ranking != null ? currentTeam.worlds_ranking : 0}.png`,
-            fallbackIcon: '/images/none.png'
+        // 마지막 남은 항목이 있으면 추가 (3개 이하로 남은 경우 처리)
+        if (itemsInRow > 0) {
+            hintContainer.appendChild(rowDiv);
         }
-    ];
+    } else {
+        console.log('No player data available for this index.');
+    }
+}
 
-    hintData.forEach(hint => {
-        const hintItem = document.createElement("div");
-        hintItem.classList.add("hint-item");
-        hintItem.style.display = "block";   // 반드시 보이도록 설정
-        hintItem.style.opacity = "1";      // 투명도를 명확히 설정
-        // 이미지 추가
-        const cover = document.createElement("div");
-        cover.classList.add("cover");
-
-        const img = document.createElement("img");
-
-        img.src = hint.icon;  // 해당 힌트의 아이콘 경로
-        img.onerror = function () {
-            this.src = hint.fallbackIcon;
-        };
-        img.onerror = function() {
-            this.src = hint.fallbackIcon;
-        };
-        img.alt = hint.label;
-        removeBlur(img);
-
-        cover.appendChild(img);
-        // 힌트 값 추가
-        const span = document.createElement("span");
-        span.classList.add("hint-value");
-        span.textContent = hint.value;
-
-        hintItem.appendChild(cover);
-        hintItem.appendChild(span);
-        hintRow.appendChild(hintItem);  // hintItem을 hintRow에 추가
-        hintRow.classList.add("fade-in");  // hintRow에 fade-in 적용
-        hintRow.childNodes.forEach(item => {
-            item.style.display = "block";   // 모든 자식 요소가 보이게 설정
-            item.style.opacity = "1";      // 모든 자식 요소의 투명도 설정
-        });
-    });
-    hintContainer.appendChild(hintRow);
-    setHintItemSizes();
+// 퀴즈 종료 처리
+function endQuiz(savedQuizData) {
+    fetch('/whichisteam/end', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            id: savedQuizData.id,
+            correctQuizCount: savedQuizData.correctQuizCount,
+            totalQuizCount: savedQuizData.totalQuizCount
+        })
+    })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('correct-count-overlay').textContent = savedQuizData.correctQuizCount;
+            document.getElementById('total-count-overlay').textContent = savedQuizData.totalQuizCount;
+            document.getElementById('quiz-overlay').style.display = 'flex';
+        })
+        .catch(error => console.error('Error ending quiz:', error));
 }
 
 function removeBlur(imageElement) {

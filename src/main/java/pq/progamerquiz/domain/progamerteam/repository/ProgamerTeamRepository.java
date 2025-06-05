@@ -27,4 +27,8 @@ public interface ProgamerTeamRepository extends JpaRepository<ProgamerTeam, Long
             ".response.ProgamerSimpleInfoResponse(pt.progamer.id, pt.progamer.progamerTag) FROM ProgamerTeam pt " +
             "WHERE pt.team.id = :teamId ")
     List<ProgamerSimpleInfoResponse> findProgamersByTeamId(Long teamId);
+
+    @Query("SELECT pt.team.id FROM ProgamerTeam pt GROUP BY pt.team.id HAVING COUNT(pt.progamer) >= 5")
+    List<Long> findTeamIdsWithFiveOrMoreProgamers();
+
 }

@@ -1,7 +1,7 @@
 package pq.progamerquiz.domain.quizzes.igotyou.controller;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ import java.util.List;
 //Quiz : I Got you!
 @Controller
 @RequiredArgsConstructor
-@Log4j2
+@Slf4j
 @RequestMapping("/igotyou")
 public class IGotYouController {
 

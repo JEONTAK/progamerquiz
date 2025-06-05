@@ -8,8 +8,6 @@ import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.repository.TeamRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Transactional
 @Service
@@ -28,7 +26,11 @@ public class TeamQueryService {
         return teamRepository.findLatestTeamByProgamerTag(progamerTag);
     }
 
-    public List<Team> findRandomTeams(Integer totalQuizCount) {
-        return IntStream.range(0, totalQuizCount).mapToObj(i -> teamRepository.findRandomTeam()).collect(Collectors.toList());
+    public List<Team> findRandomTeams(Integer totalQuizCount, List<Long> teamIds) {
+        return teamRepository.findRandomTeam(teamIds, totalQuizCount);
+    }
+
+    public List<Team> findByTeamName(String input) {
+        return teamRepository.findAllByName(input);
     }
 }
