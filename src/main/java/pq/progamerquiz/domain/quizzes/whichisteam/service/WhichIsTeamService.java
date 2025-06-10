@@ -58,7 +58,7 @@ public class WhichIsTeamService {
     }
 
     public WhichIsTeamSubmitAnswerResponse submitAnswer(Long id, Integer index, Integer correctQuizCount, Integer totalQuizCount, String input) {
-        List<WhichIsTeamQuizTeam> quizList = whichIsTeamQuizTeamRepository.findByWhichIsTeamIddWithTeam(id);
+        List<WhichIsTeamQuizTeam> quizList = whichIsTeamQuizTeamRepository.findByWhichIsTeamIdWithTeam(id);
         List<Team> submitTeam = teamQueryService.findByTeamName(input);
         if (submitTeam.stream().anyMatch(team -> Objects.equals(team.getId(), quizList.get(index).getTeam().getId()))) {
             correctQuizCount++;

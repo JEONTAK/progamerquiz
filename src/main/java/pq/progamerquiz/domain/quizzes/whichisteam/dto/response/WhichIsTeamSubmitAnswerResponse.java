@@ -3,7 +3,6 @@ package pq.progamerquiz.domain.quizzes.whichisteam.dto.response;
 
 import lombok.Getter;
 
-//Quiz : I Got you!
 @Getter
 public class WhichIsTeamSubmitAnswerResponse {
 

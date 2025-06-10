@@ -8,12 +8,13 @@ import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.common.exception.CustomException;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamResponse;
 import pq.progamerquiz.domain.progamer.entity.Progamer;
-import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
 import pq.progamerquiz.domain.progamer.service.ProgamerQueryService;
 import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.HintResult;
-import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoareyouSummitAnswerResponse;
-import pq.progamerquiz.domain.quizzes.whoareyou.entity.Whoareyou;
-import pq.progamerquiz.domain.quizzes.whoareyou.repository.WhoareyouRepository;
+import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoAreYouResponse;
+import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoAreYouSummitAnswerResponse;
+import pq.progamerquiz.domain.quizzes.whoareyou.entity.WhoAreYou;
+import pq.progamerquiz.domain.quizzes.whoareyou.repository.WhoAreYouRepository;
+import pq.progamerquiz.domain.team.dto.response.TeamInfoResponse;
 import pq.progamerquiz.domain.team.entity.Team;
 import pq.progamerquiz.domain.team.service.TeamQueryService;
 
@@ -27,30 +28,62 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
-public class WheareyouService {
+public class WheAreYouService {
 
-    final private ProgamerCommandService progamerCommandService;
     private final ProgamerQueryService progamerQueryService;
-    private final WhoareyouRepository whoareyouRepository;
-    private static final int MAX_ATTEMPTS = 8;
+    private final WhoAreYouRepository whoareyouRepository;
     private final TeamQueryService teamQueryService;
+    private static final int MAX_ATTEMPTS = 8;
 
-    public Whoareyou startQuiz() {
+    public WhoAreYouResponse startQuiz() {
         Progamer randomProgamer = progamerQueryService.findRandomProgamer();
-        Whoareyou whoareyou = Whoareyou.create(0L, false, randomProgamer);
+        WhoAreYou whoareyou = WhoAreYou.create(0L, false, randomProgamer);
         whoareyou = whoareyouRepository.save(whoareyou);
-        return whoareyou;
+        WhoAreYou savedWhoAreYou = whoareyouRepository.findByIdWIthProgamer(whoareyou.getId()).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        Progamer progamer = savedWhoAreYou.getQuizProgamer();
+        Team recentTeam = teamQueryService.findRecentTeamByProgamer(progamer.getId());
+        TeamInfoResponse teamInfoResponse = TeamInfoResponse.of(
+                recentTeam.getId(),
+                recentTeam.getName(),
+                recentTeam.getCallName(),
+                recentTeam.getLeague(),
+                recentTeam.getSeasonYear(),
+                recentTeam.getSpringRank(),
+                recentTeam.getSummerRank(),
+                recentTeam.getMsiRank(),
+                recentTeam.getWorldsRank(),
+                recentTeam.getWinterRank(),
+                recentTeam.getImageId()
+        );
+        List<String> guessedList = new ArrayList<>();
+        log.info(progamer.getProgamerTag());
+        return WhoAreYouResponse.of(
+                        whoareyou.getId(),
+                        ProgamerWithRecentTeamResponse.of(
+                                progamer.getId(),
+                                progamer.getProgamerTag(),
+                                progamer.getName(),
+                                progamer.getBirth(),
+                                progamer.getPosition(),
+                                progamer.getLeagueWin(),
+                                progamer.getIntlWin(),
+                                progamer.getNationality(),
+                                teamInfoResponse
+                        ),
+                        whoareyou.getAttempt(),
+                        whoareyou.isCorrect(),
+                        guessedList
+                );
     }
 
-    public WhoareyouSummitAnswerResponse submitAnswer(String input, Integer attempts, ProgamerWithRecentTeamResponse answer, List<String> guessedList) {
-        log.info("Input : " + input +  " | Answer : " + answer.getProgamerTag(), " | Attempt : " + attempts);
+    public WhoAreYouSummitAnswerResponse submitAnswer(String input, Integer attempts, ProgamerWithRecentTeamResponse answer, List<String> guessedList) {
         // 시도 횟수 증가
         attempts++;
 
         // 정답 확인
         boolean isCorrect = input.trim().equalsIgnoreCase(answer.getProgamerTag());
 
-        if(attempts >= MAX_ATTEMPTS) {
+        if (attempts >= MAX_ATTEMPTS) {
             input = answer.getProgamerTag();
         }
 
@@ -63,13 +96,12 @@ public class WheareyouService {
         List<HintResult> hintResults = compareHints(input, answer.getProgamerTag());
 
         // 응답 생성
-        return WhoareyouSummitAnswerResponse.of(isCorrect, attempts, answer, hintResults, guessedList);
+        return WhoAreYouSummitAnswerResponse.of(isCorrect, attempts, answer, hintResults, guessedList);
     }
 
     private List<HintResult> compareHints(String input, String answer) {
         List<HintResult> results = new ArrayList<>();
 
-        // 예: 프로게이머 데이터 조회 (실제로는 DB 또는 JSON에서 조회)
         Progamer inputProgamer = progamerQueryService.findByProgamerTag(input);
         Progamer answerProgamer = progamerQueryService.findByProgamerTag(answer);
         Team inputRecentTeam = teamQueryService.findRecentTeamByProgamerTag(input);
@@ -113,8 +145,7 @@ public class WheareyouService {
 
     @Transactional
     public void saveResult(Long id, Long attempts, boolean isCorrect) {
-        log.info(id + " "  + attempts + " " + isCorrect);
-        Whoareyou currentQuiz = whoareyouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
+        WhoAreYou currentQuiz = whoareyouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
         currentQuiz.updateResult(attempts, isCorrect);
     }
 }

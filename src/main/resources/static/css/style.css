@@ -786,13 +786,6 @@ body {
     flex-direction: column;
     align-items: center;
     opacity: 1;
- /*   display: none;
-    width : 6vw;
-    height: fit-content;
-    flex-direction: column;₩
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;*/
 }
 .hint-item.fade-in {
     display: flex;
@@ -858,6 +851,12 @@ img.no-blur {
     justify-content: center;
     align-items: center;
 }
+
+#team-info {
+    justify-content: center;
+    align-items: center;
+}
+
 .failed-message {
     display: none;
     background-color: #f44336;

@@ -6,7 +6,7 @@ import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamRespon
 import java.util.List;
 
 @Getter
-public class WhoareyouResponse {
+public class WhoAreYouResponse {
 
     private final Long id;
     private final ProgamerWithRecentTeamResponse answer;
@@ -14,7 +14,7 @@ public class WhoareyouResponse {
     private final boolean correct;
     private final List<String> guessedList;
 
-    private WhoareyouResponse(Long id, ProgamerWithRecentTeamResponse answer, Long attempts, boolean correct, List<String> guessedList) {
+    private WhoAreYouResponse(Long id, ProgamerWithRecentTeamResponse answer, Long attempts, boolean correct, List<String> guessedList) {
         this.id = id;
         this.answer = answer;
         this.attempts = attempts;
@@ -22,8 +22,8 @@ public class WhoareyouResponse {
         this.guessedList = guessedList;
     }
 
-    public static WhoareyouResponse of(Long id, ProgamerWithRecentTeamResponse progamerResponse, Long attempt, boolean correct, List<String> guessedList) {
-        return new WhoareyouResponse(id, progamerResponse, attempt, correct, guessedList);
+    public static WhoAreYouResponse of(Long id, ProgamerWithRecentTeamResponse progamerResponse, Long attempt, boolean correct, List<String> guessedList) {
+        return new WhoAreYouResponse(id, progamerResponse, attempt, correct, guessedList);
     }
 
 }

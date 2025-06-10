@@ -7,8 +7,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 import pq.progamerquiz.domain.progamer.service.ProgamerCommandService;
-import pq.progamerquiz.domain.quizzes.whoareyou.service.WheareyouService;
-import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoareyouResponse;
+import pq.progamerquiz.domain.quizzes.whoareyou.service.WheAreYouService;
+import pq.progamerquiz.domain.quizzes.whoareyou.dto.response.WhoAreYouResponse;
 
 import java.util.Collections;
 
@@ -16,13 +16,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
-public class WheareyouServiceTest {
+public class WheAreYouServiceTest {
 
     @Mock
     private ProgamerCommandService progamerCommandService;
 
     @InjectMocks
-    private WheareyouService wheAreYouService;
+    private WheAreYouService wheAreYouService;
 
     @BeforeEach
     void setUp() {
@@ -32,7 +32,7 @@ public class WheareyouServiceTest {
     @Test
     public void getImagePath() {
         // Given
-        WhoareyouResponse quiz1Dto = new WhoareyouResponse(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
+        WhoAreYouResponse quiz1Dto = new WhoAreYouResponse(1L, "progamer123", "PlayerName", 1998L, "MID", 5L, 3L, "Korea", "TeamName", 1L, "LCK");
 
         // When
         String imagePath = wheAreYouService.getImagePath(quiz1Dto);

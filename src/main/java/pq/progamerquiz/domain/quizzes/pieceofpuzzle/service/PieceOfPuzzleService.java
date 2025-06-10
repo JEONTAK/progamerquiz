@@ -2,79 +2,81 @@ package pq.progamerquiz.domain.quizzes.pieceofpuzzle.service;
 
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.common.exception.CustomException;
+import pq.progamerquiz.domain.progamer.dto.response.ProgamerSimpleInfoResponse;
+import pq.progamerquiz.domain.progamer.entity.Progamer;
+import pq.progamerquiz.domain.progamer.service.ProgamerQueryService;
+import pq.progamerquiz.domain.progamerteam.service.ProgamerTeamService;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.dto.response.PieceOfPuzzleQuizResponse;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.dto.response.PieceOfPuzzleResponse;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.dto.response.PieceOfPuzzleResultResponse;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.dto.response.PieceOfPuzzleSubmitAnswerResponse;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.entity.PieceOfPuzzle;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.entity.PieceOfPuzzleQuizTeam;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.repository.PieceOfPuzzleQuizTeamRepository;
+import pq.progamerquiz.domain.quizzes.pieceofpuzzle.repository.PieceOfPuzzleRepository;
+import pq.progamerquiz.domain.team.entity.Team;
+import pq.progamerquiz.domain.team.service.TeamQueryService;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 
-//Quiz : Piece Of Puzzle
 @Service
-@Log4j2
+@Slf4j
 @Transactional
 @RequiredArgsConstructor
 public class PieceOfPuzzleService {
-/*
-    private final TeamService teamService;
-    private final ProgamerService progamerService;*/
 
-  /*  public Optional<ProgamerInsertResponse> findByPid(String pid){
-        return progamerService.findByPid(pid);
+    private final PieceOfPuzzleRepository pieceOfPuzzleRepository;
+    private final PieceOfPuzzleQuizTeamRepository pieceOfPuzzleQuizTeamRepository;
+    private final TeamQueryService teamQueryService;
+    private final ProgamerTeamService progamerTeamService;
+    private final ProgamerQueryService progamerQueryService;
+
+    public List<PieceOfPuzzleQuizResponse> setQuizLists(Integer totalQuizCount) {
+        PieceOfPuzzle pieceOfPuzzle = PieceOfPuzzle.create(totalQuizCount, 0);
+        PieceOfPuzzle savedPieceOfPuzzle = pieceOfPuzzleRepository.save(pieceOfPuzzle);
+        List<Long> teamIds = progamerTeamService.findTeamIdsWithFiveOrMoreProgamers();
+        List<Team> teamList = teamQueryService.findRandomTeams(totalQuizCount, teamIds);
+        return LongStream.range(0, teamList.size())
+                .mapToObj(i -> {
+                    Team team = teamList.get((int) i);
+                    List<ProgamerSimpleInfoResponse> rosters = progamerTeamService.findProgamersByTeamId(team.getId());
+                    List<Long> rosterIds = rosters.stream().map(ProgamerSimpleInfoResponse::getId).toList();
+                    Progamer answerProgamer = progamerQueryService.findOneByIds(rosterIds);
+                    rosters = rosters.stream()
+                            .filter(progamer -> !progamer.getId().equals(answerProgamer.getId()))
+                            .toList();
+                    pieceOfPuzzleQuizTeamRepository.save(PieceOfPuzzleQuizTeam.create(savedPieceOfPuzzle, team, answerProgamer));
+                    return PieceOfPuzzleQuizResponse.of(savedPieceOfPuzzle.getId(), i + 1, team.getName(), team.getSeasonYear(), team.getImageId(), answerProgamer.getId(), answerProgamer.getProgamerTag(), answerProgamer.getPosition(), rosters);
+                })
+                .collect(Collectors.toList());
     }
 
-    public List<PieceOfPuzzleResponse> getTeams(int totalCount, String league) {
-        List<TeamDto> teamList = teamService.findTeamsWithRosterSize(totalCount, league);
-        AtomicInteger quizIdx = new AtomicInteger(1);
-        return teamList
-                .stream()
-                .map(team -> convert(quizIdx.getAndIncrement(), team))
-                .toList();
+    public PieceOfPuzzleResponse setQuiz(Long id, List<PieceOfPuzzleQuizResponse> quizList) {
+        PieceOfPuzzle pieceOfPuzzle = pieceOfPuzzleRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        return PieceOfPuzzleResponse.of(pieceOfPuzzle.getId(), 0, pieceOfPuzzle.getTotalQuizCount(), pieceOfPuzzle.getCorrectQuizCount(), quizList);
     }
 
-    static List<Map<Long, Boolean>> getTwoRandomProgamers(List<ProgamerInsertResponse> roster) {
-        if(roster.size() < 5) {
-            return null;
+    public PieceOfPuzzleSubmitAnswerResponse submitAnswer(Long id, Integer index, Integer correctQuizCount, Integer totalQuizCount, String input) {
+        List<PieceOfPuzzleQuizTeam> quizList = pieceOfPuzzleQuizTeamRepository.findByPieceOfPuzzleIdWithProgamer(id);
+        Progamer submitProgamer = progamerQueryService.findByProgamerTag(input);
+        if (quizList.get(index).getProgamer().getProgamerTag().equals(submitProgamer.getProgamerTag())) {
+            correctQuizCount++;
         }
-        List<Map<Long, Boolean>> answer = new ArrayList<>();
-        List<ProgamerInsertResponse> mutableRoster = new ArrayList<>(roster);
-        Collections.shuffle(mutableRoster);
-        for (ProgamerInsertResponse progamerInsertResponse : mutableRoster.subList(0, 2)) {
-            Map<Long, Boolean> progamerMap = new HashMap<>();
-            progamerMap.put(progamerInsertResponse.getId(), false);  // id를 키로 하고 초기 상태는 false
-            answer.add(progamerMap);
-        }
-        return answer;
+
+        return PieceOfPuzzleSubmitAnswerResponse.of(id, index, correctQuizCount, totalQuizCount);
     }
 
-    public boolean isAnswer(Optional<ProgamerInsertResponse> input, PieceOfPuzzleResponse pieceOfPuzzleResponse) {
-        for (Map<Long, Boolean> answer : pieceOfPuzzleResponse.getAnswer()) {
-            for (Map.Entry<Long, Boolean> entry : answer.entrySet()) {
-                if (input.get().getId().equals(entry.getKey()) && !entry.getValue()) {
-                    entry.setValue(true);
-                    return true;
-                }
-            }
-        }
-        return false;
+    public PieceOfPuzzleResultResponse saveResult(Long id, Integer correctQuizCount, Integer totalQuizCount) {
+        PieceOfPuzzle pieceOfPuzzle = pieceOfPuzzleRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        pieceOfPuzzleRepository.updateCorrectQuizCount(id, correctQuizCount);
+        return PieceOfPuzzleResultResponse.of(pieceOfPuzzle.getId(), correctQuizCount, totalQuizCount);
     }
-
-    public PieceOfPuzzleResponse convert(int idx, TeamDto submitTeam) {
-        List<ProgamerInsertResponse> roster = submitTeam.getRoster();
-        List<Map<Long, Boolean>> answer = getTwoRandomProgamers(roster);
-        if (answer == null) {
-            return null;
-        }
-
-        return new PieceOfPuzzleResponse(
-                (long) idx - 1,
-                submitTeam.getId(),
-                submitTeam.getName(),
-                submitTeam.getSeasonYear(),
-                roster,
-                answer,
-                submitTeam.getImageId(),
-                0,
-                0
-        );
-    }*/
 
 }

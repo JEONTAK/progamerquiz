@@ -17,7 +17,6 @@ import pq.progamerquiz.domain.progamer.repository.ProgamerRepository;
 import pq.progamerquiz.domain.progamerteam.entity.ProgamerTeam;
 import pq.progamerquiz.domain.progamerteam.repository.ProgamerTeamRepository;
 import pq.progamerquiz.domain.quiz.dto.QuizDto;
-import pq.progamerquiz.domain.quiz.dto.QuizMapper;
 import pq.progamerquiz.domain.quiz.entity.Quiz;
 import pq.progamerquiz.domain.quiz.service.QuizService;
 import pq.progamerquiz.domain.team.dto.response.TeamInsertResponse;
@@ -44,12 +43,6 @@ public class UpdateDBList {
     private final ProgamerTeamRepository progamerTeamRepository;
 
     public void initializeTeams() {
-  /*      List<Team> existingTeams = em.createQuery("SELECT t FROM Team t", Team.class).getResultList();
-        if (!existingTeams.isEmpty()) {
-            log.info("Teams already exist in the database. Skipping initialization.");
-            return;
-        }
-        log.info("No teams found in the database. Loading data from JSON.");*/
         try {
             // JSON 파일에서 ProGamer 객체 리스트로 읽기
             List<TeamInsertResponse> teams = mapper.readValue(
@@ -77,12 +70,6 @@ public class UpdateDBList {
     }
 
     public void initializeProgamers() {
-   /*     List<Progamer> existingProgamers = em.createQuery("SELECT p FROM Progamer p", Progamer.class).getResultList();
-        if (!existingProgamers.isEmpty()) {
-            log.info("Quizzes already exist in the database. Skipping initialization.");
-            return;
-        }
-        log.info("No Quizzes found in the database. Loading data from JSON.");*/
         try {
             // JSON 파일에서 ProGamer 객체 리스트로 읽기
             List<ProgamerInsertResponse> progamers = mapper.readValue(
@@ -128,7 +115,7 @@ public class UpdateDBList {
             rootNode.forEach(node -> {
                 try {
                     QuizDto quizDto = mapper.treeToValue(node, QuizDto.class);  // 예외가 발생할 수 있는 부분
-                    Quiz quiz = QuizMapper.toEntity(quizDto);
+                    Quiz quiz = Quiz.create(quizDto.getId(), quizDto.getUrl(), quizDto.getImageUrl(), quizDto.getTitle(), quizDto.getAltText(), quizDto.getDescription());
                     quizService.saveQuiz(quiz);
                 } catch (JsonProcessingException e) {
                     throw new RuntimeException(e);

@@ -35,8 +35,7 @@
                 Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
             </div>
             <form id="playerForm" method="post" autocomplete="off">
-                <div id="error-message-team" class="error-message" style="display: none;">
-                </div>
+                <div id="error-message-team" class="error-message" style="display: none;"></div>
                 <input id="player-input" name="input" type="text">
                 <div id="suggestions"></div>
                 <img id="team-image" alt="Player Image">
@@ -61,13 +60,6 @@
 <script th:src="@{/js/whichisteam.js}"></script>
 </body>
 <script th:inline="javascript">
-    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const currentIndex = /*[[${currentIndex}]]*/ 0;
-    const isCorrect = /*[[${isCorrect}]]*/ "start";
-    const quizList = /*[[${quizList}]]*/ [];
-    console.log("isSubmitted : " + isSubmitted);
-    console.log("currentIndex : " + currentIndex);
-    console.log("isCorrect : " + isCorrect);
     // 브라우저 언어 가져오기
     const userLang = navigator.language || navigator.userLanguage;
     let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'

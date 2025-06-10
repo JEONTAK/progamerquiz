@@ -245,7 +245,7 @@ function goToNextQuiz(quizItem, answerPidElement, savedQuizData, index) {
     answerPidElement.textContent = '';
     answerPidElement.style.display = 'none';
     quizItem.style.transition = 'background-color 1s ease';
-    quizItem.style.backgroundColor = "#c0c3cf";
+    quizItem.style.backgroundColor = "#091428";
 
     localStorage.setItem('quizData', JSON.stringify(savedQuizData));
     if (savedQuizData.index >= savedQuizData.totalQuizCount) {

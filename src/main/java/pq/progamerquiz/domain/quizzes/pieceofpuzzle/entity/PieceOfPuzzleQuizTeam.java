@@ -11,7 +11,7 @@ import pq.progamerquiz.domain.team.entity.Team;
 @Table(name = "pieceofpuzzle_team")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PieceofpuzzleTeam {
+public class PieceOfPuzzleQuizTeam {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class PieceofpuzzleTeam {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pieceofpuzzle_id", nullable = false)
-    private Pieceofpuzzle pieceofpuzzle;
+    private PieceOfPuzzle pieceofpuzzle;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
@@ -28,4 +28,14 @@ public class PieceofpuzzleTeam {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "progamer_id", nullable = false)
     private Progamer progamer;
+
+    private PieceOfPuzzleQuizTeam(PieceOfPuzzle pieceofpuzzle, Team team, Progamer progamer) {
+        this.pieceofpuzzle = pieceofpuzzle;
+        this.team = team;
+        this.progamer = progamer;
+    }
+
+    public static PieceOfPuzzleQuizTeam create(PieceOfPuzzle pieceOfPuzzle, Team team, Progamer progamer) {
+        return new PieceOfPuzzleQuizTeam(pieceOfPuzzle, team, progamer);
+    }
 }

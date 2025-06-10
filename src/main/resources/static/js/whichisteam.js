@@ -206,7 +206,7 @@ function goToNextQuiz(quizItem, savedQuizData, index) {
         savedQuizData.index = 0;  // 기본값으로 0 설정
     }
     quizItem.style.transition = 'background-color 1s ease';
-    quizItem.style.backgroundColor = "#c0c3cf";
+    quizItem.style.backgroundColor = "#091428";
 
     localStorage.setItem('quizData', JSON.stringify(savedQuizData));
     if (savedQuizData.index >= savedQuizData.totalQuizCount) {

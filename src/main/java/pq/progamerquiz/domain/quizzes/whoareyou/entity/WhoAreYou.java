@@ -11,7 +11,7 @@ import pq.progamerquiz.domain.progamer.entity.Progamer;
 @Table(name = "whoareyou")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Whoareyou extends BaseEntity {
+public class WhoAreYou extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,14 +27,14 @@ public class Whoareyou extends BaseEntity {
     @JoinColumn(name = "progamer_id", nullable = false)
     private Progamer quizProgamer;
 
-    private Whoareyou(Long attempt, boolean correct, Progamer quizProgamer) {
+    private WhoAreYou(Long attempt, boolean correct, Progamer quizProgamer) {
         this.attempt = attempt;
         this.correct = correct;
         this.quizProgamer = quizProgamer;
     }
 
-    public static Whoareyou create(Long attempt, boolean correct, Progamer quizProgamer) {
-        return new Whoareyou(attempt, correct, quizProgamer);
+    public static WhoAreYou create(Long attempt, boolean correct, Progamer quizProgamer) {
+        return new WhoAreYou(attempt, correct, quizProgamer);
     }
 
     public void updateResult(Long attempts, boolean correct) {

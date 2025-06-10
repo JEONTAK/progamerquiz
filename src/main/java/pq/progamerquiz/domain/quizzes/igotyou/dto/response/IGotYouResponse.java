@@ -5,7 +5,6 @@ import lombok.Getter;
 
 import java.util.List;
 
-//Quiz : I Got you!
 @Getter
 public class IGotYouResponse {
 

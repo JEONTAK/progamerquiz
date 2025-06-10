@@ -30,12 +30,25 @@
             </div>
         </div>
         <div class="quiz-item">
+            <div id="question-number" class="question-number">1</div>
+            <!-- 맞춘 개수 / 전체 개수를 표시할 영역 -->
+            <div id="quiz-progress" style="font-size: 18px; font-weight: bold; color: white;">
+                Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
+            </div>
             <form id="playerForm" method="post"  autocomplete="off">
                 <div id="error-message-player" class="error-message" style="display: none;">
                 </div>
-                <div id="teamInfo" class="hints-container">
-                    <span id = "team-name">Team Name</span><span id = "team-year">Year</span>
-                    <img id="team-image" th:src="@{${imagePath}}" alt="Team Image">
+                <div id="quiz-info" class="hints-container">
+                    <div class="hint-row">
+                        <div class="cover">
+                            <img id="team-image" alt="Team Image">
+                            <div id="team-name"></div>
+                        </div>
+                        <div class="cover">
+                            <img id="player-image" alt="Player Image">
+                            <div id="progamer-tag"></div>
+                        </div>
+                    </div>
                 </div>
                 <input id="player-input" name="input" type="text" >
                 <div id="suggestions"></div>
@@ -60,14 +73,6 @@
 <script th:src="@{/js/pieceofpuzzle.js}"></script>
 </body>
 <script th:inline="javascript">
-    const isSubmitted = /*[[${isSubmitted}]]*/ "true";
-    const currentIndex = /*[[${currentIndex}]]*/ 0;
-    const isCorrect = /*[[${isCorrect}]]*/ "start";
-    const quizList = /*[[${quizList}]]*/ [];
-    console.log("currentIndex : " + currentIndex);
-    console.log("isSubmitted : " + isSubmitted);
-    console.log("isCorrect : " + isCorrect);
-
     // 브라우저 언어 가져오기
     const userLang = navigator.language || navigator.userLanguage;
     let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'

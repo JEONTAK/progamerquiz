@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class WhoareyouRequest {
+public class WhoAreYouRequest {
 
     private Long id;
     private Long attempts;

@@ -24,4 +24,16 @@ public class Quiz {
     private String altText;
     private String description;
 
+    private Quiz(Long id, String url, String imageUrl, String title, String altText, String description) {
+        this.id = id;
+        this.url = url;
+        this.imageUrl = imageUrl;
+        this.title = title;
+        this.altText = altText;
+        this.description = description;
+    }
+
+    public static Quiz create(Long id, String url, String imageUrl, String title, String altText, String description) {
+        return new Quiz(id, url, imageUrl, title, altText, description);
+    }
 }

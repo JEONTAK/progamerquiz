@@ -3,7 +3,6 @@ package pq.progamerquiz.domain.quizzes.igotyou.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pq.progamerquiz.domain.quizzes.igotyou.dto.request.IGotYouSaveResultRequest;
 import pq.progamerquiz.domain.quizzes.igotyou.dto.request.IGotYouStartRequest;
@@ -16,10 +15,7 @@ import pq.progamerquiz.domain.quizzes.igotyou.service.IGotYouService;
 
 import java.util.List;
 
-;
-
-//Quiz : I Got you!
-@Controller
+@RestController
 @RequiredArgsConstructor
 @Slf4j
 @RequestMapping("/igotyou")
@@ -27,23 +23,17 @@ public class IGotYouController {
 
     private final IGotYouService iGotYouService;
 
-    @GetMapping
-    public String renderQuizPage() {
-        log.info("I got You!");
-        return "quizzes/igotyou"; // Thymeleaf 또는 정적 페이지를 반환
-    }
-
     @PostMapping("/select")
     @ResponseBody
     public ResponseEntity<IGotYouResponse> setQuiz(@RequestBody IGotYouStartRequest request) {
-        log.info("Request size : " + request.getTotalQuizCount());
-        log.info("Set Quiz...");
+        log.info("[I Got You] Request size : " + request.getTotalQuizCount());
+        log.info("[I Got You] Set Quiz...");
         List<IGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount());
-        log.info("Finish Set Quiz...");
+        log.info("[I Got You] Finish Set Quiz...");
         for (IGotYouQuizResponse iGotYouQuizResponse : quizList) {
-            log.info(iGotYouQuizResponse.getIndex() + " : " + iGotYouQuizResponse.getProgamerTag());
+            log.info("[I Got You] " +  iGotYouQuizResponse.getIndex() + " : " + iGotYouQuizResponse.getProgamerTag());
             for (int i = 0; i < iGotYouQuizResponse.getTeams().size(); i++) {
-                log.info("      Team : " + iGotYouQuizResponse.getTeams().get(i).getCallName() + " (" + iGotYouQuizResponse.getTeams().get(i).getSeasonYear() +")");
+                log.info("[I Got You]      Team : " + iGotYouQuizResponse.getTeams().get(i).getCallName() + " (" + iGotYouQuizResponse.getTeams().get(i).getSeasonYear() +")");
             }
         }
         IGotYouResponse response = iGotYouService.setQuiz(quizList.get(0).getId(), quizList);
@@ -53,7 +43,7 @@ public class IGotYouController {
     @PostMapping("/submitAnswer")
     @ResponseBody
     public ResponseEntity<IGotYouSubmitAnswerResponse> submitAnswer(@RequestBody IGotYouSubmitAnswerRequest request) {
-        log.info("Submitting answer: " + request.getInput());
+        log.info("[I Got You] Submitting answer: " + request.getInput());
         IGotYouSubmitAnswerResponse response = iGotYouService.submitAnswer(request.getId(), request.getIndex(), request.getCorrectQuizCount(), request.getTotalQuizCount(), request.getInput());
         return ResponseEntity.ok(response);
     }
@@ -62,7 +52,7 @@ public class IGotYouController {
     @PostMapping("/end")
     @ResponseBody
     public ResponseEntity<IGotYouResultResponse> quizEnd(@RequestBody IGotYouSaveResultRequest request) {
-        log.info("Finish Quiz (I Got you!) Result : " + request.getCorrectQuizCount() + " / " + request.getTotalQuizCount());
+        log.info("[I Got You] Finish Quiz Result : " + request.getCorrectQuizCount() + " / " + request.getTotalQuizCount());
         IGotYouResultResponse response = iGotYouService.saveResult(request.getId(), request.getCorrectQuizCount(), request.getTotalQuizCount());
         return ResponseEntity.ok(response);
     }

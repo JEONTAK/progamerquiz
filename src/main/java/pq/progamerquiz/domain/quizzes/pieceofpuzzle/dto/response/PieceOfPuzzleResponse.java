@@ -1,33 +1,28 @@
 package pq.progamerquiz.domain.quizzes.pieceofpuzzle.dto.response;
 
-import lombok.*;
-import pq.progamerquiz.domain.progamer.dto.response.ProgamerInsertResponse;
 
-import java.util.ArrayList;
+import lombok.Getter;
+
 import java.util.List;
-import java.util.Map;
 
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 public class PieceOfPuzzleResponse {
 
-    private Long index;
-    private Long teamId;
-    private String teamName;
-    private Long teamYear;
-    private List<ProgamerInsertResponse> roster = new ArrayList<>();
-    private List<Map<Long, Boolean>> answer = new ArrayList<>();
-    private Long image_path;
-    private int correct;
-    private int attempts;
+    private final Long id;
+    private final Integer index;
+    private final Integer totalQuizCount;
+    private final Integer correctQuizCount;
+    private final List<PieceOfPuzzleQuizResponse> quizList;
 
-
-    public void updateAttempts() {
-        this.attempts++;
+    private PieceOfPuzzleResponse(Long id, Integer index, Integer totalQuizCount, Integer correctQuizCount, List<PieceOfPuzzleQuizResponse> quizList) {
+        this.id = id;
+        this.index = index;
+        this.totalQuizCount = totalQuizCount;
+        this.correctQuizCount = correctQuizCount;
+        this.quizList = quizList;
     }
 
-    public void updateCorrect() {
-        this.correct++;
+    public static PieceOfPuzzleResponse of(Long id, Integer index, Integer totalQuizCount, Integer correctQuizCount, List<PieceOfPuzzleQuizResponse> list) {
+        return new PieceOfPuzzleResponse(id, index, totalQuizCount, correctQuizCount, list);
     }
 }

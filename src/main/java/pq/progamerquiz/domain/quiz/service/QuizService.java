@@ -24,7 +24,4 @@ public class QuizService {
         return quizRepository.findAll();
     }
 
-    public Quiz findQuizByUrl(String quizUrl) {
-        return quizRepository.findQuizByUrl(quizUrl);
-    }
 }

@@ -32,4 +32,8 @@ public class ProgamerQueryService {
     public List<Progamer> findRandomPlayers(int totalCount) {
         return IntStream.range(0, totalCount).mapToObj(i -> progamerRepository.findRandomProgamer()).collect(Collectors.toList());
     }
+
+    public Progamer findOneByIds(List<Long> rosterIds) {
+        return progamerRepository.findOneRandomProgamer(rosterIds).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "프로게이머를 찾을 수 없습니다."));
+    }
 }

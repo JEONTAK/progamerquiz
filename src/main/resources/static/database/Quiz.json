@@ -30,21 +30,5 @@
         "title": "Piece of Puzzle",
         "altText": "Find Progamer on particular team",
         "description": ""
-    },
-    {
-        "id": "5",
-        "url": "tictactoe",
-        "imageUrl": "tictactoe.png",
-        "title": "Tic Tac Toe",
-        "altText": "Play Tic Tac Toe",
-        "description": ""
-    },
-    {
-        "id": "6",
-        "url": "progamerbingo",
-        "imageUrl": "progamerbingo.png",
-        "title": "Bingo!",
-        "altText": "Make Bingo",
-        "description": ""
     }
 ]

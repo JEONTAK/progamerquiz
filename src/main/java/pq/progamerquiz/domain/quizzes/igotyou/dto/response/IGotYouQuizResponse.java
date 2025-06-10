@@ -7,7 +7,6 @@ import pq.progamerquiz.domain.team.dto.response.TeamSimpleInfoResponse;
 
 import java.util.List;
 
-//Quiz : I Got you!
 @Getter
 public class IGotYouQuizResponse {
 

@@ -10,5 +10,5 @@ import java.util.List;
 public interface WhichIsTeamQuizTeamRepository extends JpaRepository<WhichIsTeamQuizTeam, Long> {
 
     @Query("SELECT witqt FROM WhichIsTeamQuizTeam witqt JOIN FETCH witqt.team WHERE witqt.whichisteam.id = :whichIsTeamId")
-    List<WhichIsTeamQuizTeam> findByWhichIsTeamIddWithTeam(@Param("whichIsTeamId") Long whichIsTeamId);
+    List<WhichIsTeamQuizTeam> findByWhichIsTeamIdWithTeam(@Param("whichIsTeamId") Long whichIsTeamId);
 }

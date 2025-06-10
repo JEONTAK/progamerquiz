@@ -6,7 +6,7 @@ import pq.progamerquiz.domain.progamer.dto.response.ProgamerWithRecentTeamRespon
 import java.util.List;
 
 @Getter
-public class WhoareyouSummitAnswerResponse {
+public class WhoAreYouSummitAnswerResponse {
 
     private final boolean isCorrect;
     private final Integer attempts;
@@ -14,7 +14,7 @@ public class WhoareyouSummitAnswerResponse {
     private final List<HintResult> hintResults;
     private final List<String> guessedList;
 
-    private WhoareyouSummitAnswerResponse(boolean isCorrect, Integer attempts, ProgamerWithRecentTeamResponse answer, List<HintResult> hintResults, List<String> guessedList) {
+    private WhoAreYouSummitAnswerResponse(boolean isCorrect, Integer attempts, ProgamerWithRecentTeamResponse answer, List<HintResult> hintResults, List<String> guessedList) {
         this.isCorrect = isCorrect;
         this.attempts = attempts;
         this.answer = answer;
@@ -22,7 +22,7 @@ public class WhoareyouSummitAnswerResponse {
         this.guessedList = guessedList;
     }
 
-    public static WhoareyouSummitAnswerResponse of(boolean isCorrect, Integer attempts, ProgamerWithRecentTeamResponse answer, List<HintResult> hintResults, List<String> guessedList) {
-        return new WhoareyouSummitAnswerResponse(isCorrect, attempts, answer, hintResults, guessedList);
+    public static WhoAreYouSummitAnswerResponse of(boolean isCorrect, Integer attempts, ProgamerWithRecentTeamResponse answer, List<HintResult> hintResults, List<String> guessedList) {
+        return new WhoAreYouSummitAnswerResponse(isCorrect, attempts, answer, hintResults, guessedList);
     }
 }
