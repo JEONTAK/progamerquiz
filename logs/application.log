@@ -1850,3 +1850,6 @@
 2025-06-10 13:15:26 INFO  p.p.d.q.w.c.WhoAreYouController - [Who Are You] Submitting answer: Juhan
 2025-06-10 13:15:26 INFO  p.p.d.q.w.c.WhoAreYouController - [Who Are You] Finish Quiz Result : 1 / true
 2025-06-10 13:15:30 INFO  p.p.controller.HomeController - Main Page
+2025-06-10 13:16:18 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-10 13:16:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-06-10 13:16:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
