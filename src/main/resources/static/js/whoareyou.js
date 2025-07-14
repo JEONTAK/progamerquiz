@@ -28,7 +28,7 @@ function closeGuide() {
 
             // player-image src 설정
             const playerImage = document.getElementById("player-image");
-            playerImage.src = data.answer && data.answer.id ? `/images/player/${data.answer.id}.webp` : "/images/none.png";
+            playerImage.src = data.answer && data.answer.id ? `/images/LOL/player/${data.answer.id}.webp` : "/images/none.png";
         })
         .catch(error => console.error("Error starting quiz:", error));
 }
@@ -170,7 +170,7 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
                 value: teamName || "Unknown", // 팀 이름
                 answerValue: answerTeamName || "Unknown",
                 match: hint.match,
-                icon: teamImageId ? `/images/team/${teamImageId}.webp` : "/images/none.png",
+                icon: teamImageId ? `/images/LOL/team/${teamImageId}.webp` : "/images/none.png",
                 fallbackIcon: "/images/none.png",
                 getArrow: null
             };
@@ -249,9 +249,9 @@ function getHintIcon(hintName, value) {
     if (!value || value === "Unknown") return "/images/none.png";
     switch (hintName) {
         case "league":
-            return `/images/league/${value}.webp`;
+            return `/images/LOL/league/${value}.webp`;
         case "position":
-            return `/images/position/${value}.png`;
+            return `/images/LOL/position/${value}.png`;
         case "birth":
             return `/images/number/number_${value.slice(-2)}.png`;
         case "leagueWin":

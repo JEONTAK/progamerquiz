@@ -1,0 +1,3818 @@
+[
+  {
+    "id": "1",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "3-4"
+  },
+  {
+    "id": "2",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "5-8"
+  },
+  {
+    "id": "3",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "4",
+    "name": "Havan Liberty",
+    "callName": "HL",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "13-16"
+  },
+  {
+    "id": "5",
+    "name": "Keyd Stars",
+    "callName": "KS",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "6",
+    "name": "Keyd Stars",
+    "callName": "KS",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "9-12"
+  },
+  {
+    "id": "7",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "3-4"
+  },
+  {
+    "id": "8",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "9",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "5-8"
+  },
+  {
+    "id": "10",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "11",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "1"
+  },
+  {
+    "id": "12",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "5-8"
+  },
+  {
+    "id": "13",
+    "name": "Shark Esports",
+    "callName": "SHK",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "9-10"
+  },
+  {
+    "id": "14",
+    "name": "Team Envy",
+    "callName": "NV",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "15",
+    "name": "Team Envy",
+    "callName": "NV",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "2"
+  },
+  {
+    "id": "16",
+    "name": "Team Vikings",
+    "callName": "VKE",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "17",
+    "name": "Team Vikings",
+    "callName": "VKS",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "18",
+    "name": "Version1",
+    "callName": "V1",
+    "seasonYear": "2021",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "19",
+    "name": "Acend",
+    "callName": "ACE",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "1"
+  },
+  {
+    "id": "20",
+    "name": "Acend",
+    "callName": "ACE",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "5-8"
+  },
+  {
+    "id": "21",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "5-8"
+  },
+  {
+    "id": "22",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "2"
+  },
+  {
+    "id": "23",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "3-4"
+  },
+  {
+    "id": "24",
+    "name": "Gambit Esports",
+    "callName": "GMB",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "2"
+  },
+  {
+    "id": "25",
+    "name": "Gambit Esports",
+    "callName": "GMB",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "1"
+  },
+  {
+    "id": "26",
+    "name": "SuperMassive Blaze",
+    "callName": "SMB",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "9-12"
+  },
+  {
+    "id": "27",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "3-4"
+  },
+  {
+    "id": "28",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2021",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "4"
+  },
+  {
+    "id": "29",
+    "name": "Bren Esports",
+    "callName": "Bren",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "13-16"
+  },
+  {
+    "id": "30",
+    "name": "Crazy Raccoon",
+    "callName": "CR",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "31",
+    "name": "Crazy Raccoon",
+    "callName": "CR",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "9-10"
+  },
+  {
+    "id": "32",
+    "name": "Crazy Raccoon",
+    "callName": "CR",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "9-12"
+  },
+  {
+    "id": "33",
+    "name": "F4Q",
+    "callName": "F4Q",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "9-12"
+  },
+  {
+    "id": "34",
+    "name": "FULL SENSE",
+    "callName": "FS",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "35",
+    "name": "NUTURN Gaming",
+    "callName": "NU",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "3"
+  },
+  {
+    "id": "36",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "13-16"
+  },
+  {
+    "id": "37",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "5-8"
+  },
+  {
+    "id": "38",
+    "name": "Vision Strikers",
+    "callName": "VS",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "39",
+    "name": "Vision Strikers",
+    "callName": "VS",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "5-8"
+  },
+  {
+    "id": "40",
+    "name": "X10 CRIT",
+    "callName": "X10C",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "5-8"
+  },
+  {
+    "id": "41",
+    "name": "X10 Esports",
+    "callName": "X10",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "42",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2021",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "13-16"
+  },
+  {
+    "id": "43",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "44",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "45",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "46",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "11-12"
+  },
+  {
+    "id": "47",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "48",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "49",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "50",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "1"
+  },
+  {
+    "id": "51",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "2"
+  },
+  {
+    "id": "52",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "53",
+    "name": "Ninjas in Pyjamas",
+    "callName": "NIP",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "9-10"
+  },
+  {
+    "id": "54",
+    "name": "OpTic Gaming",
+    "callName": "OPTC",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "2"
+  },
+  {
+    "id": "55",
+    "name": "OpTic Gaming",
+    "callName": "OPTC",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "1"
+  },
+  {
+    "id": "56",
+    "name": "OpTic Gaming",
+    "callName": "OPTC",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "3"
+  },
+  {
+    "id": "57",
+    "name": "The Guard",
+    "callName": "TGRD",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "58",
+    "name": "XSET",
+    "callName": "XSET",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "59",
+    "name": "XSET",
+    "callName": "XSET",
+    "seasonYear": "2022",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "60",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2022",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "61",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "62",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "11-12"
+  },
+  {
+    "id": "63",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "4"
+  },
+  {
+    "id": "64",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "4"
+  },
+  {
+    "id": "65",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "1"
+  },
+  {
+    "id": "66",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "67",
+    "name": "Guild Esports",
+    "callName": "GLD",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "68",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "69",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2022",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "70",
+    "name": "BOOM Esports",
+    "callName": "BME",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "71",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "3"
+  },
+  {
+    "id": "72",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "73",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "74",
+    "name": "Northeption",
+    "callName": "NTH",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "75",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "76",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "4"
+  },
+  {
+    "id": "77",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "2"
+  },
+  {
+    "id": "78",
+    "name": "XERXIA",
+    "callName": "XIA",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "79",
+    "name": "XERXIA",
+    "callName": "XIA",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "9-10"
+  },
+  {
+    "id": "80",
+    "name": "XERXIA",
+    "callName": "XIA",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "81",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "82",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2022",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "3"
+  },
+  {
+    "id": "83",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "84",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "85",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "1"
+  },
+  {
+    "id": "86",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "2"
+  },
+  {
+    "id": "87",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "88",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "6"
+  },
+  {
+    "id": "89",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "90",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "91",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "5"
+  },
+  {
+    "id": "92",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "3"
+  },
+  {
+    "id": "93",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "94",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "95",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "96",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "97",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "4"
+  },
+  {
+    "id": "98",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "99",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2023",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "100",
+    "name": "Attacking Soul Esports",
+    "callName": "ASE",
+    "seasonYear": "2023",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "101",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2023",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "102",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2023",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "103",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2023",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "104",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2023",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "105",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "106",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "4"
+  },
+  {
+    "id": "107",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "1"
+  },
+  {
+    "id": "108",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "109",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "110",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "111",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "112",
+    "name": "Giants",
+    "callName": "GIA",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "113",
+    "name": "Giants",
+    "callName": "GIA",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "114",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "115",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "116",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "117",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "118",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "119",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "120",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "121",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "122",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "123",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2023",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "124",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "125",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "126",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "127",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "128",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "129",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "130",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "2"
+  },
+  {
+    "id": "131",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "3"
+  },
+  {
+    "id": "132",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "133",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "134",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "135",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "136",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "137",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "138",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "139",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "140",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2023",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "141",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "142",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "4"
+  },
+  {
+    "id": "143",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "144",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "145",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "146",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "147",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "148",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "149",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "150",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "151",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "152",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "153",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "154",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "155",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "5"
+  },
+  {
+    "id": "156",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "3"
+  },
+  {
+    "id": "157",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "158",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "159",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "160",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "161",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "162",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "163",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "3"
+  },
+  {
+    "id": "164",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "165",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "166",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "167",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "168",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "169",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "4"
+  },
+  {
+    "id": "170",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "171",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "172",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "6"
+  },
+  {
+    "id": "173",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "11"
+  },
+  {
+    "id": "174",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "11"
+  },
+  {
+    "id": "175",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "176",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "177",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "178",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Champions",
+    "rank": "4"
+  },
+  {
+    "id": "179",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "180",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "1"
+  },
+  {
+    "id": "181",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "182",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2024",
+    "league": "Americas",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "183",
+    "name": "All Gamers",
+    "callName": "AG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "184",
+    "name": "All Gamers",
+    "callName": "AG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "185",
+    "name": "All Gamers",
+    "callName": "AG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "186",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "187",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "5"
+  },
+  {
+    "id": "188",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "189",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "190",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "191",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "192",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "193",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "194",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "1"
+  },
+  {
+    "id": "195",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "196",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "197",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "198",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "199",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "200",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "201",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "202",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "203",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "204",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "205",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "206",
+    "name": "JD Gaming",
+    "callName": "JDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "207",
+    "name": "JD Gaming",
+    "callName": "JDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "11"
+  },
+  {
+    "id": "208",
+    "name": "JD Gaming",
+    "callName": "JDG",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "209",
+    "name": "Nova Esports",
+    "callName": "NV",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "210",
+    "name": "Nova Esports",
+    "callName": "NV",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "211",
+    "name": "Nova Esports",
+    "callName": "NV",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "212",
+    "name": "Titan Esports Club",
+    "callName": "TEC",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "6"
+  },
+  {
+    "id": "213",
+    "name": "Titan Esports Club",
+    "callName": "TEC",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "214",
+    "name": "Titan Esports Club",
+    "callName": "TEC",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "215",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Champions",
+    "rank": "7-8"
+  },
+  {
+    "id": "216",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "217",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "218",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "219",
+    "name": "TYLOO",
+    "callName": "TYL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "220",
+    "name": "TYLOO",
+    "callName": "TYL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "221",
+    "name": "TYLOO",
+    "callName": "TYL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "222",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "223",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "224",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2024",
+    "league": "China",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "225",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "226",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "227",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "228",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "229",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "230",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "231",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "232",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "233",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "234",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "235",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "236",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "237",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "238",
+    "name": "Gentle Mates",
+    "callName": "M8",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "239",
+    "name": "Gentle Mates",
+    "callName": "M8",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "240",
+    "name": "Gentle Mates",
+    "callName": "M8",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "241",
+    "name": "GIANTX",
+    "callName": "GX",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "242",
+    "name": "GIANTX",
+    "callName": "GX",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "243",
+    "name": "GIANTX",
+    "callName": "GX",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "244",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "245",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "246",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "247",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "248",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "6"
+  },
+  {
+    "id": "249",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "11"
+  },
+  {
+    "id": "250",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "11"
+  },
+  {
+    "id": "251",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "252",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "253",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "254",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "2"
+  },
+  {
+    "id": "255",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "256",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "257",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "2"
+  },
+  {
+    "id": "258",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "259",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "260",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "261",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "262",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "263",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "264",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "5"
+  },
+  {
+    "id": "265",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "266",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2024",
+    "league": "EMEA",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "267",
+    "name": "Bleed Esports",
+    "callName": "BLD",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "268",
+    "name": "Bleed Esports",
+    "callName": "BLD",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "9-11"
+  },
+  {
+    "id": "269",
+    "name": "Bleed Esports",
+    "callName": "BLD",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "11"
+  },
+  {
+    "id": "270",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "10-11"
+  },
+  {
+    "id": "271",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "9-11"
+  },
+  {
+    "id": "272",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "10"
+  },
+  {
+    "id": "273",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "5-6"
+  },
+  {
+    "id": "274",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "275",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "276",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "2"
+  },
+  {
+    "id": "277",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "278",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "279",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "2"
+  },
+  {
+    "id": "280",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "1"
+  },
+  {
+    "id": "281",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "282",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "1"
+  },
+  {
+    "id": "283",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "284",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "285",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "9"
+  },
+  {
+    "id": "286",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "9-12"
+  },
+  {
+    "id": "287",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "288",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "3"
+  },
+  {
+    "id": "289",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "290",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "291",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "3"
+  },
+  {
+    "id": "292",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "293",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "294",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "295",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "3-4"
+  },
+  {
+    "id": "296",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "297",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "298",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "7"
+  },
+  {
+    "id": "299",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Champions",
+    "rank": "13-16"
+  },
+  {
+    "id": "300",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "7-9"
+  },
+  {
+    "id": "301",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "302",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "4"
+  },
+  {
+    "id": "303",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "5"
+  },
+  {
+    "id": "304",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "305",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "5-6"
+  },
+  {
+    "id": "306",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "6"
+  },
+  {
+    "id": "307",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "9-11"
+  },
+  {
+    "id": "308",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2024",
+    "league": "Pacific",
+    "seasonName": "Stage2",
+    "rank": "8"
+  },
+  {
+    "id": "309",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "310",
+    "name": "100 Thieves",
+    "callName": "100T",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "311",
+    "name": "2GAME Esports",
+    "callName": "2G",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "312",
+    "name": "2GAME Esports",
+    "callName": "2G",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "313",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "314",
+    "name": "Cloud9",
+    "callName": "C9",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "315",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "316",
+    "name": "Evil Geniuses",
+    "callName": "EG",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "317",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "318",
+    "name": "FURIA Esports",
+    "callName": "FUR",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "319",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "320",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "2"
+  },
+  {
+    "id": "321",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "4"
+  },
+  {
+    "id": "322",
+    "name": "G2 Esports",
+    "callName": "G2",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "323",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "4"
+  },
+  {
+    "id": "324",
+    "name": "KRU Esports",
+    "callName": "KRU",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "325",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "326",
+    "name": "Leviatan",
+    "callName": "LEV",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "327",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "328",
+    "name": "LOUD",
+    "callName": "LOUD",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "329",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "3"
+  },
+  {
+    "id": "330",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "331",
+    "name": "MIBR",
+    "callName": "MIBR",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "332",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "333",
+    "name": "NRG",
+    "callName": "NRG",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "334",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "335",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "336",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "337",
+    "name": "Sentinels",
+    "callName": "SEN",
+    "seasonYear": "2025",
+    "league": "Americas",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "338",
+    "name": "All Gamers",
+    "callName": "AG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "339",
+    "name": "All Gamers",
+    "callName": "AG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "340",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "3"
+  },
+  {
+    "id": "341",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "342",
+    "name": "Bilibili Gaming",
+    "callName": "BLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "343",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "4"
+  },
+  {
+    "id": "344",
+    "name": "Dragon Ranger Gaming",
+    "callName": "DRG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "345",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "346",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Masters1",
+    "rank": "3"
+  },
+  {
+    "id": "347",
+    "name": "EDward Gaming",
+    "callName": "EDG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "348",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "349",
+    "name": "FunPlus Phoenix",
+    "callName": "FPX",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "350",
+    "name": "JD Gaming",
+    "callName": "JDG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "351",
+    "name": "JD Gaming",
+    "callName": "JDG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "352",
+    "name": "Nova Esports",
+    "callName": "NV",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "353",
+    "name": "Nova Esports",
+    "callName": "NV",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "354",
+    "name": "Titan Esports Club",
+    "callName": "TEC",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "355",
+    "name": "Titan Esports Club",
+    "callName": "TEC",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "356",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "357",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Masters1",
+    "rank": "7-8"
+  },
+  {
+    "id": "358",
+    "name": "Trace Esports",
+    "callName": "TE",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "359",
+    "name": "TYLOO",
+    "callName": "TYL",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "360",
+    "name": "TYLOO",
+    "callName": "TYL",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "361",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "362",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "3"
+  },
+  {
+    "id": "363",
+    "name": "Wolves Esports",
+    "callName": "WOL",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "364",
+    "name": "XLG Esports",
+    "callName": "XLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "365",
+    "name": "XLG Esports",
+    "callName": "XLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "366",
+    "name": "XLG Esports",
+    "callName": "XLG",
+    "seasonYear": "2025",
+    "league": "China",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "367",
+    "name": "Apeks",
+    "callName": "APK",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "368",
+    "name": "Apeks",
+    "callName": "APK",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "369",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "370",
+    "name": "BBL Esports",
+    "callName": "BBL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "371",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "372",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "2"
+  },
+  {
+    "id": "373",
+    "name": "Fnatic",
+    "callName": "FNC",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "374",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "4"
+  },
+  {
+    "id": "375",
+    "name": "FUT Esports",
+    "callName": "FUT",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "376",
+    "name": "Gentle Mates",
+    "callName": "M8",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "377",
+    "name": "Gentle Mates",
+    "callName": "M8",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "378",
+    "name": "GIANTX",
+    "callName": "GX",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "379",
+    "name": "GIANTX",
+    "callName": "GX",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "380",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "381",
+    "name": "Karmine Corp",
+    "callName": "KC",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "382",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "383",
+    "name": "KOI",
+    "callName": "KOI",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "384",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "385",
+    "name": "Natus Vincere",
+    "callName": "NAVI",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "386",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "3"
+  },
+  {
+    "id": "387",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "11-12"
+  },
+  {
+    "id": "388",
+    "name": "Team Heretics",
+    "callName": "TH",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "389",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "390",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "391",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Masters2",
+    "rank": "9-10"
+  },
+  {
+    "id": "392",
+    "name": "Team Liquid",
+    "callName": "TL",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "393",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "394",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Masters1",
+    "rank": "4"
+  },
+  {
+    "id": "395",
+    "name": "Team Vitality",
+    "callName": "VIT",
+    "seasonYear": "2025",
+    "league": "EMEA",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "396",
+    "name": "BOOM Esports",
+    "callName": "BME",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "397",
+    "name": "BOOM Esports",
+    "callName": "BME",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "398",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "399",
+    "name": "Detonation FocusMe",
+    "callName": "DFM",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "400",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "1"
+  },
+  {
+    "id": "401",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "5-6"
+  },
+  {
+    "id": "402",
+    "name": "DRX",
+    "callName": "DRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "4"
+  },
+  {
+    "id": "403",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "3"
+  },
+  {
+    "id": "404",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "5-6"
+  },
+  {
+    "id": "405",
+    "name": "Gen.G",
+    "callName": "GEN",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "2"
+  },
+  {
+    "id": "406",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "407",
+    "name": "Global Esports",
+    "callName": "GE",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  },
+  {
+    "id": "408",
+    "name": "Nongshim RedForce",
+    "callName": "NS",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "5-6"
+  },
+  {
+    "id": "409",
+    "name": "Nongshim RedForce",
+    "callName": "NS",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "410",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "411",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "1"
+  },
+  {
+    "id": "412",
+    "name": "Paper Rex",
+    "callName": "PRX",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "3"
+  },
+  {
+    "id": "413",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "7-8"
+  },
+  {
+    "id": "414",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Masters2",
+    "rank": "7-8"
+  },
+  {
+    "id": "415",
+    "name": "Rex Regum Qeon",
+    "callName": "RRQ",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "1"
+  },
+  {
+    "id": "416",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "2"
+  },
+  {
+    "id": "417",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Masters1",
+    "rank": "1"
+  },
+  {
+    "id": "418",
+    "name": "T1",
+    "callName": "T1",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "7-8"
+  },
+  {
+    "id": "419",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "4"
+  },
+  {
+    "id": "420",
+    "name": "TALON",
+    "callName": "TLN",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "5-6"
+  },
+  {
+    "id": "421",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "422",
+    "name": "Team Secret",
+    "callName": "TS",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "11-12"
+  },
+  {
+    "id": "423",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Kickoff",
+    "rank": "9-12"
+  },
+  {
+    "id": "424",
+    "name": "ZETA DIVISION",
+    "callName": "ZETA",
+    "seasonYear": "2025",
+    "league": "Pacific",
+    "seasonName": "Stage1",
+    "rank": "9-10"
+  }
+]

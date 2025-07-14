@@ -219,7 +219,7 @@ function goToNextQuiz(quizItem, savedQuizData, index) {
 function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
     teamImage.style.filter = "blur(30px)";
-    teamImage.src = `/images/team/${currentTeam.imageId}.webp`;  // 이미지 경로
+    teamImage.src = `/images/LOL/team/${currentTeam.imageId}.webp`;  // 이미지 경로
     const questionNumberElement = document.getElementById('question-number');
     questionNumberElement.textContent = index + 1 + `(${currentTeam.seasonYear})` + `(${currentTeam.league})`;  // 문제 번호는 인덱스에 1을 더한 값
     document.getElementById('total-count').textContent = totalQuizCount;
@@ -241,7 +241,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
             // 팀 이미지 추가
             const progamerImage = document.createElement('img');
             cover.appendChild(progamerImage);
-            progamerImage.src = `/images/player/${progamer.id}.webp`;  // 이미지 경로
+            progamerImage.src = `/images/LOL/player/${progamer.id}.webp`;  // 이미지 경로
             progamerImage.alt = progamer.progamerTag;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 

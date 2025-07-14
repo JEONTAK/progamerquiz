@@ -12,11 +12,11 @@ t.name AS team_name,
 t.season_year AS team_year,
 t.league AS team_league
 FROM
-progamer p
+progamerLOL p
 JOIN
 progamer_team pt ON p.progamer_id = pt.progamer_id
 JOIN
-team t ON pt.team_id = t.team_id
+teamValorant t ON pt.team_id = t.team_id
 ORDER BY
 p.progamer_id;
 

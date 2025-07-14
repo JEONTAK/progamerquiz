@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>Who Are You?</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/menu ::menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
+
+    <div class="content">
+        <div id="failed-message" class="failed-message" style="display: none;">
+            Failed!
+        </div>
+        <button id="go-to-main" class="main-button" style="display:none;" onclick="goToMainPage()">Go to Main Page
+        </button>
+        <div class="quiz-item" id="quiz-container" data-answer="${answer.id}">
+            <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
+            <form id="playerForm" method="post" autocomplete="off">
+                <img id="player-image" alt="Player Image">
+                <div id="error-message-player" class="error-message" style="display: none;">
+                </div>
+                <input id="player-input" name="input" type="text" placeholder="0 of 8">
+                <div id="suggestions"></div>
+                <div id="hintContainer" class="hints-container"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Who Are You?</h2>
+        <div id="quiz1-guide">
+        </div>
+        <button onclick="closeGuide()" class="main-button" >Got it!</button>
+    </div>
+    <script th:src="@{/js/whoareyou_valorant.js}"></script>
+</div>
+</body>
+<script th:inline="javascript">
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
+            document.getElementById('quiz1-guide').innerHTML = data[selectedLang]['quiz1-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
+</script>
+</html>

@@ -178,7 +178,7 @@ function showHint(currentPlayer, index, correctQuizCount, totalQuizCount) {
             // 팀 이미지 추가
             const teamImage = document.createElement('img');
             cover.appendChild(teamImage);
-            teamImage.src = `/images/team/${team.imageId}.webp`;  // 이미지 경로
+            teamImage.src = `/images/LOL/team/${team.imageId}.webp`;  // 이미지 경로
             teamImage.alt = team.name;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 

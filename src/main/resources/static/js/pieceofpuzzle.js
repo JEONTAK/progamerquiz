@@ -190,9 +190,9 @@ function goToNextQuiz(quizItem, savedQuizData, index) {
 function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
 
-    teamImage.src = `/images/team/${currentTeam.imageId}.webp`;  // 이미지 경로
+    teamImage.src = `/images/LOL/team/${currentTeam.imageId}.webp`;  // 이미지 경로
     teamImage.alt = currentTeam.teamName;
-    playerImage.src = `/images/player/${currentTeam.answerProgamerId}.webp`;  // 이미지 경로
+    playerImage.src = `/images/LOL/player/${currentTeam.answerProgamerId}.webp`;  // 이미지 경로
     playerImage.alt = currentTeam.answerProgamerTag;
     playerImage.style.filter = 'blur(5px)';
     teamName.textContent = currentTeam.teamName;
@@ -218,7 +218,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
             // 팀 이미지 추가
             const progamerImage = document.createElement('img');
             cover.appendChild(progamerImage);
-            progamerImage.src = `/images/player/${progamer.id}.webp`;  // 이미지 경로
+            progamerImage.src = `/images/LOL/player/${progamer.id}.webp`;  // 이미지 경로
             progamerImage.alt = progamer.progamerTag;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 

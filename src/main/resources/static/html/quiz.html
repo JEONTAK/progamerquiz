@@ -17,7 +17,7 @@
 <div th:if="${guessedGamer}">
     <h2>Guessed Pro Gamer</h2>
     <p th:style="${guessedGamer.league == correctGamer.league} ? 'color: green' : ''">League: <span th:text="${guessedGamer.league}"></span></p>
-    <p th:style="${guessedGamer.team == correctGamer.team} ? 'color: green' : ''">Team: <span th:text="${guessedGamer.team}"></span></p>
+    <p th:style="${guessedGamer.teamValorant == correctGamer.teamValorant} ? 'color: green' : ''">Team: <span th:text="${guessedGamer.teamValorant}"></span></p>
     <p th:style="${guessedGamer.playerId == correctGamer.playerId} ? 'color: green' : ''">ID: <span th:text="${guessedGamer.playerId}"></span></p>
     <p th:style="${guessedGamer.leagueWins == correctGamer.leagueWins} ? 'color: green' : ''">League Wins: <span th:text="${guessedGamer.leagueWins}"></span></p>
     <p th:style="${guessedGamer.internationalWins == correctGamer.internationalWins} ? 'color: green' : ''">International Wins: <span th:text="${guessedGamer.internationalWins}"></span></p>
@@ -27,7 +27,7 @@
 <div th:if="${correct or gameOver}">
     <h2>Correct Pro Gamer</h2>
     <p>League: <span th:text="${correctGamer.league}"></span></p>
-    <p>Team: <span th:text="${correctGamer.team}"></span></p>
+    <p>Team: <span th:text="${correctGamer.teamValorant}"></span></p>
     <p>ID: <span th:text="${correctGamer.playerId}"></span></p>
     <p>League Wins: <span th:text="${correctGamer.leagueWins}"></span></p>
     <p>International Wins: <span th:text="${correctGamer.internationalWins}"></span></p>
