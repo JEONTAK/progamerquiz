@@ -40,17 +40,8 @@
     </div>
 </div>
 <div th:replace="~{fragments/footer :: footer}"></div>
-<!-- 가이드 오버레이 -->
-<div id="guide-overlay" class="guide-overlay" style="display: none;">
-    <div class="guide-content">
-        <h2>Who Are You?</h2>
-        <div id="quiz1-guide">
-        </div>
-        <button onclick="closeGuide()" class="main-button" >Got it!</button>
-    </div>
-    <script th:src="@{/js/whoareyou_valorant.js}"></script>
-</div>
 </body>
+<script th:src="@{/js/valorant/whoareyou_valorant.js}"></script>
 <script th:inline="javascript">
     // 브라우저 언어 가져오기
     const userLang = navigator.language || navigator.userLanguage;
@@ -62,7 +53,6 @@
         .then(data => {
             // 적절한 언어 데이터 사용
             document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
-            document.getElementById('quiz1-guide').innerHTML = data[selectedLang]['quiz1-guide'].replace(/\n/g, '<br>');
         })
         .catch(error => console.error('Error loading language data:', error));
 </script>

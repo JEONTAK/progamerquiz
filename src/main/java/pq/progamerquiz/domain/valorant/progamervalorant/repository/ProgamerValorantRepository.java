@@ -11,13 +11,13 @@ import java.util.Optional;
 @Repository
 public interface ProgamerValorantRepository extends JpaRepository<ProgamerValorant, Long> {
 
-    @Query("SELECT p FROM ProgamerLOL p ORDER BY RAND() LIMIT 1")
+    @Query("SELECT p FROM ProgamerValorant p WHERE p.birth IS NOT NULL ORDER BY RAND() LIMIT 1")
     ProgamerValorant findRandomProgamer();
 
-    @Query("SELECT p FROM ProgamerLOL p WHERE LOWER(p.progamerTag) LIKE LOWER(:progamerTag)")
+    @Query("SELECT p FROM ProgamerValorant p WHERE LOWER(p.progamerTag) LIKE LOWER(:progamerTag)")
     Optional<ProgamerValorant> findByProgamerTag(String progamerTag);
 
-    @Query("SELECT p FROM ProgamerLOL p WHERE p.id IN :ids ORDER BY RAND() LIMIT 1")
+    @Query("SELECT p FROM ProgamerValorant p WHERE p.id IN :ids ORDER BY RAND() LIMIT 1")
     Optional<ProgamerValorant> findOneRandomProgamer(List<Long> ids);
 
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>Who Are You?</title>
+</head>
+<body>
+
+<div th:replace="~{fragments/menu ::menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Who Are You?</h2>
+        <p>프로게이머를 주어진 기회 안에 맞히는 게임 입니다.</p>
+        <p>총 8번의 시도가 있습니다.</p>
+        <p>추측한 프로게이머를 입력하면 6개의 힌트가 주어집니다.</p>
+        <p>힌트를 사용하여 정답을 맞혀보세요!</p>
+        <button onclick="closeGuide('leagueoflegends')" class="main-button">LOL</button>
+        <button onclick="closeGuide('valorant')" class="main-button">VALORANT</button>
+    </div>
+    <script th:src="@{/js/whoareyou.js}"></script>
+</div>
+</body>
+<script th:inline="javascript">
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
+            document.getElementById('quiz1-guide').innerHTML = data[selectedLang]['quiz1-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
+</script>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <th:block th:insert="~{fragments/header :: header}"/>
+    <title>Which is Team?</title>
+</head>
+<body>
+<div th:replace="~{fragments/menu ::menu}"></div>
+<!--메인 페이지 이미지 -->
+<div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
+<!-- 광고와 콘텐츠를 감싸는 wrapper -->
+<div class="content-wrapper">
+    <div class="ad-container adLeft">
+        <div th:replace="~{fragments/adLeft :: adLeft}"></div>
+    </div>
+
+    <div class="content">
+        <div id="failed-message" class="failed-message" style="display: none;">
+            Failed!
+        </div>
+        <!-- 오버레이 HTML 구조 -->
+        <div id="quiz-overlay" class="quiz-overlay" style="display: none;">
+            <canvas id="canvas"></canvas>
+            <div class="quiz-overlay-content">
+                <h2>Finish!</h2>
+                <p>Correct : <span id="correct-count-overlay"></span> / Total : <span id="total-count-overlay"></span></p>
+                <button id="go-to-main" class="main-button" onclick="goToMainPage()">Go to Main Page</button>
+            </div>
+        </div>
+        <div class="quiz-item" data-answer="${answer.id}">
+            <div id="question-number" class="question-number">1</div>
+            <!-- 맞춘 개수 / 전체 개수를 표시할 영역 -->
+            <div id="quiz-progress" style="font-size: 18px; font-weight: bold; color: white;">
+                Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
+            </div>
+            <form id="playerForm" method="post" autocomplete="off">
+                <div id="error-message-teamValorant" class="error-message" style="display: none;"></div>
+                <input id="player-input" name="input" type="text">
+                <div id="suggestions"></div>
+                <img id="teamValorant-image" alt="Player Image">
+                <div id = "hintContainer" class="hints-container"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="ad-container adRight">
+        <div th:replace="~{fragments/adRight :: adRight}"></div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer :: footer}"></div>
+<!-- 가이드 오버레이 -->
+<div id="guide-overlay" class="guide-overlay" style="display: none;">
+    <div class="guide-content">
+        <h2>Which Is Team?</h2>
+        <div id="quiz3-guide"></div>
+        <button onclick="closeGuide()" class="main-button">Got it!</button>
+    </div>
+</div>
+<script th:src="@{/js/whichisteam.js}"></script>
+</body>
+<script th:inline="javascript">
+    // 브라우저 언어 가져오기
+    const userLang = navigator.language || navigator.userLanguage;
+    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
+
+    // JSON 파일에서 언어 데이터를 로드
+    fetch('/database/Language.json')
+        .then(response => response.json())
+        .then(data => {
+            // 적절한 언어 데이터 사용
+            document.getElementById('error-message-teamValorant').textContent = data[selectedLang]['error-message-teamValorant'];
+            document.getElementById('quiz3-guide').innerHTML = data[selectedLang]['quiz3-guide'].replace(/\n/g, '<br>');
+        })
+        .catch(error => console.error('Error loading language data:', error));
+</script>
+</html>

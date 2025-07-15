@@ -17,7 +17,7 @@ import pq.progamerquiz.domain.leagueoflegends.quizzes.whoareyou.service.WheAreYo
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("/whoareyou")
+@RequestMapping("leagueoflegends/whoareyou")
 public class WhoAreYouController {
 
     private final WheAreYouService wheareyouService;

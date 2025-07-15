@@ -8,10 +8,12 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import pq.progamerquiz.common.enums.Game;
 import pq.progamerquiz.domain.leagueoflegends.quiz.dto.response.QuizResponse;
 import pq.progamerquiz.domain.leagueoflegends.quiz.entity.Quiz;
 import pq.progamerquiz.domain.leagueoflegends.quiz.service.QuizService;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -25,6 +27,8 @@ public class HomeController {
     @GetMapping("/")
     public String home(Model model) {
         log.info("Main Page");
+        List<Game> games = Arrays.stream(Game.values()).toList();
+
         List<Quiz> quizzes  = quizService.findAll();
 
         quizzes.forEach(quiz -> {
@@ -47,6 +51,7 @@ public class HomeController {
         }).toList();
 
         model.addAttribute("quizzes", responses);
+        model.addAttribute("games", games);
         return "home";
     }
 
