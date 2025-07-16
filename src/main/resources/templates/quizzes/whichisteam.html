@@ -53,8 +53,11 @@
 <div id="guide-overlay" class="guide-overlay" style="display: none;">
     <div class="guide-content">
         <h2>Which Is Team?</h2>
-        <div id="quiz3-guide"></div>
-        <button onclick="closeGuide()" class="main-button">Got it!</button>
+        <p>어떤 팀인지 맞히는 게임입니다.
+            총 15개 팀이 주어지고, 각 팀에는 몇 가지 힌트가 주어집니다.
+            힌트에 해당하는 팀을 맞혀보세요!</p>
+        <button onclick="closeGuide('leagueoflegends')" class="main-button">LOL</button>
+        <button onclick="closeGuide('valorant')" class="main-button">VALORANT</button>
     </div>
 </div>
 <script th:src="@{/js/whichisteam.js}"></script>
@@ -70,7 +73,6 @@
         .then(data => {
             // 적절한 언어 데이터 사용
             document.getElementById('error-message-teamValorant').textContent = data[selectedLang]['error-message-teamValorant'];
-            document.getElementById('quiz3-guide').innerHTML = data[selectedLang]['quiz3-guide'].replace(/\n/g, '<br>');
         })
         .catch(error => console.error('Error loading language data:', error));
 </script>
