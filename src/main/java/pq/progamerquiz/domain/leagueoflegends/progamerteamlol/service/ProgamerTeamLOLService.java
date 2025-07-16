@@ -2,9 +2,9 @@ package pq.progamerquiz.domain.leagueoflegends.progamerteamlol.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import pq.progamerquiz.domain.leagueoflegends.progamerlol.dto.response.ProgamerSimpleInfoResponse;
+import pq.progamerquiz.domain.leagueoflegends.progamerlol.dto.response.ProgamerLOLSimpleInfoResponse;
 import pq.progamerquiz.domain.leagueoflegends.progamerteamlol.repository.ProgamerTeamLOLRepository;
-import pq.progamerquiz.domain.leagueoflegends.teamlol.dto.response.TeamSimpleInfoResponse;
+import pq.progamerquiz.domain.leagueoflegends.teamlol.dto.response.TeamLOLSimpleInfoResponse;
 import pq.progamerquiz.domain.leagueoflegends.teamlol.entity.TeamLOL;
 
 import java.util.List;
@@ -21,11 +21,11 @@ public class ProgamerTeamLOLService {
         return null;
     }
 
-    public List<TeamSimpleInfoResponse> findTeamsByProgamerId(Long progamerId) {
+    public List<TeamLOLSimpleInfoResponse> findTeamsByProgamerId(Long progamerId) {
         return progamerTeamLOLRepository.findTeamsByProgamerId(progamerId);
     }
 
-    public List<ProgamerSimpleInfoResponse> findProgamersByTeamId(Long teamId) {
+    public List<ProgamerLOLSimpleInfoResponse> findProgamersByTeamId(Long teamId) {
         return progamerTeamLOLRepository.findProgamersByTeamId(teamId);
     }
 

@@ -1,6 +1,53 @@
+const playerImage = document.getElementById("player-image");
+
+function startQuiz() {
+    fetch('/leagueoflegends/whoareyou/startQuiz', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP 에러! 상태: ${response.status}`);
+            }
+            return response.json(); // JSON 파싱
+        })
+        .then(data => {
+            // 데이터 저장 (Local Storage 또는 전역 변수)
+            localStorage.setItem("quizData", JSON.stringify(data));
+            playerImage.src = `/images/LOL/player/${data.answer.id}.png`;  // 이미지 경로
+            const hintContainer = document.getElementById("hintContainer");
+
+            const hintRow = document.createElement("div");
+            hintRow.classList.add("hint-row");
+
+            const hintName = ['League', 'Team', 'Position', 'Birth', 'League Wins', 'International Wins'];
+            hintName.forEach(hint => {
+                const hintItem = document.createElement("div");
+                hintItem.classList.add("hint-item");
+                const hintLabel = document.createElement("span");
+                hintLabel.classList.add("hint-name");
+                hintLabel.textContent = hint; // 각 힌트의 라벨 설정
+                hintLabel.style.fontWeight = "bold";  // 강조 효과
+                hintItem.style.display = "block";
+                hintItem.style.opacity = "1";
+                hintItem.appendChild(hintLabel); // 컨테이너에 라벨을 추가
+                hintRow.appendChild(hintItem);
+            });
+            hintContainer.append(hintRow);
+            requestAnimationFrame(() => {
+                hintRow.style.opacity = "1";
+            });
+        })
+        .catch(error => console.error("퀴즈 시작 중 에러:", error));
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
+    startQuiz();
     // JSON 파일을 fetch API로 로드
-    fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
+    fetch('/database/Progamer-LOL.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
             const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
@@ -39,8 +86,6 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
     const userInput = document.getElementById('player-input').value.trim();
     const quizData = JSON.parse(localStorage.getItem('quizData'));
     const errorMessage = document.getElementById('error-message-player');
-    const playerImage = document.getElementById("player-image");
-    const quizContainer = document.getElementById("quiz-container");
     const answerPid = document.getElementById("answer-pid");
 
     if (!userInput) {
@@ -49,7 +94,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
         return;
     }
 
-    fetch('/whoareyou/submitAnswer', {
+    fetch('/leagueoflegends/whoareyou/submitAnswer', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -103,7 +148,6 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
 function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
     const hintContainer = document.getElementById("hintContainer");
     const playerInput = document.getElementById("player-input");
-    const playerImage = document.getElementById("player-image");
     const quizContainer = document.getElementById("quiz-container");
     const errorMessage = document.getElementById("error-message-player");
     const goMainButton = document.getElementById("go-to-main");
@@ -127,7 +171,7 @@ function showHint(hintResults, isCorrect, answer, guessedList, attempts) {
                 value: teamName || "Unknown", // 팀 이름
                 answerValue: answerTeamName || "Unknown",
                 match: hint.match,
-                icon: teamImageId ? `/images/LOL/team/${teamImageId}.webp` : "/images/none.png",
+                icon: teamImageId ? `/images/LOL/team/${teamImageId}.png` : "/images/none.png",
                 fallbackIcon: "/images/none.png",
                 getArrow: null
             };
@@ -206,7 +250,7 @@ function getHintIcon(hintName, value) {
     if (!value || value === "Unknown") return "/images/none.png";
     switch (hintName) {
         case "league":
-            return `/images/LOL/league/${value}.webp`;
+            return `/images/LOL/league/${value}.png`;
         case "position":
             return `/images/LOL/position/${value}.png`;
         case "birth":
@@ -222,7 +266,7 @@ function getHintIcon(hintName, value) {
 
 // 퀴즈 결과를 서버에 저장하는 함수
 function saveQuizResult(quizData, isCorrect, attempts) {
-    fetch('/whoareyou/saveResult', {
+    fetch('/leagueoflegends/whoareyou/saveResult', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

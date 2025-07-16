@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.IGotYouSaveResultRequest;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.IGotYouStartRequest;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.IGotYouSubmitAnswerRequest;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouSaveResultRequest;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouStartRequest;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouSubmitAnswerRequest;
 import pq.progamerquiz.domain.valorant.quizzes.igotyou.dto.response.ValorantIGotYouQuizResponse;
 import pq.progamerquiz.domain.valorant.quizzes.igotyou.dto.response.ValorantIGotYouResponse;
 import pq.progamerquiz.domain.valorant.quizzes.igotyou.dto.response.ValorantIGotYouResultResponse;
@@ -25,7 +25,7 @@ public class ValorantGotYouController {
 
     @PostMapping("/select")
     @ResponseBody
-    public ResponseEntity<ValorantIGotYouResponse> setQuiz(@RequestBody IGotYouStartRequest request) {
+    public ResponseEntity<ValorantIGotYouResponse> setQuiz(@RequestBody LOLIGotYouStartRequest request) {
         log.info("[I Got You] Request size : " + request.getTotalQuizCount());
         log.info("[I Got You] Set Quiz...");
         List<ValorantIGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount());
@@ -42,7 +42,7 @@ public class ValorantGotYouController {
 
     @PostMapping("/submitAnswer")
     @ResponseBody
-    public ResponseEntity<ValorantIGotYouSubmitAnswerResponse> submitAnswer(@RequestBody IGotYouSubmitAnswerRequest request) {
+    public ResponseEntity<ValorantIGotYouSubmitAnswerResponse> submitAnswer(@RequestBody LOLIGotYouSubmitAnswerRequest request) {
         log.info("[I Got You] Submitting answer: " + request.getInput());
         ValorantIGotYouSubmitAnswerResponse response = iGotYouService.submitAnswer(request.getId(), request.getIndex(), request.getCorrectQuizCount(), request.getTotalQuizCount(), request.getInput());
         return ResponseEntity.ok(response);
@@ -51,7 +51,7 @@ public class ValorantGotYouController {
     // 퀴즈 끝난 후, 맞춘 개수와 전체 개수를 넘기는 /end 처리
     @PostMapping("/end")
     @ResponseBody
-    public ResponseEntity<ValorantIGotYouResultResponse> quizEnd(@RequestBody IGotYouSaveResultRequest request) {
+    public ResponseEntity<ValorantIGotYouResultResponse> quizEnd(@RequestBody LOLIGotYouSaveResultRequest request) {
         log.info("[I Got You] Finish Quiz Result : " + request.getCorrectQuizCount() + " / " + request.getTotalQuizCount());
         ValorantIGotYouResultResponse response = iGotYouService.saveResult(request.getId(), request.getCorrectQuizCount(), request.getTotalQuizCount());
         return ResponseEntity.ok(response);

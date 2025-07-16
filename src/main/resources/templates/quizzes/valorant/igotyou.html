@@ -6,8 +6,6 @@
     <title>I got you!</title>
 </head>
 <body>
-
-<div th:replace="~{fragments/menu ::menu}"></div>
 <!--메인 페이지 이미지 -->
 <div th:replace="~{fragments/bodyHeader :: bodyHeader}"></div>
 <!-- 광고와 콘텐츠를 감싸는 wrapper -->
@@ -35,6 +33,9 @@
             <!-- 맞춘 개수 / 전체 개수를 표시할 영역 -->
             <div id="quiz-progress" style="font-size: 18px; font-weight: bold; color: white;">
                 Correct : <span id="correct-count">0</span> / Total : <span id="total-count">0</span>
+            </div>
+            <div>
+                <img id="nationality-image" alt="Nationality Image">
             </div>
             <div id="answer-pid" class="pid-overlay" style="display:none;"></div>
             <div id="error-message-player" class="error-message" style="display: none;">

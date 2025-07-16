@@ -1,17 +1,10 @@
+const teamImage =  document.getElementById('team-image');
+const playerInput = document.getElementById("player-input");
+const quizItem = document.querySelector('.quiz-item');
 
-// 가이드 오버레이 보이기
-function showGuide() {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'flex';
-}
-
-// 가이드 오버레이 닫기
-function closeGuide() {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'none';
-
+function startQuiz() {
     // 서버로 totalCount 값을 전송
-    fetch('/whichisteam/select', {
+    fetch('/leagueoflegends/whichisteam/startQuiz', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,20 +30,7 @@ function closeGuide() {
         .catch(error => {
             console.error('Error setting up quiz:', error);
         });
-
-    // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
-    localStorage.setItem('guideShown', 'true');
 }
-
-
-// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
-window.onload = function() {
-    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
-    if (!localStorage.getItem('guideShown')) {
-        showGuide();
-    }
-};
-
 
 function goToMainPage() {
     // localStorage에서 guideShown 값을 삭제 (초기화)
@@ -59,8 +39,9 @@ function goToMainPage() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    startQuiz();
     // JSON 파일을 fetch API로 로드
-    fetch('/database/Team.json')  // static 경로를 통해 JSON 파일에 접근
+    fetch('/database/Team-LOL.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(teamList => {
             const input = document.getElementById('player-input');
@@ -126,9 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error('Error fetching JSON:', error));
 });
 
-const teamImage =  document.getElementById('team-image');
-const playerInput = document.getElementById("player-input");
-
 document.getElementById('player-input').addEventListener('keydown', function(event) {
     const savedQuizData = JSON.parse(localStorage.getItem('quizData'));
 
@@ -138,7 +116,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
         const errorMessage = document.getElementById('error-message-team');
 
         // Send the user input to the server
-        fetch('/whichisteam/submitAnswer', {
+        fetch('/leagueoflegends/whichisteam/submitAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -179,10 +157,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
     }
 });
 
-const quizItem = document.querySelector('.quiz-item');
-
-
-function showCorrect(currentPlayer, quizItem, answerPidElement) {
+function showCorrect(currentPlayer, quizItem) {
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "green";
     // 텍스트 필드 수정 불가능하게 설정
@@ -190,7 +165,7 @@ function showCorrect(currentPlayer, quizItem, answerPidElement) {
     teamImage.style.filter = "none";
 }
 
-function showWrong(currentPlayer, quizItem, answerPidElement) {
+function showWrong(currentPlayer, quizItem) {
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "red";
     // 텍스트 필드 수정 불가능하게 설정
@@ -219,7 +194,7 @@ function goToNextQuiz(quizItem, savedQuizData, index) {
 function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
     teamImage.style.filter = "blur(30px)";
-    teamImage.src = `/images/LOL/team/${currentTeam.imageId}.webp`;  // 이미지 경로
+    teamImage.src = `/images/LOL/team/${currentTeam.imageId}.png`;  // 이미지 경로
     const questionNumberElement = document.getElementById('question-number');
     questionNumberElement.textContent = index + 1 + `(${currentTeam.seasonYear})` + `(${currentTeam.league})`;  // 문제 번호는 인덱스에 1을 더한 값
     document.getElementById('total-count').textContent = totalQuizCount;
@@ -241,7 +216,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
             // 팀 이미지 추가
             const progamerImage = document.createElement('img');
             cover.appendChild(progamerImage);
-            progamerImage.src = `/images/LOL/player/${progamer.id}.webp`;  // 이미지 경로
+            progamerImage.src = `/images/LOL/player/${progamer.id}.png`;  // 이미지 경로
             progamerImage.alt = progamer.progamerTag;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 
@@ -277,7 +252,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
 
 // 퀴즈 종료 처리
 function endQuiz(savedQuizData) {
-    fetch('/whichisteam/end', {
+    fetch('/leagueoflegends/whichisteam/end', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

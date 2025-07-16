@@ -22,7 +22,7 @@ function closeGuide(totalC) {
     guideOverlay.style.display = 'none';
 
     // 서버로 totalCount 값을 전송
-    fetch('/igotyou/select', {
+    fetch('/leagueoflegends/igotyou/select', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ window.onload = function () {
 //프로게이머 제안 기능
 document.addEventListener("DOMContentLoaded", function () {
     // JSON 파일을 fetch API로 로드
-    fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
+    fetch('/database/Progamer-LOL.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
             const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
@@ -113,7 +113,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
         const userInput = document.getElementById('player-input').value;
         const errorMessage = document.getElementById('error-message-player');
         // Send the user input to the server
-        fetch('/igotyou/submitAnswer', {
+        fetch('/leagueoflegends/igotyou/submitAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ function showHint(currentPlayer, index, correctQuizCount, totalQuizCount) {
             // 팀 이미지 추가
             const teamImage = document.createElement('img');
             cover.appendChild(teamImage);
-            teamImage.src = `/images/LOL/team/${team.imageId}.webp`;  // 이미지 경로
+            teamImage.src = `/images/LOL/team/${team.imageId}.png`;  // 이미지 경로
             teamImage.alt = team.name;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 
@@ -257,7 +257,7 @@ function goToNextQuiz(quizItem, answerPidElement, savedQuizData, index) {
 
 // 퀴즈 종료 처리
 function endQuiz(savedQuizData) {
-    fetch('/igotyou/end', {
+    fetch('/leagueoflegends/igotyou/end', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

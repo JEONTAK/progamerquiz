@@ -9,9 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import pq.progamerquiz.common.enums.Game;
-import pq.progamerquiz.domain.leagueoflegends.quiz.dto.response.QuizResponse;
-import pq.progamerquiz.domain.leagueoflegends.quiz.entity.Quiz;
-import pq.progamerquiz.domain.leagueoflegends.quiz.service.QuizService;
+import pq.progamerquiz.domain.quiz.dto.response.QuizResponse;
+import pq.progamerquiz.domain.quiz.entity.Quiz;
+import pq.progamerquiz.domain.quiz.service.QuizService;
 
 import java.util.Arrays;
 import java.util.List;

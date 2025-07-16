@@ -1,5 +1,6 @@
 const playerImage = document.getElementById("player-image");
 const playerInput = document.getElementById("player-input");
+const nationalityImage =  document.getElementById('nationality-image');
 
 function removeBlur(imageElement) {
     imageElement.classList.add('no-blur');
@@ -155,7 +156,9 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
 function showHint(currentPlayer, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
     const questionNumberElement = document.getElementById('question-number');
-    questionNumberElement.textContent = index + 1 + `(${currentPlayer.nationality})`;  // 문제 번호는 인덱스에 1을 더한 값
+    questionNumberElement.textContent = index + 1;  // 문제 번호는 인덱스에 1을 더한 값
+    nationalityImage.src = `/images/nationality/${currentPlayer.nationality}.png`;
+    nationalityImage.alt = '${currentTeam.nationality}';
     document.getElementById('total-count').textContent = totalQuizCount;
     // 맞춘 개수 / 전체 개수를 업데이트
     document.getElementById('correct-count').textContent = correctQuizCount;

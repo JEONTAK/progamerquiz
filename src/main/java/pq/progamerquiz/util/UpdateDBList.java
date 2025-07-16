@@ -10,15 +10,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pq.progamerquiz.common.exception.CustomException;
-import pq.progamerquiz.domain.leagueoflegends.progamerlol.dto.response.ProgamerInsertResponse;
+import pq.progamerquiz.domain.leagueoflegends.progamerlol.dto.response.ProgamerLOLInsertResponse;
 import pq.progamerquiz.domain.leagueoflegends.progamerlol.entity.ProgamerLOL;
 import pq.progamerquiz.domain.leagueoflegends.progamerlol.repository.ProgamerLOLRepository;
 import pq.progamerquiz.domain.leagueoflegends.progamerteamlol.entity.ProgamerTeamLOL;
 import pq.progamerquiz.domain.leagueoflegends.progamerteamlol.repository.ProgamerTeamLOLRepository;
-import pq.progamerquiz.domain.leagueoflegends.quiz.dto.QuizDto;
-import pq.progamerquiz.domain.leagueoflegends.quiz.entity.Quiz;
-import pq.progamerquiz.domain.leagueoflegends.quiz.service.QuizService;
-import pq.progamerquiz.domain.leagueoflegends.teamlol.dto.response.TeamInsertResponse;
+import pq.progamerquiz.domain.quiz.dto.QuizDto;
+import pq.progamerquiz.domain.quiz.entity.Quiz;
+import pq.progamerquiz.domain.quiz.service.QuizService;
+import pq.progamerquiz.domain.leagueoflegends.teamlol.dto.response.TeamLOLInsertResponse;
 import pq.progamerquiz.domain.leagueoflegends.teamlol.entity.TeamLOL;
 import pq.progamerquiz.domain.leagueoflegends.teamlol.repository.TeamLOLRepository;
 import pq.progamerquiz.domain.valorant.progamerteamvalorant.entity.ProgamerTeamValorant;
@@ -55,7 +55,7 @@ public class UpdateDBList {
     public void initializeTeamsLOL() {
         try {
             // JSON 파일에서 ProGamer 객체 리스트로 읽기
-            List<TeamInsertResponse> teams = mapper.readValue(
+            List<TeamLOLInsertResponse> teams = mapper.readValue(
                     new File("src/main/resources/static/database/Team-LOL.json"),
                     new TypeReference<>() {}
             );
@@ -82,7 +82,7 @@ public class UpdateDBList {
     public void initializeProgamersLOL() {
         try {
             // JSON 파일에서 ProGamer 객체 리스트로 읽기
-            List<ProgamerInsertResponse> progamers = mapper.readValue(
+            List<ProgamerLOLInsertResponse> progamers = mapper.readValue(
                     new File("src/main/resources/static/database/Progamer-LOL.json"),
                     new TypeReference<>() {}
             );
