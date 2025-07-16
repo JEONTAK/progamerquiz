@@ -1,3 +1,5 @@
+const playerImage = document.getElementById("player-image");
+
 function goToMainPage() {
     // localStorage에서 guideShown 값을 삭제 (초기화)
     localStorage.removeItem('guideShown');
@@ -22,7 +24,7 @@ function closeGuide(totalC) {
     guideOverlay.style.display = 'none';
 
     // 서버로 totalCount 값을 전송
-    fetch('/igotyou/select', {
+    fetch('/valorant/igotyou/select', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -70,7 +72,7 @@ window.onload = function () {
 //프로게이머 제안 기능
 document.addEventListener("DOMContentLoaded", function () {
     // JSON 파일을 fetch API로 로드
-    fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
+    fetch('/database/Progamer-Valorant.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
             const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
@@ -113,7 +115,7 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
         const userInput = document.getElementById('player-input').value;
         const errorMessage = document.getElementById('error-message-player');
         // Send the user input to the server
-        fetch('/igotyou/submitAnswer', {
+        fetch('/valorant/igotyou/submitAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -158,10 +160,13 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
 function showHint(currentPlayer, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
     const questionNumberElement = document.getElementById('question-number');
-    questionNumberElement.textContent = index + 1 + `(${currentPlayer.position})`;  // 문제 번호는 인덱스에 1을 더한 값
+    questionNumberElement.textContent = index + 1 + `(${currentPlayer.nationality})`;  // 문제 번호는 인덱스에 1을 더한 값
     document.getElementById('total-count').textContent = totalQuizCount;
     // 맞춘 개수 / 전체 개수를 업데이트
     document.getElementById('correct-count').textContent = correctQuizCount;
+
+    playerImage.src = `/images/VALORANT/player/${currentPlayer.progamerId}_${currentPlayer.progamerTag}.jpg`;  // 이미지 경로
+
     const hintContainer = document.getElementById('hintContainer');
     hintContainer.innerHTML = ''; // 이전 힌트들을 초기화
 
@@ -187,7 +192,7 @@ function showHint(currentPlayer, index, correctQuizCount, totalQuizCount) {
             const teamNameDiv = document.createElement('div');
             cover.appendChild(teamNameDiv);
             teamNameDiv.classList.add('team-name');
-            teamNameDiv.textContent = `${team.name} (${team.seasonYear})`;
+            teamNameDiv.textContent = `${team.name} - ${team.seasonName} (${team.seasonYear})`;
 
 
             // 현재 행에 항목 추가
@@ -219,6 +224,7 @@ function showCorrect(currentPlayer, quizItem, answerPidElement) {
     quizItem.style.backgroundColor = "green";
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
+    playerImage.style.filter = 'none'; // 블러 처리 해제
     // PID를 보여주기 위해 answerPidElement에 값을 넣음
     answerPidElement.textContent = currentPlayer.progamerTag;  // 선수의 PID 표시
     answerPidElement.style.display = 'block';  // PID를 표시
@@ -229,6 +235,7 @@ function showWrong(currentPlayer, quizItem, answerPidElement) {
     quizItem.style.backgroundColor = "red";
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
+    playerImage.style.filter = 'none'; // 블러 처리 해제
     // PID를 보여주기 위해 answerPidElement에 값을 넣음
     answerPidElement.textContent = currentPlayer.progamerTag;  // 선수의 PID 표시
     answerPidElement.style.display = 'block';  // PID를 표시
@@ -244,6 +251,7 @@ function goToNextQuiz(quizItem, answerPidElement, savedQuizData, index) {
     //선수 pid 초기화
     answerPidElement.textContent = '';
     answerPidElement.style.display = 'none';
+    playerImage.style.filter = 'blur(5px)';
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "#091428";
 
@@ -257,7 +265,7 @@ function goToNextQuiz(quizItem, answerPidElement, savedQuizData, index) {
 
 // 퀴즈 종료 처리
 function endQuiz(savedQuizData) {
-    fetch('/igotyou/end', {
+    fetch('/valorant/igotyou/end', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

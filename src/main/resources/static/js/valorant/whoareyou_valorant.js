@@ -86,7 +86,6 @@ document.getElementById('player-input').addEventListener('keydown', function (ev
     const quizData = JSON.parse(localStorage.getItem('quizData'));
     const errorMessage = document.getElementById('error-message-player');
     const playerImage = document.getElementById("player-image");
-    const quizContainer = document.getElementById("quiz-container");
     const answerPid = document.getElementById("answer-pid");
 
     if (!userInput) {

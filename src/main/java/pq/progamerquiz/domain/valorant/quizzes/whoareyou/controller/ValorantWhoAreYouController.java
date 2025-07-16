@@ -12,7 +12,7 @@ import pq.progamerquiz.domain.valorant.quizzes.whoareyou.dto.request.ValorantWho
 import pq.progamerquiz.domain.valorant.quizzes.whoareyou.dto.request.ValorantWhoAreYouSubmitAnswerRequest;
 import pq.progamerquiz.domain.valorant.quizzes.whoareyou.dto.response.ValorantWhoAreYouResponse;
 import pq.progamerquiz.domain.valorant.quizzes.whoareyou.dto.response.ValorantWhoAreYouSummitAnswerResponse;
-import pq.progamerquiz.domain.valorant.quizzes.whoareyou.service.ValorantWheAreYouService;
+import pq.progamerquiz.domain.valorant.quizzes.whoareyou.service.ValorantWhoAreYouService;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,12 +20,12 @@ import pq.progamerquiz.domain.valorant.quizzes.whoareyou.service.ValorantWheAreY
 @RequestMapping("/valorant/whoareyou")
 public class ValorantWhoAreYouController {
 
-    private final ValorantWheAreYouService valorantWheAreYouService;
+    private final ValorantWhoAreYouService valorantWhoAreYouService;
 
     @PostMapping("/startQuiz")
     public ResponseEntity<ValorantWhoAreYouResponse> startWhoareyou() {
         log.info("[Who Are You] Set Quiz...");
-        ValorantWhoAreYouResponse response = valorantWheAreYouService.startQuiz();
+        ValorantWhoAreYouResponse response = valorantWhoAreYouService.startQuiz();
         log.info("[Who Are You] Finish Set Quiz...");
         log.info("[Who Are You] Answer : " + response.getAnswer().getProgamerTag());
         return ResponseEntity.ok(response);
@@ -34,7 +34,7 @@ public class ValorantWhoAreYouController {
     @PostMapping("/submitAnswer")
     public ResponseEntity<ValorantWhoAreYouSummitAnswerResponse> submitAnswer(@RequestBody ValorantWhoAreYouSubmitAnswerRequest request) {
         log.info("[Who Are You] Submitting answer: " + request.getInput());
-        ValorantWhoAreYouSummitAnswerResponse response = valorantWheAreYouService.submitAnswer(
+        ValorantWhoAreYouSummitAnswerResponse response = valorantWhoAreYouService.submitAnswer(
                 request.getInput(),
                 request.getAttempts(),
                 request.getAnswer(),
@@ -46,7 +46,7 @@ public class ValorantWhoAreYouController {
     @PostMapping("/saveResult")
     public ResponseEntity<Void> saveResult(@RequestBody ValorantWhoAreYouRequest request) {
         log.info("[Who Are You] Finish Quiz Result : " + request.getAttempts() + " / " + request.isCorrect());
-        valorantWheAreYouService.saveResult(request.getId(), request.getAttempts(),request.isCorrect());
+        valorantWhoAreYouService.saveResult(request.getId(), request.getAttempts(),request.isCorrect());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

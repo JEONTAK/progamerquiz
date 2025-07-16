@@ -28,7 +28,7 @@ import java.util.List;
 @Transactional
 @RequiredArgsConstructor
 @Slf4j
-public class ValorantWheAreYouService {
+public class ValorantWhoAreYouService {
 
     private final ProgamerValorantQueryService progamerValorantQueryService;
     private final ValorantWhoAreYouRepository valorantWhoAreYouRepository;
