@@ -1,17 +1,14 @@
+const teamImage =  document.getElementById('team-image');
+const playerImage =  document.getElementById('player-image');
+const nationalityImage =  document.getElementById('nationality-image');
+const teamName =  document.getElementById('team-name');
+const progamerTag =  document.getElementById('progamer-tag');
+const playerInput = document.getElementById("player-input");
+const quizItem = document.querySelector('.quiz-item');
 
-// 가이드 오버레이 보이기
-function showGuide() {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'flex';
-}
-
-// 가이드 오버레이 닫기
-function closeGuide() {
-    const guideOverlay = document.getElementById('guide-overlay');
-    guideOverlay.style.display = 'none';
-
+function startQuiz() {
     // 서버로 totalCount 값을 전송
-    fetch('/pieceofpuzzle/select', {
+    fetch('/valorant/pieceofpuzzle/startQuiz', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -30,43 +27,19 @@ function closeGuide() {
                     correctQuizCount: data.correctQuizCount,
                     quizList: data.quizList
                 }));
-                console.log(data);
                 showHint(data.quizList[0], data.index, data.correctQuizCount, data.totalQuizCount); // 첫 번째 퀴즈 표시
             }
         })
         .catch(error => {
             console.error('Error setting up quiz:', error);
         });
-
-    // 사용자가 가이드를 닫았으므로, localStorage에 방문 기록을 저장
-    localStorage.setItem('guideShown', 'true');
 }
-
-
-// 페이지가 로드될 때 처음 방문한 경우에만 가이드 보여주기
-window.onload = function() {
-    // localStorage에 'guideShown' 키가 없는 경우에만 가이드 보여줌
-    if (!localStorage.getItem('guideShown')) {
-        showGuide();
-    }
-};
-
-
-function goToMainPage() {
-    // localStorage에서 guideShown 값을 삭제 (초기화)
-    localStorage.removeItem('guideShown');
-    window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
-}
-
-const teamImage =  document.getElementById('team-image');
-const playerImage =  document.getElementById('player-image');
-const teamName =  document.getElementById('team-name');
-const progamerTag =  document.getElementById('progamer-tag');
-const playerInput = document.getElementById("player-input");
 
 document.addEventListener("DOMContentLoaded", function() {
+    startQuiz();
+
     // JSON 파일을 fetch API로 로드
-    fetch('/database/Progamer.json')  // static 경로를 통해 JSON 파일에 접근
+    fetch('/database/Progamer-Valorant.json')  // static 경로를 통해 JSON 파일에 접근
         .then(response => response.json())
         .then(data => {
             const progamerList = data;  // JSON 데이터를 자바스크립트로 받아옴
@@ -106,7 +79,7 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
         const errorMessage = document.getElementById('error-message-player');
 
         // Send the user input to the server
-        fetch('/pieceofpuzzle/submitAnswer', {
+        fetch('/valorant/pieceofpuzzle/submitAnswer', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -147,25 +120,22 @@ document.getElementById('player-input').addEventListener('keydown', function(eve
     }
 });
 
-const quizItem = document.querySelector('.quiz-item');
-
-
-function showCorrect(currentTeam, quizItem, answerPidElement) {
+function showCorrect(currentTeam, quizItem) {
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "green";
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
     playerImage.style.filter = "none";
-    progamerTag.textContent = currentTeam.answerProgamerTag;
+    progamerTag.textContent = currentTeam.progamerTag;
 }
 
-function showWrong(currentTeam, quizItem, answerPidElement) {
+function showWrong(currentTeam, quizItem) {
     quizItem.style.transition = 'background-color 1s ease';
     quizItem.style.backgroundColor = "red";
     // 텍스트 필드 수정 불가능하게 설정
     playerInput.disabled = true;
     playerImage.style.filter = "none";
-    progamerTag.textContent = currentTeam.answerProgamerTag;
+    progamerTag.textContent = currentTeam.progamerTag;
 }
 
 // 다음 퀴즈로 이동하는 로직을 index를 사용해 처리
@@ -189,17 +159,20 @@ function goToNextQuiz(quizItem, savedQuizData, index) {
 
 function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
     playerInput.disabled = false;
-
-    teamImage.src = `/images/VALORANT/team/${currentTeam.callName}.png`;  // 이미지 경로
+    teamImage.src = `/images/VALORANT/team/${currentTeam.teamCallName}.png`;  // 이미지 경로
     teamImage.alt = currentTeam.teamName;
-    //answerProgamer 바꾸기
-    playerImage.src = `/images/VALORANT/player/${currentTeam.answerProgamer}.png`;  // 이미지 경로
-    playerImage.alt = currentTeam.answerProgamerTag;
-    playerImage.style.filter = 'blur(5px)';
     teamName.textContent = currentTeam.teamName;
 
+    //progamer 바꾸기
+    playerImage.src = `/images/VALORANT/player/${currentTeam.progamerId}_${currentTeam.progamerTag}.jpg`;  // 이미지 경로
+    playerImage.alt = currentTeam.progamerTag;
+    playerImage.style.filter = 'blur(5px)';
+
+
     const questionNumberElement = document.getElementById('question-number');
-    questionNumberElement.textContent = index + 1 + `(${currentTeam.seasonYear})` + `(${currentTeam.answerProgamerPosition})`;  // 문제 번호는 인덱스에 1을 더한 값
+    questionNumberElement.textContent = index + 1 + `(${currentTeam.seasonYear})`;  // 문제 번호는 인덱스에 1을 더한 값
+    nationalityImage.src = `/images/nationality/${currentTeam.nationality}.png`;
+    nationalityImage.alt = '${currentTeam.nationality}';
     document.getElementById('total-count').textContent = totalQuizCount;
     // 맞춘 개수 / 전체 개수를 업데이트
     document.getElementById('correct-count').textContent = correctQuizCount;
@@ -220,7 +193,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
             const progamerImage = document.createElement('img');
             cover.appendChild(progamerImage);
             //progamer 이름 바꾸기
-            progamerImage.src = `/images/VALORANT/player/${progamer}.webp`;  // 이미지 경로
+            progamerImage.src = `/images/VALORANT/player/${progamer.id}_${progamer.progamerTag}.jpg`;  // 이미지 경로
             progamerImage.alt = progamer.progamerTag;
             removeBlur(teamImage);  // 이미지 블러 제거 함수 호출
 
@@ -256,7 +229,7 @@ function showHint(currentTeam, index, correctQuizCount, totalQuizCount) {
 
 // 퀴즈 종료 처리
 function endQuiz(savedQuizData) {
-    fetch('/pieceofpuzzle/end', {
+    fetch('/valorant/pieceofpuzzle/end', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -280,3 +253,8 @@ function removeBlur(imageElement) {
     imageElement.classList.add('no-blur');
 }
 
+function goToMainPage() {
+    // localStorage에서 guideShown 값을 삭제 (초기화)
+    localStorage.removeItem('guideShown');
+    window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
+}

@@ -270,3 +270,9 @@ function endQuiz(savedQuizData) {
 function removeBlur(imageElement) {
     imageElement.classList.add('no-blur');
 }
+
+function goToMainPage() {
+    // localStorage에서 guideShown 값을 삭제 (초기화)
+    localStorage.removeItem('guideShown');
+    window.location.href = '/'; // 메인 페이지 URL로 이동 ("/"는 메인 페이지로 이동하는 경로)
+}

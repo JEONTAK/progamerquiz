@@ -65,9 +65,12 @@
 <!-- 가이드 오버레이 -->
 <div id="guide-overlay" class="guide-overlay" style="display: none;">
     <div class="guide-content">
-        <h2>Welcome to the Quiz!</h2>
-        <div id="quiz4-guide"></div>
-        <button onclick="closeGuide()" class="main-button">Got it!</button>
+        <h2>Piece Of Puzzle!</h2>
+        <p>프로게이머를 주어진 기회 안에 맞히는 게임 입니다.
+            총 15개 팀이 주어집니다,
+            주어진 힌트를 활용해 최대한 많은 선수를 맞혀보세요!</p>
+        <button onclick="closeGuide('leagueoflegends')" class="main-button">LOL</button>
+        <button onclick="closeGuide('valorant')" class="main-button">VALORANT</button>
     </div>
 </div>
 <script th:src="@{/js/pieceofpuzzle.js}"></script>
@@ -83,7 +86,6 @@
         .then(data => {
             // 적절한 언어 데이터 사용
             document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
-            document.getElementById('quiz4-guide').innerHTML = data[selectedLang]['quiz4-guide'].replace(/\n/g, '<br>');
         })
         .catch(error => console.error('Error loading language data:', error));
 

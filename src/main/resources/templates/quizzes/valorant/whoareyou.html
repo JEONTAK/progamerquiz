@@ -42,18 +42,4 @@
 <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
 <script th:src="@{/js/valorant/whoareyou_valorant.js}"></script>
-<script th:inline="javascript">
-    // 브라우저 언어 가져오기
-    const userLang = navigator.language || navigator.userLanguage;
-    let selectedLang = userLang.startsWith('ko') ? 'ko' : 'en'; // 한국어이면 'ko', 나머지 'en'
-
-    // JSON 파일에서 언어 데이터를 로드
-    fetch('/database/Language.json')
-        .then(response => response.json())
-        .then(data => {
-            // 적절한 언어 데이터 사용
-            document.getElementById('error-message-player').textContent = data[selectedLang]['error-message-player'];
-        })
-        .catch(error => console.error('Error loading language data:', error));
-</script>
 </html>
