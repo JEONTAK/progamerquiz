@@ -22,7 +22,7 @@ function startQuiz() {
             const hintRow = document.createElement("div");
             hintRow.classList.add("hint-row");
 
-            const hintName = ['League', 'Team', 'Birth', 'League Wins', 'Masters Wins', 'Champs Wins', 'Nationality'];
+            const hintName = ['League', 'Team', 'Birth', 'League', 'Masters', 'Champions', 'Nationality'];
             hintName.forEach(hint => {
                 const hintItem = document.createElement("div");
                 hintItem.classList.add("hint-item");

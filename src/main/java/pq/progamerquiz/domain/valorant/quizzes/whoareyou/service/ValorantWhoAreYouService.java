@@ -31,16 +31,16 @@ import java.util.List;
 public class ValorantWhoAreYouService {
 
     private final ProgamerValorantQueryService progamerValorantQueryService;
-    private final ValorantWhoAreYouRepository valorantWhoAreYouRepository;
+    private final ValorantWhoAreYouRepository whoAreYouRepository;
     private final TeamValorantQueryService teamValorantQueryService;
     private static final int MAX_ATTEMPTS = 8;
 
     public ValorantWhoAreYouResponse startQuiz() {
         ProgamerValorant randomProgamer = progamerValorantQueryService.findRandomProgamer();
         ValorantWhoAreYou whoareyou = ValorantWhoAreYou.create(0L, false, randomProgamer);
-        whoareyou = valorantWhoAreYouRepository.save(whoareyou);
-        ValorantWhoAreYou savedWhoAreYou = valorantWhoAreYouRepository.findByIdWIthProgamer(whoareyou.getId()).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
-        ProgamerValorant progamer = savedWhoAreYou.getQuizProgamerValorant();
+        whoareyou = whoAreYouRepository.save(whoareyou);
+        ValorantWhoAreYou savedValorantWhoAreYou = whoAreYouRepository.findByIdWIthProgamer(whoareyou.getId()).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        ProgamerValorant progamer = savedValorantWhoAreYou.getQuizProgamerValorant();
         TeamValorant recentTeam = teamValorantQueryService.findRecentTeamByProgamer(progamer.getId());
         TeamValorantInfoResponse teamInfoResponse = TeamValorantInfoResponse.of(
                 recentTeam.getId(),
@@ -141,7 +141,7 @@ public class ValorantWhoAreYouService {
 
     @Transactional
     public void saveResult(Long id, Long attempts, boolean isCorrect) {
-        ValorantWhoAreYou currentQuiz = valorantWhoAreYouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
-        currentQuiz.updateResult(attempts, isCorrect);
+        ValorantWhoAreYou currentQuiz = whoAreYouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
+        whoAreYouRepository.updateCorrectQuizCount(id, attempts, isCorrect);
     }
 }

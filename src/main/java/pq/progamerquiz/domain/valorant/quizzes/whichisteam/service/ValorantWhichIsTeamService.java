@@ -6,17 +6,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import pq.progamerquiz.common.enums.Game;
 import pq.progamerquiz.common.exception.CustomException;
+import pq.progamerquiz.domain.quizzes.entity.WhichIsTeam;
+import pq.progamerquiz.domain.quizzes.repository.WhichIsTeamRepository;
 import pq.progamerquiz.domain.valorant.progamerteamvalorant.service.ProgamerTeamValorantService;
 import pq.progamerquiz.domain.valorant.progamervalorant.dto.response.ProgamerValorantSimpleInfoResponse;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.dto.response.ValorantWhichIsTeamQuizResponse;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.dto.response.ValorantWhichIsTeamResponse;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.dto.response.ValorantWhichIsTeamResultResponse;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.dto.response.ValorantWhichIsTeamSubmitAnswerResponse;
-import pq.progamerquiz.domain.valorant.quizzes.whichisteam.entity.ValorantWhichIsTeam;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.entity.ValorantWhichIsTeamQuizTeam;
 import pq.progamerquiz.domain.valorant.quizzes.whichisteam.repository.ValorantWhichIsTeamQuizTeamRepository;
-import pq.progamerquiz.domain.valorant.quizzes.whichisteam.repository.ValorantWhichIsTeamRepository;
 import pq.progamerquiz.domain.valorant.teamvalorant.entity.TeamValorant;
 import pq.progamerquiz.domain.valorant.teamvalorant.service.TeamValorantQueryService;
 
@@ -32,14 +33,14 @@ import java.util.stream.LongStream;
 @Transactional
 public class ValorantWhichIsTeamService {
 
-    private final ValorantWhichIsTeamRepository valorantWhichIsTeamRepository;
+    private final WhichIsTeamRepository whichIsTeamRepository;
     private final ValorantWhichIsTeamQuizTeamRepository valorantWhichIsTeamQuizTeamRepository;
     private final TeamValorantQueryService teamValorantQueryService;
     private final ProgamerTeamValorantService progamerTeamValorantService;
 
-    public List<ValorantWhichIsTeamQuizResponse> setQuizLists(Integer totalQuizCount) {
-        ValorantWhichIsTeam whichIsTeam = ValorantWhichIsTeam.create(totalQuizCount, 0);
-        ValorantWhichIsTeam savedWhichIsTeam = valorantWhichIsTeamRepository.save(whichIsTeam);
+    public List<ValorantWhichIsTeamQuizResponse> setQuizLists(Integer totalQuizCount, Game game) {
+        WhichIsTeam whichIsTeam = WhichIsTeam.create(totalQuizCount, 0, game);
+        WhichIsTeam savedWhichIsTeam = whichIsTeamRepository.save(whichIsTeam);
         List<Long> teamIds = progamerTeamValorantService.findTeamIdsWithFiveOrMoreProgamers();
         List<TeamValorant> teamList = teamValorantQueryService.findRandomTeams(totalQuizCount, teamIds);
         return LongStream.range(0, teamList.size())
@@ -53,7 +54,7 @@ public class ValorantWhichIsTeamService {
     }
 
     public ValorantWhichIsTeamResponse setQuiz(Long id, List<ValorantWhichIsTeamQuizResponse> quizList) {
-        ValorantWhichIsTeam whichIsTeam = valorantWhichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        WhichIsTeam whichIsTeam = whichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
         return ValorantWhichIsTeamResponse.of(whichIsTeam.getId(), 0, whichIsTeam.getTotalQuizCount(), whichIsTeam.getCorrectQuizCount(), quizList);
     }
 
@@ -68,8 +69,8 @@ public class ValorantWhichIsTeamService {
     }
 
     public ValorantWhichIsTeamResultResponse saveResult(Long id, Integer correctQuizCount, Integer totalQuizCount) {
-        ValorantWhichIsTeam whichIsTeam = valorantWhichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
-        valorantWhichIsTeamRepository.updateCorrectQuizCount(id, correctQuizCount);
+        WhichIsTeam whichIsTeam = whichIsTeamRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈를 찾을 수 없습니다."));
+        whichIsTeamRepository.updateCorrectQuizCount(id, correctQuizCount);
         return ValorantWhichIsTeamResultResponse.of(whichIsTeam.getId(), correctQuizCount, totalQuizCount);
     }
 }

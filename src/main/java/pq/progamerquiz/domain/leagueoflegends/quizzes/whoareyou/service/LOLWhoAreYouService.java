@@ -146,6 +146,7 @@ public class LOLWhoAreYouService {
     @Transactional
     public void saveResult(Long id, Long attempts, boolean isCorrect) {
         LOLWhoAreYou currentQuiz = lolWhoAreYouRepository.findById(id).orElseThrow(() -> new CustomException(HttpStatus.NOT_FOUND, "해당 퀴즈 데이터를 찾을 수 없습니다."));
-        currentQuiz.updateResult(attempts, isCorrect);
+        lolWhoAreYouRepository.updateCorrectQuizCount(id, attempts, isCorrect);
     }
+
 }

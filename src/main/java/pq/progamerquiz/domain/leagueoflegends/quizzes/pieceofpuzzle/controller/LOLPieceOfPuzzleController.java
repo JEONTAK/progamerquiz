@@ -4,13 +4,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.common.enums.Game;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleSaveResultRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleStartRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleSubmitAnswerRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.response.LOLPieceOfPuzzleQuizResponse;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.response.LOLPieceOfPuzzleResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.response.LOLPieceOfPuzzleResultResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.response.LOLPieceOfPuzzleSubmitAnswerResponse;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.response.LOLPieceOfPuzzleResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.service.LOLPieceOfPuzzleService;
 
 import java.util.List;
@@ -28,7 +29,7 @@ public class LOLPieceOfPuzzleController {
     public ResponseEntity<LOLPieceOfPuzzleResponse> setQuiz(@RequestBody LOLPieceOfPuzzleStartRequest request) {
         log.info("[Piece Of Puzzle] Request size : " + request.getTotalQuizCount());
         log.info("[Piece Of Puzzle] Set Quiz...");
-        List<LOLPieceOfPuzzleQuizResponse> quizList = lolPieceOfPuzzleService.setQuizLists(request.getTotalQuizCount());
+        List<LOLPieceOfPuzzleQuizResponse> quizList = lolPieceOfPuzzleService.setQuizLists(request.getTotalQuizCount(), Game.LOL);
         log.info("[Piece Of Puzzle] Finish Set Quiz...");
         for (LOLPieceOfPuzzleQuizResponse LOLPieceOfPuzzleQuizResponse : quizList) {
             log.info("[Piece Of Puzzle] " + LOLPieceOfPuzzleQuizResponse.getIndex() + " : " + LOLPieceOfPuzzleQuizResponse.getAnswerProgamerTag() + " : " + LOLPieceOfPuzzleQuizResponse.getSeasonYear());

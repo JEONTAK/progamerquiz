@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.quiz.dto;
+package pq.progamerquiz.domain.quizzes.dto;
 
 import lombok.Getter;
 import lombok.Setter;

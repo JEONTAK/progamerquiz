@@ -1,15 +1,16 @@
-package pq.progamerquiz.domain.valorant.quizzes.igotyou.entity;
+package pq.progamerquiz.domain.quizzes.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pq.progamerquiz.common.enums.Game;
 
 @Entity
-@Table(name = "igotyou_valorant")
+@Table(name = "igotyou")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class ValorantIGotYou {
+public class IGotYou {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,12 +22,17 @@ public class ValorantIGotYou {
     @Column(nullable = false)
     private Integer correctQuizCount;
 
-    private ValorantIGotYou(Integer totalQuizCount, Integer correctQuizCount) {
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Game game;
+
+    public IGotYou(Integer totalQuizCount, Integer correctQuizCount, Game game) {
         this.totalQuizCount = totalQuizCount;
         this.correctQuizCount = correctQuizCount;
+        this.game = game;
     }
 
-    public static ValorantIGotYou create(Integer totalQuizCount, Integer correctQuizCount) {
-        return new ValorantIGotYou(totalQuizCount, correctQuizCount);
+    public static IGotYou create(Integer totalQuizCount, Integer correctQuizCount, Game game) {
+        return new IGotYou(totalQuizCount, correctQuizCount, game);
     }
 }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import pq.progamerquiz.domain.quizzes.entity.IGotYou;
 import pq.progamerquiz.domain.valorant.progamervalorant.entity.ProgamerValorant;
 
 @Entity
@@ -18,18 +19,18 @@ public class ValorantIGotYouQuizProgamer {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "igotyou_id", nullable = false)
-    private ValorantIGotYou igotyou;
+    private IGotYou igotyou;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "progamer_id", nullable = false)
     private ProgamerValorant answerProgamer;
 
-    private ValorantIGotYouQuizProgamer(ValorantIGotYou igotyou, ProgamerValorant answerProgamer) {
+    private ValorantIGotYouQuizProgamer(IGotYou igotyou, ProgamerValorant answerProgamer) {
         this.igotyou = igotyou;
         this.answerProgamer = answerProgamer;
     }
 
-    public static ValorantIGotYouQuizProgamer create(ValorantIGotYou igotyou, ProgamerValorant answerProgamer) {
+    public static ValorantIGotYouQuizProgamer create(IGotYou igotyou, ProgamerValorant answerProgamer) {
         return new ValorantIGotYouQuizProgamer(igotyou, answerProgamer);
     }
 }

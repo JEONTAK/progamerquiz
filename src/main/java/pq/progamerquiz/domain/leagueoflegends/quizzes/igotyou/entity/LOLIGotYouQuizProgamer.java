@@ -5,6 +5,7 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pq.progamerquiz.domain.leagueoflegends.progamerlol.entity.ProgamerLOL;
+import pq.progamerquiz.domain.quizzes.entity.IGotYou;
 
 @Entity
 @Table(name = "igotyou_progamer_lol")
@@ -18,18 +19,18 @@ public class LOLIGotYouQuizProgamer {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "igotyou_id", nullable = false)
-    private LOLIGotYou igotyou;
+    private IGotYou igotyou;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "progamer_id", nullable = false)
     private ProgamerLOL answerProgamerLOL;
 
-    private LOLIGotYouQuizProgamer(LOLIGotYou igotyou, ProgamerLOL answerProgamerLOL) {
+    private LOLIGotYouQuizProgamer(IGotYou igotyou, ProgamerLOL answerProgamerLOL) {
         this.igotyou = igotyou;
         this.answerProgamerLOL = answerProgamerLOL;
     }
 
-    public static LOLIGotYouQuizProgamer create(LOLIGotYou igotyou, ProgamerLOL answerProgamerLOL) {
+    public static LOLIGotYouQuizProgamer create(IGotYou igotyou, ProgamerLOL answerProgamerLOL) {
         return new LOLIGotYouQuizProgamer(igotyou, answerProgamerLOL);
     }
 }

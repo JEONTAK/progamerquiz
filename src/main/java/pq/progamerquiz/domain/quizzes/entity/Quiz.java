@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.quiz.entity;
+package pq.progamerquiz.domain.quizzes.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

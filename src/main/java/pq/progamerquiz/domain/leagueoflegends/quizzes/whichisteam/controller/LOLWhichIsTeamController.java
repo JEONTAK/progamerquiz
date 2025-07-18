@@ -4,14 +4,15 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.common.enums.Game;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.request.LOLWhichIsTeamSaveResultRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.request.LOLWhichIsTeamStartRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.request.LOLWhichIsTeamSubmitAnswerRequest;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamQuizResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamResponse;
+import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamResultResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamSubmitAnswerResponse;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.service.LOLWhichIsTeamService;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.request.LOLWhichIsTeamSaveResultRequest;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamQuizResponse;
-import pq.progamerquiz.domain.leagueoflegends.quizzes.whichisteam.dto.response.LOLWhichIsTeamResultResponse;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class LOLWhichIsTeamController {
     public ResponseEntity<LOLWhichIsTeamResponse> setQuiz(@RequestBody LOLWhichIsTeamStartRequest request) {
         log.info("[Which Is Team] Request size : " + request.getTotalQuizCount());
         log.info("[Which Is Team] Set Quiz...");
-        List<LOLWhichIsTeamQuizResponse> quizList = lolWhichIsTeamService.setQuizLists(request.getTotalQuizCount());
+        List<LOLWhichIsTeamQuizResponse> quizList = lolWhichIsTeamService.setQuizLists(request.getTotalQuizCount(), Game.LOL);
         log.info("[Which Is Team] Finish Set Quiz...");
         for (LOLWhichIsTeamQuizResponse LOLWhichIsTeamQuizResponse : quizList) {
             log.info("[Which Is Team] " + LOLWhichIsTeamQuizResponse.getIndex() + " : " + LOLWhichIsTeamQuizResponse.getTeamName() + " : " + LOLWhichIsTeamQuizResponse.getSeasonYear());

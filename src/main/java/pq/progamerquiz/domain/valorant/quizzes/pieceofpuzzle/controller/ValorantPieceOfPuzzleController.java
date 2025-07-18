@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.common.enums.Game;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleSaveResultRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleStartRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.pieceofpuzzle.dto.request.LOLPieceOfPuzzleSubmitAnswerRequest;
@@ -28,7 +29,7 @@ public class ValorantPieceOfPuzzleController {
     public ResponseEntity<ValorantPieceOfPuzzleResponse> setQuiz(@RequestBody LOLPieceOfPuzzleStartRequest request) {
         log.info("[Piece Of Puzzle] Request size : " + request.getTotalQuizCount());
         log.info("[Piece Of Puzzle] Set Quiz...");
-        List<ValorantPieceOfPuzzleQuizResponse> quizList = pieceOfPuzzleService.setQuizLists(request.getTotalQuizCount());
+        List<ValorantPieceOfPuzzleQuizResponse> quizList = pieceOfPuzzleService.setQuizLists(request.getTotalQuizCount(), Game.Valorant);
         log.info("[Piece Of Puzzle] Finish Set Quiz...");
         for (ValorantPieceOfPuzzleQuizResponse pieceOfPuzzleQuizResponse : quizList) {
             log.info("[Piece Of Puzzle] " + pieceOfPuzzleQuizResponse.getIndex() + " : " + pieceOfPuzzleQuizResponse.getProgamerTag() + " : " + pieceOfPuzzleQuizResponse.getSeasonYear());

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pq.progamerquiz.common.enums.Game;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouSaveResultRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouStartRequest;
 import pq.progamerquiz.domain.leagueoflegends.quizzes.igotyou.dto.request.LOLIGotYouSubmitAnswerRequest;
@@ -28,7 +29,7 @@ public class ValorantGotYouController {
     public ResponseEntity<ValorantIGotYouResponse> setQuiz(@RequestBody LOLIGotYouStartRequest request) {
         log.info("[I Got You] Request size : " + request.getTotalQuizCount());
         log.info("[I Got You] Set Quiz...");
-        List<ValorantIGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount());
+        List<ValorantIGotYouQuizResponse> quizList = iGotYouService.setQuizLists(request.getTotalQuizCount(), Game.Valorant);
         log.info("[I Got You] Finish Set Quiz...");
         for (ValorantIGotYouQuizResponse iGotYouQuizResponse : quizList) {
             log.info("[I Got You] " +  iGotYouQuizResponse.getIndex() + " : " + iGotYouQuizResponse.getProgamerTag());

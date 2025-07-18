@@ -1,4 +1,4 @@
-package pq.progamerquiz.domain.quiz.controller;
+package pq.progamerquiz.domain.quizzes.controller;
 
 
 import org.springframework.ui.Model;
@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pq.progamerquiz.domain.quiz.entity.Quiz;
-import pq.progamerquiz.domain.quiz.service.QuizService;
+import pq.progamerquiz.domain.quizzes.entity.Quiz;
+import pq.progamerquiz.domain.quizzes.service.QuizService;
 
 import java.util.List;
 

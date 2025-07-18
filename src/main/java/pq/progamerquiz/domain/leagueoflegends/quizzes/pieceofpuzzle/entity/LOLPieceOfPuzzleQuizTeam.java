@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import pq.progamerquiz.domain.leagueoflegends.progamerlol.entity.ProgamerLOL;
 import pq.progamerquiz.domain.leagueoflegends.teamlol.entity.TeamLOL;
+import pq.progamerquiz.domain.quizzes.entity.PieceOfPuzzle;
 
 @Entity
 @Table(name = "pieceofpuzzle_team_lol")
@@ -19,7 +20,7 @@ public class LOLPieceOfPuzzleQuizTeam {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pieceofpuzzle_id", nullable = false)
-    private LOLPieceOfPuzzle pieceofpuzzle;
+    private PieceOfPuzzle pieceofpuzzle;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", nullable = false)
@@ -29,13 +30,13 @@ public class LOLPieceOfPuzzleQuizTeam {
     @JoinColumn(name = "progamer_id", nullable = false)
     private ProgamerLOL progamerLOL;
 
-    private LOLPieceOfPuzzleQuizTeam(LOLPieceOfPuzzle pieceofpuzzle, TeamLOL teamLOL, ProgamerLOL progamerLOL) {
+    private LOLPieceOfPuzzleQuizTeam(PieceOfPuzzle pieceofpuzzle, TeamLOL teamLOL, ProgamerLOL progamerLOL) {
         this.pieceofpuzzle = pieceofpuzzle;
         this.teamLOL = teamLOL;
         this.progamerLOL = progamerLOL;
     }
 
-    public static LOLPieceOfPuzzleQuizTeam create(LOLPieceOfPuzzle lolPieceOfPuzzle, TeamLOL teamLOL, ProgamerLOL progamerLOL) {
-        return new LOLPieceOfPuzzleQuizTeam(lolPieceOfPuzzle, teamLOL, progamerLOL);
+    public static LOLPieceOfPuzzleQuizTeam create(PieceOfPuzzle pieceOfPuzzle, TeamLOL teamLOL, ProgamerLOL progamerLOL) {
+        return new LOLPieceOfPuzzleQuizTeam(pieceOfPuzzle, teamLOL, progamerLOL);
     }
 }

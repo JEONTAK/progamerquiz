@@ -1,10 +1,10 @@
-package pq.progamerquiz.domain.quiz.service;
+package pq.progamerquiz.domain.quizzes.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pq.progamerquiz.domain.quiz.repository.QuizRepository;
-import pq.progamerquiz.domain.quiz.entity.Quiz;
+import pq.progamerquiz.domain.quizzes.repository.QuizRepository;
+import pq.progamerquiz.domain.quizzes.entity.Quiz;
 
 import java.util.List;
 
@@ -14,7 +14,6 @@ import java.util.List;
 public class QuizService {
 
     private final QuizRepository quizRepository;
-
 
     public void saveQuiz(Quiz quiz) {
         quizRepository.save(quiz);
