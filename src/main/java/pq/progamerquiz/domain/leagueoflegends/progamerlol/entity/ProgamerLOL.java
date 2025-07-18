@@ -13,7 +13,6 @@ import pq.progamerquiz.common.enums.Position;
 public class ProgamerLOL {
 
     @Id
-    @GeneratedValue
     private Long id;
 
     @Column(nullable = false)

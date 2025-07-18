@@ -12,7 +12,6 @@ import lombok.NoArgsConstructor;
 public class ProgamerValorant {
 
     @Id
-    @GeneratedValue
     private Long id;
 
     @Column(nullable = false)

@@ -13,7 +13,6 @@ import lombok.NoArgsConstructor;
 public class TeamValorant {
 
     @Id
-    @GeneratedValue
     private Long id;
 
     @Column(nullable = false)

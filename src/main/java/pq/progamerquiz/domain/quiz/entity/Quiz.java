@@ -2,7 +2,6 @@ package pq.progamerquiz.domain.quiz.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +14,17 @@ import lombok.Setter;
 public class Quiz {
 
     @Id
-    @GeneratedValue
-    @Column(name = "quiz_id")
     private Long id;
+
+    @Column
     private String url;
+    @Column
     private String imageUrl;
+    @Column
     private String title;
+    @Column
     private String altText;
+    @Column
     private String description;
 
     private Quiz(Long id, String url, String imageUrl, String title, String altText, String description) {
